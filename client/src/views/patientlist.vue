@@ -51,13 +51,13 @@
           <el-table-column prop="operation" align='center' label="操作"  width="150">
             <template slot-scope='scope'>
               <el-button type="warning" icon='edit' size="mini" @click='handleEdit(scope.row)'>編輯</el-button>
-              <el-button type="danger" icon='delete' size="mini" @click='handleDel(scope.row,scope.$index)'>刪除</el-button>
+              <el-button type="danger" icon='delete' size="mini" @click='handleDelete(scope.row,scope.$index)'>刪除</el-button>
             </template>
           </el-table-column>
       </el-table>
   </div>
         <!-- 弹框页面 --> 
-        <Dialog :dialog='dialog' @update="getProfile"></Dialog>
+        <Dialog :dialog='dialog'  :formData="formData" @update="getProfile"></Dialog>
 </div>
 </template>
 
@@ -69,10 +69,18 @@ export default {
   data() {
     return {
       tableData: [],
+       formData:{
+        patientId: "",
+        patientName: "",
+        patientPhone: "",
+        description: "",
+        patientDetails: "",
+        id:""
+      },
       dialog: {
         show: false,
-        //title: "",
-        //option: "edit"
+        title: "",
+        option: "edit"
       },
     }
   },
@@ -95,18 +103,50 @@ export default {
         //this.setPaginations();
       })
     },
-    handleEdit(index,row){
-      console.log(123);
+
+    //TODO:编辑患者信息
+    handleEdit(row){ 
+      this.dialog={
+        show:true,
+        title:'修改患者資料',
+        option:'edit'
+      },
+      this.formData={
+        patientId:row.patientId,
+        patientName:row.patientName,
+        patientPhone:row.patientPhone,
+        description:row.description,
+        patientDetails:row.patientDetails,
+        id:row._id
+      }
     },
-    handleDele(index,row){
-      console.log(456);
+
+    //TODO:刪除患者信息
+    handleDelete(row){
+       this.$axios.delete(`/api/profiles/delete/${row._id}`).then(res => {
+          this.$message("刪除成功");
+          this.getProfile();
+       })
     },
+
+    //TODO:新增患者信息
     handleAdd(){
+      this.dialog={
+        show:true,
+        title:'新增患者資料',
+        option:'add'
+      };
+      this.formData={
+        patientId:"",
+        patientName:"",
+        patientPhone:"",
+        description:"",
+        patientDetails:"",
+        id: ""
+      };
       this.dialog.show = true;
     }
-  
-  }
-
+}
 };
 </script>
 <style scoped>

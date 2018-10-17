@@ -1,19 +1,20 @@
 <template>
     <div class="dialog">
        <el-dialog 
-            title="新建患者檔案" 
+            :title="dialog.title"
             :visible.sync="dialog.show"
             :close-on-click-modal='false'
             :close-on-press-escape='false'
-            :modal-append-to-body="false">
-       
+            :modal-append-to-body='false'>
+            
          <div class="form">
                 <el-form 
                     ref="form" 
                     :model="formData"
                     :rules="form_rules"
-                    label-width="120px" 
-                    style="margin:10px;width:auto;">
+                    label-width="100px" 
+                    style="margin:20px; width:600px"
+                    >
 
                     <el-form-item prop='patientId' label="健檢編號:">
                         <el-input type="patientId" v-model="formData.patientId"></el-input>
@@ -51,13 +52,7 @@ export default {
   name: "dialog",
   data() {
     return {
-      formData:{
-        patientId: "",
-        patientName: "",
-        patientPhone: "",
-        description: "",
-        patientDetails: "",
-      },
+     
       form_rules: {
        patientId: [
           { required: true, message: "健檢編號不能為空！", trigger: "blur" }
@@ -79,17 +74,16 @@ export default {
   },
   props: {
     dialog: Object,
-    form: Object
+    formData: Object
   },
   
   methods: {
    onSubmit(form) {
       this.$refs[form].validate(valid => {
         if (valid) {
-          //表单数据验证完成之后，提交数据;
-         // const url =
-            //this.dialog.option == "add" ? "add" : `edit/${this.form.id}`;
-            this.$axios.post(`/api/profiles/add`, this.formData).then(res => {
+            //表单数据验证完成之后，提交数据;
+            const url = this.dialog.option == "add" ? "add" : `edit/${this.formData.id}`;
+            this.$axios.post(`/api/profiles/${url}`, this.formData).then(res => {
             // 操作成功
             this.$message({
               message: "新增成功！",
@@ -106,4 +100,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+    
+</style>
+
+
 
