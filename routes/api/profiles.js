@@ -6,14 +6,15 @@ const passport=require("passport");
 const Profile =require("../../modules/Profile")
 
 // $route GET api/profiles/test
-// @desc 返回的请求的json数据
+//todo @desc 返回的请求的json数据
 //@access public
 router.get("/test",(req,res) => {
    res.json({msg:"Profile works"})
 })
 
+
 // $route POST api/profiles/add
-// @desc 创建信息接口
+//todo @desc 创建信息接口
 //@access private
 router.post("/add",passport.authenticate('jwt',{session:false}),(req,res)=>{
     const profileFields={};
