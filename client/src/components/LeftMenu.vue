@@ -98,7 +98,7 @@ export default {
   top: 71px;
   left: 0;
   min-height: 100%;
-  background-color: #324057;
+  background-color:rgb(50, 65, 87);
   z-index: 99;
 }
 .el-menu {

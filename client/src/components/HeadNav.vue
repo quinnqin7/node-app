@@ -90,7 +90,7 @@ export default {
   height: 60px;
   min-width: 600px;
   padding: 5px;
-  background: #324057;
+  background: #242f42;
   color: #fff;
   border-bottom: 1px solid #1f2d3d;
 }
