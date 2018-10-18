@@ -4,11 +4,11 @@
   "description": "restful api",
   "main": "server.js",
   "scripts": {
-    "client-install":"npm install --prefix client",
-    "client":"npm start --prefix client",
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "dev":"concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "qinnan",
   "license": "ISC",
