@@ -13,6 +13,11 @@ const ProfileSchema =new Schema({
         type:String,
         require:true
     },
+    /*病人電話*/
+    patientPhone:{
+        type:Number,
+        require:true
+    },
     /*病情描述*/
     description:{
         type:String

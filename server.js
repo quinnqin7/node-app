@@ -33,5 +33,5 @@ app.use("/api/profiles",profiles);
 const port = process.env.PORT || 3000; //设置端口号
 
 app.listen(port,()=>{
-    console.log('Server running on port ${port} ');
+    console.log('Server running on port 3000 ');
 })

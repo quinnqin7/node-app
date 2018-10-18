@@ -46,7 +46,7 @@ router.get("/",passport.authenticate('jwt',{session:false}),(req,res) => {
 
 // $route GET api/profiles/:id
 // @desc 获取单个信息
-//@access private
+// @access private
 router.get("/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
     Profile.findOne({_id:req.params.id})
         .then(profile=>{
