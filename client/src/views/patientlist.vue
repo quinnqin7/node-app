@@ -72,7 +72,7 @@
           </el-table-column>
       </el-table>
 
-      <!--FIXME: 分页功能 这段代码加进来页面就进不去，每次刷新报的错也不一样
+      <!--FIXME: 分页功能 这段代码加进去页面就进不去，每次刷新报的错也不一样
       <el-row>
         <el-col :span="24">
           <div class="pagination">

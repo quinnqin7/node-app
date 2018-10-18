@@ -1,5 +1,5 @@
 <template>
-    <div class="index">
+    <div class="mainmenu">
     <HeadNav></HeadNav>
     <LeftMenu></LeftMenu>
         <div class="rightContainer">
@@ -13,7 +13,7 @@
 import HeadNav from '../components/HeadNav'
 import LeftMenu from '../components/LeftMenu'
 export default {
-    name:"index",
+    name:"mainmenu",
     components:{
         HeadNav,
         LeftMenu
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-.index{
+.mainmenu{
     width: 100%;
     height: 100%;
     overflow: hidden;

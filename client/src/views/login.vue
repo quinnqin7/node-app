@@ -68,7 +68,7 @@ export default {
                 this.$store.dispatch("setUser", decoded);
 
 
-              this.$router.push("/index");
+              this.$router.push("/mainmenu");
               });
         } 
       });

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from './views/index.vue'
+import Mainmenu from './views/mainmenu.vue'
 
 /*註冊*/
 import Register from './views/register.vue'
@@ -35,9 +35,9 @@ const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    {path: '/',redirect: '/index'},
+    {path: '/',redirect: '/mainmenu'},
     {
-      path: '/index',name: '/index',component: Index,
+      path: '/mainmenu',name: '/mainmenu',component: Mainmenu,
       children:[
         {path:'',component:Home},
         {path:'/home',name:'home', component:Home},
