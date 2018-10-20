@@ -103,6 +103,7 @@ export default {
           });
         }
       });
+      //todo 不建议这样做
       window.location.reload()
     },
 	  changeGender(){
