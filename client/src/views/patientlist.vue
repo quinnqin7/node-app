@@ -116,7 +116,8 @@ export default {
         patientPhone: "",
         description: "",
         patientDetails: "",
-        id:""
+        id:"",
+          gender: "1"
       },
 
       dialog: {
@@ -168,8 +169,11 @@ export default {
         patientPhone:row.patientPhone,
         description:row.description,
         patientDetails:row.patientDetails,
-        id:row._id
+        id:row._id,
+          gender:"1"
       }
+      console.log('ssssssssssssssssssssssss')
+      console.log(this.formData.gender)
     },
 
     //刪除患者信息

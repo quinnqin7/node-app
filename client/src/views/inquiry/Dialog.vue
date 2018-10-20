@@ -28,6 +28,13 @@
                         <el-input type="patientPhone" v-model="formData.patientPhone"></el-input>
                     </el-form-item>
 
+                    <el-form-item label="性别" prop="gender">
+                        <el-radio-group @change="changeGender()" v-model="formData.gender">
+                            <el-radio label=1>男</el-radio>
+                            <el-radio label=2>女</el-radio>
+                        </el-radio-group>
+                    </el-form-item>
+
                     <el-form-item prop='description' label="診斷描述:">
                         <el-input type="description" v-model="formData.description"></el-input>
                     </el-form-item>
@@ -96,8 +103,12 @@ export default {
           });
         }
       });
-    }
+    },
+	  changeGender(){
+		  console.log(this.formData.gender)
+	  }
   }
+
 };
 </script>
 
