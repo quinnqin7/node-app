@@ -24,18 +24,18 @@
                         <el-input type="patientName" v-model="formData.patientName"></el-input>
                     </el-form-item>
 
-                    <el-form-item prop='patientGender' label="性别:" > 
-                    <el-radio-group  v-model="formData.radio" >
-                      <el-radio label="男"></el-radio>
-                      <el-radio label="女"></el-radio>
-                    </el-radio-group>
+                     <el-form-item label="性別" prop="gender">
+                        <el-radio-group @change="changeGender()" v-model="formData.gender">
+                            <el-radio label=1>男</el-radio>
+                            <el-radio label=2>女</el-radio>
+                        </el-radio-group>
                     </el-form-item>
 
                     <el-form-item prop='patientPhone' label="聯絡方式:">
                         <el-input type="patientPhone" v-model="formData.patientPhone"></el-input>
                     </el-form-item>
 
-                  <!--  <el-form-item prop='description' label="診斷描述:">
+                    <el-form-item prop='description' label="診斷描述:">
                         <el-input type="description" v-model="formData.description"></el-input>
                     </el-form-item> -->
 
@@ -84,9 +84,9 @@ export default {
         patientName: [
           { required: true, message: "姓名不能為空！", trigger: "blur" }
         ],
-        patientGender:[
+       /* patientGender:[
            { required: true, message: "請選擇性別！", trigger: "blur" }
-        ],
+        ],*/
         patientPhone: [
           { required: true, message: "電話不能為空！", trigger: "blur" }
         ],
@@ -125,13 +125,11 @@ export default {
         }
       });
     },
-    //性别数据转换 
-	  /*formatRole: function(row) {
-				return row.patientGender == '1' ? "男" : row.patientGender == '0' ? "女" : "暂无";
-		}, */
-
-
+	  changeGender(){
+		  console.log(this.formData.gender)
+	  }
   }
+
 };
 </script>
 

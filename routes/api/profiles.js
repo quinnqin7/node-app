@@ -12,7 +12,6 @@ router.get("/test",(req,res) => {
    res.json({msg:"Profile works"})
 })
 
-
 // $route POST api/profiles/add
 //todo @desc 创建信息接口
 //@access private
