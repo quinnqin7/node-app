@@ -20,14 +20,12 @@ import InfoShow from './views/infoShow.vue'
 
 /*問診 inquiry-> 問診病歷、問診處方、患者列表*/
 //import Inquiry from './views/inquiry/inquiry'
+import Medicalrecord from './views/medicalrecord'
 import Patientlist from './views/patientlist'
+import Treatment from './views/treatment'
 /*健檢報告管理 repManage-> 公司 ->個人*/
 
 /*統計 statistic*/
-
-
-
-
 
 Vue.use(Router)
 
@@ -43,6 +41,8 @@ const router = new Router({
         {path:'/home',name:'home', component:Home},
         {path:'/infoshow',name:'infoshow', component:InfoShow},
         {path:'/patientlist',name:'patientlist', component:Patientlist},
+        {path:'/medicalrecord',name:'medicalrecord', component:Medicalrecord},
+        {path:'/treatment',name:'treatment', component:Treatment},
       ]
     },
     {path: '/register',name: '/register',component: Register}, 

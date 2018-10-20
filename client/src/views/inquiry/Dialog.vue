@@ -20,16 +20,34 @@
                         <el-input type="patientId" v-model="formData.patientId"></el-input>
                     </el-form-item>
 
-                    <el-form-item prop='patientName'  label="姓名:">
+                    <el-form-item prop='patientName'  label="姓名:"> 
                         <el-input type="patientName" v-model="formData.patientName"></el-input>
+                    </el-form-item>
+
+                    <el-form-item prop='patientGender' label="性别:" > 
+                    <el-radio-group  v-model="formData.radio" >
+                      <el-radio label="男"></el-radio>
+                      <el-radio label="女"></el-radio>
+                    </el-radio-group>
                     </el-form-item>
 
                     <el-form-item prop='patientPhone' label="聯絡方式:">
                         <el-input type="patientPhone" v-model="formData.patientPhone"></el-input>
                     </el-form-item>
 
-                    <el-form-item prop='description' label="診斷描述:">
+                  <!--  <el-form-item prop='description' label="診斷描述:">
                         <el-input type="description" v-model="formData.description"></el-input>
+                    </el-form-item> -->
+
+                    <el-form-item label="診斷描述:" >
+                      <el-input type="description" v-model="formData.description"></el-input>
+                       <!-- <el-select v-model="formData.description" placeholder="診斷描述">
+                            <el-option
+                             v-for="(description, index) in format_type_list"
+                             :key="index" 
+                             :label="description" :value="description"
+                            ></el-option>
+                        </el-select>-->
                     </el-form-item>
 
                     <el-form-item prop='patientDetails' label="診斷建議:">
@@ -52,13 +70,22 @@ export default {
   name: "dialog",
   data() {
     return {
-     
+      
+      /*format_type_list: [
+        "头痛",
+        "发烧",
+        "发炎",
+      ],*/
+
       form_rules: {
        patientId: [
           { required: true, message: "健檢編號不能為空！", trigger: "blur" }
         ],
         patientName: [
           { required: true, message: "姓名不能為空！", trigger: "blur" }
+        ],
+        patientGender:[
+           { required: true, message: "請選擇性別！", trigger: "blur" }
         ],
         patientPhone: [
           { required: true, message: "電話不能為空！", trigger: "blur" }
@@ -74,7 +101,8 @@ export default {
   },
   props: {
     dialog: Object,
-    formData: Object
+    formData: Object,
+    
   },
   
   methods: {
@@ -96,7 +124,13 @@ export default {
           });
         }
       });
-    }
+    },
+    //性别数据转换 
+	  /*formatRole: function(row) {
+				return row.patientGender == '1' ? "男" : row.patientGender == '0' ? "女" : "暂无";
+		}, */
+
+
   }
 };
 </script>

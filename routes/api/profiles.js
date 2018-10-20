@@ -21,6 +21,7 @@ router.post("/add",passport.authenticate('jwt',{session:false}),(req,res)=>{
     /*判断写入的信息是否能添加*/
     if(req.body.patientId) profileFields.patientId = req.body.patientId;
     if(req.body.patientName) profileFields.patientName = req.body.patientName;
+    if(req.body.patientGender) profileFields.patientGender = req.body.patientGender;
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
@@ -37,7 +38,7 @@ router.get("/",passport.authenticate('jwt',{session:false}),(req,res) => {
     Profile.find()
         .then(profile=>{
             if(!profile){
-                return res.status(404).json("没有任何内容");
+                return res.status(404).json("沒有任何內容");
             }
             res.json(profile);
         })
@@ -51,7 +52,7 @@ router.get("/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
     Profile.findOne({_id:req.params.id})
         .then(profile=>{
             if(!profile){
-                return res.status(404).json("没有任何内容");
+                return res.status(404).json("沒有任何內容");
             }
             res.json(profile);
         })
@@ -66,6 +67,7 @@ router.post("/edit/:id",passport.authenticate('jwt',{session:false}),(req,res)=>
     /*判断写入的信息是否能添加*/
     if(req.body.patientId) profileFields.patientId = req.body.patientId;
     if(req.body.patientName) profileFields.patientName = req.body.patientName;
+    if(req.body.patientGender) profileFields.patientGender = req.body.patientGender;
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
@@ -86,7 +88,7 @@ router.delete('/delete/:id',passport.authenticate('jwt',{session:false}),(req,re
         .then(profile =>{
         profile.save().then(profile =>res.json(profile));
         })
-        .catch(err=>res.status(404).json("删除失败！"));
+        .catch(err=>res.status(404).json("刪除失敗！"));
 });
 
 module.exports = router;
