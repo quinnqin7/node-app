@@ -103,6 +103,7 @@ export default {
           });
         }
       });
+      window.location.reload()
     },
 	  changeGender(){
 		  console.log("更改后的性别:"+this.formData.gender)
