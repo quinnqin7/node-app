@@ -51,7 +51,11 @@
           </el-table-column>
 
           <el-table-column label="聯絡方式" prop="patientPhone" align="center" width="180"></el-table-column>
-            <el-table-column label="性别" prop="gender" align="center" width="180"> </el-table-column>
+            <el-table-column label="性别" prop="gender" align="center" width="180">
+                <template slot-scope="scope">
+                    <span style="color:#00d053" v-if="scope.row.gender == 1 ? this.rowGender='男':this.rowGender='女'">{{ this.rowGender }}</span>
+                </template>
+            </el-table-column>
           <el-table-column label="診斷描述" prop="description" align="center" width="150">
               <template slot-scope="scope">  
                 <span style="color:#00d053">{{ scope.row.description }}</span>
@@ -99,6 +103,7 @@ import Dialog from "../views/inquiry/Dialog";
 
 export default {
   name: "patientlist",
+    rowGender:"",
   data() {
     return {
       tableData: [],
