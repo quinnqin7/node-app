@@ -68,7 +68,7 @@ router.post("/edit/:id",passport.authenticate('jwt',{session:false}),(req,res)=>
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
-    
+    if(req.body.gender) profileFields.gender = req.body.gender;
     Profile.findOneAndUpdate(
         {_id:req.params.id},
         {$set:profileFields},

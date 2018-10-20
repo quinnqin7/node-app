@@ -51,7 +51,7 @@
           </el-table-column>
 
           <el-table-column label="聯絡方式" prop="patientPhone" align="center" width="180"></el-table-column>
-
+            <el-table-column label="性别" prop="gender" align="center" width="180"> </el-table-column>
           <el-table-column label="診斷描述" prop="description" align="center" width="150">
               <template slot-scope="scope">  
                 <span style="color:#00d053">{{ scope.row.description }}</span>
@@ -117,7 +117,7 @@ export default {
         description: "",
         patientDetails: "",
         id:"",
-          gender: "1"
+        gender: ""
       },
 
       dialog: {
@@ -150,6 +150,7 @@ export default {
       // 获取表格数据
         this.$axios("/api/profiles").then(res => {
         this.allTableData = res.data;
+        console.log(res.data)
         this.filterTableData = res.data;
       //设置分页数据
         this.setPaginations();
@@ -170,9 +171,9 @@ export default {
         description:row.description,
         patientDetails:row.patientDetails,
         id:row._id,
-          gender:"1"
+          gender: row.gender+""
       }
-      console.log('ssssssssssssssssssssssss')
+      console.log(' 默认的性别:')
       console.log(this.formData.gender)
     },
 

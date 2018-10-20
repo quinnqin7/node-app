@@ -30,6 +30,10 @@ const ProfileSchema =new Schema({
     date:{
         type:Date,
         default:Date.now
+    },
+    gender:{
+        type:Number,
+		require: true
     }
 })
 

@@ -30,8 +30,8 @@
 
                     <el-form-item label="性别" prop="gender">
                         <el-radio-group @change="changeGender()" v-model="formData.gender">
-                            <el-radio label=1>男</el-radio>
-                            <el-radio label=2>女</el-radio>
+                            <el-radio label="1">男</el-radio>
+                            <el-radio label="2">女</el-radio>
                         </el-radio-group>
                     </el-form-item>
 
@@ -105,7 +105,7 @@ export default {
       });
     },
 	  changeGender(){
-		  console.log(this.formData.gender)
+		  console.log("更改后的性别:"+this.formData.gender)
 	  }
   }
 
