@@ -13,7 +13,7 @@ exports.path = {
 }
 
 
-// FUNCTION 在服务端填写过滤路由的时候使用
+// FUNCTION pathFilter 在服务端填写过滤路由的时候使用
 /*
     path: 客户端请求的全部路径, 根据 level 返回一个子串
     如果传入 path.user.login     user 算一级路由

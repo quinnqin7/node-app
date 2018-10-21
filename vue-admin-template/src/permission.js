@@ -15,11 +15,14 @@ router.beforeEach((to, from, next) => {
     } else {
       alert('66666')
       if (store.getters.roles.length === 0) {
+          // FIX 就是这边 拉取用户信息 在服务端进行 jwt 校验时出现错误, res401,导致不能返回数据
         store.dispatch('GetInfo').then(res => { // 拉取用户信息
           next()
         }).catch((err) => {
           store.dispatch('FedLogOut').then(() => {
-            Message.error(err || 'Verification failed, please login again')
+              // 从这边爆出的 401 错误, 注释掉err
+            //Message.error(err ||'Verification failed, please login again')
+              Message.error('Verification failed, please login again')
             next({ path: '/' })
           })
         })

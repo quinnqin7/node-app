@@ -11,7 +11,7 @@ export function login(username, password) {
     }
   })
 }
-
+// FIX 这边对服务器的请求方式有问题
 export function getInfo(token) {
   return request({
     url: '/api/user/current',

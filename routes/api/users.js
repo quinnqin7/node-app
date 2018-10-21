@@ -71,11 +71,9 @@ router.post("/login",(req,res) =>{
             bcrypt.compare(password, user.password)
                   .then(isMatch => {
                       if(isMatch){
+                          // FIX  这里
                           const rule={
-                              id:user.id,
-                              name:user.name,
-                              avatar:user.avatar,
-                              identity:user.identity
+                              id:1
                             };
                           jwt.sign(rule,keys.secretOrKey,{expiresIn:3600},(err,token)=>{
                             if(err) throw err;
@@ -85,8 +83,7 @@ router.post("/login",(req,res) =>{
                                     "token":token
                                 }
                             });
-                            console.log('输出 res 数据')
-                            console.log(res.json)
+
                         })
                           //res.json({msg:"success"});
                       }

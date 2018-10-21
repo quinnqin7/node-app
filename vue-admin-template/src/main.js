@@ -13,6 +13,7 @@ import router from './router'
 import store from './store'
 
 import '@/icons' // icon
+// todo 在进行路由之前会进行 角色权限判断
 import '@/permission' // permission control
 
 Vue.use(ElementUI, { locale })

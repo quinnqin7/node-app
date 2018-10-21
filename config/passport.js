@@ -7,11 +7,15 @@ const keys=require("../config/keys");
 const opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = keys.secretOrKey;
+var users = [
+    {id:1}
+]
 
 module.exports = passport =>{
     passport.use(new JwtStrategy(opts, (jwt_payload, done)=> {
-       //console.log(jwt_payload);
-        User.findById(jwt_payload.id)
+       console.log(jwt_payload);
+       // FIX  这里
+        users.find(jwt_payload.id)
             .then(user =>{
                 if(user){
                     return done(null,user);
