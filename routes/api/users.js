@@ -41,6 +41,7 @@ router.post("/register",(req,res) =>{
                     // Store hash in your password DB.
                     if(err) throw err;
 
+                    //TEST 取消用户密码加密
                     newUser.password = hash;
 
                     newUser.save()
@@ -56,12 +57,14 @@ router.post("/register",(req,res) =>{
 // @desc 返回token jwt passport
 //@access public
 router.post("/login",(req,res) =>{
-    const email =req.body.email;
+    const email =req.body.username;
     const password = req.body.password;
     //查询数据库
     User.findOne({email})
         .then(user =>{
             if(!user){
+                //TEST
+                console.log(req.body)
                 return res.status(404).json("用戶不存在！")
             }
             //密码匹配
@@ -77,9 +80,13 @@ router.post("/login",(req,res) =>{
                           jwt.sign(rule,keys.secretOrKey,{expiresIn:3600},(err,token)=>{
                             if(err) throw err;
                             res.json({
-                                success:true,
-                                token:"Bearer "+ token
+                                code:20000,
+                                data:{
+                                    "token":token
+                                }
                             });
+                            console.log('输出 res 数据')
+                            console.log(res.json)
                         })
                           //res.json({msg:"success"});
                       }
@@ -98,8 +105,10 @@ router.get(
     passport.authenticate("jwt",{session:false}),
     (req,res)=>{
         res.json({
+            code:20000,
+            roles:['admin'],
             id:req.user.id,
-            name:req.user.name,
+            name: 'hahahah',
             email:req.user.email,
             identity:req.user.identity
     });

@@ -27,7 +27,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 //使用routes
-app.use("/api/users", users);
+app.use("/api/user", users);
 app.use("/api/profiles", profiles);
 
 const port = process.env.PORT || 3000; //设置端口号
