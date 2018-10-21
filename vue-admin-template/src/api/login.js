@@ -1,8 +1,9 @@
 import request from '@/utils/request'
+import api from './path'
 
 export function login(username, password) {
   return request({
-    url: '/api/user/login',
+    url: api.path.user.login,
     method: 'post',
     data: {
       username,
