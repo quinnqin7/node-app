@@ -20,7 +20,7 @@ router.post("/add",passport.authenticate('jwt',{session:false}),(req,res)=>{
     /*判断写入的信息是否能添加*/
     if(req.body.patientId) profileFields.patientId = req.body.patientId;
     if(req.body.patientName) profileFields.patientName = req.body.patientName;
-    if(req.body.patientGender) profileFields.patientGender = req.body.patientGender;
+    if(req.body.gender) profileFields.gender = req.body.gender;
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
@@ -66,7 +66,7 @@ router.post("/edit/:id",passport.authenticate('jwt',{session:false}),(req,res)=>
     /*判断写入的信息是否能添加*/
     if(req.body.patientId) profileFields.patientId = req.body.patientId;
     if(req.body.patientName) profileFields.patientName = req.body.patientName;
-    if(req.body.patientGender) profileFields.patientGender = req.body.patientGender;
+    if(req.body.gender) profileFields.gender = req.body.gender;
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;

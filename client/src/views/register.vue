@@ -21,7 +21,7 @@
                     <el-select v-model="registerUser.identity" placeholder="請選擇身份">
                         <el-option label="醫師" value="employee"></el-option>
                         <el-option label="企業" value="manager"></el-option>
-                    </el-select>
+                    </el-select> 
                 </el-form-item>    
                     <el-button type="primary" class="submit_btn" @click="submitForm('registerForm')">註 冊</el-button>
             </el-form>

@@ -80,9 +80,6 @@ export default {
         patientName: [
           { required: true, message: "姓名不能為空！", trigger: "blur" }
         ],
-       /* patientGender:[
-           { required: true, message: "請選擇性別！", trigger: "blur" }
-        ],*/
         patientPhone: [
           { required: true, message: "電話不能為空！", trigger: "blur" }
         ],
@@ -121,7 +118,7 @@ export default {
         }
       });
       //todo 不建议这样做
-     // window.location.reload()
+      window.location.reload()
     },
 	  changeGender(){
 		  console.log(this.formData.gender)

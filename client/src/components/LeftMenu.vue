@@ -76,7 +76,6 @@ export default {
           path: "inquiry",
           children: [
               { path: "medicalrecord", name: "門診病歷" },
-              { path: "treatment", name: "門診處方" },
               { path: "patientlist", name: "患者列表" }      
           ]
         },
