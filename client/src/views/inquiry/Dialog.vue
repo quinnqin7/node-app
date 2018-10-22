@@ -34,7 +34,7 @@
                     <el-form-item prop='patientPhone' label="聯絡方式:">
                         <el-input type="patientPhone" v-model="formData.patientPhone"></el-input>
                     </el-form-item>
-                    
+
                     <el-form-item label="診斷描述:" >
                       <el-input type="description" v-model="formData.description"></el-input>
                        <!-- <el-select v-model="formData.description" placeholder="診斷描述">
@@ -120,6 +120,8 @@ export default {
           });
         }
       });
+      //todo 不建议这样做
+     // window.location.reload()
     },
 	  changeGender(){
 		  console.log(this.formData.gender)
