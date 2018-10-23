@@ -1,6 +1,6 @@
 <template>
 <div class="main-content">
-    详情页
+    患者的唯一_ Id{{patinentUserId}}
 </div>
 </template>
 
@@ -8,17 +8,29 @@
  export default {
     data() {
       return {
-        
+          patinentUserId : this.$store.getters.patinentUserId
       };
     },
 
     props: {
-       
+       id:{
+           type:String,
+           default:""
+       }
     },
+    computed:{
 
-    created() {
-      
     },
+    // created(){
+    //     this.$axios.get('/api/profiles/detail', {params:{id:'5bcfa88ed7b57c8228f92a83fds'}}).then(res => {
+    //         //操作成功
+    //         this.$message({
+    //             message: '添加成功',
+    //             type: "success"
+    //         });
+    //         alert(JSON.stringify(res.data))
+    //     });
+    // },
     methods: {
 
     }

@@ -173,14 +173,15 @@
             if (valid) {
                 //表单数据验证完成之后，提交数据;
                 console.log(this.formData)
-                //this.$axios.post(`/api/profiles/add`, this.formData).then(res => {
-                // 操作成功
-                //this.$message({
-                  //message: "新增成功！",
-                  //type: "success"
-                //});
-                this.$router.push("/patientlist");
-              //}); 
+                this.$axios.post(`/api/profiles/add`, this.formData).then(res => {
+                //操作成功
+                this.$message({
+                  message: '添加成功',
+                  type: "success"
+                });
+                this.$store.dispatch("setpatinentUserId",res.data[0]._id)
+                this.$router.push("/patientDetails");
+              });
             }
           });
       },

@@ -36,7 +36,10 @@ router.post("/add",passport.authenticate('jwt',{session:false}),(req,res)=>{
     if(req.body.linkrla) profileFields.patientDetails = req.body.linkrla;*/
     
     new Profile(profileFields).save().then(profile => {
-        res.json(profile);
+        Profile.find({'patientId':profileFields.patientId},(err,docs)=>{
+            res.json(docs);
+        })
+
     })
 });
 
@@ -54,16 +57,32 @@ router.get("/",passport.authenticate('jwt',{session:false}),(req,res) => {
         .catch(err=>res.status(404).json(err));
 })
 
+
+//获取详情
+
+router.get("/detail/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
+    res.json(req.params.id)
+    // Profile.find({id})
+    //     .then(profile=>{
+    //         if(!profile){
+    //             return res.status(404).json("沒有任何內容");
+    //         }
+    //         res.json(profile);
+    //     })
+    //     .catch(err=>res.status(404).json(err));
+})
+
 // $route GET api/profiles/:id
 // @desc 获取单个信息
 // @access private
 router.get("/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
+
     Profile.findOne({_id:req.params.id})
         .then(profile=>{
             if(!profile){
                 return res.status(404).json("沒有任何內容");
             }
-            res.json(profile);
+            // res.json(profile);
         })
         .catch(err=>res.status(404).json(err));
 });
