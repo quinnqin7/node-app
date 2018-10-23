@@ -34,7 +34,35 @@ const ProfileSchema =new Schema({
     gender:{
         type:Number,
 		require: true
+    },
+    birthday:{
+        type:String,
+    },
+    patientCompany:{
+        type:String,
+    },
+    patientadr:{
+        type:String,
+    },
+    adrjt:{
+        type:String,
+    },
+    patAH:{
+        type:String,
+    },
+    patNAH:{
+        type:String,
+    },
+    linkername:{
+        type:String,
+    },
+    linkertel:{
+        type:String,
+    },
+    linkrla:{
+        type:String,
     }
+
 })
 
 module.exports = Profile= mongoose.model("profile",ProfileSchema);

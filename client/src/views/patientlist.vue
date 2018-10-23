@@ -19,7 +19,7 @@
              <el-button type="primary" size ="small" icon="search" @click='handleSearch()'>篩選</el-button>
           </el-form-item>
             <el-form-item class="btnRight">
-                <el-button type="primary" size ="small" icon="view" @click='handleAdd()'>新增患者</el-button>
+                <el-button type="primary" size ="small" icon="view"  @click='handleAdd()'>新增患者</el-button>
             </el-form-item>
          </el-form>
       </div>
@@ -72,7 +72,8 @@
 
             <el-table-column prop="operation" align='center' label="操作"  width="250">
               <template slot-scope='scope'>
-                <el-button type="primary"  size="small" @click="handleDetail(scope.$index, scope.row)" plain>詳情</el-button>
+                
+                <el-button type="primary"  :formData="formData" size="small" @click="handleDetail(scope.row)" plain>詳情</el-button>
                 <el-button type="warning" icon="el-icon-edit" size="small" @click='handleEdit(scope.row)' plain>編輯</el-button>
                 <el-button type="danger" icon="el-icon-delete" size="small" @click='handleDelete(scope.row,scope.$index)' plain>刪除</el-button>  
               </template>
@@ -98,12 +99,14 @@
 
     </div> 
         <!-- 弹框页面 --> 
-        <Dialog :dialog='dialog'  :formData="formData" @update="getProfile"></Dialog>
+        <Dialog :dialog='dialog' :formData="formData" @update="getProfile"></Dialog>
 </div>
 </template>
 
 <script>
 import Dialog from "../views/inquiry/Dialog";
+import Medicalrecord from "../views/medicalrecord";
+
 
 export default {
   name: "patientlist", 
@@ -128,7 +131,6 @@ export default {
         id:"",
         gender: ""
       },
-      
 
       dialog: {
         show: false,
@@ -149,29 +151,42 @@ export default {
     }
   },
  
- 
   created() {
       this.getProfile();
     },
 
   components: {
-      Dialog
+      Dialog,
+      Medicalrecord
     },
 
   methods: {
     getProfile() {
       // 获取表格数据
         this.$axios("/api/profiles").then(res => {
-        this.allTableData = res.data;
-        this.filterTableData = res.data;
-      //设置分页数据
-        this.setPaginations();
+          this.allTableData = res.data;
+          this.filterTableData = res.data;
+        //设置分页数据
+          this.setPaginations();
       })
     },
 
     //详情页
-    handleDetail() {
-			this.$router.push({path: '/patientDetails'});
+    handleDetail(row) {
+      this.$router.push({
+        path: 'patientDetails',
+        params:{id:this.formData.id}
+      });
+       this.formData={
+        patientId:row.patientId,
+        patientName:row.patientName,
+        patientGender:row.patientGender,
+        patientPhone:row.patientPhone,
+        description:row.description,
+        patientDetails:row.patientDetails,
+        id:row._id,
+        gender: row.gender+""
+      }
     },
     
     //编辑患者信息
@@ -191,7 +206,7 @@ export default {
         id:row._id,
         gender: row.gender+""
       }
-      console.log(' 默认的性别:')
+      //console.log(' 默认的性别:')
       console.log(this.formData.gender)
     },
 
@@ -252,7 +267,7 @@ export default {
       });
     },
 
-    //TODO:篩選
+    //篩選
     handleSearch(){
       if (!this.search_data.startTime || !this.search_data.endTime) {
         this.$message({
@@ -279,7 +294,7 @@ export default {
 .fillcontain {
   width: 100%;
   height: 100%;
-  padding: 16px;
+  padding: 20px;
   box-sizing: border-box;
 }
 .btnRight {

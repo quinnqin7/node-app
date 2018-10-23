@@ -24,6 +24,16 @@ router.post("/add",passport.authenticate('jwt',{session:false}),(req,res)=>{
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
+
+    /*if(req.body.birthday) profileFields.patientDetails = req.body.birthday;
+    if(req.body.patientCompany) profileFields.patientDetails = req.body.patientCompany;
+    if(req.body.patientadr) profileFields.patientDetails = req.body.patientadr;
+    if(req.body.adrjt) profileFields.patientDetails = req.body.adrjt;
+    if(req.body.patAH) profileFields.patientDetails = req.body.patAH;
+    if(req.body.patNAH) profileFields.patientDetails = req.body.patNAH;
+    if(req.body.linkername) profileFields.patientDetails = req.body.linkername;
+    if(req.body.linkertel) profileFields.patientDetails = req.body.linkertel;
+    if(req.body.linkrla) profileFields.patientDetails = req.body.linkrla;*/
     
     new Profile(profileFields).save().then(profile => {
         res.json(profile);
@@ -60,7 +70,7 @@ router.get("/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
 
 // $route POST api/profiles/edit
 // @desc 编辑信息接口
-//@access private
+// @access private
 router.post("/edit/:id",passport.authenticate('jwt',{session:false}),(req,res)=>{
     const profileFields={};
     /*判断写入的信息是否能添加*/
@@ -70,7 +80,19 @@ router.post("/edit/:id",passport.authenticate('jwt',{session:false}),(req,res)=>
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
-    
+
+    /*
+    if(req.body.birthday) profileFields.patientDetails = req.body.birthday;
+    if(req.body.patientCompany) profileFields.patientDetails = req.body.patientCompany;
+    if(req.body.patientadr) profileFields.patientDetails = req.body.patientadr;
+    if(req.body.adrjt) profileFields.patientDetails = req.body.adrjt;
+    if(req.body.patAH) profileFields.patientDetails = req.body.patAH;
+    if(req.body.patNAH) profileFields.patientDetails = req.body.patNAH;
+    if(req.body.linkername) profileFields.patientDetails = req.body.linkername;
+    if(req.body.linkertel) profileFields.patientDetails = req.body.linkertel;
+    if(req.body.linkrla) profileFields.patientDetails = req.body.linkrla;
+    */
+
     Profile.findOneAndUpdate(
         {_id:req.params.id},
         {$set:profileFields},

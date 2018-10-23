@@ -111,14 +111,12 @@ export default {
               type: "success"
             });
             //隱藏窗口
-            this.dialog.show = true;
+            this.dialog.show = false;
             //自動刷新
             this.$emit("update"); 
           });
         }
       });
-      //todo 不建议这样做
-      window.location.reload()
     },
 	  changeGender(){
 		  console.log(this.formData.gender)
