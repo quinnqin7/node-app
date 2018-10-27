@@ -3,7 +3,7 @@ const express = require("express");
 const router=express.Router();
 const passport=require("passport");
 
-const Profile =require("../../modules/Profile")
+const Profile =require("../../modules/patients")
 
 // $route GET api/profiles/test
 //todo @desc 返回的请求的json数据
@@ -23,7 +23,7 @@ router.post("/add",passport.authenticate('jwt',{session:false}),(req,res)=>{
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
-    
+
     new Profile(profileFields).save().then(profile => {
         res.json(profile);
     })

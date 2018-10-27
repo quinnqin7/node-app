@@ -31,8 +31,8 @@ const user = {
       return new Promise((resolve, reject) => {
         login(username, userInfo.password).then(response => {
           const data = response.data
-          console.log(data)
-          console.log(process.env.BASE_API)
+        console.log(data)
+            // setup local Cookies
           setToken(data.token)
           commit('SET_TOKEN', data.token)
           resolve()
@@ -47,14 +47,13 @@ const user = {
       return new Promise((resolve, reject) => {
         getInfo(state.token).then(response => {
           const data = response.data
-          if (data.roles && data.roles.length > 0) { // 验证返回的roles是否是一个非空数组
+          if (data.roles) { // 验证返回的roles是否是一个非空数组
             commit('SET_ROLES', data.roles)
           } else {
             reject('getInfo: roles must be a non-null array !')
           }
           commit('SET_NAME', data.name)
-          commit('SET_AVATAR', data.avatar)
-          resolve(response)
+          resolve(response.data)
         }).catch(error => {
           reject(error)
         })

@@ -6,44 +6,28 @@ const gravatar = require('gravatar');
 const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const passport=require("passport");
-
-const User =require("../../modules/User")
-// $route GET api/users/test
-// @desc 返回的请求的json数据
-//@access public
-//router.get("/test",(req,res) => {
-//   res.json({msg:"login works"})
-//})
+const api = require("../..//vue-admin-template/src/api/path")
+const User =require("../../modules/user")
+const Doctor = require("../../modules/doctor")
+const EnterPrise = require("../../modules/enterprise")
 
 
-// $route POST api/users/register
-// @desc 返回的请求的json数据
-//@access public
 router.post("/register",(req,res) =>{
-    //console.log(req.body);
-    //查询数据库中是否拥有邮箱
-    User.findOne({email:req.body.email})
+	let parse  = req.body
+    User.findOne({email:parse.email})
     .then((user) => {
         if(user){
             return res.status(400).json("郵箱已被註冊!")
         }else{
-            const avatar = gravatar.url(req.body.email, {s: '200', r: 'pg', d: 'mm'});
             const newUser= new User({
-                name:req.body.name,
-                email:req.body.email,
-                avatar,
-                password:req.body.password,
-                identity:req.body.identity
+                email:parse.email,
+                pwd:parse.pwd,
+                role:parse.role
             });
-            //密码加密
             bcrypt.genSalt(10, function(err, salt) {
-                bcrypt.hash(newUser.password, salt, function(err, hash) {
-                    // Store hash in your password DB.
+                bcrypt.hash(newUser.pwd, salt, function(err, hash) {
                     if(err) throw err;
-
-                    //TEST 取消用户密码加密
-                    newUser.password = hash;
-
+                    newUser.pwd = hash;
                     newUser.save()
                         .then(user => res.json(user))
                         .catch(err => console.log(err));
@@ -53,27 +37,18 @@ router.post("/register",(req,res) =>{
     })
 })
 
-// $route POST api/users/login
-// @desc 返回token jwt passport
-//@access public
 router.post("/login",(req,res) =>{
-    const email =req.body.username;
-    const password = req.body.password;
-    //查询数据库
+	let parse  = req.body
+    const email =parse.email;
+    const pwd = parse.pwd;
     User.findOne({email})
         .then(user =>{
-            if(!user){
-                //TEST
-                console.log(req.body)
-                return res.status(404).json("用戶不存在！")
-            }
-            //密码匹配
-            bcrypt.compare(password, user.password)
+            bcrypt.compare(pwd, user.pwd)
                   .then(isMatch => {
                       if(isMatch){
-                          // FIX  这里
                           const rule={
-                              id:1
+                              id: user.id,
+							  role:user.role
                             };
                           jwt.sign(rule,keys.secretOrKey,{expiresIn:3600},(err,token)=>{
                             if(err) throw err;
@@ -83,9 +58,7 @@ router.post("/login",(req,res) =>{
                                     "token":token
                                 }
                             });
-
                         })
-                          //res.json({msg:"success"});
                       }
                       else{
                           return res.status(400).json("密碼錯誤")
@@ -94,21 +67,49 @@ router.post("/login",(req,res) =>{
         });
     })
 
-// $route GET api/users/current 用户已经拿到Token,当前想要请求一些数据信息
-// @desc return current user
-//@access private
-router.get(
-    "/current",
+
+
+router.post("/logout",(req,res) =>{
+	res.json({
+		code:20000
+	})
+})
+
+
+
+
+router.post(
+    "/getInfo",
     passport.authenticate("jwt",{session:false}),
     (req,res)=>{
-        res.json({
-            code:20000,
-            roles:['admin'],
-            id:req.user.id,
-            name: 'hahahah',
-            email:req.user.email,
-            identity:req.user.identity
-    });
+		var id = jwt.decode(req.body.token).id;
+		var role = jwt.decode(req.body.token).role;
+		if(role === "1")
+		{
+			Doctor.findOne({_id:id}).then(user =>{
+				var data = user.toObject()
+				Object.assign(data,{roles:role})
+					res.json({
+						code:20000,
+						data
+					})
+				}
+			)
+		}
+		if(role === "2")
+		{
+			EnterPrise.findOne({_id:id}).then(user =>{
+				var data = user.toObject()
+				Object.assign(data,{roles:role})
+				res.json({
+					code:20000,
+					data
+				})
+				}
+			)
+		}
+
+
 })
 
 module.exports = router;

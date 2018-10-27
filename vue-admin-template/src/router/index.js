@@ -7,6 +7,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 /* Layout */
+
 import Layout from '../views/layout/Layout'
 
 /**
@@ -21,6 +22,7 @@ import Layout from '../views/layout/Layout'
     icon: 'svg-name'             the icon show in the sidebar,
   }
  **/
+
 export const constantRouterMap = [
     {path: '/login', component: () => import('@/views/login/index'), hidden: true},
     {path: '/404', component: () => import('@/views/404'), hidden: true},
@@ -37,27 +39,7 @@ export const constantRouterMap = [
         }]
     },
 
-    {
-        path: '/example',
-        component: Layout,
-        redirect: '/example/table',
-        name: 'Example',
-        meta: {title: 'Example', icon: 'example'},
-        children: [
-            {
-                path: 'table',
-                name: 'Table',
-                component: () => import('@/views/table/index'),
-                meta: {title: 'Table', icon: 'table'}
-            },
-            {
-                path: 'tree',
-                name: 'Tree',
-                component: () => import('@/views/tree/index'),
-                meta: {title: 'Tree', icon: 'tree'}
-            }
-        ]
-    },
+
 
     {
         path: '/form',
@@ -149,3 +131,42 @@ export default new Router({
     scrollBehavior: () => ({y: 0}),
     routes: constantRouterMap
 })
+
+export const asyncRouterMap = [
+    // {
+    //     path: '/example',
+    //     component: Layout,
+    //     redirect: '/example/table',
+    //     name: 'Example',
+    //     meta: {title: 'Example', icon: 'example', role: ['1']},
+    //     children: [
+    //         {
+    //             path: 'table',
+    //             name: 'Table',
+    //             component: () => import('@/views/table/index'),
+    //             meta: {title: 'Table', icon: 'table',role: ['1']}
+    //         },
+    //         {
+    //             path: 'tree',
+    //             name: 'Tree',
+    //             component: () => import('@/views/tree/index'),
+    //             meta: {title: 'Tree', icon: 'tree',role: ['1']}
+    //         }
+    //     ]
+    // },
+    // // {
+    //     path: '/permission',
+    //     component: Layout,
+    //     name: '权限测试',
+    //     meta: { role: ['1','super_editor'] }, //页面需要的权限
+    //     children: [
+    //         {
+    //             path: 'index',
+    //             component: Permission,
+    //             name: '权限测试页',
+    //             meta: { role: ['1','super_editor'] }  //页面需要的权限
+    //         }]
+    // },
+    // { path: '*', redirect: '/404', hidden: true }
+];
+

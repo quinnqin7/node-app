@@ -1,28 +1,30 @@
 import request from '@/utils/request'
 import api from './path'
 
-export function login(username, password) {
+export function login(email, pwd) {
   return request({
     url: api.path.user.login,
     method: 'post',
     data: {
-      username,
-      password
+        email,
+        pwd
     }
   })
 }
-// FIX 这边对服务器的请求方式有问题
+
 export function getInfo(token) {
   return request({
-    url: '/api/user/current',
-    method: 'get',
-    params: { token }
+    url: '/api/user/getInfo',
+    method: 'post',
+      data: {
+          token
+      }
   })
 }
 
 export function logout() {
   return request({
-    url: '/user/logout',
+    url: '/api/user/logout',
     method: 'post'
   })
 }
