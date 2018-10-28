@@ -2,31 +2,21 @@
 const express = require("express");
 const router=express.Router();
 const passport=require("passport");
+var Profile = require('../../modules/user')
+const Patients =require("../../modules/patients")
+const jwt = require('jsonwebtoken');
 
-const Profile =require("../../modules/patients")
 
-// $route GET api/profiles/test
-//todo @desc 返回的请求的json数据
-//@access public
-router.get("/test",(req,res) => {
-   res.json({msg:"Profile works"})
-})
+router.post("/patients",passport.authenticate('jwt',{session:false}),(req,res)=>{
+	var enterPriseId = jwt.decode(req.body.token).id
+    Patients.find({enterPriseId}).then(patientlist => {
+        var data = patientlist
+		res.json({
+			code:20000,
+			data
+		})
+    }).catch(err=>res.status(404).json(err));
 
-// $route POST api/profiles/add
-//todo @desc 创建信息接口
-//@access private
-router.post("/add",passport.authenticate('jwt',{session:false}),(req,res)=>{
-    const profileFields={};
-    /*判断写入的信息是否能添加*/
-    if(req.body.patientId) profileFields.patientId = req.body.patientId;
-    if(req.body.patientName) profileFields.patientName = req.body.patientName;
-    if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
-    if(req.body.description) profileFields.description = req.body.description;
-    if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
-
-    new Profile(profileFields).save().then(profile => {
-        res.json(profile);
-    })
 });
 
 // $route GET api/profiles

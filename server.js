@@ -8,8 +8,8 @@ const api = require("./vue-admin-template/src/api/path")
 // 引入users.js
 const users = require("./routes/api/users")
 
-// 引入profiles.js
-const profiles = require("./routes/api/profiles")
+
+const enterprise = require("./routes/api/enterprise")
 
 //DB config
 const db = require("./config/keys").mongoURI
@@ -30,7 +30,7 @@ require("./config/passport")(passport)
 //使用routes
 // FIX 和前端 调用一样的接口文件 --> ./vue-admin-template/src/api/login.js
 app.use(api.pathFilter(api.path.user.login,1), users)
-app.use("/api/profiles", profiles)
+app.use("/api/enterprise", enterprise)
 
 const port = process.env.PORT || 3000 //设置端口号
 
