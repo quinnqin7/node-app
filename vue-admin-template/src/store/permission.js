@@ -24,9 +24,9 @@ const permission = {
             return new Promise(resolve => {
                 const {roles} = data;
                 console.log(roles)
-                //todo judge to getRouter have issue
                 const accessedRouters = asyncRouterMap.filter(v => {
-                    if (roles.indexOf('1') >= 0) return true;
+                    //if you want to set admin role in the system you can tkof //and set the res-> roles:['admin']
+                    //if (roles.indexOf('admin') >= 0) return true;
                     if (hasPermission(roles, v)) {
                         if (v.children && v.children.length > 0) {
                             v.children = v.children.filter(child => {
@@ -43,8 +43,7 @@ const permission = {
                     return false;
                 });
                 commit('SET_ROUTERS', accessedRouters);
-                console.log(accessedRouters)
-
+                console.log(store.getters.addRouters)
 
                 console.log("all routes")
                 console.log(store.getters.routers)
