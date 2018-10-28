@@ -1,5 +1,5 @@
 import { asyncRouterMap, constantRouterMap } from '../router';
-
+import store from './index'
 function hasPermission(roles, route) {
     if (route.meta && route.meta.role) {
         return roles.some(role => route.meta.role.indexOf(role) >= 0)
@@ -20,9 +20,11 @@ const permission = {
         }
     },
     actions: {
-        GenerateRoutes({ commit }, data) {
+        GenerateRoutes({ commit },data) {
             return new Promise(resolve => {
-                const { roles } = data;
+                const {roles} = data;
+                console.log(roles)
+                //todo judge to getRouter have issue
                 const accessedRouters = asyncRouterMap.filter(v => {
                     if (roles.indexOf('1') >= 0) return true;
                     if (hasPermission(roles, v)) {
@@ -41,6 +43,11 @@ const permission = {
                     return false;
                 });
                 commit('SET_ROUTERS', accessedRouters);
+                console.log(accessedRouters)
+
+
+                console.log("all routes")
+                console.log(store.getters.routers)
                 resolve();
             })
         }

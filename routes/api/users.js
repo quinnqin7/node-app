@@ -88,7 +88,9 @@ router.post(
 		{
 			Doctor.findOne({_id:id}).then(user =>{
 				var data = user.toObject()
-				Object.assign(data,{roles:role})
+				var c = []
+				c.push(role)
+				Object.assign(data,{roles:c})
 					res.json({
 						code:20000,
 						data
@@ -100,7 +102,9 @@ router.post(
 		{
 			EnterPrise.findOne({_id:id}).then(user =>{
 				var data = user.toObject()
-				Object.assign(data,{roles:role})
+				var c = []
+				c.push(role)
+				Object.assign(data,{roles:c})
 				res.json({
 					code:20000,
 					data
