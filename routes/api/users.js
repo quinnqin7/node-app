@@ -29,10 +29,35 @@ router.post("/register",(req,res) =>{
                     if(err) throw err;
                     newUser.pwd = hash;
                     newUser.save()
-                        .then(user => res.json(user))
+                        .then(user =>
+							{
+								if(user.role === '1'){
+									new Doctor({_id:user.id}).save()
+								}
+								else if(user.role === '2')
+								{
+									new EnterPrise({_id:user.id}).save()
+								}
+								const rule={
+								id: user.id,
+								role:user.role
+							};
+								jwt.sign(rule,keys.secretOrKey,{expiresIn:3600},(err,token)=>{
+									if(err) throw err;
+									res.json({
+										code:20000,
+										data:{
+											"token":token
+										}
+									});
+								})
+							}
+						)
                         .catch(err => console.log(err));
                 });
             });
+
+
         }
     })
 })

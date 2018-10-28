@@ -5,6 +5,9 @@ const en = {
         'msg': 'point out',
     },
     comm:{
+        'doctor':'doctor',
+        'enterprise':'enterprise',
+        'patient':'patient',
         'lang':'English',
         'cn':'中文(简体)',
         'en':'English',

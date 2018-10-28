@@ -5,6 +5,9 @@ const cn = {
         'msg': '提示',
     },
     comm:{
+        'doctor':'医生',
+        'enterprise':'企业',
+        'patient':'患者',
         'lang':'中文(简体)',
         'cn':'中文(简体)',
         'en':'English',

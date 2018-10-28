@@ -1,4 +1,4 @@
-import { login, logout, getInfo } from '@/api/login'
+import { login, logout, getInfo, register } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import gravatar from 'gravatar'
 
@@ -43,6 +43,23 @@ const user = {
         })
       })
     },
+
+      Register({ commit }, userInfo) {
+          const username = userInfo.username.trim()
+          return new Promise((resolve, reject) => {
+              register(username, userInfo.password,userInfo.role).then(response => {
+                  const data = response.data
+                  // setup local Cookies
+                  setToken(data.token)
+                  commit('SET_TOKEN', data.token)
+                  // FIXME my gravatar
+                  commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
+                  resolve()
+              }).catch(error => {
+                  reject(error)
+              })
+          })
+      },
 
     // 获取用户信息
     GetInfo({ commit, state }) {

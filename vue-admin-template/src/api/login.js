@@ -25,6 +25,19 @@ export function getInfo(token) {
 export function logout() {
   return request({
     url: '/api/user/logout',
-    method: 'post'
+    method: 'post',
+
   })
+}
+
+export function register(email, pwd, role){
+    return request({
+        url: '/api/user/register',
+        method: 'post',
+        data: {
+            email,
+            pwd,
+            role
+        }
+    })
 }

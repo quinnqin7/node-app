@@ -4,6 +4,9 @@ const tw = {
         'msg': '提示',
     },
     comm:{
+        'doctor':'醫生',
+        'enterprise':'企業',
+        'patient':'患者',
         'lang':'中文(繁體)',
         'cn':'中文(簡體)',
         'en':'English',
