@@ -31,7 +31,7 @@ export const constantRouterMap = [
         path: '/',
         component: Layout,
         redirect: '/dashboard',
-        name: 'Dashboard',
+        name: 'Dashboard2',
         hidden: true,
         children: [{
             path: 'dashboard',
@@ -64,7 +64,7 @@ export const asyncRouterMap = [
                 path: 'Patients',
                 name: 'Patients',
                 component: () => import('@/views/Patients/index'),
-                meta: {title: 'Patients', icon: 'table', role:['2']}
+                meta: {title: 'router.patients', icon: 'table', role:['2']}
             }
         ]
     },
@@ -79,7 +79,7 @@ export const asyncRouterMap = [
                 path: 'Schedule',
                 name: 'Schedule',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'Schedule', icon: 'table', role:['2']}
+                meta: {title: 'router.schedule', icon: 'table', role:['2']}
             }
         ]
     },
@@ -94,7 +94,7 @@ export const asyncRouterMap = [
                 path: 'Analysis',
                 name: 'table',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'Analysis', icon: 'table', role:['2']}
+                meta: {title: 'router.analysis', icon: 'table', role:['2']}
             }
         ]
     },
@@ -105,9 +105,6 @@ export const asyncRouterMap = [
 
 
     // DOCTOR ROUTER
-
-
-
 
 
 
@@ -122,7 +119,7 @@ export const asyncRouterMap = [
                 path: 'Analysis',
                 name: 'Analysis',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'Analysis', icon: 'table', role:['1']}
+                meta: {title: 'router.analysis', icon: 'table', role:['1']}
             }
         ]
     },
@@ -137,7 +134,7 @@ export const asyncRouterMap = [
                 path: 'EnterpriseInfo',
                 name: 'EnterpriseInfo',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'EnterpriseInfo', icon: 'table', role:['1']}
+                meta: {title: 'router.enterPriseInfo', icon: 'table', role:['1']}
             }
         ]
     },
@@ -152,7 +149,7 @@ export const asyncRouterMap = [
                 path: 'Schedule',
                 name: 'Schedule',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'Schedule', icon: 'table', role:['1']}
+                meta: {title: 'router.schedule', icon: 'table', role:['1']}
             }
         ]
     },

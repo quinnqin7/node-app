@@ -2,6 +2,11 @@
 export default {
   name: 'MenuItem',
   functional: true,
+    // computed:{
+    //   title:function () {
+    //         return this.$t(title)
+    //   }
+    // },
   props: {
     icon: {
       type: String,
