@@ -20,7 +20,7 @@ const en = {
         'analysis':'Analysis',
         'enterPriseInfo':'EnterPriseInfo',
         'schedule':'Schedule',
-        'patients':'patients'
+        'patients':'Patients'
     }
 }
 

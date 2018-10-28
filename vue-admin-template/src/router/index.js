@@ -27,18 +27,9 @@ export const constantRouterMap = [
     {path: '/login', component: () => import('@/views/login/index'), hidden: true},
     {path: '/404', component: () => import('@/views/404'), hidden: true},
 
-    {
-        path: '/',
-        component: Layout,
-        redirect: '/dashboard',
-        name: 'Dashboard2',
-        hidden: true,
-        children: [{
-            path: 'dashboard',
-            component: () => import('@/views/dashboard/index')
-        }]
-    },
-    {path: '*', redirect: '/404', hidden: true}
+
+
+
 ]
 
 export default new Router({
@@ -53,6 +44,23 @@ export const asyncRouterMap = [
     //ENTERPRISE ROUTER
 
 
+    {
+        path: '/',
+        component: Layout,
+        redirect: '/dashboard',
+        name: 'Dashboard',
+        hidden: true,
+        meta: {
+            role:['2']
+        },
+        children: [{
+            path: 'dashboard',
+            component: () => import('@/views/dashboard/enterprise'),
+            meta: {
+                role:['2']
+            },
+        }]
+    },
     {
         path: '/Patients',
         component: Layout,
@@ -109,6 +117,23 @@ export const asyncRouterMap = [
 
 
     {
+        path: '/',
+        component: Layout,
+        redirect: '/dashboard',
+        name: 'Dashboard',
+        hidden: true,
+        meta: {
+            role:['1']
+        },
+        children: [{
+            path: 'dashboard',
+            component: () => import('@/views/dashboard/doctor'),
+            meta: {
+                role:['1']
+            },
+        }]
+    },
+    {
         path: '/Analysis',
         component: Layout,
         meta: {
@@ -153,7 +178,7 @@ export const asyncRouterMap = [
             }
         ]
     },
-
+    {path: '*', redirect: '/404', hidden: true}
 ];
 
 // {

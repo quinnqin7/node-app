@@ -43,10 +43,6 @@ const permission = {
                     return false;
                 });
                 commit('SET_ROUTERS', accessedRouters);
-                console.log(store.getters.addRouters)
-
-                console.log("all routes")
-                console.log(store.getters.routers)
                 resolve();
             })
         }

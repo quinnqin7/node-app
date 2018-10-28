@@ -8,7 +8,7 @@ const cn = {
         'lang':'中文(简体)',
         'cn':'中文(简体)',
         'en':'English',
-        'tw':'中文(繁体)',
+        'tw':'中文(繁體)',
         'dashboard':'仪表板',
         'home':'首页',
         'logout':'登出'

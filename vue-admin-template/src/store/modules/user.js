@@ -1,5 +1,6 @@
 import { login, logout, getInfo } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
+import gravatar from 'gravatar'
 
 const user = {
   state: {
@@ -34,6 +35,8 @@ const user = {
             // setup local Cookies
           setToken(data.token)
           commit('SET_TOKEN', data.token)
+            // FIXME my gravatar
+            commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
           resolve()
         }).catch(error => {
           reject(error)
@@ -52,6 +55,7 @@ const user = {
             reject('getInfo: roles must be a non-null array !')
           }
           commit('SET_NAME', data.name)
+
           resolve(response.data)
         }).catch(error => {
           reject(error)
