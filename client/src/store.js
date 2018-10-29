@@ -11,7 +11,7 @@ const types = {
 
 var state = { // 需要维护的状态
     isAutnenticated: false,  // 是否认证
-    user: {},   // 存储用户信息
+    user: {},   // 当解析token后，得到对应的用户信息，存储用户信息
     patinentUserId: ''
 }
 
@@ -44,6 +44,7 @@ const mutations = {
     }
 }
 
+//异步操作
 const actions = {
     setIsAutnenticated: ({commit}, isAutnenticated) => {
         commit(types.SET_AUTNENTIATED, isAutnenticated)

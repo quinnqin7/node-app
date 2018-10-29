@@ -26,7 +26,7 @@
     <div class="table_container">   
           <el-table 
               :data="tableData"
-              max-height="450"
+              max-height="650"
               border
               :default-sort = "{prop: 'date', order: 'descending'}"
               style="width: 100%">

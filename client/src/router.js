@@ -34,8 +34,7 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {path: '/',redirect: '/mainmenu'},
-    {
-      path: '/mainmenu',name: '/mainmenu',component: Mainmenu,
+    {path: '/mainmenu',name: '/mainmenu',component: Mainmenu,
       children:[
         {path:'',component:Home},
         {path:'/home',name:'home', component:Home},
@@ -55,14 +54,6 @@ const router = new Router({
 
 
 
-//路由守卫
-router.beforeEach((to, from, next) => {
-  const isLogin = localStorage.eleToken ? true : false;
-  if( to.path == '/login' || to.path=='/register'){
-    next();
-  }else{
-    isLogin ? next() : next('/login');
-  }
-});
+
 
 export default router;

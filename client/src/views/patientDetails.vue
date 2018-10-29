@@ -1,6 +1,7 @@
 <template>
 <div class="main-content">
-    患者的唯一_ Id{{patinentUserId}}
+    患者的唯一_ Id
+    {{patinentUserId}}
 </div>
 </template>
 
