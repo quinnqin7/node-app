@@ -9,7 +9,7 @@
                 <el-form-item label="郵箱" prop="email">
                     <el-input v-model="loginUser.email" placeholder="請輸入郵箱"></el-input>
                 </el-form-item>
-                <el-form-item label="密碼p" prop="password">
+                <el-form-item label="密碼" prop="password">
                     <el-input v-model="loginUser.password" placeholder="請輸入密碼" type="password"></el-input>
                 </el-form-item>  
                 <el-form-item>
