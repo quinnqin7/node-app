@@ -5,11 +5,11 @@ const passport=require("passport");
 var Profile = require('../../modules/user')
 const Patients =require("../../modules/patients")
 const jwt = require('jsonwebtoken');
-
+const historyCase = require('../../modules/historyCase')
 
 router.post("/patients",passport.authenticate('jwt',{session:false}),(req,res)=>{
-	var enterPriseId = jwt.decode(req.body.token).id
-    Patients.find({enterPriseId}).then(patientlist => {
+	var enterpriseId = jwt.decode(req.body.token).id
+	Patients.find({enterpriseId}).then(patientlist => {
         var data = patientlist
 		res.json({
 			code:20000,
@@ -18,6 +18,27 @@ router.post("/patients",passport.authenticate('jwt',{session:false}),(req,res)=>
     }).catch(err=>res.status(404).json(err));
 
 });
+
+router.post("/patient",passport.authenticate('jwt',{session:false}),(req,res) => {
+	Patients.findOne({_id:req.body.id})
+		.then(Patient=>{
+		    var data = Patient.toObject()
+			historyCase.find({patientId:req.body.id}).then(his=>{
+			    var history = {his}
+                Object.assign(data,history)
+			    res.json({
+                    code:20000,
+                    data
+                })
+
+
+            }).catch(err=>res.status(404).json(err));
+		})
+		.catch(err=>res.status(404).json(err));
+})
+
+
+
 
 // $route GET api/profiles
 // @desc 获取所有信息
