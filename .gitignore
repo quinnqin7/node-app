@@ -1,5 +1,4 @@
 node_modules/
-/client/node_modules/
-/vue-admin-template/node_modules/
+/web/node_modules/
 .idea/
 .vscode/
