@@ -14,7 +14,8 @@ const cn = {
         'tw':'中文(繁體)',
         'dashboard':'仪表板',
         'home':'首页',
-        'logout':'登出'
+        'logout':'登出',
+        'register':''
     },
 
     doctor:{

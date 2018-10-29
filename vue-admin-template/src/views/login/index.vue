@@ -31,6 +31,7 @@
             <div class="tips">
                 <span style="margin-right:20px;">username: {{$t('message.hello')}}</span>
                 <span> password: admin</span>
+                <a href="/register">{{$t('comm.register')}}</a>
             </div>
         </el-form>
     </div>
