@@ -19,6 +19,24 @@ router.post("/patients",passport.authenticate('jwt',{session:false}),(req,res)=>
 
 });
 
+router.get("/patients/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
+	console.log('jfkldsjfklajsfkljlkfjaskjk')
+	console.log(req.params.id)
+	// Patients.findOne({_id:req.params.id})
+	// 	.then(patient=>{
+	// 		if(!patient){
+	// 			return res.status(404).json("没有任何内容");
+	// 		}
+	// 		var data = patient
+	// 		res.json({
+    //             code:20000,
+	// 			data
+    //         });
+	// 	})
+	// 	.catch(err=>res.status(404).json(err));
+});
+
+
 // $route GET api/profiles
 // @desc 获取所有信息
 //@access private
@@ -36,16 +54,16 @@ router.get("/",passport.authenticate('jwt',{session:false}),(req,res) => {
 // $route GET api/profiles/:id
 // @desc 获取单个信息
 // @access private
-router.get("/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
-    Profile.findOne({_id:req.params.id})
-        .then(profile=>{
-            if(!profile){
-                return res.status(404).json("没有任何内容");
-            }
-            res.json(profile);
-        })
-        .catch(err=>res.status(404).json(err));
-});
+// router.get("/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
+//     Profile.findOne({_id:req.params.id})
+//         .then(profile=>{
+//             if(!profile){
+//                 return res.status(404).json("没有任何内容");
+//             }
+//             res.json(profile);
+//         })
+//         .catch(err=>res.status(404).json(err));
+// });
 
 // $route POST api/profiles/edit
 // @desc 编辑信息接口

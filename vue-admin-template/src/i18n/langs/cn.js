@@ -16,7 +16,11 @@ const cn = {
         'home':'首页',
         'logout':'登出'
     },
+    table:{
+        'cancel':"取消",
+        'confirm':"完成",
 
+    },
     doctor:{
 
     },

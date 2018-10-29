@@ -36,13 +36,13 @@
 
 
         <el-dialog :title="hahahah" :visible.sync="dialogFormVisible">
-            <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="70px" style="width: 400px; margin-left:50px;">
+            <el-form ref="dataForm" :rules="rules" :model="patientData" label-position="left" label-width="70px" style="width: 400px; margin-left:50px;">
                 <el-form-item :label="hahahahahaha" prop="type">
-                    fjdksjfkljdklsajlksadfl
+                    {{patientData.name}}
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-                <el-button @click="dialogFormVisible = false">quxiao</el-button>
+                <el-button @click="dialogFormVisible = false">{{$t('table.cancel')}}</el-button>
                 <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">{{ $t('table.confirm') }}</el-button>
             </div>
         </el-dialog>
@@ -54,12 +54,13 @@
 </template>
 
 <script>
-    import {getPatients} from '@/api/enterprise'
+    import {getPatients, getPatient} from '@/api/enterprise'
     import Dialog from './commponents/Dialog'
 
     export default {
         data() {
             return {
+                patientData:"",
                 dialogFormVisible:false,
                 patientId: "",
                 list: null, // all data
@@ -97,8 +98,15 @@
             },
             setUpDetail(row) {
                 this.dialogFormVisible = true
-                    this.patientId = row._id
+                this.patientId = row._id
                 console.log(this.patientId)
+            },
+            fetchPatientData(){
+                this.listLoading = true
+                getPatient(this.patientId).then(response => {
+                    this.patientData = response.data
+                    this.listLoading = false
+                })
             }
 
         }

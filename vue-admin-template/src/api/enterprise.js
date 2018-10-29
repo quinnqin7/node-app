@@ -9,3 +9,11 @@ export function getPatients() {
     }
   })
 }
+export function getPatient(id) {
+    return request({
+        url: '/api/enterprise/patients',
+        method: 'get',
+        params:{id}
+    })
+}
+
