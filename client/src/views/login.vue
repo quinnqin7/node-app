@@ -57,8 +57,10 @@ export default {
               //token
               //console.log(res);
               const {token}=res.data;
+
               //存储到LS
               localStorage.setItem('eleToken',token);
+              
               //解析token
               const decoded = jwt_decode(token);
               //console.log(decoded);
@@ -68,7 +70,7 @@ export default {
                 this.$store.dispatch("setUser", decoded);
 
 
-              this.$router.push("/index");
+              this.$router.push("/mainmenu");
               });
         } 
       });

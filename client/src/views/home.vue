@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    //TODO: jdfksfjskl 
+   
 }
 </script>
 
@@ -32,7 +32,5 @@ export default {
   font-size: 30px;
 }
 </style>
-
-<!--FIXME: dhsjadhksadjska-->
 
 

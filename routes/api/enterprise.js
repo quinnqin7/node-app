@@ -26,39 +26,68 @@ router.get("/",passport.authenticate('jwt',{session:false}),(req,res) => {
     Profile.find()
         .then(profile=>{
             if(!profile){
-                return res.status(404).json("没有任何内容");
+                return res.status(404).json("沒有任何內容");
             }
             res.json(profile);
         })
         .catch(err=>res.status(404).json(err));
 })
 
+
+//获取详情
+
+router.get("/detail/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
+    res.json(req.params.id)
+    // Profile.find({id})
+    //     .then(profile=>{
+    //         if(!profile){
+    //             return res.status(404).json("沒有任何內容");
+    //         }
+    //         res.json(profile);
+    //     })
+    //     .catch(err=>res.status(404).json(err));
+})
+
 // $route GET api/profiles/:id
 // @desc 获取单个信息
 // @access private
 router.get("/:id",passport.authenticate('jwt',{session:false}),(req,res) => {
+
     Profile.findOne({_id:req.params.id})
         .then(profile=>{
             if(!profile){
-                return res.status(404).json("没有任何内容");
+                return res.status(404).json("沒有任何內容");
             }
-            res.json(profile);
+            // res.json(profile);
         })
         .catch(err=>res.status(404).json(err));
 });
 
 // $route POST api/profiles/edit
 // @desc 编辑信息接口
-//@access private
+// @access private
 router.post("/edit/:id",passport.authenticate('jwt',{session:false}),(req,res)=>{
     const profileFields={};
     /*判断写入的信息是否能添加*/
     if(req.body.patientId) profileFields.patientId = req.body.patientId;
     if(req.body.patientName) profileFields.patientName = req.body.patientName;
+    if(req.body.gender) profileFields.gender = req.body.gender;
     if(req.body.patientPhone) profileFields.patientPhone = req.body.patientPhone;
     if(req.body.description) profileFields.description = req.body.description;
     if(req.body.patientDetails) profileFields.patientDetails = req.body.patientDetails;
-    if(req.body.gender) profileFields.gender = req.body.gender;
+
+    /*
+    if(req.body.birthday) profileFields.patientDetails = req.body.birthday;
+    if(req.body.patientCompany) profileFields.patientDetails = req.body.patientCompany;
+    if(req.body.patientadr) profileFields.patientDetails = req.body.patientadr;
+    if(req.body.adrjt) profileFields.patientDetails = req.body.adrjt;
+    if(req.body.patAH) profileFields.patientDetails = req.body.patAH;
+    if(req.body.patNAH) profileFields.patientDetails = req.body.patNAH;
+    if(req.body.linkername) profileFields.patientDetails = req.body.linkername;
+    if(req.body.linkertel) profileFields.patientDetails = req.body.linkertel;
+    if(req.body.linkrla) profileFields.patientDetails = req.body.linkrla;
+    */
+
     Profile.findOneAndUpdate(
         {_id:req.params.id},
         {$set:profileFields},
@@ -75,7 +104,7 @@ router.delete('/delete/:id',passport.authenticate('jwt',{session:false}),(req,re
         .then(profile =>{
         profile.save().then(profile =>res.json(profile));
         })
-        .catch(err=>res.status(404).json("删除失败！"));
+        .catch(err=>res.status(404).json("刪除失敗！"));
 });
 
 module.exports = router;

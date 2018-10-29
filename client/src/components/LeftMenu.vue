@@ -1,6 +1,5 @@
 <template>
-    <el-row class="menu_page">
-         <el-col>
+    <div class="menu_page"> 
              <el-menu
                 mode="vertical"
                 background-color="#324057"
@@ -58,14 +57,14 @@
                         </router-link>
                     </el-submenu>   
                 </template>
-
-
              </el-menu>
-         </el-col>
-    </el-row>
+        
+   </div>
 </template>
 <script>
 //import Patientlist from './views/inquiry/PatientList'
+//import Levelbar from './Levelbar';
+
 export default {
   name: "leftmenu",
   data() {
@@ -77,7 +76,6 @@ export default {
           path: "inquiry",
           children: [
               { path: "medicalrecord", name: "門診病歷" },
-              { path: "treatment", name: "門診處方" },
               { path: "patientlist", name: "患者列表" }      
           ]
         },
@@ -89,6 +87,9 @@ export default {
         }
       ]
     };
+  },
+  components:{
+      //Levelbar,
   }
 };
 </script>

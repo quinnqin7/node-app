@@ -20,23 +20,30 @@
                         <el-input type="patientId" v-model="formData.patientId"></el-input>
                     </el-form-item>
 
-                    <el-form-item prop='patientName'  label="姓名:">
+                    <el-form-item prop='patientName'  label="姓名:"> 
                         <el-input type="patientName" v-model="formData.patientName"></el-input>
+                    </el-form-item>
+
+                     <el-form-item label="性別" prop="gender">
+                        <el-radio-group @change="changeGender()" v-model="formData.gender">
+                            <el-radio label=1>男</el-radio>
+                            <el-radio label=2>女</el-radio>
+                        </el-radio-group>
                     </el-form-item>
 
                     <el-form-item prop='patientPhone' label="聯絡方式:">
                         <el-input type="patientPhone" v-model="formData.patientPhone"></el-input>
                     </el-form-item>
 
-                    <el-form-item label="性别" prop="gender">
-                        <el-radio-group @change="changeGender()" v-model="formData.gender">
-                            <el-radio label="1">男</el-radio>
-                            <el-radio label="2">女</el-radio>
-                        </el-radio-group>
-                    </el-form-item>
-
-                    <el-form-item prop='description' label="診斷描述:">
-                        <el-input type="description" v-model="formData.description"></el-input>
+                    <el-form-item label="診斷描述:" >
+                      <el-input type="description" v-model="formData.description"></el-input>
+                       <!-- <el-select v-model="formData.description" placeholder="診斷描述">
+                            <el-option
+                             v-for="(description, index) in format_type_list"
+                             :key="index" 
+                             :label="description" :value="description"
+                            ></el-option>
+                        </el-select>-->
                     </el-form-item>
 
                     <el-form-item prop='patientDetails' label="診斷建議:">
@@ -59,7 +66,13 @@ export default {
   name: "dialog",
   data() {
     return {
-     
+      
+      /*format_type_list: [
+        "头痛",
+        "发烧",
+        "发炎",
+      ],*/
+
       form_rules: {
        patientId: [
           { required: true, message: "健檢編號不能為空！", trigger: "blur" }
@@ -81,7 +94,8 @@ export default {
   },
   props: {
     dialog: Object,
-    formData: Object
+    formData: Object,
+    
   },
   
   methods: {
@@ -97,16 +111,15 @@ export default {
               type: "success"
             });
             //隱藏窗口
-            this.dialog.show = true;
+            this.dialog.show = false;
             //自動刷新
             this.$emit("update"); 
           });
         }
       });
-      window.location.reload()
     },
 	  changeGender(){
-		  console.log("更改后的性别:"+this.formData.gender)
+		  console.log(this.formData.gender)
 	  }
   }
 
