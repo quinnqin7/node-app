@@ -4,11 +4,9 @@ const bodyParser = require("body-parser")
 const passport = require("passport")
 const app = express()
 const api = require("./web/src/api/path")
-
+const doctor = require("./routes/api/doctor")
 // 引入users.js
 const users = require("./routes/api/users")
-
-
 const enterprise = require("./routes/api/enterprise")
 
 //DB config
@@ -31,6 +29,10 @@ require("./config/passport")(passport)
 // FIX 和前端 调用一样的接口文件 --> ./vue-admin-template/src/api/login.js
 app.use(api.pathFilter(api.path.user.login,1), users)
 app.use("/api/enterprise", enterprise)
+app.use("/api/doctor", doctor)
+
+
+
 
 const port = process.env.PORT || 3000 //设置端口号
 

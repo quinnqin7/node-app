@@ -45,7 +45,11 @@ const cn = {
         'cancel':'取消',
         'date':'日期',
         'hisCase':'以往病例',
-        'suggest':'建议'
+        'suggest':'建议',
+        'domain':'企业名称',
+        'specialHarm':'特殊危害/人',
+        'frequency':'频率',
+        'look':'查看',
     }
 
 }

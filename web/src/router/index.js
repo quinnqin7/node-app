@@ -158,7 +158,7 @@ export const asyncRouterMap = [
             {
                 path: 'EnterpriseInfo',
                 name: 'EnterpriseInfo',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/enterprise/index'),
                 meta: {title: 'router.enterpriseInfo', icon: 'table', role:['1']}
             }
         ]
