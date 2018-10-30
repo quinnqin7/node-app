@@ -14,7 +14,8 @@ const en = {
         'tw':'中文(繁体)',
         'dashboard':'Dashboard',
         'home':'home',
-        'logout':'logout'
+        'logout':'logout',
+        'inquiry':'inquiry'
     },
     doctor:{
 

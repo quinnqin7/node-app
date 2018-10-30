@@ -117,7 +117,6 @@
 
 <script>
     import {getPatients,getPatient} from '@/api/enterprise'
-    import Dialog from './commponents/Dialog'
     export default {
         data() {
             return {
@@ -144,7 +143,7 @@
             }
         },
         comments: {
-            Dialog
+            // Dialog
         },
         created() {
             this.fetchData()
