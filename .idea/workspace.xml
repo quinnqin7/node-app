@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="add my avatar =&gt;&gt; cool">
-      <change beforePath="$PROJECT_DIR$/.idea/node-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/node-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/enterprise.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/enterprise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/generate.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/generate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/test/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/api/enterprise.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/api/enterprise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/i18n/langs/cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/i18n/langs/cn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/Patients/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/Patients/index.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -114,7 +106,7 @@
     <session id="-1476528767">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.opened" value="3" />
@@ -171,8 +163,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/keys.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+            <state relative-caret-position="72">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -447,7 +439,7 @@
       <workItem from="1540736506535" duration="21846000" />
       <workItem from="1540790092271" duration="287000" />
       <workItem from="1540791555365" duration="168000" />
-      <workItem from="1540791768552" duration="5167000" />
+      <workItem from="1540791768552" duration="5382000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1539741047852</created>
@@ -512,11 +504,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540753018553</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add my avatar =&gt;&gt; cool">
+      <created>1540823500147</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1540823500147</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84833000" />
+    <option name="totallyTimeSpent" value="85048000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -544,8 +543,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.26335877" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27224198" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924472" visible="true" weight="0.41992882" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007553" side_tool="true" visible="true" weight="0.41992882" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.4341637" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -904,13 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue-admin-template/src/api/enterprise.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/enterprise.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -918,10 +910,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue-admin-template/src/api/enterprise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/keys.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+        <state relative-caret-position="72">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
