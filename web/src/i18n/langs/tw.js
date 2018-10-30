@@ -21,9 +21,12 @@ const tw = {
     },
     router:{
         'analysis':'統計',
-        'enterpriseInfo':'企業信息',
+        'enterpriseInfo':'問診',
         'schedule':'排班',
-        'patients':'患者'
+        'patients':'患者',
+        'appointment':'預約',
+        'mine':'我的',
+        'home':'首頁'
     }
 
 }

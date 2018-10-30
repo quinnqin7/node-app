@@ -20,6 +20,7 @@ const cn = {
         'login':'登陆',
         'email':'邮件',
         'pwd':'密码',
+
     },
 
     doctor:{
@@ -27,9 +28,13 @@ const cn = {
     },
     router:{
         'analysis':'统计',
-        'enterpriseInfo':'企业信息',
+        'enterpriseInfo':'问诊',
         'schedule':'排班',
-        'patients':'患者'
+        'patients':'患者',
+        'appointment':'预约',
+        'mine':'我的',
+        'home':'首页'
+
     },
     table:{
         'id':'排序',

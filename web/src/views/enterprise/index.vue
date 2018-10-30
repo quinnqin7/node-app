@@ -12,7 +12,7 @@
                 <!--<el-option v-for="item in sortOptions" :key="item.key" :label="item.label" :value="item.key"/>-->
             <!--</el-select>-->
             <!--<el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('table.search') }}</el-button>-->
-            <!--<el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">{{ $t('table.add') }}</el-button>-->
+            <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">{{ $t('table.add') }}</el-button>
             <!--<el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">{{ $t('table.export') }}</el-button>-->
             <!--<el-checkbox v-model="showReviewer" class="filter-item" style="margin-left:15px;" @change="tableKey=tableKey+1">{{ $t('table.reviewer') }}</el-checkbox>-->
         </div>
@@ -29,7 +29,7 @@
                     {{ scope.$index }}
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.domain')"  align="center">
+            <el-table-column :label="$t('table.name')"  align="center">
                 <template slot-scope="scope">
                     {{ scope.row.name }}
                 </template>
@@ -39,24 +39,14 @@
                     <span>{{ scope.row.tel }}</span>
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.specialHarm')" align="center">
+            <el-table-column :label="$t('table.gender')"  align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.specialHarm }}</span>
-                </template>
-            </el-table-column>
-            <el-table-column :label="$t('table.frequency')" align="center">
-                <template slot-scope="scope">
-                    <span>{{ scope.row.frequency }}</span>
+                    {{ msg = scope.row.gender==='1'?$t('table.gender-ms'):$t('table.gender-mr') }}
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
                     <el-button  @click="handleDetail(scope.row)">{{$t('table.detail')}}</el-button>
-                </template>
-            </el-table-column>
-            <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
-                <template slot-scope="scope">
-                    <el-button  @click="handleDetail(scope.row)">{{$t('table.look')}}</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -127,8 +117,6 @@
 
 <script>
     import {getPatients,getPatient} from '@/api/enterprise'
-    import {getEnterprises} from '@/api/doctor'
-    import {getToken} from "../../utils/auth";
     export default {
         data() {
             return {
@@ -155,7 +143,7 @@
             }
         },
         comments: {
-            //Dialog
+            // Dialog
         },
         created() {
             this.fetchData()
@@ -163,7 +151,7 @@
         methods: {
             fetchData() {
                 this.listLoading = true
-                getEnterprises(getToken()).then(response => {
+                getPatients().then(response => {
                     this.list = response.data
                     this.listLoading = false
                 })

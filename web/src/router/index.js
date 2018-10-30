@@ -134,6 +134,21 @@ export const asyncRouterMap = [
         }]
     },
     {
+        path: '/Home',
+        component: Layout,
+        meta: {
+            role:['1']
+        },
+        children: [
+            {
+                path: 'Home',
+                name: 'Home',
+                component: () => import('@/views/dashboard/doctor'),
+                meta: {title: 'router.home', icon: 'table', role:['1']}
+            }
+        ]
+    },
+    {
         path: '/Analysis',
         component: Layout,
         meta: {
@@ -175,6 +190,37 @@ export const asyncRouterMap = [
                 name: 'Schedule',
                 component: () => import('@/views/table/index'),
                 meta: {title: 'router.schedule', icon: 'table', role:['1']}
+            }
+        ]
+    },
+
+    {
+        path: '/appointment',
+        component: Layout,
+        meta: {
+            role:['1']
+        },
+        children: [
+            {
+                path: 'appointment',
+                name: 'appointment',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.appointment', icon: 'table', role:['1']}
+            }
+        ]
+    },
+    {
+        path: '/mine',
+        component: Layout,
+        meta: {
+            role:['1']
+        },
+        children: [
+            {
+                path: 'mine',
+                name: 'mine',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.mine', icon: 'table', role:['1']}
             }
         ]
     },
