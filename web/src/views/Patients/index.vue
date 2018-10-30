@@ -53,6 +53,7 @@
 
 
         <el-dialog class="dialog" :title="$t(textMap[dialogStatus])" :visible.sync="dialogFormVisible">
+
             <el-form ref="dataForm"  :model="dialogData" label-position="left" label-width="70px" style="width: 100%;">
                 <el-form-item :label="$t('table.name')" prop="type">
                     <el-input v-model="dialogData.name"/>
@@ -65,6 +66,22 @@
                         <el-radio :label="1">女</el-radio>
                         <el-radio :label="2">男</el-radio>
                     </el-radio-group>
+                </el-form-item>
+                <el-form-item v-show="showEditCase" :label="$t('table.case')" style="margin-top:20px">
+                    <el-input
+                        type="textarea"
+                        :autosize="{ minRows: 2, maxRows: 4}"
+                        :placeholder="$t('table.pleaseInput')"
+                        v-model="dialogData.mainContent">
+                    </el-input>
+                </el-form-item>
+                <el-form-item v-show="showEditCase" :label="$t('table.suggest')">
+                    <el-input
+                        type="textarea"
+                        :autosize="{ minRows: 2, maxRows: 4}"
+                        :placeholder="$t('table.pleaseInput')"
+                        v-model="dialogData.suggest">
+                    </el-input>
                 </el-form-item>
                 <el-table
                     :data="dialogData.his"
@@ -86,42 +103,29 @@
                         :label="$t('table.suggest')"
                         style="width:33%;">
                     </el-table-column>
-                    <!--<el-table-column-->
-                        <!--prop="city"-->
-                        <!--label="市区"-->
-                        <!--width="120">-->
-                    <!--</el-table-column>-->
-                    <!--<el-table-column-->
-                        <!--prop="address"-->
-                        <!--label="地址"-->
-                        <!--width="300">-->
-                    <!--</el-table-column>-->
-                    <!--<el-table-column-->
-                        <!--prop="zip"-->
-                        <!--label="邮编"-->
-                        <!--width="120">-->
-                    <!--</el-table-column>-->
                 </el-table>
+
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false">{{ $t('table.cancel') }}</el-button>
-                <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">{{ $t('table.confirm') }}</el-button>
+                <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">{{ dialogStatus==='create'?$t('table.next'):$t('table.confirm') }}</el-button>
             </div>
         </el-dialog>
-
-
-
-
     </div>
 </template>
 
 <script>
-    import {getPatients,getPatient} from '@/api/enterprise'
-    import Dialog from './commponents/Dialog'
+    import {getPatients,getPatient,createPatient} from '@/api/enterprise'
+    import { mapGetters } from 'vuex'
+    import {doctorToGetPatients} from '@/api/doctor'
+    import jwt from 'jsonwebtoken'
+    import {updatePatient} from "../../api/enterprise";
+    import {getToken} from "../../utils/auth";
     export default {
         data() {
             return {
                 dialogData:"",
+                showEditCase:false,
                 dialogFormVisible:false,
                 dialogStatus: '',
                 textMap: {
@@ -144,29 +148,45 @@
             }
         },
         comments: {
-            Dialog
+
         },
         created() {
             this.fetchData()
         },
+        computed:{
+            ...mapGetters([
+                'name',
+                'roles'
+            ])
+        },
+
         methods: {
             fetchData() {
+
                 this.listLoading = true
-                getPatients().then(response => {
-                    this.list = response.data
-                    this.listLoading = false
-                })
+
+                if(this.roles[0] === '1'){
+                    doctorToGetPatients(this.$route.params.enterpriseId).then(response => {
+                        this.list = response.data
+                        this.listLoading = false
+                    })
+                }else {
+                    getPatients().then(response => {
+                        this.list = response.data
+                        this.listLoading = false
+                    })
+                }
             },
             fetchPatientData(id){
                 this.listLoading = true
                 getPatient(id).then(response => {
-                    console.log(response.data)
                     this.dialogData = response.data
                     this.listLoading = false
                 })
             },
             handleCreate() {
                 this.resetTemp()
+                this.showEditCase=false
                 this.dialogStatus = 'create'
                 this.dialogFormVisible = true
                 this.$nextTick(() => {
@@ -174,6 +194,11 @@
                 })
             },
             handleDetail(row) {
+                this.showEditCase=true
+                if(this.roles[0] === '2')
+                {
+                    this.showEditCase=false //企业 无法添加病例
+                }
                 this.dialogFormVisible = true
                 this.dialogStatus = 'detail'
                 this.fetchPatientData(row._id)
@@ -182,7 +207,72 @@
                 this.dialogData = {
                     //在这里面写 (创建)弹窗 初始化
                 }
-            }
+            },
+            createData() {
+                this.$refs['dataForm'].validate((valid) => {
+                    if (valid) {
+                        if(this.roles[0] === '1')
+                        {
+                        createPatient(this.dialogData,this.$route.params.enterpriseId).then(() => {
+                            this.dialogFormVisible = false
+                            this.$notify({
+                                title: '成功',
+                                message: '创建成功',
+                                type: 'success',
+                                duration: 2000
+                            })
+                            this.showEditCase=true
+                            this.handleDetail()
+                        })
+                        }
+                        else{
+                            createPatient(this.dialogData,jwt.decode(getToken()).id).then(() => {
+                                this.dialogFormVisible = false
+                                this.$notify({
+                                    title: '成功',
+                                    message: '创建成功',
+                                    type: 'success',
+                                    duration: 2000
+                                })
+
+                            })
+                        }
+                    }
+                })
+            },
+            // FIXME 在传输需要修改的数据的时候, 重复传输了大量的病例
+            updateData(){
+                this.$refs['dataForm'].validate((valid) => {
+                    if (valid) {
+                        if(this.roles[0] === '1')
+                        {
+                            updatePatient(this.dialogData,this.$route.params.enterpriseId,jwt.decode(getToken()).id).then(() => {
+                                this.dialogFormVisible = false
+                                this.$notify({
+                                    title: '成功',
+                                    message: '编辑成功',
+                                    type: 'success',
+                                    duration: 2000
+                                })
+                                this.showEditCase=true
+                            })
+                        }
+                        else if(this.roles[0] === '2'){
+                            updatePatient(this.dialogData,jwt.decode(getToken()).id,"").then(() => {
+                                this.dialogFormVisible = false
+                                this.$notify({
+                                    title: '成功',
+                                    message: '编辑成功',
+                                    type: 'success',
+                                    duration: 2000
+                                })
+                                this.showEditCase=true
+                            })
+                        }
+
+                    }
+                })
+            },
 
         }
     }

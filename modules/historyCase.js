@@ -4,6 +4,7 @@ var historyCaseSchema = mongoose.Schema({
 	suggest:String,
 	enterpriseId:mongoose.Schema.Types.ObjectId,
 	patientId:mongoose.Schema.Types.ObjectId,
+	doctorId:mongoose.Schema.Types.ObjectId,
 	time:Date,
 })
 

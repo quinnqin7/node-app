@@ -4,7 +4,7 @@ var Random = Mock.Random
 var historyCase = require('./models/historyCase')
 
 //生成 几条 病例
-module.exports = function (num, enterpriseId, patientId) {
+module.exports = function (num, enterpriseId, patientId,doctorId) {
 	for (var i = 0; i < num; i++) {
 		var data = Mock.mock({
 			// 属性 list 的值是一个数组，其中含有 1 到 10 个元素
@@ -13,6 +13,7 @@ module.exports = function (num, enterpriseId, patientId) {
 			'time':Random.date(),
 			'enterpriseId': enterpriseId.toString(),
 			'patientId':patientId.toString()
+			'doctorId':doctorId.toString()
 		})
 
 		var patients = new historyCase(data)

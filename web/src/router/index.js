@@ -106,7 +106,21 @@ export const asyncRouterMap = [
             }
         ]
     },
-
+    {
+        path: '/mine',
+        component: Layout,
+        meta: {
+            role:['2']
+        },
+        children: [
+            {
+                path: 'mine',
+                name: 'mine',
+                component: () => import('@/views/mine/enterprise/index'),
+                meta: {title: 'router.mine', icon: 'table', role:['2']}
+            }
+        ]
+    },
 
 
 
@@ -175,6 +189,13 @@ export const asyncRouterMap = [
                 name: 'EnterpriseInfo',
                 component: () => import('@/views/enterprise/index'),
                 meta: {title: 'router.enterpriseInfo', icon: 'table', role:['1']}
+            },
+            {
+                path: 'enterpriseShowPatient/:enterpriseId',
+                name: 'enterpriseShowPatient',
+                hidden: true,
+                component: () => import('@/views/Patients/index'),
+                meta: {title: 'router.enterpriseShowPatient', icon: 'table', role:['1']}
             }
         ]
     },
@@ -219,7 +240,7 @@ export const asyncRouterMap = [
             {
                 path: 'mine',
                 name: 'mine',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/mine/doctor/index'),
                 meta: {title: 'router.mine', icon: 'table', role:['1']}
             }
         ]
