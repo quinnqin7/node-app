@@ -6,10 +6,10 @@ const gravatar = require('gravatar');
 const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const passport=require("passport");
-const api = require("../..//vue-admin-template/src/api/path")
+const api = require("../../web/src/api/path")
 const User =require("../../modules/user")
 const Doctor = require("../../modules/doctor")
-const EnterPrise = require("../../modules/enterprise")
+const enterprise = require("../../modules/enterprise")
 
 
 router.post("/register",(req,res) =>{
@@ -36,7 +36,7 @@ router.post("/register",(req,res) =>{
 								}
 								else if(user.role === '2')
 								{
-									new EnterPrise({_id:user.id}).save()
+									new enterprise({_id:user.id}).save()
 								}
 								const rule={
 								id: user.id,
@@ -125,7 +125,7 @@ router.post(
 		}
 		if(role === "2")
 		{
-			EnterPrise.findOne({_id:id}).then(user =>{
+			enterprise.findOne({_id:id}).then(user =>{
 				var data = user.toObject()
 				var c = []
 				c.push(role)

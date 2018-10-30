@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const passport = require("passport")
 const app = express()
-const api = require("./vue-admin-template/src/api/path")
+const api = require("./web/src/api/path")
 
 // 引入users.js
 const users = require("./routes/api/users")

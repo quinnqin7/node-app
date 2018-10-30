@@ -1,1 +1,0 @@
-var mongoose = require('./db')var doctorSchema = mongoose.Schema({    // FIXME 应该从数据库取出来 啊企业 id    frequency: 'string',    perfession: 'string',    serviceTime: Object,    tel: 'string',    address: 'string',    introduce: 'string',    name: 'string',    _id:mongoose.Schema.Types.ObjectId})module.exports = mongoose.model('Doctor', doctorSchema, 'doctor')

@@ -1,1 +1,0 @@
-var mongoose = require('mongoose')mongoose.connect('mongodb://md:md@127.0.0.1/md')module.exports = mongoose
