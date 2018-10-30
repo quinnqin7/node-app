@@ -141,9 +141,9 @@ export const asyncRouterMap = [
         },
         children: [
             {
-                path: 'EnterpriseInfo',
-                name: 'EnterpriseInfo',
-                component: () => import('@/views/enterprise/index'),
+                path: 'Home',
+                name: 'Home',
+                component: () => import('@/views/dashboard/doctor'),
                 meta: {title: 'router.home', icon: 'table', role:['1']}
             }
         ]
@@ -202,9 +202,9 @@ export const asyncRouterMap = [
         },
         children: [
             {
-                path: 'EnterpriseInfo',
-                name: 'EnterpriseInfo',
-                component: () => import('@/views/enterprise/index'),
+                path: 'appointment',
+                name: 'appointment',
+                component: () => import('@/views/table/index'),
                 meta: {title: 'router.appointment', icon: 'table', role:['1']}
             }
         ]
@@ -217,9 +217,9 @@ export const asyncRouterMap = [
         },
         children: [
             {
-                path: 'EnterpriseInfo',
-                name: 'EnterpriseInfo',
-                component: () => import('@/views/enterprise/index'),
+                path: 'mine',
+                name: 'mine',
+                component: () => import('@/views/table/index'),
                 meta: {title: 'router.mine', icon: 'table', role:['1']}
             }
         ]
