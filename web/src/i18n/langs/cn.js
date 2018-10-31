@@ -66,7 +66,10 @@ const cn = {
 		'success': '成功',
 		'email': '邮箱',
 		'pwd': '密码',
-		'demandPerfession': '需求'
+		'demandPerfession': '需求',
+        'appointment':'预约',
+        'serviceTime':'可服务时间',
+
 	}
 }
 

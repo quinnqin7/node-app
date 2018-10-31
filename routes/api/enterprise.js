@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken');
 const historyCase = require('../../modules/historyCase')
 const mongoose = require('mongoose')
 const enterprise = require('../../modules/enterprise')
+const doctor = require('../../modules/doctor')
+const doctorServiceTime = require('../../modules/doctorServiceTime')
 
 router.post("/patients", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var enterpriseId = jwt.decode(req.body.token).id
@@ -146,6 +148,29 @@ router.post("/modifyEnterpriseInfo", passport.authenticate('jwt', {session: fals
 
 
 
+
+
+//getDoctorAndServiceTime
+router.post("/getDoctorAndServiceTime", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorServiceTime.find({doctorId:req.body.doctorId}).then(docs=>{
+		var data=docs
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
+
+//getDoctors
+router.post("/getDoctors", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctor.find({}).then(docs=>{
+		var data=docs
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
 
 
 

@@ -67,3 +67,25 @@ export function modifyEnterpriseInfo(enterpriseData){
     })
 
 }
+
+export function getDoctorAndServiceTime(doctorId){
+    return request({
+        url: '/api/enterprise/getDoctorAndServiceTime',
+        method: 'post',
+        data:{
+            doctorId:doctorId
+        }
+    })
+}
+
+export function getDoctors(){
+    return request({
+        url: '/api/enterprise/getDoctors',
+        method: 'post',
+        data:{
+
+        }
+    })
+}
+
+//getDoctorAndServiceTime

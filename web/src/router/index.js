@@ -92,6 +92,21 @@ export const asyncRouterMap = [
         ]
     },
     {
+        path: '/appointment',
+        component: Layout,
+        meta: {
+            role:['2']
+        },
+        children: [
+            {
+                path: 'appointment',
+                name: 'appointment',
+                component: () => import('@/views/appointment/enterprise/index'),
+                meta: {title: 'router.appointment', icon: 'table', role:['2']}
+            }
+        ]
+    },
+    {
         path: '/Analysis',
         component: Layout,
         meta: {
