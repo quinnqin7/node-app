@@ -14,7 +14,7 @@ const cn = {
 		'cn': '中文(简体)',
 		'en': 'English',
 		'tw': '中文(繁體)',
-		'dashboard': '仪表板',
+		'dashboard': '导航',
 		'home': '首页',
 		'logout': '登出',
 		'register': '注册',
