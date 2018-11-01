@@ -19,3 +19,6 @@ mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mong
 
 
 ********现存一个 bug ,可以接受 同一段时间 内两个不同企业 的预约
+
+
+要做排班
