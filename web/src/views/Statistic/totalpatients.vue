@@ -1,26 +1,33 @@
 <template>
-    <!--<div>-->
-        <!--<ve-line :data="chartData"></ve-line>-->
-    <!--</div>-->
+    <div>
+        <ve-histogram :data="chartData" :settings="chartSettings"></ve-histogram>
+    </div>
 </template>
 
-<!--<script>-->
-    <!--import VeLine from 'v-charts'-->
-    <!--export default {-->
-        <!--created () {-->
-            <!--this.chartData = {-->
-                <!--columns: ['日期', '销售量'],-->
-                <!--rows: [-->
-                    <!--{ '日期': '1月1日', '销售量': 123 },-->
-                    <!--{ '日期': '1月2日', '销售量': 1223 },-->
-                    <!--{ '日期': '1月3日', '销售量': 2123 },-->
-                    <!--{ '日期': '1月4日', '销售量': 4123 },-->
-                    <!--{ '日期': '1月5日', '销售量': 3123 },-->
-                    <!--{ '日期': '1月6日', '销售量': 7123 }-->
-                <!--]-->
-            <!--}-->
-        <!--},-->
+<script>
+    import VeHistogram from 'v-charts/lib/histogram.common'
+    import 'v-charts/lib/style.css'
+    export default {
+        data () {
+            this.chartSettings = {
+                stack: { '患者': ['男', '女'] }
+            }
+            return {
+                chartData: {
+                    columns: ['日期', '男', '女', '患病率'],
+                    rows: [
+                        { '日期': '1/1', '男': 1393, '女': 1093, '患病率': 0.32 },
+                        { '日期': '1/2', '男': 3530, '女': 3230, '患病率': 0.26 },
+                        { '日期': '1/3', '男': 2923, '女': 2623, '患病率': 0.76 },
+                        { '日期': '1/4', '男': 1723, '女': 1423, '患病率': 0.49 },
+                        { '日期': '1/5', '男': 3792, '女': 3492, '患病率': 0.323 },
+                        { '日期': '1/6', '男': 4593, '女': 4293, '患病率': 0.78 }
+                    ]
+                }
+            }
+        },
 
-        <!--components: { VeLine }-->
-    <!--}-->
-<!--</script>-->
+
+        components: { VeHistogram }
+    }
+</script>
