@@ -11,7 +11,7 @@ const enterprise = require('../../modules/enterprise')
 const mongoose = require('mongoose')
 const Doctor = require('../../modules/doctor')
 const user = require('../../modules/user')
-
+const doctorMessage = require('../../modules/doctorMessage')
 
 
 
@@ -101,6 +101,83 @@ router.post("/modifyDoctorInfo", passport.authenticate('jwt', {session: false}),
 		res.status(404).json(err)
 	})
 });
+
+
+
+//getDoctorMessage
+
+router.post("/getDoctorMessage", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorMessage.find({doctorId:req.body.doctorId,handle:'0'}).then(data=>{
+		res.json({
+					code:20000,
+					data
+				})
+	})
+});
+
+
+//getAgree
+
+router.post("/getAgree", passport.authenticate('jwt', {session: false}), (req, res) => {
+var messageAgree = {
+	handle:'1',
+	agree:'1',
+}
+var enterpriseid = {
+	enterpriseId:req.body.enterpriseId
+}
+	doctorMessage.findOneAndUpdate(
+		{_id: req.body.messageId},
+		{$set: messageAgree},
+		{new: true}
+	).then(doc=>{
+		doctorServiceTime.findOneAndUpdate(
+			{_id:req.body.doctorServiceTimeId},
+			{$set: enterpriseid},
+			{new: true}
+		).then(doc=>{
+			//console.log('同意预约')
+			res.json({
+				code:20000
+			})
+		})
+
+	})
+
+});
+
+//setRefuse
+router.post("/setRefuse", passport.authenticate('jwt', {session: false}), (req, res) => {
+	var messagerefuse = {
+		handle:'1',
+		refuse:'1',
+	}
+	doctorMessage.findOneAndUpdate(
+		{_id: req.body.messageId},
+		{$set: messagerefuse},
+		{new: true}
+	).then(doc=>{
+		res.json({
+			code:20000
+		})
+	}).catch(err=>{
+		res.status(404).json('error')
+	})
+
+	// doctorMessage.find({doctorId:req.body.doctorId,handle:'0'}).then(data=>{
+	// 	res.json({
+	// 		code:20000,
+	// 		data
+	// 	})
+	// })
+});
+
+
+
+
+
+
+
 
 module.exports = router;
 

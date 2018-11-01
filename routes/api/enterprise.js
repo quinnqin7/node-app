@@ -9,6 +9,10 @@ const mongoose = require('mongoose')
 const enterprise = require('../../modules/enterprise')
 const doctor = require('../../modules/doctor')
 const doctorServiceTime = require('../../modules/doctorServiceTime')
+const doctorMessage = require('../../modules/doctorMessage')
+
+
+
 
 router.post("/patients", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var enterpriseId = jwt.decode(req.body.token).id
@@ -152,7 +156,7 @@ router.post("/modifyEnterpriseInfo", passport.authenticate('jwt', {session: fals
 
 //getDoctorAndServiceTime
 router.post("/getDoctorAndServiceTime", passport.authenticate('jwt', {session: false}), (req, res) => {
-	doctorServiceTime.find({doctorId:req.body.doctorId}).then(docs=>{
+	doctorServiceTime.find({doctorId:req.body.doctorId,enterpriseId:''}).then(docs=>{
 		var data=docs
 		res.json({
 			code:20000,
@@ -171,6 +175,80 @@ router.post("/getDoctors", passport.authenticate('jwt', {session: false}), (req,
 		})
 	})
 });
+
+
+
+//enterpriseAppointmentDoctor
+
+router.post("/enterpriseAppointmentDoctor", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//console.log(req.body)
+	req.body.doctorServiceTimeIdArray.forEach(function(value,index){
+		//console.log(value)
+var enterpriseid = {
+	enterpriseId:req.body.enterpriseId
+}
+		doctorServiceTime.findOneAndUpdate(
+			{_id: value},
+			{$set: enterpriseid},
+			{new: true}
+		).then(profile => {
+			if(index === req.body.doctorServiceTimeIdArray.length-1) {
+				res.json({
+					code: 20000
+				})
+			}
+		}).catch(err => {
+			res.status(404).json(err)
+		})
+	})
+});
+
+
+//sendMessageToDoctor
+router.post("/sendMessageToDoctor", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//console.log(req.body)
+	req.body.doctorServiceTimeIdArray.forEach(function(value,index){
+		var doctorMessageToSave = new doctorMessage({
+			mainContent:req.body.mainContent,
+			handle:'0',
+			doctorServiceTimeId:value,
+			enterpriseId:req.body.enterpriseId,
+			doctorId:req.body.doctorId,
+			agree:'0',
+			refuse:'0',
+			time:new Date(),
+		})
+		doctorMessageToSave.save().then(doc=>{
+			if(index === req.body.doctorServiceTimeIdArray.length-1) {
+				res.json({
+					code: 20000
+				})
+			}
+		}).catch(err=>{
+			console.log(err)
+		})
+	})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -12,7 +12,7 @@ module.exports = function (num, enterpriseId, patientId,doctorId) {
 			'suggest': Random.cparagraph(3, 7),
 			'time':Random.date(),
 			'enterpriseId': enterpriseId.toString(),
-			'patientId':patientId.toString()
+			'patientId':patientId.toString(),
 			'doctorId':doctorId.toString()
 		})
 

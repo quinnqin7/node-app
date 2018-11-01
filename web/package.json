@@ -20,6 +20,7 @@
     "gravatar": "^1.6.0",
     "js-cookie": "2.2.0",
     "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "vue": "2.5.17",

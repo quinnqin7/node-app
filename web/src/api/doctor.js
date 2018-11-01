@@ -52,3 +52,41 @@ export function modifyDoctorInfo(doctorData){
     })
 
 }
+
+
+
+//getDoctorMessage
+
+export function getDoctorMessage(doctorId){
+    return request({
+        url: '/api/doctor/getDoctorMessage',
+        method: 'post',
+        data:{
+            doctorId:doctorId
+        }
+    })
+}
+
+//getAgree
+export function getAgree(doctorServiceTimeId, messageId,enterpriseId){
+    return request({
+        url: '/api/doctor/getAgree',
+        method: 'post',
+        data:{
+            doctorServiceTimeId:doctorServiceTimeId,
+            messageId:messageId,
+            enterpriseId:enterpriseId
+        }
+    })
+}
+
+//setRefuse
+export function setRefuse(messageId){
+    return request({
+        url: '/api/doctor/setRefuse',
+        method: 'post',
+        data:{
+            messageId:messageId,
+        }
+    })
+}

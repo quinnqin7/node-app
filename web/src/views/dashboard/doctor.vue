@@ -15,7 +15,8 @@
                 'name',
                 'roles'
             ])
-        }
+        },
+
     }
 </script>
 

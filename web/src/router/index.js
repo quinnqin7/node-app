@@ -224,7 +224,7 @@ export const asyncRouterMap = [
             {
                 path: 'Schedule',
                 name: 'Schedule',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/arrange/doctor/index'),
                 meta: {title: 'router.schedule', icon: 'table', role:['1']}
             }
         ]
@@ -240,7 +240,7 @@ export const asyncRouterMap = [
             {
                 path: 'appointment',
                 name: 'appointment',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/appointment/doctor/index'),
                 meta: {title: 'router.appointment', icon: 'table', role:['1']}
             }
         ]

@@ -88,4 +88,32 @@ export function getDoctors(){
     })
 }
 
-//getDoctorAndServiceTime
+//enterpriseAppointmentDoctor
+
+export function enterpriseAppointmentDoctor(doctorServiceTimeIdArray,enterpriseId){
+    return request({
+        url: '/api/enterprise/enterpriseAppointmentDoctor',
+        method: 'post',
+        data:{
+            doctorServiceTimeIdArray:doctorServiceTimeIdArray,
+            enterpriseId:enterpriseId
+        }
+    })
+}
+
+
+
+//sendMessageToDoctor
+
+export function sendMessageToDoctor(doctorId,doctorServiceTimeIdArray,enterpriseId,mainContent){
+    return request({
+        url: '/api/enterprise/sendMessageToDoctor',
+        method: 'post',
+        data:{
+            doctorId:doctorId,
+            doctorServiceTimeIdArray:doctorServiceTimeIdArray,
+            enterpriseId:enterpriseId,
+            mainContent:mainContent
+        }
+    })
+}

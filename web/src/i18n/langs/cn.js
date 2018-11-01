@@ -69,7 +69,12 @@ const cn = {
 		'demandPerfession': '需求',
         'appointment':'预约',
         'serviceTime':'可服务时间',
-
+        'agree':'同意',
+        'refuse':'拒绝',
+        'time':'时间',
+        'startTime':'开始时间',
+        'endTime':'结束时间',
+        'isAppointmant':'是否有预约'
 	}
 }
 

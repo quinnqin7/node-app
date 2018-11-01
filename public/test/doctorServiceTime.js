@@ -7,8 +7,8 @@ module.exports = function (num, enterpriseId, doctorId) {
 	for (var i = 0; i < num; i++) {
 		var data = Mock.mock({
 			// 属性 list 的值是一个数组，其中含有 1 到 10 个元素
-			'startTime':Random.date(),
-			'endTime':Random.date(),
+			'startTime':Random.date('yyyy-MM-dd'),
+			'endTime':Random.date('yyyy-MM-dd'),
 			'enterpriseId': enterpriseId.toString(),
 			'doctorId':doctorId.toString()
 		})
