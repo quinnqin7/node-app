@@ -87,7 +87,7 @@ export const asyncRouterMap = [
                 path: 'Schedule',
                 name: 'Schedule',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'router.schedule', icon: 'table', role:['2']}
+                meta: {title: 'router.schedule', icon: 'schedule', role:['2']}
             }
         ]
     },
@@ -102,7 +102,7 @@ export const asyncRouterMap = [
                 path: 'appointment',
                 name: 'appointment',
                 component: () => import('@/views/appointment/enterprise/index'),
-                meta: {title: 'router.appointment', icon: 'table', role:['2']}
+                meta: {title: 'router.appointment', icon: 'appointment', role:['2']}
             }
         ]
     },
@@ -117,7 +117,7 @@ export const asyncRouterMap = [
                 path: 'Analysis',
                 name: 'table',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'router.analysis', icon: 'table', role:['2']}
+                meta: {title: 'router.analysis', icon: 'chart', role:['2']}
             }
         ]
     },
@@ -132,7 +132,7 @@ export const asyncRouterMap = [
                 path: 'mine',
                 name: 'mine',
                 component: () => import('@/views/mine/enterprise/index'),
-                meta: {title: 'router.mine', icon: 'table', role:['2']}
+                meta: {title: 'router.mine', icon: 'peoples', role:['2']}
             }
         ]
     },
@@ -162,6 +162,8 @@ export const asyncRouterMap = [
             },
         }]
     },
+
+    //首頁
     {
         path: '/Home',
         component: Layout,
@@ -173,25 +175,46 @@ export const asyncRouterMap = [
                 path: 'Home',
                 name: 'Home',
                 component: () => import('@/views/dashboard/doctor'),
-                meta: {title: 'router.home', icon: 'table', role:['1']}
+                meta: {title: 'router.home', icon: 'home', role:['1']}
             }
         ]
     },
+
+    //排班
     {
-        path: '/Analysis',
+        path: '/Schedule',
         component: Layout,
         meta: {
             role:['1']
         },
         children: [
             {
-                path: 'Analysis',
-                name: 'Analysis',
+                path: 'Schedule',
+                name: 'Schedule',
                 component: () => import('@/views/table/index'),
-                meta: {title: 'router.analysis', icon: 'table', role:['1']}
+                meta: {title: 'router.schedule', icon: 'schedule', role:['1']}
             }
         ]
     },
+
+    //預約
+    {
+        path: '/appointment',
+        component: Layout,
+        meta: {
+            role:['1']
+        },
+        children: [
+            {
+                path: 'appointment',
+                name: 'appointment',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.appointment', icon: 'appointment', role:['1']}
+            }
+        ]
+    },
+
+    //問診
     {
         path: '/EnterpriseInfo',
         component: Layout,
@@ -203,7 +226,7 @@ export const asyncRouterMap = [
                 path: 'EnterpriseInfo',
                 name: 'EnterpriseInfo',
                 component: () => import('@/views/enterprise/index'),
-                meta: {title: 'router.enterpriseInfo', icon: 'table', role:['1']}
+                meta: {title: 'router.enterpriseInfo', icon: 'form', role:['1']}
             },
             {
                 path: 'enterpriseShowPatient/:enterpriseId',
@@ -214,6 +237,7 @@ export const asyncRouterMap = [
             }
         ]
     },
+<<<<<<< Updated upstream
     {
         path: '/Schedule',
         component: Layout,
@@ -229,22 +253,34 @@ export const asyncRouterMap = [
             }
         ]
     },
+=======
+>>>>>>> Stashed changes
 
+    //統計
     {
-        path: '/appointment',
+        path: '/Analysis',
         component: Layout,
         meta: {
             role:['1']
         },
         children: [
             {
+<<<<<<< Updated upstream
                 path: 'appointment',
                 name: 'appointment',
                 component: () => import('@/views/appointment/doctor/index'),
                 meta: {title: 'router.appointment', icon: 'table', role:['1']}
+=======
+                path: 'Analysis',
+                name: 'Analysis',
+                component: () => import('@/views/Statistic/totalpatients'),
+                meta: {title: 'router.analysis', icon: 'chart', role:['1']}
+>>>>>>> Stashed changes
             }
         ]
     },
+
+    //我的
     {
         path: '/mine',
         component: Layout,
@@ -256,7 +292,7 @@ export const asyncRouterMap = [
                 path: 'mine',
                 name: 'mine',
                 component: () => import('@/views/mine/doctor/index'),
-                meta: {title: 'router.mine', icon: 'table', role:['1']}
+                meta: {title: 'router.mine', icon: 'peoples', role:['1']}
             }
         ]
     },

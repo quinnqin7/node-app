@@ -11,7 +11,7 @@ const tw = {
         'cn':'中文(簡體)',
         'en':'English',
         'tw':'中文(繁體)',
-        'dashboard':'儀表板',
+        'dashboard':'導航',
         'home':'首頁',
         'logout':'登出'
     },
