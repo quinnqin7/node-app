@@ -208,7 +208,7 @@ export const asyncRouterMap = [
             {
                 path: 'appointment',
                 name: 'appointment',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/appointment/doctor/index'),
                 meta: {title: 'router.appointment', icon: 'appointment', role:['1']}
             }
         ]

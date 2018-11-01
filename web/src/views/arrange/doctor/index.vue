@@ -76,7 +76,8 @@
             </el-table-column>
             <el-table-column
                 :label="$t('table.startTime')"
-                prop="startTime">
+                prop="startTime"
+                sortable>
             </el-table-column>
             <el-table-column
                 :label="$t('table.endTime')"

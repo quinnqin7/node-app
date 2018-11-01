@@ -39,10 +39,13 @@
     import {mapGetters} from 'vuex'
     import Breadcrumb from '@/components/Breadcrumb'
     import Hamburger from '@/components/Hamburger'
-
+    import {getDoctorMessage} from "../../../api/doctor";
+    import {getToken} from "../../../utils/auth";
+    const jwt = require('jsonwebtoken');
     export default {
         data() {
             return {
+                list:'',
                 zh_cn: null
             }
         },
@@ -51,7 +54,7 @@
             Hamburger
         },
         created() {
-
+            this.realTime()
         },
         computed: {
             ...mapGetters([
@@ -82,6 +85,30 @@
                     this.$i18n.locale = 'tw';
                 }
             },
+            fetchAppointmentData(){
+                //this.listLoading = true
+                getDoctorMessage(jwt.decode(getToken()).id).then((response)=>{
+                    this.list = response.data
+                    if(this.list.toString()!=='')
+                    {
+                        this.$notify({
+                            title: '预约',
+                            message: '您有预约请求',
+                            type: 'success',
+                            duration: 1000
+                        })
+                    }
+                    //console.log(this.list.toString())
+                    //console.log(response)
+                }).catch(err=>{
+                    console.log(err)
+                })
+            },
+            realTime(){
+                this.fetchAppointmentData()
+                setTimeout(this.realTime,3000)
+            },
+
         },
 
     }

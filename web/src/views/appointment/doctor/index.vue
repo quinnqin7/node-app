@@ -76,7 +76,7 @@
                 //this.listLoading = true
                 getDoctorMessage(jwt.decode(getToken()).id).then((response)=>{
                     this.list = response.data
-                    console.log(response)
+                    //console.log(response)
                 }).catch(err=>{
                     console.log(err)
                 })
