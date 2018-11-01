@@ -90,3 +90,26 @@ export function setRefuse(messageId){
         }
     })
 }
+
+
+export function DoctorTogetDoctorAndServiceTime(doctorId){
+    return request({
+        url: '/api/doctor/DoctorTogetDoctorAndServiceTime',
+        method: 'post',
+        data:{
+            doctorId:doctorId
+        }
+    })
+}
+
+//DoctorToGetEnterprise
+
+export function DoctorToGetEnterprise(enterpiseArray){
+    return request({
+        url: '/api/doctor/DoctorToGetEnterprise',
+        method: 'post',
+        data:{
+            enterpiseArray:enterpiseArray
+        }
+    })
+}

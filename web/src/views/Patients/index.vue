@@ -124,7 +124,7 @@
     export default {
         data() {
             return {
-                dialogData:"",
+                dialogData:{},
                 showEditCase:false,
                 dialogFormVisible:false,
                 dialogStatus: '',

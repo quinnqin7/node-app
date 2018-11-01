@@ -174,7 +174,31 @@ router.post("/setRefuse", passport.authenticate('jwt', {session: false}), (req, 
 
 
 
+router.post("/DoctorTogetDoctorAndServiceTime", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorServiceTime.find({doctorId:req.body.doctorId}).then(docs=>{
+		var data=docs
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
 
+
+
+
+//DoctorToGetEnterprise
+
+router.post("/DoctorToGetEnterprise", passport.authenticate('jwt', {session: false}), (req, res) => {
+	enterprise.find({_id:{$in:req.body.enterpiseArray}}).then(docs=>{
+		var data=docs
+		//console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
 
 
 

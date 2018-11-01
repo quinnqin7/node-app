@@ -165,6 +165,8 @@ router.post("/getDoctorAndServiceTime", passport.authenticate('jwt', {session: f
 	})
 });
 
+
+
 //getDoctors
 router.post("/getDoctors", passport.authenticate('jwt', {session: false}), (req, res) => {
 	doctor.find({}).then(docs=>{

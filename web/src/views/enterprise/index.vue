@@ -94,7 +94,7 @@
     export default {
         data() {
             return {
-                dialogData:"",
+                dialogData:{},
                 dialogFormVisible:false,
                 dialogStatus: '',
                 textMap: {

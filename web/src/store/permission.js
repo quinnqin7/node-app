@@ -23,7 +23,7 @@ const permission = {
         GenerateRoutes({ commit },data) {
             return new Promise(resolve => {
                 const {roles} = data;
-                console.log(roles)
+                //console.log(roles)
                 const accessedRouters = asyncRouterMap.filter(v => {
                     //if you want to set admin role in the system you can tkof //and set the res-> roles:['admin']
                     //if (roles.indexOf('admin') >= 0) return true;

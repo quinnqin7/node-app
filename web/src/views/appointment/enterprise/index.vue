@@ -129,7 +129,7 @@
         data() {
             return {
                 multipleSelection: '',
-                dialogData: "",
+                dialogData: {},
                 serviceTimeData: [],
                 dialogFormVisible: false,
                 dialogStatus: '',

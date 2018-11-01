@@ -22,3 +22,5 @@ mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mong
 
 
 要做排班
+
+注意 ：dialogData:{},
