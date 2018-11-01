@@ -1,8 +1,8 @@
-<!--<template>-->
+<template>
     <!--<div>-->
         <!--<ve-line :data="chartData"></ve-line>-->
     <!--</div>-->
-<!--</template>-->
+</template>
 
 <!--<script>-->
     <!--import VeLine from 'v-charts'-->

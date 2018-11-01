@@ -190,25 +190,35 @@
             fetchData() {
                 this.listLoading = true
                 DoctorTogetDoctorAndServiceTime(jwt.decode(getToken()).id).then(response => {
-                    //console.log(response)
+                    // console.log('返回的 合并之前list 数据')
+                    // console.log(response.data)
                     this.list = response.data
                     var enterpriseIdArray = this.list.map(data=>{
+                        // if(data.enterpriseId!=='')
                         return data.enterpriseId
                     })
-                    //console.log(enterpriseIdArray)
-                    DoctorToGetEnterprise(enterpriseIdArray).then(response=>{
-                        var hhh = this.list.map(data=>{
-                            for(var i = 0;i< response.data.length;i++)
+
+                    DoctorToGetEnterprise(enterpriseIdArray.filter(f=>f)).then(response=>{
+                        // console.log('返回的企业数据')
+                        // console.log(response.data)
+                        // console.log('现在的 list 数据')
+                        // console.log(this.list)
+                        //合并 数据  要出错也是这里出错
+                        var mergeData = this.list.map(data=>{
+                            for(let i = 0;i< response.data.length;i++)
                             {
                                 if(data.enterpriseId === response.data[i]._id){
-                                    return Object.assign(data,response.data[i])
+                                    return Object.assign(data,response.data[i]) //哼合并
                                 }
+                                if(data.enterpriseId==='')
+                                    return data
                             }
                         })
                         // console.log(response.data)
-                        // console.log('合并之后的数据')
-                        // console.log(hhh)
-                        this.list = hhh
+                        //
+                        //     console.log('合并之后list的数据')
+                        //  console.log(hhh)
+                        this.list = mergeData //.filter(f=>f)
                     })
                     this.listLoading = false
                 })
@@ -226,22 +236,22 @@
             handleCreateSchedule(){
                 //console.log(this.starttime + this.endtime)
 
-                // CreateSchedule(this.starttime,this.endtime,jwt.decode(getToken()).id).then(()=>{
-                //     this.$notify({
-                //         title: '添加',
-                //         message: '添加成功',
-                //         type: 'success',
-                //         duration: 2000
-                //     })
-                // }).catch(err=>{
-                //     this.$notify({
-                //         title: '添加',
-                //         message: '添加失败',
-                //         type: 'error',
-                //         duration: 2000
-                //     })
-                // })
-
+                CreateSchedule(this.starttime,this.endtime,jwt.decode(getToken()).id).then(()=>{
+                    this.$notify({
+                        title: '添加',
+                        message: '添加成功',
+                        type: 'success',
+                        duration: 2000
+                    })
+                }).catch(err=>{
+                    this.$notify({
+                        title: '添加',
+                        message: '添加失败',
+                        type: 'error',
+                        duration: 2000
+                    })
+                })
+                    window.location.reload()
                 this.dialogFormVisible=false
             }
         }
