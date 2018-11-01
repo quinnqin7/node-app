@@ -113,3 +113,18 @@ export function DoctorToGetEnterprise(enterpiseArray){
         }
     })
 }
+
+
+//CreateSchedule
+
+export function CreateSchedule(startTime,endTime,doctorId){
+    return request({
+        url: '/api/doctor/CreateSchedule',
+        method: 'post',
+        data:{
+            startTime:startTime,
+            endTime:endTime,
+            doctorId:doctorId
+        }
+    })
+}

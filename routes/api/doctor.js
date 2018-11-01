@@ -200,7 +200,26 @@ router.post("/DoctorToGetEnterprise", passport.authenticate('jwt', {session: fal
 	})
 });
 
+//CreateSchedule
+router.post("/CreateSchedule", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//console.log(req.body)
+	var doctorServiceTimes = new doctorServiceTime({
+		startTime:req.body.startTime,
+		endTime:req.body.endTime,
+		doctorId:req.body.doctorId,
+		enterpriseId:''
+	})
+	doctorServiceTimes.save().then(doc=>{
+		//console.log(doc)
+		res.json({
+			code:20000
+		})
+	}).catch(err=>{
+		//consoel.log(err)
+		res.status(404).json(err)
+	})
 
+});
 
 
 module.exports = router;

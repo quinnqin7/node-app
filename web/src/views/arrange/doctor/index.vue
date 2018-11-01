@@ -40,7 +40,7 @@
             <!--</el-table-column>-->
         <!--</el-table>-->
 
-        <el-button  class="filter-item" style="margin:0 10px 10px 0;float: right" type="primary" icon="el-icon-edit" @click="handleCreateSchedu">{{ $t('table.add') }}</el-button>
+        <el-button  class="filter-item" style="margin:0 10px 10px 0;float: right" type="primary" icon="el-icon-edit" @click="dialogFormVisible=true">{{ $t('table.add') }}</el-button>
         <el-table
             :data="list"
             style="width: 100%">
@@ -110,22 +110,22 @@
                         :picker-options="pickerOptions1">
                     </el-date-picker>
                 </el-form-item>
-                <el-form-item :label="$t('table.enterpriseCategory')" prop="type">
-                    <el-input :disabled="true" v-model="dialogData.enterpriseCategory"/>
-                </el-form-item>
-                <el-form-item :label="$t('table.frequency')" prop="type">
-                    <el-input :disabled="true" v-model="dialogData.frequency"/>
-                </el-form-item>
-                <el-form-item :label="$t('table.numberOfPeople')" prop="type">
-                    <el-input :disabled="true" v-model="dialogData.numberOfPeople"/>
-                </el-form-item>
-                <el-form-item :label="$t('table.specialHarm')" prop="type">
-                    <el-input :disabled="true" v-model="dialogData.specialHarm"/>
-                </el-form-item>
+                <!--<el-form-item :label="$t('table.enterpriseCategory')" prop="type">-->
+                    <!--<el-input :disabled="true" v-model="dialogData.enterpriseCategory"/>-->
+                <!--</el-form-item>-->
+                <!--<el-form-item :label="$t('table.frequency')" prop="type">-->
+                    <!--<el-input :disabled="true" v-model="dialogData.frequency"/>-->
+                <!--</el-form-item>-->
+                <!--<el-form-item :label="$t('table.numberOfPeople')" prop="type">-->
+                    <!--<el-input :disabled="true" v-model="dialogData.numberOfPeople"/>-->
+                <!--</el-form-item>-->
+                <!--<el-form-item :label="$t('table.specialHarm')" prop="type">-->
+                    <!--<el-input :disabled="true" v-model="dialogData.specialHarm"/>-->
+                <!--</el-form-item>-->
 
             </el-form>
             <div slot="footer" class="dialog-footer">
-                <el-button @click="dialogFormVisible = false">{{ $t('table.cancel') }}</el-button>
+                <el-button @click="handleCreateSchedule">{{ $t('table.confirm') }}</el-button>
                 <!--<el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">{{ $t('table.confirm') }}</el-button>-->
             </div>
         </el-dialog>
@@ -135,10 +135,8 @@
 </template>
 
 <script>
-    //import { getList } from '@/api/enterprise'
-    import {getDoctorAndServiceTime} from "../../../api/enterprise";
     import {getToken} from "../../../utils/auth";
-    import {DoctorTogetDoctorAndServiceTime, DoctorToGetEnterprise} from "../../../api/doctor";
+    import {CreateSchedule, DoctorTogetDoctorAndServiceTime, DoctorToGetEnterprise} from "../../../api/doctor";
 
     const jwt = require('jsonwebtoken');
     export default {
@@ -225,8 +223,26 @@
                 }
 
             },
-            handleCreateSchedu(){
-                this.dialogFormVisible=true
+            handleCreateSchedule(){
+                //console.log(this.starttime + this.endtime)
+
+                // CreateSchedule(this.starttime,this.endtime,jwt.decode(getToken()).id).then(()=>{
+                //     this.$notify({
+                //         title: '添加',
+                //         message: '添加成功',
+                //         type: 'success',
+                //         duration: 2000
+                //     })
+                // }).catch(err=>{
+                //     this.$notify({
+                //         title: '添加',
+                //         message: '添加失败',
+                //         type: 'error',
+                //         duration: 2000
+                //     })
+                // })
+
+                this.dialogFormVisible=false
             }
         }
     }

@@ -181,21 +181,21 @@ export const asyncRouterMap = [
     },
 
     //排班
-    {
-        path: '/Schedule',
-        component: Layout,
-        meta: {
-            role:['1']
-        },
-        children: [
-            {
-                path: 'Schedule',
-                name: 'Schedule',
-                component: () => import('@/views/table/index'),
-                meta: {title: 'router.schedule', icon: 'schedule', role:['1']}
-            }
-        ]
-    },
+    // {
+    //     path: '/Schedule',
+    //     component: Layout,
+    //     meta: {
+    //         role:['1']
+    //     },
+    //     children: [
+    //         {
+    //             path: 'Schedule',
+    //             name: 'Schedule',
+    //             component: () => import('@/views/table/index'),
+    //             meta: {title: 'router.schedule', icon: 'schedule', role:['1']}
+    //         }
+    //     ]
+    // },
 
     //預約
     {
@@ -237,7 +237,6 @@ export const asyncRouterMap = [
             }
         ]
     },
-<<<<<<< Updated upstream
     {
         path: '/Schedule',
         component: Layout,
@@ -253,8 +252,7 @@ export const asyncRouterMap = [
             }
         ]
     },
-=======
->>>>>>> Stashed changes
+
 
     //統計
     {
@@ -265,17 +263,10 @@ export const asyncRouterMap = [
         },
         children: [
             {
-<<<<<<< Updated upstream
-                path: 'appointment',
-                name: 'appointment',
-                component: () => import('@/views/appointment/doctor/index'),
-                meta: {title: 'router.appointment', icon: 'table', role:['1']}
-=======
                 path: 'Analysis',
                 name: 'Analysis',
                 component: () => import('@/views/Statistic/totalpatients'),
                 meta: {title: 'router.analysis', icon: 'chart', role:['1']}
->>>>>>> Stashed changes
             }
         ]
     },
@@ -298,6 +289,9 @@ export const asyncRouterMap = [
     },
     {path: '*', redirect: '/404', hidden: true}
 ];
+
+
+
 
 // {
 //     path: '/nested',
