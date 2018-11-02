@@ -10,9 +10,9 @@ const enterprise = require('../../modules/enterprise')
 const doctor = require('../../modules/doctor')
 const doctorServiceTime = require('../../modules/doctorServiceTime')
 const doctorMessage = require('../../modules/doctorMessage')
-
-
-
+const user = require('../../modules/user')
+const mail = require('../../config/mail')
+const keys = require("../../config/keys");
 
 router.post("/patients", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var enterpriseId = jwt.decode(req.body.token).id
@@ -207,8 +207,10 @@ var enterpriseid = {
 
 
 //sendMessageToDoctor
+// 在这边调用邮件  发送功能
 router.post("/sendMessageToDoctor", passport.authenticate('jwt', {session: false}), (req, res) => {
 	//console.log(req.body)
+	// 根据 选定的 时间进行 发送 预约 所以 这边 应该也要 呵呵 ,如果 选定多个时间进行预约呵呵
 	req.body.doctorServiceTimeIdArray.forEach(function(value,index){
 		var doctorMessageToSave = new doctorMessage({
 			mainContent:req.body.mainContent,
@@ -220,11 +222,27 @@ router.post("/sendMessageToDoctor", passport.authenticate('jwt', {session: false
 			refuse:'0',
 			time:new Date(),
 		})
+
 		doctorMessageToSave.save().then(doc=>{
 			if(index === req.body.doctorServiceTimeIdArray.length-1) {
-				res.json({
-					code: 20000
+				user.findOne({_id:req.body.doctorId}).then(doc=>{
+					console.log(doc)
+					console.log('发送邮箱')
+					const rule={
+						id: req.body.doctorId,
+						role:doc.role
+					};
+					jwt.sign(rule,keys.secretOrKey,{expiresIn:3600},(err,token)=>{
+						if(err) throw err;
+						mail(doc.email,token)
+						res.json({
+							code: 20000
+						})
+					})
+				}).catch(err=>{
+					console.log(err)
 				})
+
 			}
 		}).catch(err=>{
 			console.log(err)

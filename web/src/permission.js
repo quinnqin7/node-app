@@ -5,7 +5,7 @@ import 'nprogress/nprogress.css'// Progress 进度条样式
 import { Message } from 'element-ui'
 import { getToken } from '@/utils/auth' // 验权
 
-const whiteList = ['/login','/register',] // 不重定向白名单
+const whiteList = ['/login','/register','^/mailjump'] // 不重定向白名单
 router.beforeEach((to, from, next) => {
   NProgress.start()
     // Judge if user had login before
@@ -35,13 +35,23 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else {
-    if (whiteList.indexOf(to.path) !== -1) {
-      next()
-    } else {
-        // The First Page to Login
-      next(`/login?redirect=${to.path}`) // 否则全部重定向到登录页
-      NProgress.done()
-    }
+      // FIXME 这边有问题
+      var hah=false
+      whiteList.forEach(data=>{
+          if (to.path.match(data) != null) {
+         //if (true) {
+              hah = true
+          }
+      })
+      if (hah) {
+          //if (true) {
+          console.log(to.path)
+          next()
+      } else {
+          // The First Page to Login
+          next(`/login?redirect=${to.path}`) // 否则全部重定向到登录页
+          NProgress.done()
+      }
   }
 })
 

@@ -24,3 +24,10 @@ mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mong
 要做排班
 
 注意 ：dialogData:{},
+
+
+如需 要 暴露在公网
+请修改
+web/config/dev.env.js
+web/config/index.js
+server.js
