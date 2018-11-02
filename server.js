@@ -36,6 +36,6 @@ app.use("/api/doctor", doctor)
 
 const port = process.env.PORT || 3000 //设置端口号
 
-app.listen(port,'120.110.93.189', () => {
+app.listen(port,'66,112,214,13', () => {
     console.log('Server running on port 3000 ')
 })
