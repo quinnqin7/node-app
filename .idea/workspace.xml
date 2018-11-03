@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="Sendmail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/config/dev.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/config/dev.env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/config/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -155,7 +156,7 @@
         <counts>
           <entry key="gitignore" value="4" />
           <entry key="html" value="26" />
-          <entry key="js" value="6123" />
+          <entry key="js" value="6131" />
           <entry key="json" value="10" />
           <entry key="md" value="378" />
           <entry key="txt" value="96" />
@@ -167,7 +168,7 @@
           <entry key="Git file" value="4" />
           <entry key="HTML" value="26" />
           <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="6123" />
+          <entry key="JavaScript" value="6131" />
           <entry key="Markdown" value="10" />
           <entry key="PLAIN_TEXT" value="464" />
           <entry key="Vue.js" value="5809" />
@@ -186,9 +187,9 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8094566">
+    <splitter split-orientation="horizontal" split-proportion="0.8930612">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.7237762">
+        <splitter split-orientation="horizontal" split-proportion="0.83434343">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="false">
@@ -222,8 +223,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/web/config/dev.env.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="108">
-                      <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+                    <state relative-caret-position="90">
+                      <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
                     </state>
                   </provider>
                 </entry>
@@ -233,11 +234,11 @@
                   <provider selected="true" editor-type-id="text-editor" />
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/web/config/index.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="378">
-                      <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+                    <state relative-caret-position="396">
+                      <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
                     </state>
                   </provider>
                 </entry>
@@ -251,11 +252,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/README.md">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="573">
-                      <caret line="38" column="76" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+                    <state relative-caret-position="137">
+                      <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
                     </state>
                   </provider>
                 </entry>
@@ -394,11 +395,11 @@
         <option value="$PROJECT_DIR$/web/src/views/login/index.vue" />
         <option value="$PROJECT_DIR$/config/mail.js" />
         <option value="$PROJECT_DIR$/config/keys.js" />
-        <option value="$PROJECT_DIR$/web/config/dev.env.js" />
-        <option value="$PROJECT_DIR$/web/config/index.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/web/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/web/config/dev.env.js" />
+        <option value="$PROJECT_DIR$/web/config/index.js" />
       </list>
     </option>
   </component>
@@ -448,6 +449,12 @@
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node-app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -518,7 +525,7 @@
       <workItem from="1540736506535" duration="29023000" />
       <workItem from="1540824086647" duration="3179000" />
       <workItem from="1541169381359" duration="17385000" />
-      <workItem from="1541191289312" duration="2050000" />
+      <workItem from="1541191289312" duration="2877000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1539741047852</created>
@@ -751,11 +758,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541194208467</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Sendmail">
+      <created>1541196096500</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1541196096500</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204665000" />
+    <option name="totallyTimeSpent" value="205492000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -771,7 +785,7 @@
     <frame x="0" y="23" width="1920" height="981" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14536741" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14536741" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -783,7 +797,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996865" weight="0.26285714" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.7673057" visible="true" weight="0.26390404" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7673057" visible="true" weight="0.26390404" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23269436" side_tool="true" visible="true" weight="0.26390404" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.8290735" weight="0.19976905" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -791,7 +805,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Translate" order="3" weight="0.328541" />
-      <window_info anchor="right" id="Mongo Explorer" order="4" weight="0.42172524" />
+      <window_info anchor="right" id="Mongo Explorer" order="4" visible="true" weight="0.072949946" />
       <window_info anchor="right" id="Database" order="5" weight="0.3290735" />
     </layout>
     <layout-to-restore>
@@ -1150,29 +1164,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/config/dev.env.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/config/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -1183,8 +1176,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="38" column="76" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+        <state relative-caret-position="137">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/config/dev.env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
