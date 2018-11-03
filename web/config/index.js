@@ -11,7 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {// 配置跨域
       '/api': {
-        target: 'http://med.4843.fun:3000/api/',
+        target: 'http://localhost:3000/api/',
         ws: true,
         changOrigin: true,
         pathRewrite: {
@@ -19,7 +19,7 @@ module.exports = {
         }}},
 
     // Various Dev Server settings
-    host: 'med.4843.fun', // can be overwritten by process.env.HOST
+    host: 'localhost', // can be overwritten by process.env.HOST
     port: 9999, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,

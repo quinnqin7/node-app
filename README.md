@@ -1,3 +1,19 @@
+<center style='font-size:20px'>项目简介</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    (查看generate裏面註釋的使用方法)執行node generate.js 初始化數據庫
    现在 自动生成数据 出现问题,  病例生成少了 医生的 id
 
@@ -13,11 +29,6 @@ mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mong
 
 
 
-
-我靠我忘记刚刚要编辑那个文件了
-靠靠靠靠爱快 oak 爱快 oak 哦啊
-
-
 ********现存一个 bug ,可以接受 同一段时间 内两个不同企业 的预约
 
 
@@ -27,7 +38,7 @@ mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mong
 
 
 如需 要 暴露在公网
-请修改
+请修改  将已经在域名服务商解析好的域名 修改
 web/config/dev.env.js
 web/config/index.js
 server.js

@@ -6,7 +6,7 @@ function mail(to,token){
 		user:"noreply@guojiakun.cn",
 		pass:"FjEhJEaEMEBENA6M"
 	}
-	var htmlbody = "您有一个预约,请尽快查收http://120.110.93.189:9528/#/mailjump/"+token
+	var htmlbody = "您有一个预约,请尽快查收http://localhost:9999/#/mailjump/"+token
 	let transporter = nodemail.createTransport({
 		host: 'smtp.exmail.qq.com',
 		port: 465,
