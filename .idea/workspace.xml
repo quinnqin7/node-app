@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="edit document-&gt; README.md">
-      <change afterPath="$PROJECT_DIR$/docs/images/gitcheckout.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -112,7 +111,7 @@
           <entry key="LICENSE" value="1" />
           <entry key="css" value="1" />
           <entry key="gitignore" value="3" />
-          <entry key="html" value="3" />
+          <entry key="html" value="4" />
           <entry key="ico" value="2" />
           <entry key="jpeg" value="1" />
           <entry key="jpg" value="1" />
@@ -140,7 +139,7 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="Git file" value="3" />
-          <entry key="HTML" value="3" />
+          <entry key="HTML" value="4" />
           <entry key="Image" value="7" />
           <entry key="JSON" value="11" />
           <entry key="JavaScript" value="193" />
@@ -158,7 +157,7 @@
           <entry key="html" value="26" />
           <entry key="js" value="6151" />
           <entry key="json" value="10" />
-          <entry key="md" value="1503" />
+          <entry key="md" value="1943" />
           <entry key="txt" value="124" />
           <entry key="vue" value="5809" />
         </counts>
@@ -170,7 +169,7 @@
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="6151" />
           <entry key="Markdown" value="10" />
-          <entry key="PLAIN_TEXT" value="1617" />
+          <entry key="PLAIN_TEXT" value="2057" />
           <entry key="Vue.js" value="5809" />
         </counts>
       </usages-collector>
@@ -204,12 +203,21 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="332">
-                <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+              <first_editor relative-caret-position="280">
+                <caret line="39" column="2456" selection-start-line="39" selection-start-column="2456" selection-end-line="39" selection-end-column="2456" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
               </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/database.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -296,6 +304,7 @@
       <find>list</find>
       <find>jwt</find>
       <find>this.$route.par</find>
+      <find>localhost</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -409,13 +418,7 @@
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-app" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -494,7 +497,7 @@
       <workItem from="1541237828129" duration="1350000" />
       <workItem from="1541253943478" duration="895000" />
       <workItem from="1541257062386" duration="28000" />
-      <workItem from="1541257100987" duration="3217000" />
+      <workItem from="1541257100987" duration="5478000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1539741047852</created>
@@ -755,11 +758,25 @@
       <option name="project" value="LOCAL" />
       <updated>1541258725967</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="edit document-&gt; README.md">
+      <created>1541260325923</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1541260325923</updated>
+    </task>
+    <task id="LOCAL-00039" summary="edit document-&gt; README.md">
+      <created>1541263078594</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1541263078594</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211246000" />
+    <option name="totallyTimeSpent" value="213507000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -773,6 +790,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="981" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14536741" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -886,13 +904,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/views/mine/enterprise/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/store/getters.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1138,6 +1149,13 @@
     <entry file="file://$PROJECT_DIR$/docs/images/gitcheckout.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/database.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1146,8 +1164,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="332">
-            <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+          <first_editor relative-caret-position="280">
+            <caret line="39" column="2456" selection-start-line="39" selection-start-column="2456" selection-end-line="39" selection-end-column="2456" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
