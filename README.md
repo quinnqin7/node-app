@@ -29,7 +29,7 @@
 
 3. ```cd node-app ; npm install; cd ../web; npm install``` (加载依赖)
 4. 在 node-app项目根目录下 ```npm run dev``` (前端和后台一起启动)
-5. 默认是在 localhost ,如果要修改  请全局 搜索 localhost 关键字 进行修改, 域名访问请修改 直接 改成域名 不要 用 公网 ip (不然访问首页会爆 [Invalid Host Header](https://tonghuashuo.github.io/blog/webpack-dev-server-invalid-host-header.html) 错误)
+5. 默认是在 localhost:9898 , node 服务端口不变 ->3000, 如果要 修改前端 访问,请去 [projectname]/web/src/api/path.js 修改 host.ip , host.vueport, 域名访问请修改 直接 改成域名 不要 用 公网 ip (不然访问首页会爆 [Invalid Host Header](https://tonghuashuo.github.io/blog/webpack-dev-server-invalid-host-header.html) 错误)  非 root(管理员sudo组 用户无法使用1024以下端口,至少在 mac 上是这样的)
 6. 最好使用 [pm2](http://pm2.keymetrics.io) 启动项目,而且是 前后端 分开 启动 ,不然 不知道 什么 时候 ,你 的 相关node 进程 就会莫名其妙的消失😁 ,至少我是这样
 ***
 # 数据库模型
