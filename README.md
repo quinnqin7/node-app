@@ -84,27 +84,24 @@
 
 ***
 ### 其他问题
-如果后台 异常了,没反应了,启动不了了
-kill -15 `lsof -i tcp:3000 | grep node| awk '{print $2}'`
-
-秦楠启动数据库
-mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mongo.log --auth --fork
-
-
-
-********现存一个 bug ,可以接受 同一段时间 内两个不同企业 的预约
+    如果后台 异常了,没反应了,启动不了了
+    mac:
+    kill -15 `lsof -i tcp:3000 | grep node| awk '{print $2}'`
+    linux:
+    kill -15 `ps -ef | grep node| awk '{print $2}'`
 
 
-要做排班
-
-注意 ：dialogData:{},
-
-视频日志
-
-https://drive.google.com/drive/u/2/folders/1RMLnDFYNtceEsNZJoIPSxv5St6bhNf9-
+    秦楠启动数据库
+    mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mongo.log --auth --fork
 
 
+# 支持的浏览器
 
+Modern browsers and Internet Explorer 10+.
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
+| --------- | --------- | --------- | --------- |
+| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
 
 
 
