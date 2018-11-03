@@ -1,6 +1,25 @@
-<center style='font-size:20px'>项目简介</center>
+# 项目简介
+
+> 使用框架
+
+* 后台: [express4.16.4],
+* 前端: [vue2.5], [vue-admin-template], [element-ui]
+
+> 使用数据库
+
+* [mongodb V4.0.2]
 
 
+
+
+
+
+
+
+
+>
+>
+>
 
 
 
@@ -48,3 +67,14 @@ server.js
 视频日志
 
 https://drive.google.com/drive/u/2/folders/1RMLnDFYNtceEsNZJoIPSxv5St6bhNf9-
+
+
+
+
+
+
+[vue-admin-template]:https://github.com/PanJiaChen/vue-admin-template/tree/master/src
+[element-ui]:http://element-cn.eleme.io/#/zh-CN
+[vue2.5]:https://cn.vuejs.org/index.html
+[express4.16.4]:https://expressjs.com/zh-cn/
+[mongodb V4.0.2]:https://www.mongodb.com
