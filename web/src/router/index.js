@@ -96,7 +96,9 @@ export const asyncRouterMap = [
         path: '/appointment',
         component: Layout,
         meta: {
-            role:['2']
+            title: 'router.appointment',
+            role:['2'],
+            icon: 'appointment',
         },
         children: [
             {
@@ -104,7 +106,19 @@ export const asyncRouterMap = [
                 name: 'appointment',
                 component: () => import('@/views/appointment/enterprise/index'),
                 meta: {title: 'router.appointment', icon: 'appointment', role:['2']}
-            }
+            },
+            {
+                path: 'appointmentRefuse',
+                name: 'appointmentRefuse',
+                component: () => import('@/views/appointment/enterprise/refuse'),
+                meta: {title: 'router.appointmentRefuse', icon: 'appointment', role:['2']}
+            },
+            {
+                path: 'appointmentSign',
+                name: 'appointmentSign',
+                component: () => import('@/views/appointment/enterprise/sign'),
+                meta: {title: 'router.appointmentSign', icon: 'appointment', role:['2']}
+            },
         ]
     },
     {

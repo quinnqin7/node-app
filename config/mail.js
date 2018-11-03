@@ -1,12 +1,12 @@
 var nodemail = require('nodemailer')
-
+const path = require('../web/src/api/path')
 
 function mail(to,token){
 	let account = {
 		user:"noreply@guojiakun.cn",
 		pass:"FjEhJEaEMEBENA6M"
 	}
-	var htmlbody = "您有一个预约,请尽快查收http://localhost:9999/#/mailjump/"+token
+	var htmlbody = "您有一个预约,请尽快查收http://"+path.host.ip+":"+path.host.vueport+"/#/mailjump/"+token
 	let transporter = nodemail.createTransport({
 		host: 'smtp.exmail.qq.com',
 		port: 465,

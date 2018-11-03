@@ -33,8 +33,9 @@ const cn = {
 		'appointment': '预约',
 		'mine': '我的',
 		'home': '首页',
-		'enterpriseShowPatient': '企业患者'
-
+		'enterpriseShowPatient': '企业患者',
+        'appointmentRefuse':'拒绝预约',
+        'appointmentSign':'预约签到'
 	},
 	table: {
 		'id': '排序',
@@ -74,7 +75,11 @@ const cn = {
         'time':'时间',
         'startTime':'开始时间',
         'endTime':'结束时间',
-        'isAppointmant':'是否有预约'
+        'isAppointmant':'是否有预约',
+        'sign':'签到',
+        'delay':'迟到',
+        'status':'状态',
+        'absent':'缺席'
 	}
 }
 

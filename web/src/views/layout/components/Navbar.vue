@@ -105,8 +105,10 @@
                 })
             },
             realTime(){
+                //FIXME 这边 要进行 角色判断,不然会一直请求啊请求啊请求啊啊啊啊啊
+                //if (jwt.decode(getToken()).roles )
                 this.fetchAppointmentData()
-                setTimeout(this.realTime,3000)
+                setTimeout(this.realTime,10000)
             },
 
         },

@@ -251,14 +251,52 @@ router.post("/sendMessageToDoctor", passport.authenticate('jwt', {session: false
 });
 
 
+//getRefuseData
+router.post("/getRefuseData", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorMessage.find({refuse:'1',enterpriseId:req.body.enterpriseId}).then(docs=>{
+		var data=docs
+		//console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
+
+//getSignData
+router.post("/getSignData", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorServiceTime.find({enterpriseId:req.body.enterpriseId}).then(docs=>{
+		var data=docs
+		console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
 
 
+//sign
+router.post("/sign", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorServiceTime.findOneAndUpdate(
+		{_id: req.body.doctorServiceTimeId},
+		{$set: {sign:req.body.sign}},
+		{new: true}
+	).then(()=>{
+		res.json({
+			code:20000,
+		})
+	}).catch((err)=>{console.log(err)})
 
-
-
-
-
-
+	// doctorServiceTime.findAndUpdate({enterpriseId:req.body.enterpriseId}).then(docs=>{
+	// 	var data=docs
+	// 	console.log(data)
+	// 	res.json({
+	// 		code:20000,
+	// 		data
+	// 	})
+	// })
+});
 
 
 

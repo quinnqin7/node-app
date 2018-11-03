@@ -20,7 +20,7 @@ router.post("/getEnterprises", passport.authenticate('jwt', {session: false}), (
 	var doctorId = jwt.decode(req.body.token).id
 	doctorServiceTime.find({doctorId: doctorId}).then(docs => {
 		var enterpriseIdArray = docs.map(doc=>{
-			if (doc.enterpriseId !== "")
+			if (doc.enterpriseId !== "" && doc.sign !=='0')
 			return mongoose.Types.ObjectId(doc.enterpriseId)
 		})
 		 enterprise.find({_id:{$in:enterpriseIdArray}}).then(data=>{
@@ -163,13 +163,6 @@ router.post("/setRefuse", passport.authenticate('jwt', {session: false}), (req, 
 	}).catch(err=>{
 		res.status(404).json('error')
 	})
-
-	// doctorMessage.find({doctorId:req.body.doctorId,handle:'0'}).then(data=>{
-	// 	res.json({
-	// 		code:20000,
-	// 		data
-	// 	})
-	// })
 });
 
 
@@ -207,7 +200,8 @@ router.post("/CreateSchedule", passport.authenticate('jwt', {session: false}), (
 		startTime:req.body.startTime,
 		endTime:req.body.endTime,
 		doctorId:req.body.doctorId,
-		enterpriseId:''
+		enterpriseId:'',
+		sign:'0'
 	})
 	doctorServiceTimes.save().then(doc=>{
 		//console.log(doc)
