@@ -221,7 +221,7 @@ const Journal = require('../../modules/journal')
 //submitJournal 提交公告
 router.post("/submitJournal", passport.authenticate('jwt', {session: false}), (req, res) => {
 	//console.log(req.body)
-if(jwt.decode(req.body.token).role === '1'){
+if(jwt.decode(req.body.token).role === '4'){
 	var Journalontent = new Journal({
 		date:new Date(),
 		content:req.body.content,
@@ -240,8 +240,6 @@ if(jwt.decode(req.body.token).role === '1'){
 }else{
 	res.status(404).json(err)
 }
-
-
 });
 
 

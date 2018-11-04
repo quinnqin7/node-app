@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="">
+    <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="FIX A holy Bug in ==&gt; arrange/doctor/index.vue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/views/Statistic/totalpatients.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/Statistic/totalpatients.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -203,12 +205,8 @@
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="318" column="19" lean-forward="true" selection-start-line="318" selection-start-column="19" selection-end-line="318" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-input#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="148">
+              <caret line="268" column="23" lean-forward="true" selection-start-line="268" selection-start-column="23" selection-end-line="268" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -216,7 +214,7 @@
       <file leaf-file-name="doctor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/doctor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
+            <state relative-caret-position="545">
               <caret line="57" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
@@ -316,6 +314,8 @@
         <option value="$PROJECT_DIR$/web/src/views/mine/doctor/index.vue" />
         <option value="$PROJECT_DIR$/web/src/views/mine/enterprise/index.vue" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/web/src/router/index.js" />
+        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/src/i18n/langs/cn.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/modules/journal.js" />
@@ -325,8 +325,6 @@
         <option value="$PROJECT_DIR$/web/src/api/doctor.js" />
         <option value="$PROJECT_DIR$/routes/api/doctor.js" />
         <option value="$PROJECT_DIR$/web/src/views/journal/index.vue" />
-        <option value="$PROJECT_DIR$/web/src/router/index.js" />
-        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue" />
       </list>
     </option>
@@ -350,8 +348,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="39" />
-    <option name="y" value="45" />
+    <option name="x" value="-16" />
+    <option name="y" value="26" />
     <option name="width" value="1440" />
     <option name="height" value="817" />
   </component>
@@ -379,6 +377,12 @@
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -392,14 +396,24 @@
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="appointment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node-app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="appointment" type="462c0819:PsiDirectoryNode" />
+              <item name="enterprise" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -479,6 +493,13 @@
       <workItem from="1541253943478" duration="895000" />
       <workItem from="1541257062386" duration="28000" />
       <workItem from="1541257100987" duration="35181000" />
+    </task>
+    <task id="LOCAL-00001" summary="all">
+      <created>1539741047852</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539741047852</updated>
     </task>
     <task id="LOCAL-00002" summary="all">
       <created>1539741078258</created>
@@ -802,32 +823,11 @@
       <option name="project" value="LOCAL" />
       <updated>1541288059123</updated>
     </task>
-    <task id="LOCAL-00048" summary="FIX A holy Bug in ==&gt; arrange/doctor/index.vue">
-      <created>1541330323597</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1541330323598</updated>
-    </task>
-    <task id="LOCAL-00049" summary="FIX A holy Bug in ==&gt; arrange/doctor/index.vue">
-      <created>1541330642079</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1541330642079</updated>
-    </task>
-    <task id="LOCAL-00050" summary="企业端预约医师列表翻页功能">
-      <created>1541334414788</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1541334414822</updated>
-    </task>
-    <option name="localTasksCounter" value="51" />
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263236000" />
+    <option name="totallyTimeSpent" value="251970000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -840,16 +840,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="490" y="47" width="1440" height="817" extended-state="0" />
+    <frame x="-16" y="26" width="1440" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996865" weight="0.26285714" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23462088" side_tool="true" visible="true" weight="0.2840746" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.8268956" weight="0.19942611" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23390558" side_tool="true" visible="true" weight="0.2840746" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.82761085" weight="0.19942611" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="right" id="Mongo Explorer" order="4" visible="true" weight="0.14949928" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.76537913" visible="true" weight="0.2840746" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.76609445" visible="true" weight="0.2840746" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22603719" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -950,6 +950,7 @@
     <MESSAGE value="fix a holy bug" />
     <MESSAGE value="增添 mdules 修改样式" />
     <MESSAGE value="other" />
+    <MESSAGE value="FIX A holy Bug in ==&gt; arrange/doctor/index.vue" />
     <MESSAGE value="more" />
     <MESSAGE value="Sendmail" />
     <MESSAGE value="edit document-&gt; README.md" />
@@ -957,9 +958,7 @@
     <MESSAGE value="域名 ip 集中设置" />
     <MESSAGE value="添加 医师 去 企业 签到 功能" />
     <MESSAGE value="添加问题" />
-    <MESSAGE value="FIX A holy Bug in ==&gt; arrange/doctor/index.vue" />
-    <MESSAGE value="企业端预约医师列表翻页功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="企业端预约医师列表翻页功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -973,6 +972,12 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/db.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -1132,7 +1137,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="231" column="8" lean-forward="true" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/views/journal/plugins.js" />
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="69" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="8" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/static/tinymce4.7.5/tinymce.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1294,46 +1316,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="68" column="22" lean-forward="true" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/utils/request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-676" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/utils/validate.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/doctor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
+        <state relative-caret-position="545">
           <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="318" column="19" lean-forward="true" selection-start-line="318" selection-start-column="19" selection-end-line="318" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-input#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="148">
+          <caret line="268" column="23" lean-forward="true" selection-start-line="268" selection-start-column="23" selection-end-line="268" selection-end-column="23" />
         </state>
       </provider>
     </entry>
