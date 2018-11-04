@@ -283,8 +283,8 @@
                 });
             },
             setPaginations() {
-                // 总页数
-                this.paginations.total = this.list.length;
+
+                this.paginations.total = this.list.length; // 总页数
                 this.paginations.page_index = 1;
                 this.paginations.page_size = 5;
                 // 设置默认分页数据
