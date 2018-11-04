@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="chart-container">
         <ve-histogram :data="chartData" :settings="chartSettings"></ve-histogram>
     </div>
 </template>
@@ -31,3 +31,11 @@
         components: { VeHistogram }
     }
 </script>
+
+<style>
+    .chart-container{
+        position: relative;
+        width: 60%;
+        height: calc(100vh - 84px);
+    }
+</style>

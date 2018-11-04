@@ -52,6 +52,19 @@
             </el-table-column>
         </el-table>
 
+        <!--分頁-->
+        <div class="paginations">
+            <el-pagination
+                v-if='paginations.total > 0'
+                :page-sizes="paginations.page_sizes"
+                :page-size="paginations.page_size"
+                :layout="paginations.layout"
+                :total="paginations.total"
+                :current-page.sync='paginations.page_index'
+                @current-change='handleCurrentChange'
+                @size-change='handleSizeChange'>
+            </el-pagination>
+        </div>
 
         <el-dialog class="dialog" :title="$t(textMap[dialogStatus])" :visible.sync="dialogFormVisible">
             <el-form ref="dataForm" :model="dialogData" label-position="left" label-width="70px" style="width: 100%;">
@@ -136,6 +149,18 @@
                 },
                 list: null, // all data
                 listLoading: true,
+
+                tableData: [],
+                filterTableData:[],
+
+                //需要给分页组件传的信息
+                paginations: {
+                    page_index: 1, // 当前位于哪页
+                    total: 0, // 总数
+                    page_size: 5, // 1页显示多少条
+                    page_sizes: [5, 10, 15, 20], //每页显示多少条
+                    layout: "total, sizes, prev, pager, next, jumper" // 翻页属性
+                },
             }
         },
         filters: {
@@ -170,6 +195,10 @@
                 getDoctors(id).then(response => {
                     this.list = response.data
                     this.listLoading = false
+
+                    this.filterTableData = response.data;
+                    //设置分页数据
+                    this.setPaginations();
                 })
             },
             handlelook(row) {
@@ -232,7 +261,38 @@
                         this.refuseData = response.data
                     }
                 )
-            }
+            },
+
+            handleCurrentChange(page) {
+                // 当前页
+                let sortnum = this.paginations.page_size * (page - 1);
+                let table = this.list.filter((item, index) => {
+                    return index >= sortnum;
+                });
+                // 设置默认分页数据
+                this.tableData = table.filter((item, index) => {
+                    return index < this.paginations.page_size;
+                });
+            },
+            handleSizeChange(page_size) {
+                // 切换size
+                this.paginations.page_index = 1;
+                this.paginations.page_size = page_size;
+                this.tableData = this.list.filter((item, index) => {
+                    return index < page_size;
+                });
+            },
+            setPaginations() {
+                // 总页数
+                this.paginations.total = this.list.length;
+                this.paginations.page_index = 1;
+                this.paginations.page_size = 5;
+                // 设置默认分页数据
+                this.tableData = this.list.filter((item, index) => {
+                    return index < this.paginations.page_size;
+                });
+            },
+
 
         }
     }
@@ -249,5 +309,10 @@
 
     .dialog {
         wdith: 1000px;
+    }
+
+    .paginations {
+        text-align: right;
+        margin-top: 10px;
     }
 </style>
