@@ -20,7 +20,7 @@
         <el-table
             style="width:100%"
             v-loading="listLoading"
-            :data="list"
+            :data="tableData"
             element-loading-text="Loading"
             border
             fit
@@ -147,10 +147,10 @@
                     detail: 'table.detail',
                     create: 'table.add'
                 },
-                list: null, // all data
-                listLoading: true,
 
                 tableData: [],
+                list: [], //all data
+                listLoading: true,
                 filterTableData:[],
 
                 //需要给分页组件传的信息
@@ -283,8 +283,8 @@
                 });
             },
             setPaginations() {
-
-                this.paginations.total = this.list.length; // 总页数
+                // 总页数
+                this.paginations.total = this.list.length;
                 this.paginations.page_index = 1;
                 this.paginations.page_size = 5;
                 // 设置默认分页数据
@@ -292,7 +292,6 @@
                     return index < this.paginations.page_size;
                 });
             },
-
 
         }
     }
