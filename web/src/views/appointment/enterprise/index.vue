@@ -16,6 +16,13 @@
             <!--<el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">{{ $t('table.export') }}</el-button>-->
             <!--<el-checkbox v-model="showReviewer" class="filter-item" style="margin-left:15px;" @change="tableKey=tableKey+1">{{ $t('table.reviewer') }}</el-checkbox>-->
         </div>
+        <!-- 筛选 -->
+         <div>
+            <div style="width:30%">筛选：</div>
+                <el-input type="search" v-model="search" style="width:70%" placeholder="请输入关键字"></el-input>
+         </div>
+
+
 
         <el-table
             style="width:100%"
@@ -27,22 +34,22 @@
             highlight-current-row>
             <el-table-column align="center" :label="$t('table.id')">
                 <template slot-scope="scope">
-                    {{ scope.$index }}
+                    {{ scope.$index+1 }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.name')" align="center">
                 <template slot-scope="scope">
-                    {{ scope.row.name }}
+                    <span>{{ showDate(scope.row.name) }} </span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.tel')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.tel }}</span>
+                    <span>{{ showDate(scope.row.tel) }}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.perfession')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.perfession }}</span>
+                    <span>{{ showDate(scope.row.perfession )}}</span>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
@@ -153,6 +160,8 @@
                 listLoading: true,
                 filterTableData:[],
 
+                search: '',
+
                 //需要给分页组件传的信息
                 paginations: {
                     page_index: 1, // 当前位于哪页
@@ -179,6 +188,21 @@
         created() {
             this.fetchDoctorsData()
 
+        },
+        computed:{
+            //实时监听表格
+            tableData:function () {
+                const search = this.search
+                if (search) {
+                    return this.list.filter(dataNews => {
+                        return Object.keys(dataNews).some(key => {
+                            return String(dataNews[key]).toLowerCase().indexOf(search) > -1
+                        })
+                    })
+                }
+                return this.list
+                this.setPaginations();
+            }
         },
         methods: {
             fetchDoctorAndServiceTimeData(doctorId, row) {
@@ -292,6 +316,16 @@
                     return index < this.paginations.page_size;
                 });
             },
+            // 筛选高亮
+            showDate(val) {
+                val = val + '';
+                if (val.indexOf(this.search) !== -1 && this.search !== '') {
+                    return val.replace(this.search,'<span color="#409EFF">' + this.search + '</span>>' )
+                } else {
+                    return val
+                }
+            }
+
 
         }
     }
