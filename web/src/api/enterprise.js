@@ -155,3 +155,27 @@ export function Sign(sign,doctorServiceTimeId){
         }
     })
 }
+
+//enterprisesToGetDoctor
+export function enterprisesToGetDoctor(enterpriseId){
+    return request({
+        url: '/api/enterprise/enterprisesToGetDoctor',
+        method: 'post',
+        data:{
+            enterpriseId:enterpriseId,
+        }
+    })
+}
+
+
+//fetchNoHandleAppointmentData
+
+export function fetchNoHandleAppointmentData(enterpriseId){
+    return request({
+        url: '/api/enterprise/fetchNoHandleAppointmentData',
+        method: 'post',
+        data:{
+            enterpriseId:enterpriseId,
+        }
+    })
+}

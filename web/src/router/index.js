@@ -62,6 +62,24 @@ export const asyncRouterMap = [
             },
         }]
     },
+    //首頁
+    {
+        path: '/Home',
+        component: Layout,
+        meta: {
+            role:['2']
+        },
+        children: [
+            {
+                path: 'Home',
+                name: 'Home',
+                component: () => import('@/views/dashboard/enterprise'),
+                meta: {title: 'router.home', icon: 'home', role:['2']}
+            }
+        ]
+    },
+
+
     {
         path: '/Patients',
         component: Layout,

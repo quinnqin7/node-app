@@ -301,12 +301,31 @@ router.post("/sign", passport.authenticate('jwt', {session: false}), (req, res) 
 
 
 
+//enterprisesToGetDoctor
+router.post("/enterprisesToGetDoctor", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorServiceTime.find({enterpriseId:req.body.enterpriseId,sign:'1'}).then(docs=>{
+		var data=docs
+		console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
 
 
 
-
-
-
+//fetchNoHandleAppointmentData
+router.post("/fetchNoHandleAppointmentData", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorMessage.find({enterpriseId:req.body.enterpriseId,handle:'0'}).then(docs=>{
+		var data=docs
+		console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
 
 
 
