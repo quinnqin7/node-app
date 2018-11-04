@@ -33,8 +33,10 @@ const cn = {
 		'appointment': '预约',
 		'mine': '我的',
 		'home': '首页',
-		'enterpriseShowPatient': '企业患者'
-
+		'enterpriseShowPatient': '企业患者',
+        'appointmentRefuse':'拒绝预约',
+        'appointmentSign':'预约签到',
+        'journal':'公告',
 	},
 	table: {
 		'id': '排序',
@@ -44,6 +46,7 @@ const cn = {
 		'gender-ms': '女',
 		'gender-mr': '男',
 		'confirm': '完成',
+        'clean':'清空',
 		'setup': '操作',
 		'detail': '详情',
 		'add': '创建',
@@ -74,8 +77,19 @@ const cn = {
         'time':'时间',
         'startTime':'开始时间',
         'endTime':'结束时间',
-        'isAppointmant':'是否有预约'
-	}
+        'isAppointmant':'是否有预约',
+        'sign':'签到',
+        'delay':'迟到',
+        'status':'状态',
+        'absent':'缺席',
+
+	},
+    nav:{
+	    'hello':'您好',
+        'doctor':'医师',
+        'enterprise':'企业为:',
+        'enterpriseRunner':'的用户您好'
+    }
 }
 
 export default cn;

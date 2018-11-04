@@ -3,7 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+const paths = require('../src/api/path')
 module.exports = {
   dev: {
     // Paths
@@ -11,7 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {// 配置跨域
       '/api': {
-        target: 'http://localhost:3000/api/',
+        target: 'http://'+paths.host.ip+':3000/api/',
         ws: true,
         changOrigin: true,
         pathRewrite: {
@@ -19,8 +19,8 @@ module.exports = {
         }}},
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 9528, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: paths.host.ip, // can be overwritten by process.env.HOST
+    port: paths.host.vueport, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: false,

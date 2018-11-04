@@ -79,7 +79,18 @@ const user = {
         })
       })
     },
-
+      //邮箱登录 跳转
+      MailJump({ commit }, token) {
+          //const username = userInfo.username.trim()
+          return new Promise((resolve, reject) => {
+                  // setup local Cookies
+                  setToken(token)
+                  commit('SET_TOKEN',token)
+                  // FIXME my gravatar
+                  commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
+                  resolve()
+          })
+      },
     // 登出
     LogOut({ commit, state }) {
       return new Promise((resolve, reject) => {

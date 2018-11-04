@@ -102,8 +102,6 @@
                     })
                 })
             },
-
-
             handleRefuse(messageId){
                 setRefuse(messageId).then(()=>{
                     this.$notify({

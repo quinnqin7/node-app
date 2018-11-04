@@ -117,3 +117,41 @@ export function sendMessageToDoctor(doctorId,doctorServiceTimeIdArray,enterprise
         }
     })
 }
+
+//getRefuseData
+
+export function getRefuseData(enterpriseId){
+    return request({
+        url: '/api/enterprise/getRefuseData',
+        method: 'post',
+        data:{
+            enterpriseId:enterpriseId,
+        }
+    })
+}
+
+
+//getSignData
+
+export function getSignData(enterpriseId){
+    return request({
+        url: '/api/enterprise/getSignData',
+        method: 'post',
+        data:{
+            enterpriseId:enterpriseId,
+        }
+    })
+}
+
+//sign
+
+export function Sign(sign,doctorServiceTimeId){
+    return request({
+        url: '/api/enterprise/sign',
+        method: 'post',
+        data:{
+            doctorServiceTimeId:doctorServiceTimeId,
+            sign:sign
+        }
+    })
+}

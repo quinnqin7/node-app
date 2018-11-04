@@ -2,8 +2,21 @@
     <el-menu class="navbar" mode="horizontal">
         <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
         <breadcrumb/>
+
+        <el-popover v-if="getRole() ==='1' " placement="top-start" title="个人信息" width="200" trigger="hover" content="这边要可以显示 个人的相关信息" style="float:right;margin-right: 100px">
+            <el-button  style="border: #f9f3ff" slot="reference">{{$t('nav.hello')}}<span style="color:#61a2ff">{{name}}</span>{{$t('nav.doctor')}}</el-button>
+        </el-popover>
+
+        <el-popover v-if="getRole() ==='2' " placement="top-start" title="个人信息" width="200" trigger="hover" content="这边要可以显示 个人的相关信息" style="float:right;margin-right: 100px">
+            <el-button  style="border: #f9f3ff" slot="reference">{{$t('nav. enterprise')}}<span style="color:#61a2ff">{{name}}</span>{{$t('nav.enterpriseRunner')}}</el-button>
+        </el-popover>
+
+
+
+
+
         <!--done i18n change-->
-        <el-dropdown :hide-on-click="true" style="float:right;margin-right: 100px" @command="changeLangEvent">
+        <el-dropdown :hide-on-click="true" style="float:right;margin-right: 10px" @command="changeLangEvent">
               <span class="el-dropdown-link">
                 {{$t('comm.lang')}}<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
@@ -13,6 +26,7 @@
                 <el-dropdown-item command="en">{{$t('comm.en')}}</el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
+
 
 
         <!--//info-->
@@ -45,6 +59,7 @@
     export default {
         data() {
             return {
+                getrole:"false",
                 list:'',
                 zh_cn: null
             }
@@ -55,12 +70,16 @@
         },
         created() {
             this.realTime()
+            //this.getRole()
         },
         computed: {
             ...mapGetters([
                 'sidebar',
-                'avatar'
+                'avatar',
+                'name',
+                'roles'
             ]),
+
         },
         methods: {
             toggleSideBar() {
@@ -105,9 +124,18 @@
                 })
             },
             realTime(){
+                //FIXME 这边 要进行 角色判断,不然会一直请求啊请求啊请求啊啊啊啊啊
+                //if (jwt.decode(getToken()).roles )
                 this.fetchAppointmentData()
-                setTimeout(this.realTime,3000)
+                setTimeout(this.realTime,10000)
             },
+            //判断显示 名字的格式
+            getRole(){
+                if (this.roles[0] === '1')
+                return '1'
+                if (this.roles[0] === '2')
+                    return '2'
+            }
 
         },
 

@@ -26,6 +26,7 @@ import Layout from '../views/layout/Layout'
 export const constantRouterMap = [
     {path: '/login', component: () => import('@/views/login/index'), hidden: true},
     {path: '/register', component: () => import('@/views/register/index'), hidden: true},
+    {path: '/mailjump/:token', component: () => import('@/views/mail/jump/index'), hidden: false},
     {path: '/404', component: () => import('@/views/404'), hidden: true},
 
 
@@ -95,7 +96,9 @@ export const asyncRouterMap = [
         path: '/appointment',
         component: Layout,
         meta: {
-            role:['2']
+            title: 'router.appointment',
+            role:['2'],
+            icon: 'appointment',
         },
         children: [
             {
@@ -103,7 +106,19 @@ export const asyncRouterMap = [
                 name: 'appointment',
                 component: () => import('@/views/appointment/enterprise/index'),
                 meta: {title: 'router.appointment', icon: 'appointment', role:['2']}
-            }
+            },
+            {
+                path: 'appointmentRefuse',
+                name: 'appointmentRefuse',
+                component: () => import('@/views/appointment/enterprise/refuse'),
+                meta: {title: 'router.appointmentRefuse', icon: 'appointment', role:['2']}
+            },
+            {
+                path: 'appointmentSign',
+                name: 'appointmentSign',
+                component: () => import('@/views/appointment/enterprise/sign'),
+                meta: {title: 'router.appointmentSign', icon: 'appointment', role:['2']}
+            },
         ]
     },
     {
@@ -284,6 +299,23 @@ export const asyncRouterMap = [
                 name: 'mine',
                 component: () => import('@/views/mine/doctor/index'),
                 meta: {title: 'router.mine', icon: 'peoples', role:['1']}
+            }
+        ]
+    },
+
+
+    {
+        path: '/journal',
+        component: Layout,
+        meta: {
+            role:['1']
+        },
+        children: [
+            {
+                path: 'journal',
+                name: 'journal',
+                component: () => import('@/views/journal/index'),
+                meta: {title: 'router.journal', icon: 'chart', role:['1']}
             }
         ]
     },

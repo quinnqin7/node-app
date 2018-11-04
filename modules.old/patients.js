@@ -1,1 +1,0 @@
-var mongoose = require('mongoose')var patientSchema = mongoose.Schema({    name:'string',    tel:'string',    brith:'string',    gender:'string',    historyCase:Object,    pwd:'string',    enterpriseId:mongoose.Schema.Types.ObjectId})module.exports = mongoose.model('Patient',patientSchema,'patients')

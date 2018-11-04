@@ -128,3 +128,14 @@ export function CreateSchedule(startTime,endTime,doctorId){
         }
     })
 }
+
+//fetchContentData
+export function fetchContentData(token){
+    return request({
+        url: '/api/doctor/fetchContentData',
+        method: 'post',
+        data:{
+            token:token,
+        }
+    })
+}

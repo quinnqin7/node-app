@@ -18,6 +18,7 @@
         </div>
 
         <el-table
+            style="width:100%"
             v-loading="listLoading"
             :data="list"
             element-loading-text="Loading"
@@ -44,11 +45,6 @@
                     <span>{{ scope.row.perfession }}</span>
                 </template>
             </el-table-column>
-            <!--<el-table-column :label="$t('table.serviceTime')" align="center">-->
-            <!--<template slot-scope="scope">-->
-            <!--<span>{{ scope.row.serviceTime }}</span>-->
-            <!--</template>-->
-            <!--</el-table-column>-->
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
                     <el-button @click="handlelook(scope.row)">{{$t('table.look')}}</el-button>
@@ -119,7 +115,7 @@
     import {
         enterpriseAppointmentDoctor,
         getDoctorAndServiceTime,
-        getDoctors,
+        getDoctors, getRefuseData,
         sendMessageToDoctor
     } from "../../../api/enterprise";
     import {getToken} from "../../../utils/auth";
@@ -128,6 +124,7 @@
     export default {
         data() {
             return {
+                refuseData:null,
                 multipleSelection: '',
                 dialogData: {},
                 serviceTimeData: [],
@@ -156,6 +153,7 @@
         },
         created() {
             this.fetchDoctorsData()
+
         },
         methods: {
             fetchDoctorAndServiceTimeData(doctorId, row) {
@@ -227,6 +225,13 @@
                         duration: 2000
                     })
                 }
+            },
+            fetchRefuseData(){
+                getRefuseData(jwt.decode(getToken()).id).then(
+                    response=>{
+                        this.refuseData = response.data
+                    }
+                )
             }
 
         }
