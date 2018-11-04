@@ -221,7 +221,7 @@ router.post("/CreateSchedule", passport.authenticate('jwt', {session: false}), (
 
 router.post("/fetchContentData", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var role = jwt.decode(req.body.token).role
-	Journal.find({recipient:role}).then(data=>{
+	Journal.find({recipient:[role,'4']}).then(data=>{
 		//console.log(doc)
 		res.json({
 			code:20000,

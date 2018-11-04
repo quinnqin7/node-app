@@ -82,7 +82,6 @@ const cn = {
         'delay':'迟到',
         'status':'状态',
         'absent':'缺席',
-
 	},
     nav:{
 	    'hello':'您好',

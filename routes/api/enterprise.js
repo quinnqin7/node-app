@@ -48,7 +48,8 @@ router.post("/createPatient", passport.authenticate('jwt', {session: false}), (r
 		name: req.body.patientData.name,
 		tel: req.body.patientData.tel,
 		gender: req.body.patientData.gender,
-		enterpriseId: mongoose.Types.ObjectId(req.body.enterpriseId)
+		enterpriseId: mongoose.Types.ObjectId(req.body.enterpriseId),
+		role:'3'
 	})
 	patient.save().then(docs => {
 		res.json({

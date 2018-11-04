@@ -303,7 +303,7 @@ export const asyncRouterMap = [
         ]
     },
 
-
+//journal 公告
     {
         path: '/journal',
         component: Layout,
@@ -315,10 +315,11 @@ export const asyncRouterMap = [
                 path: 'journal',
                 name: 'journal',
                 component: () => import('@/views/journal/index'),
-                meta: {title: 'router.journal', icon: 'chart', role:['1']}
+                meta: {title: 'router.journal', icon: 'chart', role:['4']}
             }
         ]
     },
+
     {path: '*', redirect: '/404', hidden: true}
 ];
 
