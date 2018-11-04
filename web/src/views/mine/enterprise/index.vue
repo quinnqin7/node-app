@@ -80,6 +80,7 @@
                         type: 'success',
                         duration: 2000
                     })
+                    window.location.reload()
                 }).catch(()=>{
                     this.$notify({
                         title: "失败",

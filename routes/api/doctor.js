@@ -13,7 +13,7 @@ const Doctor = require('../../modules/doctor')
 const user = require('../../modules/user')
 const doctorMessage = require('../../modules/doctorMessage')
 
-
+const Journal = require('../../modules/journal')
 
 
 router.post("/getEnterprises", passport.authenticate('jwt', {session: false}), (req, res) => {
@@ -215,6 +215,24 @@ router.post("/CreateSchedule", passport.authenticate('jwt', {session: false}), (
 
 });
 
+
+
+//fetchContentData
+
+router.post("/fetchContentData", passport.authenticate('jwt', {session: false}), (req, res) => {
+	var role = jwt.decode(req.body.token).role
+	Journal.find({recipient:role}).then(data=>{
+		//console.log(doc)
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		//consoel.log(err)
+		res.status(404).json(err)
+	})
+
+});
 
 module.exports = router;
 

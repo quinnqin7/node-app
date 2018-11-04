@@ -5,6 +5,7 @@ const passport = require("passport")
 const app = express()
 const api = require("./web/src/api/path")
 const doctor = require("./routes/api/doctor")
+const admin = require("./routes/api/admin")
 // 引入users.js
 const users = require("./routes/api/users")
 const enterprise = require("./routes/api/enterprise")
@@ -30,7 +31,7 @@ require("./config/passport")(passport)
 app.use(api.pathFilter(api.path.user.login,1), users)
 app.use("/api/enterprise", enterprise)
 app.use("/api/doctor", doctor)
-
+app.use("/api/admin", admin)
 
 
 

@@ -302,6 +302,23 @@ export const asyncRouterMap = [
             }
         ]
     },
+
+
+    {
+        path: '/journal',
+        component: Layout,
+        meta: {
+            role:['1']
+        },
+        children: [
+            {
+                path: 'journal',
+                name: 'journal',
+                component: () => import('@/views/journal/index'),
+                meta: {title: 'router.journal', icon: 'chart', role:['1']}
+            }
+        ]
+    },
     {path: '*', redirect: '/404', hidden: true}
 ];
 
