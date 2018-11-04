@@ -11,7 +11,12 @@
             <el-button  style="border: #f9f3ff" slot="reference">{{$t('nav. enterprise')}}<span style="color:#61a2ff">{{name}}</span>{{$t('nav.enterpriseRunner')}}</el-button>
         </el-popover>
 
-
+        <el-popover v-if="getRole() ==='4' " placement="top-start" title="个人信息" width="200" trigger="hover" content="这边要可以显示 个人的相关信息" style="float:right;margin-right: 100px">
+            <el-button  style="border: #f9f3ff" slot="reference">{{$t('nav. hello')}}<span style="color:#61a2ff">{{name}}</span>{{$t('nav.admin')}}</el-button>
+        </el-popover>
+        <el-popover v-if="getRole() ==='3' " placement="top-start" title="个人信息" width="200" trigger="hover" content="这边要可以显示 个人的相关信息" style="float:right;margin-right: 100px">
+            <el-button  style="border: #f9f3ff" slot="reference">{{$t('nav. hello')}}<span style="color:#61a2ff">{{name}}</span>{{$t('nav.patient')}}</el-button>
+        </el-popover>
 
 
 
@@ -135,6 +140,10 @@
                 return '1'
                 if (this.roles[0] === '2')
                     return '2'
+                if (this.roles[0] === '3')
+                    return '3'
+                if (this.roles[0] === '4')
+                    return '4'
             }
 
         },

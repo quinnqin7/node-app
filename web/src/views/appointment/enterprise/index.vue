@@ -125,6 +125,7 @@
     import {getPatients, getPatient} from '@/api/enterprise'
     import moment from 'moment'
     //  import {getEnterprise, getEnterprises} from "../../api/doctor";
+    import {dateFormat} from '../../../utils/dateFormat/index'
     import {
         enterpriseAppointmentDoctor,
         getDoctorAndServiceTime,
@@ -137,6 +138,7 @@
     export default {
         data() {
             return {
+                dateFormat:dateFormat,
                 refuseData:null,
                 multipleSelection: '',
                 dialogData: {},
@@ -206,14 +208,14 @@
                 this.dialogStatus = 'detail'
                 this.fetchDoctorAndServiceTimeData(row._id, row)
             },
-            //格式化时间的方法
-            dateFormat: function (row, column) {
-                var date = row[column.property];
-                if (date == undefined) {
-                    return "";
-                }
-                return moment(date).format("YYYY-MM-DD HH");
-            },
+            //格式化时间的方法 //已经写在 untils 下面了
+            // dateFormat: function (row, column) {
+            //     var date = row[column.property];
+            //     if (date == undefined) {
+            //         return "";
+            //     }
+            //     return moment(date).format("YYYY-MM-DD HH");
+            // },
             handleSelectionChange(val) { //这边获取 选择的预约时间
                 this.multipleSelection = val;
                 //console.log(this.multipleSelection)

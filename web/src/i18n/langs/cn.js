@@ -37,6 +37,11 @@ const cn = {
         'appointmentRefuse':'拒绝预约',
         'appointmentSign':'预约签到',
         'journal':'公告',
+        'journaledit':'公告编辑',
+        'journalList':'公告列表',
+        'doctormanager':'医师管理',
+        'enterprisemanager':'企业管理',
+        'feedback':'反馈'
 	},
 	table: {
 		'id': '排序',
@@ -87,7 +92,9 @@ const cn = {
 	    'hello':'您好',
         'doctor':'医师',
         'enterprise':'企业为:',
-        'enterpriseRunner':'的用户您好'
+        'enterpriseRunner':'的用户您好',
+        'admin':'管理员',
+        'patient':'朋友'
     }
 }
 

@@ -137,8 +137,34 @@ router.post(
 				}
 			)
 		}
-
-
+		if(role === "4")
+		{
+			Doctor.findOne({_id:id}).then(user =>{
+					var data = user.toObject()
+					var c = []
+					c.push(role)
+					Object.assign(data,{roles:c})
+					res.json({
+						code:20000,
+						data
+					})
+				}
+			)
+		}
+		if(role === "3")
+		{
+			enterprise.findOne({_id:id}).then(user =>{
+					var data = user.toObject()
+					var c = []
+					c.push(role)
+					Object.assign(data,{roles:c})
+					res.json({
+						code:20000,
+						data
+					})
+				}
+			)
+		}
 })
 
 module.exports = router;

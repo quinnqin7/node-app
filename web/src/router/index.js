@@ -303,22 +303,143 @@ export const asyncRouterMap = [
         ]
     },
 
+
+
+
+
+
+
+
+
+
+//    ADMIN
+
+
+
+
+
+
+
+
+
+    {
+        path: '/',
+        component: Layout,
+        redirect: '/dashboard',
+        name: 'Dashboard',
+        //hidden: true,
+        meta: {
+            title:'router.home',
+            role:['4']
+        },
+        children: [{
+            path: 'dashboard',
+            component: () => import('@/views/dashboard/admin'),
+            meta: {
+                title:'router.home',
+                role:['4'],
+                icon: 'peoples',
+            },
+        }]
+    },
+
+
+
+
 //journal 公告
     {
         path: '/journal',
         component: Layout,
         meta: {
-            role:['1']
+            title: 'router.journal',
+            role:['4'],
+            icon: 'peoples',
         },
         children: [
             {
-                path: 'journal',
-                name: 'journal',
-                component: () => import('@/views/journal/index'),
-                meta: {title: 'router.journal', icon: 'chart', role:['4']}
+                path: 'journaledit',
+                name: 'journaledit',
+                component: () => import('@/views/journal/edit'),
+                meta: {title: 'router.journaledit', icon: 'chart', role:['4']}
+            },
+            {
+                path: 'journalList',
+                name: 'journalList',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.journalList', icon: 'chart', role:['4']}
             }
         ]
     },
+
+
+
+    {
+        path: '/doctormanager',
+        component: Layout,
+        meta: {
+            role:['4']
+        },
+        children: [
+            {
+                path: 'doctormanager',
+                name: 'doctormanager',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.doctormanager', icon: 'peoples', role:['4']}
+            }
+        ]
+    },
+    {
+        path: '/enterprisemanager',
+        component: Layout,
+        meta: {
+            role:['4']
+        },
+        children: [
+            {
+                path: 'enterprisemanager',
+                name: 'enterprisemanager',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.enterprisemanager', icon: 'peoples', role:['4']}
+            }
+        ]
+    },
+    {
+        path: '/analysis',
+        component: Layout,
+        meta: {
+            role:['4']
+        },
+        children: [
+            {
+                path: 'analysis',
+                name: 'analysis',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.analysis', icon: 'peoples', role:['4']}
+            }
+        ]
+    },
+    {
+        path: '/feedback',
+        component: Layout,
+        meta: {
+            role:['4']
+        },
+        children: [
+            {
+                path: 'feedback',
+                name: 'feedback',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.feedback', icon: 'peoples', role:['4']}
+            }
+        ]
+    },
+
+
+
+
+
+
+
 
     {path: '*', redirect: '/404', hidden: true}
 ];

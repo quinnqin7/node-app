@@ -192,7 +192,7 @@
                 this.listLoading = true
                 DoctorTogetDoctorAndServiceTime(jwt.decode(getToken()).id).then(response => {
                     // console.log('返回的 合并之前list 数据')
-                    // console.log(response.data)
+                    //console.log(response.data)
                     this.list = response.data
                     var enterpriseIdArray = this.list.map(data=>{
                         // if(data.enterpriseId!=='')

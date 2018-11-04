@@ -14,4 +14,4 @@
 ```node generate.js -d``` (未测试)删除全部数据
 
     请在 生成 用户后在生成 企业和患者数据,不然 因为是异步 执行,所以 可能会出现 异常,
-    不要这样执行 ❌node generate.js -a 10;node generate.js -g ❌ 
+    不要这样执行 ❌node generate.js -a 10;node generate.js -g ❌
