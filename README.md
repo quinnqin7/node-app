@@ -1,4 +1,4 @@
-<center>![](./docs/images/logo.png)</center>
+<div align=center>![](./docs/images/logo.png)</div>
 # 项目简介
 
   本项目在 [nvm] 安装的 [Nodejs8.12](https://nodejs.org/zh-cn/) 环境下开发, 语言 JavaScript [es6](http://es6.ruanyifeng.com)
