@@ -1,4 +1,4 @@
-<div align=center><img width="150" height="150" src="./docs/images/logo.png" /></div>
+<div align=center><img  src="./docs/images/logo.png" /></div>
 # 项目简介
 
   本项目在 [nvm] 安装的 [Nodejs8.12](https://nodejs.org/zh-cn/) 环境下开发, 语言 JavaScript [es6](http://es6.ruanyifeng.com)
