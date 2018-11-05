@@ -11,6 +11,17 @@ export function login(email, pwd) {
     }
   })
 }
+//patientlogin
+export function patientlogin(email, pwd) {
+    return request({
+        url: '/api/user/patientlogin',
+        method: 'post',
+        data: {
+            email,
+            pwd
+        }
+    })
+}
 
 export function getInfo(token) {
   return request({

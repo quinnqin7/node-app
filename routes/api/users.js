@@ -10,6 +10,8 @@ const api = require("../../web/src/api/path")
 const User =require("../../modules/user")
 const Doctor = require("../../modules/doctor")
 const enterprise = require("../../modules/enterprise")
+const patient = require("../../modules/patients")
+
 
 
 router.post("/register",(req,res) =>{
@@ -66,6 +68,7 @@ router.post("/login",(req,res) =>{
 	let parse  = req.body
     const email =parse.email;
     const pwd = parse.pwd;
+    //console.log('fjkldsjfklsjlfkjalskjk')
     User.findOne({email})
         .then(user =>{
             bcrypt.compare(pwd, user.pwd)
@@ -92,6 +95,41 @@ router.post("/login",(req,res) =>{
         });
     })
 
+router.post("/patientlogin",(req,res) =>{
+	let parse  = req.body
+	const tel =parse.email;
+	const pwd = parse.pwd;
+	patient.findOne({tel})
+		.then(user =>{
+			console.log(user)
+			// bcrypt.compare(pwd, user.pwd)
+			// 	.then(isMatch => {
+			//
+			// 	})
+
+
+			if(pwd===user.pwd){
+							const rule={
+								id: user.id,
+								role:user.role
+							};
+							jwt.sign(rule,keys.secretOrKey,{expiresIn:3600},(err,token)=>{
+								if(err) throw err;
+								res.json({
+									code:20000,
+									data:{
+										"token":token
+									}
+								});
+							})
+						}
+						else{
+							return res.status(400).json("密碼錯誤")
+						}
+		});
+})
+
+
 
 
 router.post("/logout",(req,res) =>{
@@ -109,6 +147,7 @@ router.post(
     (req,res)=>{
 		var id = jwt.decode(req.body.token).id;
 		var role = jwt.decode(req.body.token).role;
+		console.log('hope')
 		if(role === "1")
 		{
 			Doctor.findOne({_id:id}).then(user =>{
@@ -153,7 +192,7 @@ router.post(
 		}
 		if(role === "3")
 		{
-			enterprise.findOne({_id:id}).then(user =>{
+			patient.findOne({_id:id}).then(user =>{
 					var data = user.toObject()
 					var c = []
 					c.push(role)
@@ -164,6 +203,7 @@ router.post(
 					})
 				}
 			)
+
 		}
 })
 

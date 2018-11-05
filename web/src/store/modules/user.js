@@ -1,4 +1,4 @@
-import { login, logout, getInfo, register } from '@/api/login'
+import { login, patientlogin, logout, getInfo, register } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import gravatar from 'gravatar'
 
@@ -43,6 +43,24 @@ const user = {
         })
       })
     },
+      patientLogin({ commit }, userInfo) {
+          const username = userInfo.username.trim()
+          return new Promise((resolve, reject) => {
+              patientlogin(username, userInfo.password).then(response => {
+                  const data = response.data
+                  // setup local Cookies
+                  console.log(data.token)
+                  setToken(data.token)
+                  commit('SET_TOKEN', data.token)
+                  // FIXME my gravatar
+                  commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
+                  resolve()
+              }).catch(error => {
+                  reject(error)
+              })
+          })
+      },
+
 
       Register({ commit }, userInfo) {
           const username = userInfo.username.trim()

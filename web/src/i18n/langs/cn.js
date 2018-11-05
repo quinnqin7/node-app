@@ -6,6 +6,7 @@ const cn = {
 		'msg': '提示',
 	},
 	comm: {
+	    'patienttitle':'企业用户登陆',
 		'title': '医师企业媒合平台',
 		'doctor': '医生',
 		'enterprise': '企业',
@@ -21,6 +22,7 @@ const cn = {
 		'login': '登陆',
 		'email': '邮件',
 		'pwd': '密码',
+        'contact':'联系',
 
 	},
 

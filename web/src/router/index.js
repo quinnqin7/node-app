@@ -24,10 +24,11 @@ import Layout from '../views/layout/Layout'
  **/
 
 export const constantRouterMap = [
+    {path: '/a', component: () => import('@/views/index'), hidden: true},
     {path: '/login', component: () => import('@/views/login/index'), hidden: true},
+    {path: '/patientlogin', component: () => import('@/views/login/patient'), hidden: true},
     {path: '/register', component: () => import('@/views/register/index'), hidden: true},
     {path: '/mailjump/:token', component: () => import('@/views/mail/jump/index'), hidden: false},
-
     {path: '/404', component: () => import('@/views/404'), hidden: true},
 
 
@@ -459,7 +460,48 @@ export const asyncRouterMap = [
 
 
 
-    //COMMMMM
+
+
+
+
+
+
+
+    //PATIENT
+    {
+        path: '/',
+        component: Layout,
+        redirect: '/dashboard',
+        name: 'Dashboard',
+        hidden: true,
+        meta: {
+            role:['3']
+        },
+        children: [{
+            path: 'dashboard',
+            component: () => import('@/views/table/index'),
+            meta: {
+                role:['3']
+            },
+        }]
+    },
+    {
+        path: '/Home',
+        component: Layout,
+        meta: {
+            role:['3']
+        },
+        children: [
+            {
+                path: 'Home',
+                name: 'Home',
+                component: () => import('@/views/table/index'),
+                meta: {title: 'router.home', icon: 'home', role:['3']}
+            }
+        ]
+    },
+
+//COMMMMM
 
     {
         path: '/map',
@@ -477,8 +519,6 @@ export const asyncRouterMap = [
             }
         ]
     },
-
-
 
 
 

@@ -45,11 +45,14 @@
 # 重要模块说明
 1.response token
 
-    所有 对服务器数据的 请求都会 在 http 数据流的header 里边,添加一个 Authorization key 里面放着 服务器 返回的 jwt 编码后的 token
+    所有 对服务器数据的 请求都会 在 http 数据流的header 里边,
+    添加一个 Authorization key 里面放着 服务器 返回的 jwt 编码后的 token
 <img src="./docs/images/authHeader.png" style="zoom:50%" />
 
     另外 返回的数据 都会先经过 axios 过滤拦截, 可以针对特殊场景根据自己的需要进行特定修改拦截
-    并且所有 前端 api 引入,都需要使用该 实例,然后该实例 导出(export) 一个 Promise 对象 ,可以对数据请求 的 成功 和 失败进行不同 的处理,具体例子请看 web/views/login/index.vue 里边的 handleLogin methods 一直看下去
+    并且所有 前端 api 引入,都需要使用该 实例,然后该实例 导出(export) 一个 Promise 对象 ,
+    可以对数据请求 的 成功 和 失败进行不同 的处理,
+    具体例子请看 web/views/login/index.vue 里边的 handleLogin methods 一直看下去
 
 ```javascript
 import axios from 'axios'
@@ -241,7 +244,8 @@ export default permission;
     mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mongo.log --auth --fork
 
 
-# API (使用 postman进行 api 数据测试,以下是测试过程的 api 分享,并且body 里边 都有 数据请 求格式 还存在)
+# API
+    (使用 postman进行 api 数据测试,以下是测试过程的 api 分享,并且body 里边 都有 数据请 求格式 还存在)
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/afc4520ba3f8e6891f20)
 
 # 第三方 API
