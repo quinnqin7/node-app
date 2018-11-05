@@ -12,6 +12,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import i18n from './i18n/i18n'
+import VCharts from 'v-charts'
 import '@/icons' // icon
 // todo 在进行路由之前会进行 角色权限判断
 import '@/permission' // permission control
@@ -19,6 +20,8 @@ import '@/permission' // permission control
 Vue.use(ElementUI, { locale })
 Vue.use(VueI18n)
 Vue.config.productionTip = false
+Vue.use(VCharts)
+
 
 new Vue({
   el: '#app',

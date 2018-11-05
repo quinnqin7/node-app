@@ -1,109 +1,135 @@
 <template>
     <div class="dashboard-container">
-        <!--<div class="dashboard-text">doctorname:{{ name }}</div>-->
-        <!--<div class="dashboard-text">roles:<span v-for="role in roles" :key="role">{{ role }}</span></div>-->
-        <el-card class="box-card odd" shadow="hover">
+
+
+        <!--todo 公告-->
+        <el-card class="box-card odd" shadow="hover" >
             <div slot="header" class="clearfix">
-                <span>今日公告</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                <span>公告</span>
+                <!--<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
-            <!--<div v-for="o in 4" :key="o" class="text item">-->
-            <!--{{'列表内容 ' + o }}-->
-            <!--</div>-->
+            <!--<el-table-->
+                <!--:data="journalData"-->
+                <!--style="width: 100%;margin-top: -20px"-->
+                <!--max-height="150">-->
+                <!--<el-table-column-->
+                    <!--fixed-->
+                    <!--sortable-->
+                    <!--prop="date"-->
+                    <!--label="日期"-->
+                    <!--width="100">-->
+                <!--</el-table-column>-->
+                <!--<el-table-column-->
+                    <!--prop="title"-->
+                    <!--label="标题"-->
+                <!--&gt;-->
+                <!--</el-table-column>-->
+                <!--<el-table-column-->
+                    <!--fixed="right"-->
+                    <!--label="操作"-->
+                    <!--width="50">-->
+                    <!--<template slot-scope="scope">-->
+                        <!--<el-button type="text" @click="displayContent(scope.row.content)" size="small">查看</el-button>-->
+                    <!--</template>-->
+                <!--</el-table-column>-->
+            <!--</el-table>-->
+        <div style="height:140px;overflow: hidden;">
+            <div v-for="(o,index) in journalData" :key="index" class="text item">
+                {{ o['date'] +" "+ o['title'] +"   " }}<el-button type="text" @click="displayContent(o['content'])" size="small">查看</el-button>
+            </div>
+        </div>
 
-            <el-table
-                :data="journalData"
-                style="width: 100%;margin-top: -20px"
-                max-height="150">
-                <el-table-column
-                    fixed
-                    sortable
-                    prop="date"
-                    label="日期"
-                    width="100">
-                </el-table-column>
-                <el-table-column
-                    prop="title"
-                    label="标题"
-                >
-                </el-table-column>
-                <el-table-column
-                    fixed="right"
-                    label="操作"
-                    width="50">
-                    <template slot-scope="scope">
-                        <!--<el-button-->
-                        <!--@click.native.prevent="deleteRow(scope.$index, journalData)"-->
-                        <!--type="text"-->
-                        <!--size="small">-->
-                        <!--查看-->
-                        <!--</el-button>-->
-                        <el-button type="text" @click="displayContent(scope.row.content)" size="small">查看</el-button>
-
-
-
-                    </template>
-                </el-table-column>
-            </el-table>
         </el-card>
 
+
+
+
+
+        <!-- todo 反馈-->
         <el-card class="box-card even" shadow="hover">
             <div slot="header" class="clearfix">
-                <span>今日公告</span>
-                <el-button style="float: right; padding: 3px 0;margin-left: 10%;" type="text">操作按钮</el-button>
+                <span>反馈</span>
+                <!--<el-button style="float: right; padding: 3px 0;margin-left: 10%;" type="text">操作按钮</el-button>-->
             </div>
             <!--<div v-for="o in 4" :key="o" class="text item">-->
             <!--{{'列表内容 ' + o }}-->
             <!--</div>-->
             <el-input
                 type="textarea"
-                :autosize="{ minRows: 6, maxRows: 6}"
+                :autosize="{ minRows: 5, maxRows: 5}"
                 placeholder="请输入内容"
                 v-model="textarea3">
             </el-input>
+            <el-button type="success"
+                       style="float:right;margin-right: 10px;width:50px;height:30px;padding: 0;margin-top: 10px;margin-bottom: 10px;"
+                       @click="sendFeedBack(textarea3)">{{ $t('table.confirm') }}
+            </el-button>
         </el-card>
 
+
+
+
+
+        <!--todo 为企业服务的医师-->
         <el-card class="box-card odd" shadow="hover">
             <div slot="header" class="clearfix">
-                <span>今日公告</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                <span>为企业服务的医师</span>
+                <!--<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
-            <div v-for="o in 4" :key="o" class="text item">
-                {{'列表内容 ' + o }}
+            <!--doctorHadServiceData-->
+            <div v-for="(o,index) in doctorHadServiceData" :key="index" class="text item">
+                {{'医师 Id ' + o.doctorId }}
             </div>
         </el-card>
 
+
+
+
+        <!--todo 未处理的 预约请求-->
         <el-card class="box-card even" shadow="hover">
             <div slot="header" class="clearfix">
-                <span>今日公告</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                <span>未处理的 预约请求</span>
+                <!--<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
-            <div v-for="o in 4" :key="o" class="text item">
-                {{'列表内容 ' + o }}
+            <div v-for="(o,index) in noHandle" :key="index" class="text item">
+                {{'医生 id ' + o.doctorId }}
             </div>
         </el-card>
 
-        <el-card class="box-card odd" shadow="hover">
-            <div slot="header" class="clearfix">
-                <span>今日公告</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
-            </div>
-            <div v-for="o in 4" :key="o" class="text item">
-                {{'列表内容 ' + o }}
-            </div>
-        </el-card>
+
+
+
+
+
+        <!--<el-card class="box-card odd" shadow="hover">-->
+            <!--<div slot="header" class="clearfix">-->
+                <!--<span>今日公告</span>-->
+                <!--<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
+            <!--</div>-->
+            <!--<div v-for="o in 4" :key="o" class="text item">-->
+                <!--{{'列表内容 ' + o }}-->
+            <!--</div>-->
+        <!--</el-card>-->
+
+
+
+
     </div>
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
+    import {mapGetters} from 'vuex'
     import {getToken} from "../../utils/auth";
     import {fetchContentData} from "../../api/doctor";
-
+    import {sendFeedBack} from "../../utils/sendFeedBack";
+    import {enterprisesToGetDoctor, fetchNoHandleAppointmentData} from "../../api/enterprise";
+    const jwt = require('jsonwebtoken');
     export default {
-        data(){
-            return{
-                journalData:[{
+        data() {
+            return {
+                noHandle:[],
+                sendFeedBack: sendFeedBack,
+                journalData: [{
                     date: '2016-05-03',
                     name: '王小虎',
                     content: '上海',
@@ -125,7 +151,8 @@
                     title: '上海市普陀区金沙江路 1518 弄',
                     zip: 200333
                 }],
-                textarea3:''
+                textarea3: '',
+                doctorHadServiceData:''
             }
         },
         name: 'Dashboard',
@@ -135,22 +162,54 @@
                 'roles'
             ])
         },
-        created(){
+        created() {
             this.fetchContent()
+            this.fetchServiceDoctorData()
+            this.fetchNoHandleAppointment()
         },
-        methods:{
-            fetchContent(){
-                fetchContentData(getToken()).then((response)=>{
+        methods: {
+            fetchContent() {
+                fetchContentData(getToken()).then((response) => {
                     this.journalData = response.data
-                }).catch(()=>{
+                }).catch(() => {
                     this.$alert('获取数据错误')
                 })
             },
-            displayContent(data){
+            displayContent(data) {
                 this.$alert(data, {
                     dangerouslyUseHTMLString: true
                 })
+            },
+            fetchServiceDoctorData() {
+                this.listLoading = true
+                enterprisesToGetDoctor(jwt.decode(getToken()).id).then(response => {
+                    //去重
+                    var hash = {};
+                    this.doctorHadServiceData = response.data.reduce(function(item, next) {
+                        hash[next.doctorId] ? '' : hash[next.doctorId] = true && item.push(next);
+                        return item
+                    }, [])
+                    //this.doctorHadServiceData = response.data
+                    console.log(this.doctorHadServiceData)
+                    this.listLoading = false
+                })
+            },
+            fetchNoHandleAppointment(){
+                this.listLoading = true
+                fetchNoHandleAppointmentData(jwt.decode(getToken()).id).then((response)=>{
+                    //去重
+                    var hash = {};
+                    this.noHandle = response.data.reduce(function(item, next) {
+                        hash[next.doctorId] ? '' : hash[next.doctorId] = true && item.push(next);
+                        return item
+                    }, [])
+                    this.listLoading = false
+                })
             }
+
+
+
+        //    todo methdoTail
         }
     }
 </script>
@@ -165,12 +224,14 @@
             line-height: 46px;
         }
     }
+
     .text {
         font-size: 14px;
     }
 
     .item {
-        margin-bottom: 18px;
+        margin-bottom: 5px;
+
     }
 
     .clearfix:before,
@@ -178,23 +239,25 @@
         display: table;
         content: "";
     }
+
     .clearfix:after {
         clear: both
     }
 
     .box-card {
         width: 40%;
-        height:40%;
-
+        height: 40%;
 
         margin-top: 20px;
     }
-    .odd{
+
+    .odd {
         margin-left: 5%;
-        float:left;
+        float: left;
     }
-    .even{
+
+    .even {
         margin-right: 5%;
-        float:right;
+        float: right;
     }
 </style>

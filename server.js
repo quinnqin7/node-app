@@ -9,7 +9,7 @@ const admin = require("./routes/api/admin")
 // 引入users.js
 const users = require("./routes/api/users")
 const enterprise = require("./routes/api/enterprise")
-
+const comm = require("./routes/api/comm")
 //DB config
 const db = require("./config/keys").mongoURI
 
@@ -32,7 +32,7 @@ app.use(api.pathFilter(api.path.user.login,1), users)
 app.use("/api/enterprise", enterprise)
 app.use("/api/doctor", doctor)
 app.use("/api/admin", admin)
-
+app.use("/api/comm", comm)
 
 
 const port = process.env.PORT || 3000 //设置端口号
