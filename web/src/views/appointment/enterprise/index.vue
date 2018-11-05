@@ -16,18 +16,26 @@
             <!--<el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">{{ $t('table.export') }}</el-button>-->
             <!--<el-checkbox v-model="showReviewer" class="filter-item" style="margin-left:15px;" @change="tableKey=tableKey+1">{{ $t('table.reviewer') }}</el-checkbox>-->
         </div>
+
         <!-- 筛选 -->
          <div>
-            <div style="width:30%">筛选：</div>
-                <el-input type="search" v-model="search" style="width:70%" placeholder="请输入关键字"></el-input>
-         </div>
+        <el-form :inline="true" :model="search">
+            <el-form-item label="查询：">
+            <el-input type="search" style="width:100%" placeholder="请输入关键字"></el-input>
+            </el-form-item>
 
+            <el-form-item>
+                <el-button type="primary" size ="small" icon="search" @click='handleSearch()'>篩選</el-button>
+            </el-form-item>
+
+        </el-form>
+        </div>
 
 
         <el-table
             style="width:100%"
             v-loading="listLoading"
-            :data="tableData"
+            :data="tables"
             element-loading-text="Loading"
             border
             fit
@@ -39,22 +47,22 @@
             </el-table-column>
             <el-table-column :label="$t('table.name')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ showDate(scope.row.name) }} </span>
+                    <span>{{scope.row.name}}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.tel')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ showDate(scope.row.tel) }}</span>
+                    <span >{{scope.row.tel}}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.perfession')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ showDate(scope.row.perfession )}}</span>
+                    <span>{{scope.row.perfession}}</span>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button @click="handlelook(scope.row)">{{$t('table.look')}}</el-button>
+                    <el-button type="primary" @click="handlelook(scope.row)">{{$t('table.look')}}</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -154,13 +162,13 @@
                     detail: 'table.detail',
                     create: 'table.add'
                 },
-
-                tableData: [],
+                tables:[],
                 list: [], //all data
                 listLoading: true,
                 filterTableData:[],
 
-                search: '',
+                search: {},
+
 
                 //需要给分页组件传的信息
                 paginations: {
@@ -190,19 +198,19 @@
 
         },
         computed:{
-            //实时监听表格
-            tableData:function () {
-                const search = this.search
-                if (search) {
-                    return this.list.filter(dataNews => {
-                        return Object.keys(dataNews).some(key => {
-                            return String(dataNews[key]).toLowerCase().indexOf(search) > -1
-                        })
-                    })
-                }
-                return this.list
-                this.setPaginations();
-            }
+
+            // tables:function () {
+            //     const search = this.search
+            //     if (search) {
+            //         return  this.list = this.filterTableData.filter(dataNews => {
+            //             return Object.keys(dataNews).some(key => {
+            //                 return String(dataNews[key]).toLowerCase().indexOf(search) > -1
+            //             })
+            //         })
+            //     }
+            //     return this.filterTableData
+            //    // this.setPaginations();
+            // }
         },
         methods: {
             fetchDoctorAndServiceTimeData(doctorId, row) {
@@ -219,7 +227,6 @@
                 getDoctors(id).then(response => {
                     this.list = response.data
                     this.listLoading = false
-
                     this.filterTableData = response.data;
                     //设置分页数据
                     this.setPaginations();
@@ -294,7 +301,7 @@
                     return index >= sortnum;
                 });
                 // 设置默认分页数据
-                this.tableData = table.filter((item, index) => {
+                this.tables = table.filter((item, index) => {
                     return index < this.paginations.page_size;
                 });
             },
@@ -302,7 +309,7 @@
                 // 切换size
                 this.paginations.page_index = 1;
                 this.paginations.page_size = page_size;
-                this.tableData = this.list.filter((item, index) => {
+                this.tables = this.list.filter((item, index) => {
                     return index < page_size;
                 });
             },
@@ -312,22 +319,31 @@
                 this.paginations.page_index = 1;
                 this.paginations.page_size = 5;
                 // 设置默认分页数据
-                this.tableData = this.list.filter((item, index) => {
+                this.tables = this.list.filter((item, index) => {
                     return index < this.paginations.page_size;
                 });
             },
-            // 筛选高亮
-            showDate(val) {
-                val = val + '';
-                if (val.indexOf(this.search) !== -1 && this.search !== '') {
-                    return val.replace(this.search,'<span color="#409EFF">' + this.search + '</span>>' )
-                } else {
-                    return val
+
+            //TODO：筛选
+            handleSearch(){
+                if(!this.search){
+                    this.$message({
+                        type: "warning",
+                        message: "请输入关键字"
+                    });
+                    this.fetchDoctorsData();
+                    return;
                 }
+                const search = this.search;
+                this.list = this.filterTableData.filter(item => {
+                   console.log(item);
+
+                });
+
+                //this.setPaginations();
             }
-
-
         }
+
     }
 </script>
 <style scoped>
