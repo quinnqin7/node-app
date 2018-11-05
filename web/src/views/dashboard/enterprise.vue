@@ -78,7 +78,7 @@
             </div>
             <!--doctorHadServiceData-->
             <div v-for="(o,index) in doctorHadServiceData" :key="index" class="text item">
-                {{'列表内容 ' + o.doctorId }}
+                {{'医师 Id ' + o.doctorId }}
             </div>
         </el-card>
 
@@ -186,7 +186,7 @@
                     //去重
                     var hash = {};
                     this.doctorHadServiceData = response.data.reduce(function(item, next) {
-                        hash[next.name] ? '' : hash[next.name] = true && item.push(next);
+                        hash[next.doctorId] ? '' : hash[next.doctorId] = true && item.push(next);
                         return item
                     }, [])
                     //this.doctorHadServiceData = response.data
@@ -200,7 +200,7 @@
                     //去重
                     var hash = {};
                     this.noHandle = response.data.reduce(function(item, next) {
-                        hash[next.name] ? '' : hash[next.name] = true && item.push(next);
+                        hash[next.doctorId] ? '' : hash[next.doctorId] = true && item.push(next);
                         return item
                     }, [])
                     this.listLoading = false

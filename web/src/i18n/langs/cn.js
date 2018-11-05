@@ -41,7 +41,8 @@ const cn = {
         'journalList':'公告列表',
         'doctormanager':'医师管理',
         'enterprisemanager':'企业管理',
-        'feedback':'反馈'
+        'feedback':'反馈',
+        'map':'地图'
 	},
 	table: {
 		'id': '排序',
@@ -87,6 +88,7 @@ const cn = {
         'delay':'迟到',
         'status':'状态',
         'absent':'缺席',
+
 	},
     nav:{
 	    'hello':'您好',
