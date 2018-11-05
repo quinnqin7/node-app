@@ -45,14 +45,152 @@
 # 重要模块说明
 1.response token
 
-    略略
+    所有 对服务器数据的 请求都会 在 http 数据流的header 里边,添加一个 Authorization key 里面放着 服务器 返回的 jwt 编码后的 token
+<img src="./docs/images/authHeader.png" style="zoom:50%" />
 
+    另外 返回的数据 都会先经过 axios 过滤拦截, 可以针对特殊场景根据自己的需要进行特定修改拦截
+    并且所有 前端 api 引入,都需要使用该 实例,然后该实例 导出(export) 一个 Promise 对象 ,可以对数据请求 的 成功 和 失败进行不同 的处理,具体例子请看 web/views/login/index.vue 里边的 handleLogin methods 一直看下去
 
+```javascript
+import axios from 'axios'
+import { Message, MessageBox } from 'element-ui'
+import store from '../store'
+import { getToken } from '@/utils/auth'
+
+// 创建axios实例
+const service = axios.create({
+  baseURL: process.env.BASE_API, // api 的 base_url
+  timeout: 5000 // 请求超时时间
+})
+
+// request拦截器
+service.interceptors.request.use(
+  config => {
+    if (store.getters.token) {
+      config.headers['Authorization'] = "Bearer "+getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+    }
+    return config
+  },
+  error => {
+    // Do something with request error
+    console.log(error) // for debug
+    Promise.reject(error)
+  }
+)
+
+// response 拦截器
+service.interceptors.response.use(
+  response => {
+    /**
+     * code为非20000是抛错 可结合自己业务进行修改
+     */
+    const res = response.data
+    if (res.code !== 20000) {
+      Message({
+        message: res.message,
+        type: 'error',
+        duration: 5 * 1000
+      })
+      // 50008:非法的token; 50012:其他客户端登录了;  50014:Token 过期了;
+      if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+        MessageBox.confirm(
+          '你已被登出，可以取消继续留在该页面，或者重新登录',
+          '确定登出',
+          {
+            confirmButtonText: '重新登录',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }
+        ).then(() => {
+          store.dispatch('FedLogOut').then(() => {
+            location.reload() // 为了重新实例化vue-router对象 避免bug
+          })
+        })
+      }
+      return Promise.reject('error')
+    } else {
+      return response.data
+    }
+  },
+  error => {
+    console.log('err' + error) // for debug
+    Message({
+      message: error.message,
+      type: 'error',
+      duration: 5 * 1000
+    })
+    return Promise.reject(error)
+  }
+)
+
+export default service
+```
 
 2.router permission
 
-    略略
+    本应用 一共应该会有 4种角色 ,不同的角色 分不同的菜单
+    一共 有三个 文件在 管理这个 角色判断
+    web/src/permission.js (在这边 进行路由 判断)
+    web/store/permission.js (根据 角色 roles 动态生成 路由,子路由,子子路由)
+    web/router/index.js (存放 动态路由的 地方)
 
+>web/store/permission.js
+```javascript
+import { asyncRouterMap, constantRouterMap } from '../router';
+import store from './index'
+function hasPermission(roles, route) {
+    if (route.meta && route.meta.role) {
+        return roles.some(role => route.meta.role.indexOf(role) >= 0)
+    } else {
+        return true
+    }
+}
+
+const permission = {
+    state: {
+        routers: constantRouterMap,
+        addRouters: []
+    },
+    mutations: {
+        SET_ROUTERS: (state, routers) => {
+            state.addRouters = routers;
+            state.routers = constantRouterMap.concat(routers);
+        }
+    },
+    actions: {
+        GenerateRoutes({ commit },data) {
+            return new Promise(resolve => {
+                const {roles} = data;
+                //console.log(roles)
+                const accessedRouters = asyncRouterMap.filter(v => {
+                    //if you want to set admin role in the system you can tkof //and set the res-> roles:['admin']
+                    //if (roles.indexOf('admin') >= 0) return true;
+                    //这边注释掉 是因为 , 超级管理员会拥有所有 路由 ,但现实 是 根本 不需要,还是 在新建一个角色 然后 ,写不同的服务端
+                    if (hasPermission(roles, v)) {
+                        if (v.children && v.children.length > 0) {
+                            v.children = v.children.filter(child => {
+                                if (hasPermission(roles, child)) {
+                                    return child
+                                }
+                                return false;
+                            });
+                            return v
+                        } else {
+                            return v
+                        }
+                    }
+                    return false;
+                });
+                commit('SET_ROUTERS', accessedRouters);
+                resolve();
+            })
+        }
+    }
+};
+export default permission;
+
+```
+    这里边 使用 了一个 递归 进行 子路由以及 子子子...路由的添加
 
 
 ### 模块视频日志
@@ -70,10 +208,11 @@
   2.评价
 * 超级管理员
   1.对医生企业的管理
-* 所有的表格都没有进行 多项查询  , 分页 处理
+* 所有的表格都没有进行 多项查询  , ~~分页处理~~
 * 所有 的时间 格式, 以及 时间 比较 ,时间 排列 都没完成
 * 国际化 功能 没翻译 -> tw.js ->en.js
 * 预约时间过期的判断 以及 服务企业时间过期的 判断
+* 地图
 * 还有很多,记不起来,碰到想到 在写 🌶
 
 ***
@@ -100,6 +239,16 @@
 
     秦楠启动数据库
     mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mongo.log --auth --fork
+
+
+# API (使用 postman进行 api 数据测试,以下是测试过程的 api 分享,并且body 里边 都有 数据请 求格式 还存在)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/afc4520ba3f8e6891f20)
+
+# 第三方 API
+* 百度地图JavaScript API V2.0
+    1.[相关介绍](http://lbsyun.baidu.com/index.php?title=jspopular)
+    2.[类参考](http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html)
+* 将来有可能换到 google map (台湾地区百度地图无法 使用地址 逆解析)
 
 
 # 支持的浏览器

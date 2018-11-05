@@ -27,6 +27,7 @@ const permission = {
                 const accessedRouters = asyncRouterMap.filter(v => {
                     //if you want to set admin role in the system you can tkof //and set the res-> roles:['admin']
                     //if (roles.indexOf('admin') >= 0) return true;
+                    //这边注释掉 是因为 , 超级管理员会拥有所有 路由 ,但现实 是 根本 不需要,还是 在新建一个角色 然后 ,写不同的服务端
                     if (hasPermission(roles, v)) {
                         if (v.children && v.children.length > 0) {
                             v.children = v.children.filter(child => {
