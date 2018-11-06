@@ -228,8 +228,18 @@ export default permission;
 * 医生可以接受 同一段时间 内两个不同企业 的预约
 * 还有很多,记不起来,碰到想到 在写 🌶
 
+### 待优化的小问题 哇=͟͟͞͞塞=͟͟͞͞=͟͟͞͞风=͟͟͞͞好=͟͟͞͞大=͟͟͞͞啊=͟͟͞͞
+*企业端 患者模块
+    1.点开弹窗无法获取到患者性别
+    2.修改患者资料失败
+    3.搜索功能
+*医师端
+    头像上传功能。并且使之能在企业端的预约模块中显示。
 
-
+*所有表单样式的优化
+*登录界面的优化及错误提示
+*首页模板样式的优化（建议把颜色改为浅色，简洁为主）
+    
 
 ***
 ### 其他问题
@@ -240,7 +250,7 @@ export default permission;
     kill -15 `ps -ef | grep node| awk '{print $2}'`
 
 
-    秦楠启动数据库
+    启动数据库
     mongod --dbpath ~/WebstormProjects/mongo --logpath ~/WebstormProjects/mongo/mongo.log --auth --fork
 
 

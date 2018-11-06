@@ -2,14 +2,14 @@
     <div class="app-container">
         <div class="filter-container">
             <div style="margin-top: 15px;">
-                <input placeholder="请输入内容" v-model="searchInput" class="input-with-select" @focus="fetchData" v-on:input="handleSearch">
+                <input placeholder="请输入内容" v-model="searchInput" class="input-with-select" @focus="fetchData" v-on:input="handleSearch"></input>
                     <!--<el-select v-model="searchSelect" slot="prepend" placeholder="请选择">-->
                         <!--<el-option label="姓名" value="1"></el-option>-->
                         <!--<el-option label="性别" value="2"></el-option>-->
                         <!--<el-option label="用户电话" value="3"></el-option>-->
                     <!--</el-select>-->
                     <!--<el-button slot="append" @click="handleSearch"  icon="el-icon-search"></el-button>-->
-                </input>
+
             </div>
             <!--<el-input :placeholder="$t('table.title')" v-model="listQuery.title" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter"/>-->
             <!--<el-select v-model="listQuery.importance" :placeholder="$t('table.importance')" clearable style="width: 90px" class="filter-item">-->
@@ -163,8 +163,6 @@
     import jwt from 'jsonwebtoken'
     import {Search, updatePatient} from "../../api/enterprise";
     import {getToken} from "../../utils/auth";
-    //import FileSaver from 'file-saver';
-    //import XLSX from 'xlsx'
 
     export default {
         data() {
@@ -335,26 +333,6 @@
                 });
             },
 
-            //筛选
-            handleSearch(){
-                console.log(1);
-                // if(!this.search){
-                //     this.$message({
-                //         type: "warning",
-                //         message: "请输入关键字"
-                //     });
-                //     this.fetchData();
-                //     return;
-                // }
-                // const search = this.search;
-                // this.list = this.filterTableData.filter(item => {
-                //     console.log(item);
-                //
-                // });
-                //
-                // //this.setPaginations();
-            },
-
             // FIXME 在传输需要修改的数据的时候, 重复传输了大量的病例
             updateData(){
                 this.$refs['dataForm'].validate((valid) => {
@@ -410,7 +388,7 @@
                 //
                 // })
                 // console.log(this.searchInput + this.searchSelect)
-            }
+            },
 
             handleDownload() {
                 this.downloadLoading = true
