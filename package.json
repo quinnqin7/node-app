@@ -18,7 +18,9 @@
     "concurrently": "^4.0.1",
     "echarts": "^4.2.0-rc.2",
     "express": "^4.16.4",
+    "file-saver": "^2.0.0-rc.4",
     "gravatar": "^1.6.0",
+    "js-xlsx": "^0.8.22",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.3",
     "node-gyp": "^3.8.0",
@@ -28,9 +30,11 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "supervisor": "^0.12.0",
-    "v-charts": "^1.18.0"
+    "v-charts": "^1.18.0",
+    "xlsx": "^0.14.0"
   },
   "devDependencies": {
-    "mockjs": "^1.0.1-beta3"
+    "mockjs": "^1.0.1-beta3",
+    "script-loader": "^0.7.2"
   }
 }

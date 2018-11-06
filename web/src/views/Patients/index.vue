@@ -17,16 +17,34 @@
             <!--<el-checkbox v-model="showReviewer" class="filter-item" style="margin-left:15px;" @change="tableKey=tableKey+1">{{ $t('table.reviewer') }}</el-checkbox>-->
         </div>
 
+        <!-- 筛选 -->
+         <div>
+        <el-form :inline="true" :model="search">
+            <el-form-item label="查询：">
+                    <el-input type="search" style="width:100%" placeholder="请输入关键字"></el-input>
+            </el-form-item>
+
+            <el-form-item>
+                <el-button type="primary" size ="big" icon="el-icon-search" @click='handleSearch()'>查询</el-button>
+            </el-form-item>
+
+            <el-form-item>
+                <el-button type="success" size ="big" @click='handleDownload()' :loading="downloadLoading">导出<i class="el-icon-upload el-icon--right"></i></el-button>
+            </el-form-item>
+
+        </el-form>
+        </div>
+
         <el-table
             v-loading="listLoading"
-            :data="list"
+            :data="tables"
             element-loading-text="Loading"
             border
             fit
             highlight-current-row>
             <el-table-column align="center" :label="$t('table.id')" >
                 <template slot-scope="scope">
-                    {{ scope.$index }}
+                    {{ scope.$index+1 }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.name')"  align="center">
@@ -46,10 +64,24 @@
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button  @click="handleDetail(scope.row)">{{$t('table.detail')}}</el-button>
+                    <el-button type="primary" plain @click="handleDetail(scope.row)">{{$t('table.detail')}}</el-button>
                 </template>
             </el-table-column>
         </el-table>
+
+        <!--分頁-->
+        <div class="paginations">
+            <el-pagination
+                v-if='paginations.total > 0'
+                :page-sizes="paginations.page_sizes"
+                :page-size="paginations.page_size"
+                :layout="paginations.layout"
+                :total="paginations.total"
+                :current-page.sync='paginations.page_index'
+                @current-change='handleCurrentChange'
+                @size-change='handleSizeChange'>
+            </el-pagination>
+        </div>
 
 
         <el-dialog class="dialog" :title="$t(textMap[dialogStatus])" :visible.sync="dialogFormVisible">
@@ -121,6 +153,9 @@
     import jwt from 'jsonwebtoken'
     import {updatePatient} from "../../api/enterprise";
     import {getToken} from "../../utils/auth";
+    //import FileSaver from 'file-saver';
+    //import XLSX from 'xlsx'
+
     export default {
         data() {
             return {
@@ -132,8 +167,21 @@
                     detail: 'table.detail',
                     create: 'table.add'
                 },
-                list: null, // all data
+                list: [], // all data
                 listLoading: true,
+                search:{},
+                tables:[],
+
+                filterTableData:[],
+                downloadLoading: false,
+
+                paginations: {
+                    page_index: 1,
+                    total: 0,
+                    page_size: 5,
+                    page_sizes: [5, 10, 15, 20],
+                    layout: "total, sizes, prev, pager, next, jumper"
+                },
 
             }
         },
@@ -151,7 +199,8 @@
 
         },
         created() {
-            this.fetchData()
+            this.fetchData();
+            //this.fetchPatientData();
         },
         computed:{
             ...mapGetters([
@@ -174,6 +223,8 @@
                     getPatients().then(response => {
                         this.list = response.data
                         this.listLoading = false
+                        this.filterTableData = response.data;
+                        this.setPaginations();
                     })
                 }
             },
@@ -182,6 +233,7 @@
                 getPatient(id).then(response => {
                     this.dialogData = response.data
                     this.listLoading = false
+
                 })
             },
             handleCreate() {
@@ -240,6 +292,57 @@
                     }
                 })
             },
+
+            handleCurrentChange(page) {
+                // 当前页
+                let sortnum = this.paginations.page_size * (page - 1);
+                let table = this.list.filter((item, index) => {
+                    return index >= sortnum;
+                });
+                // 设置默认分页数据
+                this.tables = table.filter((item, index) => {
+                    return index < this.paginations.page_size;
+                });
+            },
+            handleSizeChange(page_size) {
+                // 切换size
+                this.paginations.page_index = 1;
+                this.paginations.page_size = page_size;
+                this.tables = this.list.filter((item, index) => {
+                    return index < page_size;
+                });
+            },
+            setPaginations() {
+                // 总页数
+                this.paginations.total = this.list.length;
+                this.paginations.page_index = 1;
+                this.paginations.page_size = 5;
+                // 设置默认分页数据
+                this.tables = this.list.filter((item, index) => {
+                    return index < this.paginations.page_size;
+                });
+            },
+
+            //筛选
+            handleSearch(){
+                console.log(1);
+                // if(!this.search){
+                //     this.$message({
+                //         type: "warning",
+                //         message: "请输入关键字"
+                //     });
+                //     this.fetchData();
+                //     return;
+                // }
+                // const search = this.search;
+                // this.list = this.filterTableData.filter(item => {
+                //     console.log(item);
+                //
+                // });
+                //
+                // //this.setPaginations();
+            },
+
             // FIXME 在传输需要修改的数据的时候, 重复传输了大量的病例
             updateData(){
                 this.$refs['dataForm'].validate((valid) => {
@@ -274,7 +377,23 @@
                 })
             },
 
+            handleDownload() {
+                this.downloadLoading = true
+                require.ensure([], () => {
+                    const { export_json_to_excel } = require('@/vendor/Export2Excel')
+                    const tHeader = ['姓名', '电话','性别']
+                    const filterVal = ['name', 'tel','gender']
+                    const list = this.list
+                    const data = this.formatJson(filterVal, list)
+                    export_json_to_excel(tHeader, data, '患者列表excel')
+                    this.downloadLoading = false
+                })
+            },
+            formatJson(filterVal, jsonData) {
+                return jsonData.map(v => filterVal.map(j => v[j]))
+            }
         }
+
     }
 </script>
 <style scoped>
@@ -287,5 +406,9 @@
     }
     .dialog {
         wdith:1000px;
+    }
+    .paginations {
+        text-align: right;
+        margin-top: 10px;
     }
 </style>

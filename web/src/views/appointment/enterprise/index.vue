@@ -19,13 +19,13 @@
 
         <!-- 筛选 -->
          <div>
-        <el-form :inline="true" :model="search">
+        <el-form :inline="true" >
             <el-form-item label="查询：">
-            <el-input type="search" style="width:100%" placeholder="请输入关键字"></el-input>
+            <el-input type="search" v-model="search" style="width:100%" placeholder="请输入关键字"></el-input>
             </el-form-item>
 
             <el-form-item>
-                <el-button type="primary" size ="small" icon="search" @click='handleSearch()'>篩選</el-button>
+                <el-button type="primary" size ="big" icon="search" @click='handleSearch()'>查询</el-button>
             </el-form-item>
 
         </el-form>
@@ -62,7 +62,7 @@
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button type="primary" @click="handlelook(scope.row)">{{$t('table.look')}}</el-button>
+                    <el-button type="primary" plain @click="handlelook(scope.row)">{{$t('table.look')}}</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -169,7 +169,7 @@
                 listLoading: true,
                 filterTableData:[],
 
-                search: {},
+                search: "",
 
 
                 //需要给分页组件传的信息
@@ -328,6 +328,7 @@
 
             //TODO：筛选
             handleSearch(){
+                console.log(this.search)
                 if(!this.search){
                     this.$message({
                         type: "warning",
@@ -336,9 +337,16 @@
                     this.fetchDoctorsData();
                     return;
                 }
-                const search = this.search;
-                this.list = this.filterTableData.filter(item => {
-                   console.log(item);
+                var search = this.search;
+                this.filterTableData = this.filterTableData.map(item => {
+                   // if(search.indexOf(item))
+                   //     return item
+                   //  item.map(data=>{
+                   //      for(let i = 0; i<data.length;i ++)
+                   //      {
+                   //          if
+                   //      }
+                   //  })
 
                 });
 
