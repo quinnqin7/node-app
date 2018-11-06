@@ -179,3 +179,17 @@ export function fetchNoHandleAppointmentData(enterpriseId){
         }
     })
 }
+
+
+//Search
+export function Search(searchSelect,searchInput,token){
+    return request({
+        url: '/api/enterprise/Search',
+        method: 'post',
+        data:{
+            searchSelect:searchSelect,
+            searchInput:searchInput,
+            token:token,
+        }
+    })
+}

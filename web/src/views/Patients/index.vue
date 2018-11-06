@@ -1,6 +1,16 @@
 <template>
     <div class="app-container">
         <div class="filter-container">
+            <div style="margin-top: 15px;">
+                <input placeholder="请输入内容" v-model="searchInput" class="input-with-select" @focus="fetchData" v-on:input="handleSearch">
+                    <!--<el-select v-model="searchSelect" slot="prepend" placeholder="请选择">-->
+                        <!--<el-option label="姓名" value="1"></el-option>-->
+                        <!--<el-option label="性别" value="2"></el-option>-->
+                        <!--<el-option label="用户电话" value="3"></el-option>-->
+                    <!--</el-select>-->
+                    <!--<el-button slot="append" @click="handleSearch"  icon="el-icon-search"></el-button>-->
+                </input>
+            </div>
             <!--<el-input :placeholder="$t('table.title')" v-model="listQuery.title" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter"/>-->
             <!--<el-select v-model="listQuery.importance" :placeholder="$t('table.importance')" clearable style="width: 90px" class="filter-item">-->
                 <!--<el-option v-for="item in importanceOptions" :key="item" :label="item" :value="item"/>-->
@@ -151,7 +161,7 @@
     import { mapGetters } from 'vuex'
     import {doctorToGetPatients} from '@/api/doctor'
     import jwt from 'jsonwebtoken'
-    import {updatePatient} from "../../api/enterprise";
+    import {Search, updatePatient} from "../../api/enterprise";
     import {getToken} from "../../utils/auth";
     //import FileSaver from 'file-saver';
     //import XLSX from 'xlsx'
@@ -159,6 +169,8 @@
     export default {
         data() {
             return {
+                searchInput:'',
+                searchSelect:'',
                 dialogData:{},
                 showEditCase:false,
                 dialogFormVisible:false,
@@ -376,6 +388,29 @@
                     }
                 })
             },
+            handleSearch: function(){
+                //window.location.reload()
+                this.tmp = this.list
+                //过滤关键词 包含_id
+                this.tmp = this.tmp.map(item=>{
+                    var data = Object.values(item).join()
+                    //console.log(data)
+                     if( data.indexOf(this.searchInput) !== -1)
+                       return item
+
+                        //console.log(Object.values(item).join())
+
+                })
+                this.list = this.tmp.filter(d=>d)
+
+                // Search(this.searchSelect,this.searchInput,getToken()).then((response)=>{
+                //     this.list = response.data
+                //
+                // }).catch(()=>{
+                //
+                // })
+                // console.log(this.searchInput + this.searchSelect)
+            }
 
             handleDownload() {
                 this.downloadLoading = true

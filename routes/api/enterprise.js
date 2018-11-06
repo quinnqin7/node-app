@@ -14,6 +14,7 @@ const user = require('../../modules/user')
 const mail = require('../../config/mail')
 const keys = require("../../config/keys");
 
+
 router.post("/patients", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var enterpriseId = jwt.decode(req.body.token).id
 	Patients.find({enterpriseId}).then(patientlist => {
@@ -328,6 +329,37 @@ router.post("/fetchNoHandleAppointmentData", passport.authenticate('jwt', {sessi
 });
 
 
+//Search
+router.post("/Search", passport.authenticate('jwt', {session: false}), (req, res) => {
+	console.log(req.body)
+	if(req.body.searchSelect === '1')
+	{
+		Patients.find({name:req.body.searchInput}).then(data=>{
+			res.json({
+				code:20000,
+				data
+			})
+			console.log(data)
+		}).catch()
+	}
+	if(req.body.searchSelect === '2')
+	{
+
+	}
+	if(req.body.searchSelect === '3')
+	{
+
+	}
+
+	// doctorMessage.find({enterpriseId:req.body.enterpriseId,handle:'0'}).then(docs=>{
+	// 	var data=docs
+	// 	console.log(data)
+	// 	res.json({
+	// 		code:20000,
+	// 		data
+	// 	})
+	// })
+});
 
 
 
