@@ -2,14 +2,14 @@
     <div class="app-container">
         <div class="filter-container">
             <div style="margin-top: 15px;">
-                <el-input placeholder="请输入内容" v-model="searchInput" class="input-with-select" @focus="fetchData">
-                    <el-select v-model="searchSelect" slot="prepend" placeholder="请选择">
-                        <el-option label="姓名" value="1"></el-option>
-                        <el-option label="性别" value="2"></el-option>
-                        <el-option label="用户电话" value="3"></el-option>
-                    </el-select>
-                    <el-button slot="append" @click="handleSearch"  icon="el-icon-search"></el-button>
-                </el-input>
+                <input placeholder="请输入内容" v-model="searchInput" class="input-with-select" @focus="fetchData" v-on:input="handleSearch">
+                    <!--<el-select v-model="searchSelect" slot="prepend" placeholder="请选择">-->
+                        <!--<el-option label="姓名" value="1"></el-option>-->
+                        <!--<el-option label="性别" value="2"></el-option>-->
+                        <!--<el-option label="用户电话" value="3"></el-option>-->
+                    <!--</el-select>-->
+                    <!--<el-button slot="append" @click="handleSearch"  icon="el-icon-search"></el-button>-->
+                </input>
             </div>
             <!--<el-input :placeholder="$t('table.title')" v-model="listQuery.title" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter"/>-->
             <!--<el-select v-model="listQuery.importance" :placeholder="$t('table.importance')" clearable style="width: 90px" class="filter-item">-->
@@ -285,7 +285,7 @@
                     }
                 })
             },
-            handleSearch(){
+            handleSearch: function(){
                 //window.location.reload()
                 this.tmp = this.list
                 //过滤关键词 包含_id
