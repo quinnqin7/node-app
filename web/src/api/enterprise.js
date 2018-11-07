@@ -193,3 +193,27 @@ export function Search(searchSelect,searchInput,token){
         }
     })
 }
+
+//getHistory
+export function getHistory(patientId,enterpriseId){
+    return request({
+        url: '/api/enterprise/getHistory',
+        method: 'post',
+        data:{
+            patientId:patientId,
+            enterpriseId:enterpriseId,
+        }
+    })
+}
+
+//getHistory2
+export function getHistory2(patientIdArray,enterpriseId){
+    return request({
+        url: '/api/enterprise/getHistory2',
+        method: 'post',
+        data:{
+            patientIdArray:patientIdArray,
+            enterpriseId:enterpriseId,
+        }
+    })
+}
