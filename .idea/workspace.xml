@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="link">
+      <change afterPath="$PROJECT_DIR$/web/src/views/journal/journalList/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/permission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/store/modules/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/layout/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/layout/components/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/login/patient.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/login/patient.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/api/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/api/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/i18n/langs/cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/i18n/langs/cn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/views/journal/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/journal/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/views/table/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/table/index.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -114,7 +115,7 @@
     <session id="-1476528767">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="LICENSE" value="1" />
+          <entry key="LICENSE" value="2" />
           <entry key="css" value="2" />
           <entry key="gif" value="1" />
           <entry key="gitignore" value="3" />
@@ -122,7 +123,7 @@
           <entry key="ico" value="3" />
           <entry key="jpeg" value="2" />
           <entry key="jpg" value="23" />
-          <entry key="js" value="350" />
+          <entry key="js" value="356" />
           <entry key="json" value="17" />
           <entry key="localhost/med/doctor" value="14" />
           <entry key="localhost/med/doctorMessage" value="8" />
@@ -134,12 +135,12 @@
           <entry key="localhost/med/patients" value="3" />
           <entry key="localhost/med/users" value="19" />
           <entry key="map" value="1" />
-          <entry key="md" value="24" />
+          <entry key="md" value="25" />
           <entry key="png" value="23" />
           <entry key="pwd" value="1" />
           <entry key="svg" value="12" />
           <entry key="txt" value="1" />
-          <entry key="vue" value="112" />
+          <entry key="vue" value="115" />
           <entry key="xml" value="1" />
           <entry key="yml" value="2" />
         </counts>
@@ -151,13 +152,13 @@
           <entry key="HTML" value="7" />
           <entry key="Image" value="52" />
           <entry key="JSON" value="17" />
-          <entry key="JavaScript" value="349" />
+          <entry key="JavaScript" value="355" />
           <entry key="MONGO" value="96" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="PLAIN_TEXT" value="29" />
           <entry key="SVG" value="12" />
           <entry key="SourceMap" value="1" />
-          <entry key="Vue.js" value="112" />
+          <entry key="Vue.js" value="115" />
           <entry key="XML" value="1" />
           <entry key="YAML" value="2" />
         </counts>
@@ -167,11 +168,11 @@
           <entry key="css" value="32" />
           <entry key="gitignore" value="4" />
           <entry key="html" value="48" />
-          <entry key="js" value="9355" />
+          <entry key="js" value="9767" />
           <entry key="json" value="10" />
-          <entry key="md" value="4886" />
+          <entry key="md" value="4933" />
           <entry key="txt" value="411" />
-          <entry key="vue" value="11747" />
+          <entry key="vue" value="12630" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -180,22 +181,22 @@
           <entry key="Git file" value="4" />
           <entry key="HTML" value="48" />
           <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="9356" />
+          <entry key="JavaScript" value="9768" />
           <entry key="Markdown" value="10" />
-          <entry key="PLAIN_TEXT" value="5287" />
-          <entry key="Vue.js" value="11746" />
+          <entry key="PLAIN_TEXT" value="5334" />
+          <entry key="Vue.js" value="12629" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -248,99 +249,145 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/utils/auth.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/utils/validate.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/permission.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api/users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/store/modules/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/login/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="103" column="30" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/login/patient.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="99" column="48" lean-forward="true" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api/enterprise.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="390" column="10" selection-start-line="390" selection-start-column="10" selection-end-line="390" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/utils/request.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/utils/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-139">
-              <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.71608204">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/src/views/Patients/index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="388">
+                  <caret line="212" column="14" lean-forward="true" selection-end-line="500" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-form-item#3;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-table-column#0;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-table-column#1;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-table-column#2;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="e#6085#6156#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/src/views/table/index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1229">
+                  <caret line="127" column="18" selection-end-line="428" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="e#6085#6156#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/src/views/journal/edit.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="127">
+                  <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/src/views/journal/journalList/index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1485">
+                  <caret line="152" column="21" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-button#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="e#4525#4596#0" expanded="true" />
+                    <element signature="e#14874#14894#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/src/api/admin.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="402">
+                  <caret line="41" column="38" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/api/admin.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="446">
+                  <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/src/router/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="33">
+                  <caret line="368" column="12" lean-forward="true" selection-start-line="368" selection-start-column="12" selection-end-line="368" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#0#21#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/src/api/comm.js">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="305">
+                    <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
+                  </first_editor>
+                  <second_editor>
+                    <markdownNavigatorState />
+                  </second_editor>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LICENSE">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/cn.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="452">
+                  <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -352,10 +399,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dateFormat</find>
-      <find>list</find>
-      <find>textarea3</find>
-      <find>showDate</find>
       <find>tableData</find>
       <find>getEnterprises</find>
       <find>console</find>
@@ -382,6 +425,10 @@
       <find>$in</find>
       <find>require</find>
       <find>getDoctorMessage</find>
+      <find>/:</find>
+      <find>router-link</find>
+      <find>find</find>
+      <find>findOneAndUpdate</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -401,15 +448,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/src/views/mine/enterprise/index.vue" />
-        <option value="$PROJECT_DIR$/modules/journal.js" />
-        <option value="$PROJECT_DIR$/web/src/api/admin.js" />
-        <option value="$PROJECT_DIR$/web/src/api/doctor.js" />
-        <option value="$PROJECT_DIR$/web/src/views/journal/index.vue" />
         <option value="$PROJECT_DIR$/modules/patients.js" />
         <option value="$PROJECT_DIR$/routes/api/doctor.js" />
         <option value="$PROJECT_DIR$/public/initdb/models/patients.js" />
-        <option value="$PROJECT_DIR$/routes/api/admin.js" />
         <option value="$PROJECT_DIR$/web/src/views/dashboard/admin.vue" />
         <option value="$PROJECT_DIR$/web/src/utils/dateFormat/index.js" />
         <option value="$PROJECT_DIR$/web/src/views/arrange/doctor/index.vue" />
@@ -427,10 +468,8 @@
         <option value="$PROJECT_DIR$/web/src/api/login.js" />
         <option value="$PROJECT_DIR$/web/src/views/register/index.vue" />
         <option value="$PROJECT_DIR$/config/passport.js" />
-        <option value="$PROJECT_DIR$/web/src/router/index.js" />
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/static/assets/bootstrap/js/popper.min.js" />
-        <option value="$PROJECT_DIR$/web/src/i18n/langs/cn.js" />
         <option value="$PROJECT_DIR$/config/keys.js" />
         <option value="$PROJECT_DIR$/public/initdb/user.js" />
         <option value="$PROJECT_DIR$/public/initdb/patientd.js" />
@@ -444,7 +483,6 @@
         <option value="$PROJECT_DIR$/web/src/views/Patients/index.vue" />
         <option value="$PROJECT_DIR$/public/initdb/doctorServiceTime.js" />
         <option value="$PROJECT_DIR$/public/serverpwd.txt" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/web/src/permission.js" />
         <option value="$PROJECT_DIR$/web/src/views/layout/components/Navbar.vue" />
         <option value="$PROJECT_DIR$/web/src/store/modules/user.js" />
@@ -452,6 +490,15 @@
         <option value="$PROJECT_DIR$/web/src/views/login/index.vue" />
         <option value="$PROJECT_DIR$/web/src/views/login/patient.vue" />
         <option value="$PROJECT_DIR$/web/src/utils/request.js" />
+        <option value="$PROJECT_DIR$/web/src/views/table/index.vue" />
+        <option value="$PROJECT_DIR$/web/src/views/journal/journalLIst/index.vue" />
+        <option value="$PROJECT_DIR$/web/src/i18n/langs/cn.js" />
+        <option value="$PROJECT_DIR$/web/src/views/journal/journalList/index.vue" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/web/src/api/admin.js" />
+        <option value="$PROJECT_DIR$/routes/api/admin.js" />
+        <option value="$PROJECT_DIR$/web/src/router/index.js" />
+        <option value="$PROJECT_DIR$/web/src/views/journal/edit.vue" />
       </list>
     </option>
   </component>
@@ -463,9 +510,218 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/public/initdb/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/ajv/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/aproba/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/are-we-there-yet/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/asn1/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/assert-plus/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/asynckit/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/aws-sign2/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/aws4/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt-pbkdf/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/aproba/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/are-we-there-yet/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/console-control-strings/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/deep-extend/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/delegates/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/detect-libc/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/fs-minipass/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/gauge/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/has-unicode/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/ignore-walk/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/minipass/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/minipass/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/minipass/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/minizlib/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/needle/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/node-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/nopt/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/npm-bundled/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/npm-packlist/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/npmlog/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/os-homedir/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/os-tmpdir/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/osenv/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/rc/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/rc/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/sax/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/strip-json-comments/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/tar/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/tar/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/tar/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/wide-align/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bcrypt/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bluebird/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bson/browser_build/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/bson/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/caseless/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/co/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/combined-stream/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/commander/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/console-control-strings/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/dashdash/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/delayed-stream/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/delegates/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/ecc-jsbn/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/extend/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/extsprintf/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/fast-deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/fast-json-stable-stringify/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/forever-agent/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/form-data/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/gauge/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/getpass/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/har-schema/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/har-validator/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/has-unicode/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/http-signature/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/is-typedarray/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/isexe/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/isstream/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/jsbn/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/json-schema-traverse/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/json-schema/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/json-stringify-safe/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/jsprim/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/kareem/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/lodash.get/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/memory-pager/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mime-db/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mime-types/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mockjs/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mockjs/test/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongodb-core/node_modules/bson/browser_build/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongodb-core/node_modules/bson/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongodb-core/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongodb/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose-legacy-pluralize/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/aggregate/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/express/connection-sharing/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/geospatial/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/lean/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/mapreduce/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/promises/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/querybuilder/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/examples/replicasets/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mongoose/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mpath/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/mquery/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/nan/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/nan/tools/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/node-gyp/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/nopt/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/npmlog/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/oauth-sign/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/os-homedir/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/os-tmpdir/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/osenv/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/performance-now/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/psl/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/regexp-clone/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/request/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/require_optional/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/require_optional/test/nestedTest/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/resolve-from/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/saslprep/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/sliced/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/sparse-bitfield/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/sshpk/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/tar/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/tough-cookie/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/tunnel-agent/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/tweetnacl/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/uuid/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/verror/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/which/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/wide-align/package.json" />
+      <path value="$PROJECT_DIR$/public/initdb/node_modules/wrappy/package.json" />
       <path value="$PROJECT_DIR$/public/initdb/package.json" />
       <path value="$PROJECT_DIR$/web/package.json" />
     </packageJsonPaths>
@@ -473,11 +729,10 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="104" />
-    <option name="y" value="102" />
-    <option name="width" value="1301" />
-    <option name="height" value="745" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="981" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -488,7 +743,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -530,29 +784,22 @@
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="i18n" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="i18n" type="462c0819:PsiDirectoryNode" />
+              <item name="langs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
@@ -560,7 +807,6 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
@@ -568,8 +814,7 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="journal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
@@ -577,7 +822,8 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="journal" type="462c0819:PsiDirectoryNode" />
+              <item name="journalList" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
@@ -587,10 +833,19 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Patients" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node-app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="table" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -600,7 +855,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -669,6 +924,7 @@
       <workItem from="1541522360955" duration="2446000" />
       <workItem from="1541524821662" duration="18740000" />
       <workItem from="1541558881483" duration="6631000" />
+      <workItem from="1541615784906" duration="7972000" />
     </task>
     <task id="LOCAL-00013" summary="fix a holy bug">
       <created>1540815507956</created>
@@ -1017,7 +1273,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333179000" />
+    <option name="totallyTimeSpent" value="341765000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1030,10 +1286,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="981" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18882175" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7521079" visible="true" weight="0.19542067" />
+      <window_info id="Structure" order="1" sideWeight="0.24789207" side_tool="true" visible="true" weight="0.19542067" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1042,11 +1299,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996865" weight="0.26153848" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978701" weight="0.259542" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.75755286" visible="true" weight="0.3539945" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.24244712" side_tool="true" visible="true" weight="0.3539945" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.77442414" weight="0.2393539" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7550586" visible="true" weight="0.35332605" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.24494143" side_tool="true" visible="true" weight="0.35332605" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.7742279" weight="0.25845146" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1195,55 +1452,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/initdb/historyCase.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/initdb/doctor.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/initdb/enterprise.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/initdb/patientd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/initdb/README.md" />
-    <entry file="file://$PROJECT_DIR$/public/initdb/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/initdb/generate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="86" column="49" lean-forward="true" selection-start-line="86" selection-start-column="49" selection-end-line="86" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/initdb/models/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/appointment/doctor/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/doctor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1367,13 +1575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/api/enterprise.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="212" column="23" lean-forward="true" selection-start-line="212" selection-start-column="23" selection-end-line="212" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/static/assets/img/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1394,20 +1595,6 @@
     <entry file="file://$PROJECT_DIR$/web/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-carousel#0;n#section#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1421,50 +1608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="-3862">
-            <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/Patients/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="252" column="32" selection-start-line="252" selection-start-column="32" selection-end-line="257" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-form-item#3;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-table-column#0;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-table-column#1;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-table-column#2;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#6085#6156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/api/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1479,9 +1626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16">
           <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1497,13 +1641,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/utils/validate.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/enterprise.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="390" column="10" selection-start-line="390" selection-start-column="10" selection-end-line="390" selection-end-column="10" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/store/modules/user.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1540,9 +1677,149 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/views/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1314">
+          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#style#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-carousel#0;n#section#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/api/enterprise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3798">
+          <caret line="212" column="23" selection-start-line="212" selection-start-column="23" selection-end-line="212" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/enterprise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7020">
+          <caret line="390" column="10" selection-start-line="390" selection-start-column="10" selection-end-line="390" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/cn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/api/comm.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="305">
+            <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/views/table/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1229">
+          <caret line="127" column="18" selection-end-line="428" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#6085#6156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/views/Patients/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="212" column="14" lean-forward="true" selection-end-line="500" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-form-item#3;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-table-column#0;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-table-column#1;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-table-column#2;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#6085#6156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/api/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/views/journal/journalList/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="152" column="21" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#4525#4596#0" expanded="true" />
+            <element signature="e#14874#14894#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="368" column="12" lean-forward="true" selection-start-line="368" selection-start-column="12" selection-end-line="368" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/views/journal/edit.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
         </state>
       </provider>
     </entry>

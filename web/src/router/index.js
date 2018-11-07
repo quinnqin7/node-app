@@ -383,9 +383,16 @@ export const asyncRouterMap = [
                 meta: {title: 'router.journaledit', icon: 'chart', role:['4']}
             },
             {
+                hidden:'true',
+                path: 'journaledit/:journalId',
+                name: 'journalUpdate',
+                component: () => import('@/views/journal/edit'),
+                meta: {title: 'router.journaledit', icon: 'chart', role:['4']}
+            },
+            {
                 path: 'journalList',
                 name: 'journalList',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/journal/journalList/index'),
                 meta: {title: 'router.journalList', icon: 'chart', role:['4']}
             }
         ]

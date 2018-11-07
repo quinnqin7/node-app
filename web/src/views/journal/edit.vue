@@ -29,7 +29,7 @@
 
 <script>
     import Tinymce from './components/Tinymce'
-    import {submitJournal} from "../../api/admin";
+    import {fetchJournalContent, submitJournal, updateJournal} from "../../api/admin";
     import {getToken} from "../../utils/auth";
 
     export default {
@@ -43,26 +43,53 @@
                 title:'',
             }
         },
+        created(){
+          if(this.$route.params.journalId){
+              this.fetchContent(this.$route.params.journalId)
+              //console.log(this.$route.params.journalId)
+          }else {
+              this.clean()
+          }
+          },
         methods:{
             submitJournal(){
                 if(this.content!==''&& this.select!==''&& this.title!==''){
                     //FIXME 这边要添加验证 ,暂时先不弄
-                    submitJournal(this.content,this.select,this.title,getToken()).then(()=>{
-                        this.$notify({
-                            title: '发表提示',
-                            message: '发表成功',
-                            type: 'success',
-                            duration: 2000
+                    if(this.$route.params.journalId) {
+                        updateJournal(this.$route.params.journalId,this.content, this.select, this.title,).then((response)=>{
+                            this.$notify({
+                                title: '修改提示',
+                                message: '修改成功',
+                                type: 'success',
+                                duration: 2000
+                            })
+                        	}).catch(err=>{
+                        		console.log(err)
+                            this.$notify({
+                                title: '修改提示',
+                                message: '修改失败',
+                                type: 'error',
+                                duration: 2000
+                            })
                         })
-                        window.location.reload()
-                    }).catch(()=>{
-                        this.$notify({
-                            title: '发表提示',
-                            message: '发表失败',
-                            type: 'error',
-                            duration: 2000
+                    }else{
+                        submitJournal(this.content, this.select, this.title, getToken()).then(() => {
+                            this.$notify({
+                                title: '发表提示',
+                                message: '发表成功',
+                                type: 'success',
+                                duration: 2000
+                            })
+                            window.location.reload()
+                        }).catch(() => {
+                            this.$notify({
+                                title: '发表提示',
+                                message: '发表失败',
+                                type: 'error',
+                                duration: 2000
+                            })
                         })
-                        })
+                    }
                 }else{
                     this.$notify({
                         title: '错误',
@@ -76,6 +103,16 @@
                 this.content = null;
                 this.select = null;
                 this.title = null;
+            },
+            fetchContent(journalId){
+                fetchJournalContent(journalId).then((response)=>{
+                    this.content = response.data.content
+                    this.select = response.data.select
+                    this.title = response.data.title
+                		console.log(response.data)
+                	}).catch(err=>{
+                		console.log(err)
+                })
             }
         }
     }

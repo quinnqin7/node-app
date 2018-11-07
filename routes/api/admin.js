@@ -16,6 +16,92 @@ const Journal = require('../../modules/journal')
 
 
 
+
+
+
+
+
+//submitJournal 提交公告
+router.post("/submitJournal", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//console.log(req.body)
+if(jwt.decode(req.body.token).role === '4'){
+	var Journalontent = new Journal({
+		date:new Date(),
+		content:req.body.content,
+		recipient:req.body.recipient,
+		title:req.body.title,
+	})
+	Journalontent.save().then(doc=>{
+		//console.log(doc)
+		res.json({
+			code:20000
+		})
+	}).catch(err=>{
+		//consoel.log(err)
+		res.status(404).json(err)
+	})
+}else{
+	res.status(404).json(err)
+}
+});
+
+
+//getJournalList
+router.post("/getJournalList", passport.authenticate('jwt', {session: false}), (req, res) => {
+	Journal.find({},{title:1,date:1,_id:1}).then(data=>{
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		console.log(err)
+		res.status(400).json('获取公告错误')
+	})
+});
+
+//fetchJournalContent
+router.post("/fetchJournalContent", passport.authenticate('jwt', {session: false}), (req, res) => {
+	Journal.findOne({_id:req.body.journalId}).then(data=>{
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		console.log(err)
+		res.status(400).json('获取公告错误')
+	})
+});
+
+
+//updateJournal
+router.post("/updateJournal", passport.authenticate('jwt', {session: false}), (req, res) => {
+	var journal = {
+		content: req.body.content,
+		select: req.body.select,
+		title: req.body.title
+	}
+	Journal.findOneAndUpdate(
+		{_id:req.body.journalId},
+		{$set: journal},
+		{new: true}).then(data=>{
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		console.log(err)
+		res.status(400).json('更新公告错误')
+	})
+});
+
+
+
+
+
+
+
+
+
 // router.post("/getEnterprises", passport.authenticate('jwt', {session: false}), (req, res) => {
 // 	var doctorId = jwt.decode(req.body.token).id
 // 	doctorServiceTime.find({doctorId: doctorId}).then(docs => {
@@ -214,33 +300,6 @@ const Journal = require('../../modules/journal')
 // 	})
 //
 // });
-
-
-
-
-//submitJournal 提交公告
-router.post("/submitJournal", passport.authenticate('jwt', {session: false}), (req, res) => {
-	//console.log(req.body)
-if(jwt.decode(req.body.token).role === '4'){
-	var Journalontent = new Journal({
-		date:new Date(),
-		content:req.body.content,
-		recipient:req.body.recipient,
-		title:req.body.title,
-	})
-	Journalontent.save().then(doc=>{
-		//console.log(doc)
-		res.json({
-			code:20000
-		})
-	}).catch(err=>{
-		//consoel.log(err)
-		res.status(404).json(err)
-	})
-}else{
-	res.status(404).json(err)
-}
-});
 
 
 module.exports = router;

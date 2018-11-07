@@ -90,7 +90,7 @@ const cn = {
         'delay':'迟到',
         'status':'状态',
         'absent':'缺席',
-
+        'title':'标题'
 	},
     nav:{
 	    'hello':'您好',
