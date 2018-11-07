@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="修改 README.md 文档">
+    <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/Patients/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/Patients/index.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -201,7 +199,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/views/Patients/index.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -218,15 +216,6 @@
                 <element signature="n#style#0;n#el-table-column#2;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#8129#8198#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="238" column="6" selection-start-line="238" selection-start-column="6" selection-end-line="238" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -364,9 +353,8 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="114" />
-    <option name="y" value="29" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="817" />
   </component>
@@ -471,14 +459,7 @@
       <workItem from="1541257062386" duration="28000" />
       <workItem from="1541257100987" duration="65409000" />
       <workItem from="1541430137758" duration="20068000" />
-      <workItem from="1541522303736" duration="899000" />
-    </task>
-    <task id="LOCAL-00010" summary="other">
-      <created>1540762011862</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1540762011862</updated>
+      <workItem from="1541522303736" duration="1430000" />
     </task>
     <task id="LOCAL-00011" summary="other">
       <created>1540762020890</created>
@@ -816,11 +797,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541430094553</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="修改 README.md 文档">
+      <created>1541523515440</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1541523515441</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304535000" />
+    <option name="totallyTimeSpent" value="305066000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -833,17 +821,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="817" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996865" weight="0.26153848" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23588924" side_tool="true" weight="0.3816794" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.8290735" weight="0.31924883" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.8290735" visible="true" weight="0.31850788" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="right" auto_hide="true" id="Mongo Explorer" order="4" weight="0.13791268" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.76411074" visible="true" weight="0.26398852" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19527897" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.76411074" weight="0.26398852" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19527897" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Translate" order="3" weight="0.328541" />
@@ -1167,6 +1155,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/views/Patients/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1183,13 +1178,6 @@
             <element signature="n#style#0;n#el-table-column#2;n#el-table#0;n#el-form#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#8129#8198#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="238" column="6" selection-start-line="238" selection-start-column="6" selection-end-line="238" selection-end-column="6" />
         </state>
       </provider>
     </entry>
