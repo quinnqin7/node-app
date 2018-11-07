@@ -2,7 +2,7 @@
 # 项目简介
 
   本项目在 [nvm] 安装的 [Nodejs8.12](https://nodejs.org/zh-cn/) 环境下开发, 语言 JavaScript [es6](http://es6.ruanyifeng.com)
-
+  * [在线地址](http://med.4843.fun) [测试账号](./public/serverpwd.txt)
 > 使用框架
 
 * 后台: [express4.16.4],
@@ -239,7 +239,7 @@ export default permission;
 *所有表单样式的优化
 *登录界面的优化及错误提示
 *首页模板样式的优化（建议把颜色改为浅色，简洁为主）
-    
+
 
 ***
 ### 其他问题
