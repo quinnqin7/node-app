@@ -10,7 +10,8 @@ module.exports = function (num, enterpriseId, doctorId) {
 			'startTime':Random.date('yyyy-MM-dd'),
 			'endTime':Random.date('yyyy-MM-dd'),
 			'enterpriseId': enterpriseId.toString(),
-			'doctorId':doctorId.toString()
+			'doctorId':doctorId.toString(),
+			'sign':'0'
 		})
 
 		var dst = new doctorServiceTime(data)

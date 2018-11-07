@@ -55,32 +55,7 @@
                 <!-- END NAVIGATION AREA -->
 
                  <!--MOBILE-MENU-AREA START -->
-                    <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block">
-                        <div class="col-md-9">
-                            <div class="mobile-menu">
-                                <nav id="dropdown">
-                                    <ul class="navbar-nav">
-                                        <li><a href="index.html">Home</a>
-                                            <ul>
-                                                <li><a href="index.html">Home 1</a></li>
-                                                <li><a href="index-2.html">Home 2</a></li>
-                                                <li><a href="index-3.html">Home 3</a></li>
-                                                <li><a href="index-4.html">Home 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        没写 css 样式
-                                        <li><a href="#">I want To</a>
-                                            <ul>
-                                                <li><a href="#"><i class="icofont icofont-doctor-alt"></i> Find a Doctor</a></li>
-                                                <li><a href="#"><i class="icofont icofont-ui-calendar"></i> Request an Appointment</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
+
                  <!--MOBILE-MENU-AREA END -->
 
 
@@ -95,7 +70,10 @@
             </el-carousel-item>
         </el-carousel>
         </section>
-
+        <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block" style="margin-bottom: 50px;">
+            <span class="hahah"><a class="aaa" href="/#/login">Doctor & Master</a></span>
+            <span class="hahah"><a class="aaa" href="/#/patientlogin">EnterpriseUser</a></span>
+        </div>
         <section id="counter" class="counter-section overlay  section-back-image" data-background="assets/img/bg/counter-bg.jpg">
             <div class="container">
                 <div class="row wow fadeInDown">
@@ -235,5 +213,21 @@
 
     .el-icon-arrow-down {
         font-size: 12px;
+    }
+    .hahah{
+        float: right;
+        display: block;
+        height:50px;
+        width:50%;
+        text-align: center;
+        line-height: 50px;
+        background-color: #6cadc8;
+
+    }
+    a.aaa:link{
+        color:#ffffff !important;
+    }
+    a.aaa:visited{
+        color:#ffffff !important;
     }
 </style>

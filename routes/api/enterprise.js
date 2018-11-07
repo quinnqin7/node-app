@@ -71,28 +71,35 @@ router.post("/updatePatient", passport.authenticate('jwt', {session: false}), (r
 		gender: req.body.patientData.gender,
 		enterpriseId: mongoose.Types.ObjectId(req.body.enterpriseId)
 	}
-	var historyCaseToSave = new historyCase({
-		mainContent: req.body.patientData.mainContent,
-		suggest: req.body.patientData.suggest,
-		doctorId: mongoose.Types.ObjectId(req.body.doctorId),
-		enterpriseId: mongoose.Types.ObjectId(req.body.enterterpriseId),
-		patientId: mongoose.Types.ObjectId(req.body.patientData._id),
-		time: new Date()
-	})
-	if (req.body.doctorId != "") { // 只有医师 才能添加病例
-		historyCaseToSave.save().then((docs) => {
-			res.json({
-				code: 20000
-			})
-		}).catch(err => {
-			res.status(404).json(err)
-		})
-	}
+
+
+	//console.log(req.body.patientData._id)
 	Patients.findOneAndUpdate(
-		{_id: req.body.patientData._id},
+		{_id: mongoose.Types.ObjectId(req.body.patientData._id)},
 		{$set: patient},
 		{new: true}
 	).then(profile => {
+		if (req.body.doctorId != "") { // 只有医师 才能添加病例
+			var historyCaseToSave = new historyCase({
+				mainContent: req.body.patientData.mainContent,
+				suggest: req.body.patientData.suggest,
+				doctorId: mongoose.Types.ObjectId(req.body.doctorId),
+				enterpriseId: mongoose.Types.ObjectId(req.body.enterpriseId),
+				patientId: mongoose.Types.ObjectId(req.body.patientData._id),
+				time: new Date()
+			})
+			historyCaseToSave.save().then((docs) => {
+				res.json({
+					code: 20000
+				})
+			}).catch(err => {
+				res.status(404).json(err)
+			})
+		}else{
+			res.json({
+				code: 20000
+			})
+		}
 	}).catch(err => {
 		res.status(404).json(err)
 	})
@@ -359,6 +366,34 @@ router.post("/Search", passport.authenticate('jwt', {session: false}), (req, res
 	// 		data
 	// 	})
 	// })
+});
+
+
+
+
+//getHistory
+router.post("/getHistory", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//返回指定企业 指定 人 的 所有 病例
+	historyCase.find({enterpriseId:req.body.enterpriseId,patientId:req.body.patientId}).then(docs=>{
+		var data=docs
+		console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
+
+router.post("/getHistory2", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//返回指定企业 指定 人 的 所有 病例
+	historyCase.find({patientId:{$in:req.body.patientIdArray}}).then(docs=>{
+		var data=docs
+		//console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
 });
 
 

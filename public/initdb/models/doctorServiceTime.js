@@ -4,6 +4,7 @@ var doctorServiceTimeSchema = mongoose.Schema({
 	endTime: Date,
 	enterpriseId: String,
 	doctorId:mongoose.Schema.Types.ObjectId,
+	sign:String
 })
 
 module.exports = mongoose.model('doctorServiceTime', doctorServiceTimeSchema, 'doctorServiceTime')
