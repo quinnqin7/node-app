@@ -95,9 +95,21 @@
                     if (valid) {
                         this.loading = true
                         this.$store.dispatch('patientLogin', this.loginForm).then(() => {
+                            this.$notify({
+                                title: '登陆',
+                                message: '登陆成功',
+                                type: 'success',
+                                duration: 1000
+                            })
                             this.loading = false
                             this.$router.push({path: this.redirect || '/'})
-                        }).catch(() => {
+                        }).catch((err) => {
+                            this.$notify({
+                                title: '登陆',
+                                message: err.response.data,
+                                type: 'error',
+                                duration: 2000
+                            })
                             this.loading = false
                         })
                     } else {

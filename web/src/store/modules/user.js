@@ -37,7 +37,7 @@ const user = {
           commit('SET_TOKEN', data.token)
             // FIXME my gravatar
             commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
-          resolve()
+          resolve(response)
         }).catch(error => {
           reject(error)
         })

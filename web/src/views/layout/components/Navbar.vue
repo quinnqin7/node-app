@@ -126,6 +126,12 @@
                     //console.log(response)
                 }).catch(err=>{
                     console.log(err)
+                    this.$notify({
+                        title: '出错',
+                        message: '登陆超时',
+                        type: 'error',
+                        duration: 1000
+                    })
                 })
             },
             realTime(){

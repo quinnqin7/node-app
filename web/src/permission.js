@@ -45,11 +45,11 @@ router.beforeEach((to, from, next) => {
       })
       if (hah) {
           //if (true) {
-          console.log(to.path)
+          //console.log(to.path)
           next()
       } else {
           // The First Page to Login
-          next(`/a?redirect=${to.path}`) // 否则全部重定向到登录页
+          next(`/a?redirect=${to.path}`) // 否则全部重定向到首页
           NProgress.done()
       }
   }
