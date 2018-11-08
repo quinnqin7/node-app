@@ -49,3 +49,25 @@ export function updateJournal(journalId,content,select,title) {
         }
     })
 }
+
+//adminToGetEneterprise
+export function adminToGetEneterprise(token) {
+    return request({
+        url: '/api/admin/adminToGetEneterprise',
+        method: 'post',
+        data:{
+            token:token,
+        }
+    })
+}
+
+//getFeedBack
+
+export function getFeedBack() {
+    return request({
+        url: '/api/admin/getFeedBack',
+        method: 'post',
+        data:{
+        }
+    })
+}

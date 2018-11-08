@@ -6,7 +6,7 @@
                 <!--<a target="_blank" class="link-type" href="https://panjiachen.github.io/vue-element-admin-site/component/rich-editor.html"> {{ $t('components.documentation') }}</a>-->
             <!--</code>-->
             <div>
-                <tinymce :height="300" v-model="content"/>
+                <tinymce style="margin:20px 20px 0 20px" :height="300" v-model="content"/>
             </div>
             <!--<div class="editor-content" v-html="content"/>-->
 

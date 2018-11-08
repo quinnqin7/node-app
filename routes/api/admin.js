@@ -13,7 +13,7 @@ const Doctor = require('../../modules/doctor')
 const user = require('../../modules/user')
 const doctorMessage = require('../../modules/doctorMessage')
 const Journal = require('../../modules/journal')
-
+const feedback = require('../../modules/feedback')
 
 
 
@@ -93,6 +93,41 @@ router.post("/updateJournal", passport.authenticate('jwt', {session: false}), (r
 		res.status(400).json('更新公告错误')
 	})
 });
+
+
+//adminToGetEneterprise
+router.post("/adminToGetEneterprise", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//console.log(jwt.decode(req.body.token))
+	if(jwt.decode(req.body.token).role=== '4'){
+	enterprise.find({}).then(data=>{
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		console.log(err)
+		res.status(400).json('获取公告错误')
+	})}else{
+		res.status(400).json('motherfuck')
+	}
+});
+
+//getFeedBack
+router.post("/getFeedBack", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//console.log(jwt.decode(req.body.token))
+		feedback.find({}).then(data=>{
+			res.json({
+				code:20000,
+				data
+			})
+		}).catch(err=>{
+			console.log(err)
+			res.status(400).json('获取公告错误')
+		})
+});
+
+
+
 
 
 

@@ -410,7 +410,7 @@ export const asyncRouterMap = [
             {
                 path: 'doctormanager',
                 name: 'doctormanager',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/admin/manager/doctor'),
                 meta: {title: 'router.doctormanager', icon: 'peoples', role:['4']}
             }
         ]
@@ -425,7 +425,7 @@ export const asyncRouterMap = [
             {
                 path: 'enterprisemanager',
                 name: 'enterprisemanager',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/admin/manager/enterprise'),
                 meta: {title: 'router.enterprisemanager', icon: 'peoples', role:['4']}
             }
         ]
@@ -455,7 +455,7 @@ export const asyncRouterMap = [
             {
                 path: 'feedback',
                 name: 'feedback',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/admin/feedback/index'),
                 meta: {title: 'router.feedback', icon: 'peoples', role:['4']}
             }
         ]
