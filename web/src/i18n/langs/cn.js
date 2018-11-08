@@ -44,7 +44,10 @@ const cn = {
         'doctormanager':'医师管理',
         'enterprisemanager':'企业管理',
         'feedback':'反馈',
-        'map':'地图'
+        'map':'地图',
+        'case':'病例',
+        'caseEdit':'病例编辑',
+        'caseDetail':'病例查看'
 	},
 	table: {
 		'id': '排序',

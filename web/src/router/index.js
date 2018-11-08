@@ -44,7 +44,7 @@ export default new Router({
 export const asyncRouterMap = [
 
 
-    //ENTERPRISE ROUTER
+    //todo ENTERPRISE ROUTER
 
 
     {
@@ -176,7 +176,7 @@ export const asyncRouterMap = [
 
 
 
-    // DOCTOR ROUTER
+    //todo DOCTOR ROUTER
 
 
 
@@ -332,7 +332,7 @@ export const asyncRouterMap = [
 
 
 
-//    ADMIN
+//todo    ADMIN
 
 
 
@@ -474,7 +474,7 @@ export const asyncRouterMap = [
 
 
 
-    //PATIENT
+    //todo PATIENT
     {
         path: '/',
         component: Layout,
@@ -502,11 +502,38 @@ export const asyncRouterMap = [
             {
                 path: 'Home',
                 name: 'Home',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/dashboard/patient'),
                 meta: {title: 'router.home', icon: 'home', role:['3']}
             }
         ]
     },
+    {
+        path: '/Edit',
+        component: Layout,
+        meta: {
+            role:['3'],
+            title:'router.case',
+            icon: 'home'
+        },
+        children: [
+            {
+                path: 'Edit',
+                name: 'Edit',
+                component: () => import('@/views/Patients/enterprisePatient/edit/edit'),
+                meta: {title: 'router.caseEdit', icon: 'home', role:['3']}
+            },
+            {
+                path: 'Detail',
+                name: 'Detail',
+                component: () => import('@/views/Patients/enterprisePatient/list'),
+                meta: {title: 'router.caseDetail', icon: 'home', role:['3']}
+            }
+        ]
+    },
+
+
+
+
 
 //COMMMMM
 

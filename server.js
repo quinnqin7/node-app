@@ -12,7 +12,7 @@ const enterprise = require("./routes/api/enterprise")
 const comm = require("./routes/api/comm")
 //DB config
 const db = require("./config/keys").mongoURI
-
+const patient = require("./routes/api/patient")
 //使用body-parser中间件
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -33,6 +33,7 @@ app.use("/api/enterprise", enterprise)
 app.use("/api/doctor", doctor)
 app.use("/api/admin", admin)
 app.use("/api/comm", comm)
+app.use("/api/patient", patient)
 
 
 const port = process.env.PORT || 3000 //设置端口号
