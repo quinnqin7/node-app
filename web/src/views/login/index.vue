@@ -101,6 +101,7 @@
                                 type: 'success',
                                 duration: 1000
                             })
+
                             //console.log(response)
 							this.loading = false
 							this.$router.push({path: this.redirect || '/'})

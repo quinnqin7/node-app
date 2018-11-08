@@ -221,6 +221,7 @@ export default permission;
 ***
 
 ### 现存问题
+* 数据库 病例 DoctorId 字段需要 使用 String 格式
 * 打开 tinymce 编辑器的时候 cpu 的 突然 飚高,过一会就好了
 * 暂时 将 管理员 的信息 注册到 Doctor 表中,不然 登不进去(在管理员注册时,请选择 医生,然后 在数据库中 更改 管理员的 角色值,相关文件 Router/api/user.js-> /getInfo)
 * 返回错误 提示 需要 友好 化

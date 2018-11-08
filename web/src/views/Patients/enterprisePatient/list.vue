@@ -3,16 +3,20 @@
         <!--todo 搜索 框-->
         <div class="filter-container">
             <div style="margin-top: 15px;">
-                <input placeholder="请输入关键词"   v-model="searchInput" class="input-with-select" @focus="fetchData"
+                <input placeholder="请输入关键词" v-model="searchInput" class="input-with-select" @focus="fetchData"
                        style="float: left;width:200px;height:40px;border-radius: 5px;border: 1px solid #cce5ff;padding: 10px;color:#6cadc8;"
-                       v-on:input="handleSearch" v-on:keyup.enter="handleSearch" v-on:keyup.delete="fetchData" />
+                       v-on:input="handleSearch" v-on:keyup.enter="handleSearch" v-on:keyup.delete="fetchData"/>
             </div>
-            <el-button style="margin-left: 10px" type="primary" size ="big" icon="el-icon-search" @click='getHistoryCase()'>查询</el-button>
+            <el-button style="margin-left: 10px" type="primary" size="big" icon="el-icon-search"
+                       @click='getHistoryCase()'>查询
+            </el-button>
             <!--<el-button v-if="roles[0] === '2'" type="success" size ="big" @click='handleDownload()' :loading="downloadLoading">导出<i class="el-icon-upload el-icon&#45;&#45;right"></i></el-button>-->
 
-            <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit"
-                       @click="handleCreate">{{ $t('table.add') }}
-            </el-button>
+            <a href="#/Edit/Edit">
+                <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit"
+                >{{ $t('table.add') }}
+                </el-button>
+            </a>
         </div>
 
 
@@ -24,30 +28,47 @@
             border
             fit
             highlight-current-row>
-            <el-table-column align="center" :label="$t('table.id')">
+            <el-table-column align="center" :label="$t('table.id')" >
                 <template slot-scope="scope">
                     {{ scope.$index+1 }}
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.name')" align="center">
+            <el-table-column :label="$t('table.caseDoctor')" align="center">
                 <template slot-scope="scope">
-                    {{ scope.row.name }}
+                    {{ scope.row.doctorId }}
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.tel')" align="center">
+            <el-table-column :label="$t('table.hisSimple')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.tel }}</span>
+                    <template v-if="a = scope.row.mainContent"></template>
+                    <span v-html="a.replace(/<img.*\/>/ig, '').replace(/[u4E00-u9FA5]/g,'').substring(0,9)"></span>
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.gender')" align="center">
+            <el-table-column :label="$t('table.suggest')" align="center">
                 <template slot-scope="scope">
-                    <!--{{ msg = scope.row.gender==='1'?$t('table.gender-ms'):$t('table.gender-mr') }}-->
-                    {{scope.row.gender}}
+                    <template v-if="a = scope.row.suggest"></template>
+                    <span v-html="a.replace(/<img.*\/>/ig, '').replace(/[u4E00-u9FA5]/g,'').substring(0,9)">{{  }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column :label="$t('table.rate')" align="center">
+                <template slot-scope="scope">
+                    <el-button style="width:50px;height:20px;padding: 0;font-size:12px;" type="info" plain
+                               @click="handleLookAccess(scope.row.accessContent)">{{$t('table.lookAccess')}}
+                    </el-button>
+                    <el-rate
+                        v-model="scope.row.rate"
+                        :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
+                    </el-rate>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
                     <el-button type="primary" plain @click="handleDetail(scope.row)">{{$t('table.detail')}}</el-button>
+                </template>
+            </el-table-column>
+            <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
+                <template slot-scope="scope">
+                    <el-button type="success" plain @click="handleAssess(scope.row)">{{$t('table.assess')}}</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -67,25 +88,41 @@
         </div>
 
         <!--todo 弹窗-->
+        <!--FIXME 这边有时间在改-->
         <el-dialog class="dialog" :title="$t(textMap[dialogStatus])" :visible.sync="dialogFormVisible">
-
             <el-form ref="dataForm" :model="dialogData" label-position="left" label-width="70px" style="width: 100%;">
-                <el-form-item :label="$t('table.name')" prop="type">
-                    <el-input v-model="dialogData.name"/>
-                </el-form-item>
-                <el-form-item :label="$t('table.tel')" prop="type">
-                    <el-input v-model="dialogData.tel"/>
-                </el-form-item>
-                <el-form-item :label="$t('table.gender')" prop="type">
-                    <el-radio-group v-model="dialogData.gender">
-                        <el-radio label="女">女</el-radio>
-                        <el-radio label="男">男</el-radio>
-                    </el-radio-group>
-                </el-form-item>
+                <template v-if="dialogStatus === 'detail'">
+                    <el-collapse v-model="activeNames"> <!-- @change="handleChange">-->
+                        <el-collapse-item :title="$t('table.hisCase')" name="1">
+                            <div v-html="dialogData.mainContent"></div>
+                        </el-collapse-item>
+                        <el-collapse-item :title="$t('table.suggest')" name="2">
+                            <div v-html="dialogData.suggest"></div>
+                        </el-collapse-item>
+                    </el-collapse>
+                </template>
+                <template v-if="dialogStatus === 'assess'">
+                    <tinymce style="margin:0;" :height="300" v-model="content"/>
+                    <div class="block" style="float:right;margin-top: 10px">
+                        <el-rate
+                            v-model="rate"
+                            :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
+                        </el-rate>
+                    </div>
+                </template>
+                <template v-if="dialogStatus === 'lookaccess'">
+                    <el-collapse v-model="activeNames">
+                        <el-collapse-item :title="$t('table.myaccess')" name="1">
+                            <div>{{dialogData.access}}</div>
+                        </el-collapse-item>
+                    </el-collapse>
+                </template>
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false">{{ $t('table.cancel') }}</el-button>
-                <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">{{
+                <el-button type="primary"
+                           @click="dialogStatus==='assess'?assessCase(rate, content,dialogData.doctorId, dialogData._id):updateData()">
+                    {{
                     dialogStatus==='create'?$t('table.next'):$t('table.confirm') }}
                 </el-button>
             </div>
@@ -100,22 +137,31 @@
     import jwt from 'jsonwebtoken'
     import {getHistory, getHistory2, Search, updatePatient} from "@/api/enterprise";
     import {getToken} from "@/utils/auth";
-    import {getHistoryCase} from "../../../api/patient";
+    import {assessCase, getAllRate, getHistoryCase, getOneRate} from "../../../api/patients";
     //import FileSaver from 'file-saver';
     //import XLSX from 'xlsx'
+    import Tinymce from './edit/components/Tinymce'
 
     export default {
+        components: {Tinymce},
         data() {
             return {
+                watchdog:'0',
+                allRate:[],
+                content: '',
+                rate: null,
+                activeNames: ['1'],
                 searchInput: '',
                 dialogData: {},
                 dialogFormVisible: false,
                 dialogStatus: '',
                 textMap: {
                     detail: 'table.detail',
-                    create: 'table.add'
+                    create: 'table.add',
+                    assess: 'table.assess',
+                    lookaccess: 'table.lookAccess'
                 },
-                excel:[],
+                excel: [],
                 list: [], // all data
                 listLoading: true,
                 tables: [],
@@ -142,6 +188,7 @@
         comments: {},
         created() {
             this.fetchData();
+
             //this.fetchPatientData();
         },
         computed: {
@@ -154,13 +201,15 @@
         methods: {
             fetchData() {
                 this.listLoading = true
-                getHistoryCase(getToken()).then((response)=>{
-                		console.log(response.data)
-                	}).catch(err=>{
-                		console.log(err)
+                getHistoryCase(getToken()).then((response) => {
+                    this.list = response.data
+                    this.setPaginations()
+                    this.listLoading = false
+
+                }).catch(err => {
+                    console.log(err)
                 })
-                this.setPaginations()
-                this.listLoading = false
+
             },
             fetchOtherData(id) {
                 this.listLoading = true
@@ -170,18 +219,22 @@
                     this.listLoading = false
                 })
             },
-            handleCreate() {
+            handleAssess(row) {
                 this.resetTemp()
-                this.dialogStatus = 'create'
+                this.dialogStatus = 'assess'
+                this.dialogData = row
+                this.content = row.accessContent
                 this.dialogFormVisible = true
-                this.$nextTick(() => {
-                    this.$refs['dataForm'].clearValidate()
-                })
+                this.rate = row.rate
+                    this.$nextTick(() => {
+                        this.$refs['dataForm'].clearValidate()
+                    })
             },
             handleDetail(row) {
                 this.dialogFormVisible = true
                 this.dialogStatus = 'detail'
-                this.fetchOtherData(row._id)
+                this.dialogData = row
+                // this.fetchOtherData(row._id)
             },
             resetTemp() {
                 this.dialogData = {
@@ -250,36 +303,37 @@
 
             // FIXME 在传输需要修改的数据的时候, 重复传输了大量的病例
             updateData() {
-                this.$refs['dataForm'].validate((valid) => {
-                    if (valid) {
-                        // if (this.roles[0] === '1') {
-                        //     updatePatient(this.dialogData, this.$route.params.enterpriseId, jwt.decode(getToken()).id).then(() => {
-                        //         console.log(this.$route.params.enterpriseId)
-                        //         this.dialogFormVisible = false
-                        //         this.$notify({
-                        //             title: '成功',
-                        //             message: '编辑成功',
-                        //             type: 'success',
-                        //             duration: 2000
-                        //         })
-                        //         this.showEditCase = true
-                        //     })
-                        // }
-                        // else if (this.roles[0] === '2') {
-                        //     updatePatient(this.dialogData, jwt.decode(getToken()).id, "").then(() => {
-                        //         this.dialogFormVisible = false
-                        //         this.$notify({
-                        //             title: '成功',
-                        //             message: '编辑成功',
-                        //             type: 'success',
-                        //             duration: 2000
-                        //         })
-                        //         this.showEditCase = true
-                        //     })
-                        // }
+                // this.$refs['dataForm'].validate((valid) => {
+                //     if (valid) {
+                // if (this.roles[0] === '1') {
+                //     updatePatient(this.dialogData, this.$route.params.enterpriseId, jwt.decode(getToken()).id).then(() => {
+                //         console.log(this.$route.params.enterpriseId)
+                //         this.dialogFormVisible = false
+                //         this.$notify({
+                //             title: '成功',
+                //             message: '编辑成功',
+                //             type: 'success',
+                //             duration: 2000
+                //         })
+                //         this.showEditCase = true
+                //     })
+                // }
+                // else if (this.roles[0] === '2') {
+                //     updatePatient(this.dialogData, jwt.decode(getToken()).id, "").then(() => {
+                //         this.dialogFormVisible = false
+                //         this.$notify({
+                //             title: '成功',
+                //             message: '编辑成功',
+                //             type: 'success',
+                //             duration: 2000
+                //         })
+                //         this.showEditCase = true
+                //     })
+                // }
 
-                    }
-                })
+                // }
+                // })
+                this.dialogFormVisible = false
             },
             handleSearch: function () {
                 //window.location.reload()
@@ -307,9 +361,9 @@
                 this.downloadLoading = true
                 this.getHistoryCase()
                 // require.ensure([], () => {
-                const { export_json_to_excel } = require('@/vendor/Export2Excel')
-                const tHeader = ['姓名','电话' ,'病例','诊断建议','时间']
-                const filterVal = ['name','tel', 'mainContent','suggest','time']
+                const {export_json_to_excel} = require('@/vendor/Export2Excel')
+                const tHeader = ['姓名', '电话', '病例', '诊断建议', '时间']
+                const filterVal = ['name', 'tel', 'mainContent', 'suggest', 'time']
                 const list = this.excel
                 const data = this.formatJson(filterVal, list)
                 export_json_to_excel(tHeader, data, '患者列表excel')
@@ -358,6 +412,56 @@
             // })
             // console.log(this.excel)
             //}
+            assessCase(rate, content, doctorId, id) {
+                assessCase(rate, content, doctorId, id).then((response) => {
+                    //console.log(response.data)
+                    this.$notify({
+                        title: '评价',
+                        message: response.data.success,
+                        type: 'success',
+                        duration: 1000
+                    })
+                    this.content = null
+                    this.dialogFormVisible = false
+                }).catch(err => {
+                    this.$notify({
+                        title: '评价',
+                        message: err.response.data,
+                        type: 'error',
+                        duration: 1000
+                    })
+                    //console.log(err.response.data)
+                })
+                //console.log(rate+content+id+doctorId)
+            },
+            // getRate(caseId) {
+            //         console.log(caseId)
+            //     this.allRate.forEach(data=>{
+            //         if(data._id === caseId)
+            //         {
+            //             var test = {
+            //                 "a":data.rate,
+            //                 "b":data.content
+            //             }
+            //             return test
+            //         }
+            //     })
+            // },
+            // getAllRate(){
+            //     getAllRate().then((response) => {
+            //         this.allRate = response.data
+            //         this.watchdog= '1'
+            //         console.log(this.allRate)
+            //     }).catch(err => {
+            //         console.log(err)
+            //     })
+            // },
+            handleLookAccess(access) {
+                this.dialogStatus = 'lookaccess'
+                this.$alert(access,"查看评价", {
+                    dangerouslyUseHTMLString: true
+                });
+            }
         }
     }
 </script>
@@ -379,4 +483,5 @@
         text-align: right;
         margin-top: 10px;
     }
+
 </style>

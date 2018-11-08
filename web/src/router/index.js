@@ -486,7 +486,7 @@ export const asyncRouterMap = [
         },
         children: [{
             path: 'dashboard',
-            component: () => import('@/views/table/index'),
+            component: () => import('@/views/dashboard/patient'),
             meta: {
                 role:['3']
             },

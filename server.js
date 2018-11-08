@@ -12,7 +12,10 @@ const enterprise = require("./routes/api/enterprise")
 const comm = require("./routes/api/comm")
 //DB config
 const db = require("./config/keys").mongoURI
-const patient = require("./routes/api/patient")
+const patient = require("./routes/api/patients")
+
+
+
 //使用body-parser中间件
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())

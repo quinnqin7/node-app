@@ -65,10 +65,10 @@
             </el-pagination>
         </div>
 
+        <!--:fullscreen=fus-->
+        <el-dialog fullscreen=fus class="dialog" :title="$t(textMap[dialogStatus])" :visible.sync="dialogFormVisible">
 
-        <el-dialog class="dialog" :title="$t(textMap[dialogStatus])" :visible.sync="dialogFormVisible">
-
-            <el-form ref="dataForm" :model="dialogData" label-position="left" label-width="70px" style="width: 100%;">
+            <el-form :label-position="labelPosition"  ref="dataForm" :model="dialogData" label-position="left" label-width="70px" style="width:100% !important;">
                 <el-form-item :label="$t('table.name')" prop="type">
                     <el-input v-model="dialogData.name"/>
                 </el-form-item>
@@ -81,44 +81,28 @@
                         <el-radio label="男">男</el-radio>
                     </el-radio-group>
                 </el-form-item>
-                <el-form-item v-show="showEditCase" :label="$t('table.case')" style="margin-top:20px">
-                    <el-input
-                        type="textarea"
-                        :autosize="{ minRows: 2, maxRows: 4}"
-                        :placeholder="$t('table.pleaseInput')"
-                        v-model="dialogData.mainContent">
-                    </el-input>
+                <el-form-item   v-show="showEditCase" :label="$t('table.case')" style="margin-top:20px;">
+
+                    <tinymce style="margin:0;" :height="300" v-model="dialogData.mainContent"/>
+
                 </el-form-item>
                 <el-form-item v-show="showEditCase" :label="$t('table.suggest')">
-                    <el-input
-                        type="textarea"
-                        :autosize="{ minRows: 2, maxRows: 4}"
-                        :placeholder="$t('table.pleaseInput')"
-                        v-model="dialogData.suggest">
-                    </el-input>
+                    <tinymce style="margin:0;" :height="300" v-model="dialogData.suggest"/>
                 </el-form-item>
-                <el-table
-                    :data="dialogData.his"
-                    style="width: 100%"
-                    height="250">
-                    <el-table-column
-                        fixed
-                        prop="time"
-                        :label="$t('table.date')"
-                        style="width:33%;">
-                    </el-table-column>
-                    <el-table-column
-                        prop="mainContent"
-                        :label="$t('table.hisCase')"
-                        style="width:33%;">
-                    </el-table-column>
-                    <el-table-column
-                        prop="suggest"
-                        :label="$t('table.suggest')"
-                        style="width:33%;">
-                    </el-table-column>
-                </el-table>
+                <el-collapse v-model="activeName" accordion>
+                    <!--<template v-if="a = scope.row.mainContent"></template>-->
+                    <!--<span v-html="a.replace(/<img.*\/>/ig, '').replace(/[u4E00-u9FA5]/g,'').substring(0,9)"></span>-->
+                    <el-collapse-item v-for="(h,index) in dialogData.his" :title=h.time+h.doctorId  :name=index+1 >
+                        <el-button @click="printdata(h.mainContent)">打印病例</el-button>
+                        <el-button @click="printdata(h.suggest)">打印诊断建议</el-button>
+                        <el-button @click="printdata(h.mainContent +'<br />'+ h.suggest)">全部打印</el-button>
+                        <center><h1>{{$t('table.hisCase')}}</h1></center>
+                        <div v-html="h.mainContent"></div>
+                        <h1>{{$t('table.suggest')}}</h1>
+                        <div v-html="h.suggest"></div>
+                    </el-collapse-item>
 
+                </el-collapse>
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false">{{ $t('table.cancel') }}</el-button>
@@ -137,12 +121,17 @@
     import jwt from 'jsonwebtoken'
     import {getHistory, getHistory2, Search, updatePatient} from "../../api/enterprise";
     import {getToken} from "../../utils/auth";
+    import Tinymce from './enterprisePatient/edit/components/Tinymce'
     //import FileSaver from 'file-saver';
     //import XLSX from 'xlsx'
 
     export default {
+        components: {Tinymce},
         data() {
             return {
+                fus:'true',
+                activeName:['1'],
+                labelPosition:'top',
                 searchInput: '',
                 searchSelect: '',
                 dialogData: {},
@@ -193,6 +182,17 @@
         },
 
         methods: {
+            printdata(content){
+                //let subOutputRankPrint = document.getElementById('hhh');
+                //console.log(subOutputRankPrint.innerHTML);
+                //let newContent =subOutputRankPrint.innerHTML;
+                let oldContent = document.body.innerHTML;
+                document.body.innerHTML = content;
+                window.print();
+                window.location.reload();
+                document.body.innerHTML = oldContent;
+                return false;
+            },
             fetchData() {
                 this.listLoading = true
                 if (this.roles[0] === '1') {
@@ -480,9 +480,7 @@
     }
 </script>
 <style scoped>
-    .app-container {
-        width: 100%;
-    }
+
 
     .filter-item {
         float: right;

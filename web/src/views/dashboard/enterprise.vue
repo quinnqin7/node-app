@@ -8,31 +8,6 @@
                 <span>公告</span>
                 <!--<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
-            <!--<el-table-->
-                <!--:data="journalData"-->
-                <!--style="width: 100%;margin-top: -20px"-->
-                <!--max-height="150">-->
-                <!--<el-table-column-->
-                    <!--fixed-->
-                    <!--sortable-->
-                    <!--prop="date"-->
-                    <!--label="日期"-->
-                    <!--width="100">-->
-                <!--</el-table-column>-->
-                <!--<el-table-column-->
-                    <!--prop="title"-->
-                    <!--label="标题"-->
-                <!--&gt;-->
-                <!--</el-table-column>-->
-                <!--<el-table-column-->
-                    <!--fixed="right"-->
-                    <!--label="操作"-->
-                    <!--width="50">-->
-                    <!--<template slot-scope="scope">-->
-                        <!--<el-button type="text" @click="displayContent(scope.row.content)" size="small">查看</el-button>-->
-                    <!--</template>-->
-                <!--</el-table-column>-->
-            <!--</el-table>-->
         <div style="height:140px;overflow: hidden;">
             <div v-for="(o,index) in journalData" :key="index" class="text item">
                 {{ o['date'] +" "+ o['title'] +"   " }}<el-button type="text" @click="displayContent(o['content'])" size="small">查看</el-button>
@@ -51,9 +26,6 @@
                 <span>反馈</span>
                 <!--<el-button style="float: right; padding: 3px 0;margin-left: 10%;" type="text">操作按钮</el-button>-->
             </div>
-            <!--<div v-for="o in 4" :key="o" class="text item">-->
-            <!--{{'列表内容 ' + o }}-->
-            <!--</div>-->
             <el-input
                 type="textarea"
                 :autosize="{ minRows: 5, maxRows: 5}"
