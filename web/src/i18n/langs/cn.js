@@ -44,7 +44,10 @@ const cn = {
         'doctormanager':'医师管理',
         'enterprisemanager':'企业管理',
         'feedback':'反馈',
-        'map':'地图'
+        'map':'地图',
+        'case':'病例',
+        'caseEdit':'病例编辑',
+        'caseDetail':'病例查看'
 	},
 	table: {
 		'id': '排序',
@@ -62,6 +65,9 @@ const cn = {
 		'cancel': '取消',
 		'date': '日期',
 		'hisCase': '以往病例',
+        'assess':'评价',
+        'hisSimple':'病例简略',
+        'caseDoctor':'诊断医生',
 		'suggest': '诊断建议',
 		'domain': '企业名称',
 		'specialHarm': '特殊危害/人',
@@ -90,7 +96,11 @@ const cn = {
         'delay':'迟到',
         'status':'状态',
         'absent':'缺席',
-
+        'title':'标题',
+        'content':'主要内容',
+        'rate':'评价等级',
+        'lookAccess':'查看评价',
+        'myaccess':'我的评价'
 	},
     nav:{
 	    'hello':'您好',

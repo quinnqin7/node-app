@@ -58,8 +58,6 @@ router.post("/register",(req,res) =>{
                         .catch(err => console.log(err));
                 });
             });
-
-
         }
     })
 })
@@ -68,7 +66,6 @@ router.post("/login",(req,res) =>{
 	let parse  = req.body
     const email =parse.email;
     const pwd = parse.pwd;
-    //console.log('fjkldsjfklsjlfkjalskjk')
     User.findOne({email})
         .then(user =>{
             bcrypt.compare(pwd, user.pwd)
@@ -83,16 +80,19 @@ router.post("/login",(req,res) =>{
                             res.json({
                                 code:20000,
                                 data:{
-                                    "token":token
+                                    "token":token,
+									"success":'登陆成功'
                                 }
                             });
                         })
                       }
                       else{
-                          return res.status(400).json("密碼錯誤")
+                          return res.status(400).json("密码错误")
                       }
                   })
-        });
+        }).catch(err=>{
+        	res.status(400).json('账号错误')
+	})
     })
 
 router.post("/patientlogin",(req,res) =>{
@@ -118,15 +118,18 @@ router.post("/patientlogin",(req,res) =>{
 								res.json({
 									code:20000,
 									data:{
-										"token":token
+										"token":token,
+										"success":'登陆成功'
 									}
 								});
 							})
 						}
 						else{
-							return res.status(400).json("密碼錯誤")
+							return res.status(400).json("密码错误")
 						}
-		});
+		}).catch(err=>{
+			res.status(400).json('账号错误')
+	})
 })
 
 

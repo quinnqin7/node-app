@@ -6,6 +6,9 @@ var historyCaseSchema = mongoose.Schema({
 	patientId:mongoose.Schema.Types.ObjectId,
 	doctorId:mongoose.Schema.Types.ObjectId,
 	time:Date,
+	rate:Number,
+	accessContent: 'string',
+	accessDate:Date,
 })
 
 module.exports = mongoose.model('historyCase', historyCaseSchema, 'historyCase')

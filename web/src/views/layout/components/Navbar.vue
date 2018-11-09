@@ -2,7 +2,7 @@
     <el-menu class="navbar" mode="horizontal">
         <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
         <breadcrumb/>
-
+        <screenfull class="screenfull right-menu-item"/>
         <el-popover v-if="getRole() ==='1' " placement="top-start" title="个人信息" width="200" trigger="hover" content="这边要可以显示 个人的相关信息" style="float:right;margin-right: 100px">
             <el-button  style="border: #f9f3ff" slot="reference">{{$t('nav.hello')}}<span style="color:#61a2ff">{{name}}</span>{{$t('nav.doctor')}}</el-button>
         </el-popover>
@@ -61,6 +61,7 @@
     import {getDoctorMessage} from "../../../api/doctor";
     import {getToken} from "../../../utils/auth";
     const jwt = require('jsonwebtoken');
+    import Screenfull from '@/components/Screenfull'
     export default {
         data() {
             return {
@@ -71,7 +72,8 @@
         },
         components: {
             Breadcrumb,
-            Hamburger
+            Hamburger,
+            Screenfull,
         },
         created() {
             this.realTime()
@@ -126,6 +128,12 @@
                     //console.log(response)
                 }).catch(err=>{
                     console.log(err)
+                    this.$notify({
+                        title: '出错',
+                        message: '登陆超时',
+                        type: 'error',
+                        duration: 1000
+                    })
                 })
             },
             realTime(){
@@ -164,7 +172,7 @@
         }
         .screenfull {
             position: absolute;
-            right: 90px;
+            right: 350px;
             top: 16px;
             color: red;
         }

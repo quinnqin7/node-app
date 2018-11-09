@@ -10,9 +10,10 @@
             <el-button style="margin-left: 10px" type="primary" size ="big" icon="el-icon-search" @click='getHistoryCase()'>查询</el-button>
             <!--<el-button v-if="roles[0] === '2'" type="success" size ="big" @click='handleDownload()' :loading="downloadLoading">导出<i class="el-icon-upload el-icon&#45;&#45;right"></i></el-button>-->
 
-            <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit"
-                       @click="handleCreate">{{ $t('table.add') }}
+            <a href="#/journal/journaledit"><el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit"
+                       >{{ $t('table.add') }}
             </el-button>
+            </a>
         </div>
 
 
@@ -29,25 +30,19 @@
                     {{ scope.$index+1 }}
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.name')" align="center">
+            <el-table-column :label="$t('table.title')" align="center">
                 <template slot-scope="scope">
-                    {{ scope.row.name }}
+                    {{ scope.row.title }}
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.tel')" align="center">
+            <el-table-column :label="$t('table.date')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.tel }}</span>
-                </template>
-            </el-table-column>
-            <el-table-column :label="$t('table.gender')" align="center">
-                <template slot-scope="scope">
-                    <!--{{ msg = scope.row.gender==='1'?$t('table.gender-ms'):$t('table.gender-mr') }}-->
-                    {{scope.row.gender}}
+                    <span>{{ scope.row.date }}</span>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button type="primary" plain @click="handleDetail(scope.row)">{{$t('table.detail')}}</el-button>
+                    <router-link :to="'../../journal/journaledit/'+scope.row._id"><el-button type="primary" plain >{{$t('table.detail')}}</el-button></router-link>
                 </template>
             </el-table-column>
         </el-table>
@@ -66,7 +61,7 @@
             </el-pagination>
         </div>
 
-<!--todo 弹窗-->
+        <!--todo 弹窗-->
         <el-dialog class="dialog" :title="$t(textMap[dialogStatus])" :visible.sync="dialogFormVisible">
 
             <el-form ref="dataForm" :model="dialogData" label-position="left" label-width="70px" style="width: 100%;">
@@ -98,8 +93,9 @@
     import {mapGetters} from 'vuex'
     import {doctorToGetPatients} from '@/api/doctor'
     import jwt from 'jsonwebtoken'
-    import {getHistory, getHistory2, Search, updatePatient} from "@/api/enterprise";
-    import {getToken} from "@/utils/auth";
+    import {getHistory, getHistory2, Search, updatePatient} from "../../../api/enterprise";
+    import {getToken} from "../../../utils/auth";
+    import {getJournalList} from "../../../api/admin";
     //import FileSaver from 'file-saver';
     //import XLSX from 'xlsx'
 
@@ -153,60 +149,14 @@
         methods: {
             fetchData() {
                 this.listLoading = true
-                this.list=[
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳堃',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'郭佳',
-                        tel:'18020748373',
-                        gender:'男',
-                    },
-                    {
-                        name:'朱清雯',
-                        tel:'871779755',
-                        gender:'女',
-                    },
-                ]
-                this.setPaginations()
-                this.listLoading = false
+                getJournalList().then(response=>{
+                   // console.log(response.data)
+                   this.list = response.data
+                    this.setPaginations()
+                    this.handleSearch()
+                    this.listLoading = false
+                }).catch(err=>{console.log(err)})
+                //console.log('hahah')
             },
             fetchOtherData(id) {
                 this.listLoading = true
@@ -364,45 +314,45 @@
             formatJson(filterVal, jsonData) {
                 return jsonData.map(v => filterVal.map(j => v[j]))
             },
-           // getHistoryCase(){
-                // var patientIdArray = this.list.map(item=>{
-                //     // console.log(item._id)
-                //     // console.log(jwt.decode(getToken()).id)
-                //     return item._id
-                //
-                // })
-                // getHistory2(patientIdArray,jwt.decode(getToken()).id).then(response=>{
-                //     //console.log(item.name+"  "+response.data)
-                //     // response.data.map(one=>{
-                //     //     var oneObj = {
-                //     //         name:item.name,
-                //     //         tel:item.tel,
-                //     //         mainContent:one.mainContent,
-                //     //         suggest:one.suggest,
-                //     //         time:one.time
-                //     //     }
-                //     //     this.excel.push(oneObj)
-                //     //     // console.log(item.name + "" +one.mainContent + "   " +one.suggest+"" +one.time)
-                //     // })
-                //     console.log(response.data)
-                //     this.list.map(item=>{
-                //         response.data.map(data=>{
-                //             if(item._id === data.patientId){
-                //                 var oneObj = {
-                //                     name:item.name,
-                //                     tel:item.tel,
-                //                     mainContent:data.mainContent,
-                //                     suggest:data.suggest,
-                //                     time:data.time,
-                //                 }
-                //                 this.excel.push(oneObj)
-                //             }
-                //         })
-                //     })
-                // }).catch(err=>{
-                //     console.log(err)
-                // })
-                // console.log(this.excel)
+            // getHistoryCase(){
+            // var patientIdArray = this.list.map(item=>{
+            //     // console.log(item._id)
+            //     // console.log(jwt.decode(getToken()).id)
+            //     return item._id
+            //
+            // })
+            // getHistory2(patientIdArray,jwt.decode(getToken()).id).then(response=>{
+            //     //console.log(item.name+"  "+response.data)
+            //     // response.data.map(one=>{
+            //     //     var oneObj = {
+            //     //         name:item.name,
+            //     //         tel:item.tel,
+            //     //         mainContent:one.mainContent,
+            //     //         suggest:one.suggest,
+            //     //         time:one.time
+            //     //     }
+            //     //     this.excel.push(oneObj)
+            //     //     // console.log(item.name + "" +one.mainContent + "   " +one.suggest+"" +one.time)
+            //     // })
+            //     console.log(response.data)
+            //     this.list.map(item=>{
+            //         response.data.map(data=>{
+            //             if(item._id === data.patientId){
+            //                 var oneObj = {
+            //                     name:item.name,
+            //                     tel:item.tel,
+            //                     mainContent:data.mainContent,
+            //                     suggest:data.suggest,
+            //                     time:data.time,
+            //                 }
+            //                 this.excel.push(oneObj)
+            //             }
+            //         })
+            //     })
+            // }).catch(err=>{
+            //     console.log(err)
+            // })
+            // console.log(this.excel)
             //}
         }
     }

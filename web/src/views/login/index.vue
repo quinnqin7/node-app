@@ -94,10 +94,24 @@
 				this.$refs.loginForm.validate(valid => {
 					if (valid) {
 						this.loading = true
-						this.$store.dispatch('Login', this.loginForm).then(() => {
+						this.$store.dispatch('Login', this.loginForm).then((response) => {
+                            this.$notify({
+                                title: '登陆',
+                                message: response.data.success,
+                                type: 'success',
+                                duration: 1000
+                            })
+
+                            //console.log(response)
 							this.loading = false
 							this.$router.push({path: this.redirect || '/'})
-						}).catch(() => {
+						}).catch((err) => {
+                            this.$notify({
+                                title: '登陆',
+                                message: err.response.data,
+                                type: 'error',
+                                duration: 2000
+                            })
 							this.loading = false
 						})
 					} else {

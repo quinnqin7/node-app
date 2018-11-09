@@ -44,7 +44,7 @@ export default new Router({
 export const asyncRouterMap = [
 
 
-    //ENTERPRISE ROUTER
+    //todo ENTERPRISE ROUTER
 
 
     {
@@ -176,7 +176,7 @@ export const asyncRouterMap = [
 
 
 
-    // DOCTOR ROUTER
+    //todo DOCTOR ROUTER
 
 
 
@@ -332,7 +332,7 @@ export const asyncRouterMap = [
 
 
 
-//    ADMIN
+//todo    ADMIN
 
 
 
@@ -383,9 +383,16 @@ export const asyncRouterMap = [
                 meta: {title: 'router.journaledit', icon: 'chart', role:['4']}
             },
             {
+                hidden:'true',
+                path: 'journaledit/:journalId',
+                name: 'journalUpdate',
+                component: () => import('@/views/journal/edit'),
+                meta: {title: 'router.journaledit', icon: 'chart', role:['4']}
+            },
+            {
                 path: 'journalList',
                 name: 'journalList',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/journal/journalList/index'),
                 meta: {title: 'router.journalList', icon: 'chart', role:['4']}
             }
         ]
@@ -403,7 +410,7 @@ export const asyncRouterMap = [
             {
                 path: 'doctormanager',
                 name: 'doctormanager',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/admin/manager/doctor'),
                 meta: {title: 'router.doctormanager', icon: 'peoples', role:['4']}
             }
         ]
@@ -418,7 +425,7 @@ export const asyncRouterMap = [
             {
                 path: 'enterprisemanager',
                 name: 'enterprisemanager',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/admin/manager/enterprise'),
                 meta: {title: 'router.enterprisemanager', icon: 'peoples', role:['4']}
             }
         ]
@@ -448,7 +455,7 @@ export const asyncRouterMap = [
             {
                 path: 'feedback',
                 name: 'feedback',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/admin/feedback/index'),
                 meta: {title: 'router.feedback', icon: 'peoples', role:['4']}
             }
         ]
@@ -467,7 +474,7 @@ export const asyncRouterMap = [
 
 
 
-    //PATIENT
+    //todo PATIENT
     {
         path: '/',
         component: Layout,
@@ -479,7 +486,7 @@ export const asyncRouterMap = [
         },
         children: [{
             path: 'dashboard',
-            component: () => import('@/views/table/index'),
+            component: () => import('@/views/dashboard/patient'),
             meta: {
                 role:['3']
             },
@@ -495,11 +502,38 @@ export const asyncRouterMap = [
             {
                 path: 'Home',
                 name: 'Home',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/dashboard/patient'),
                 meta: {title: 'router.home', icon: 'home', role:['3']}
             }
         ]
     },
+    {
+        path: '/Edit',
+        component: Layout,
+        meta: {
+            role:['3'],
+            title:'router.case',
+            icon: 'home'
+        },
+        children: [
+            {
+                path: 'Edit',
+                name: 'Edit',
+                component: () => import('@/views/Patients/enterprisePatient/edit/edit'),
+                meta: {title: 'router.caseEdit', icon: 'home', role:['3']}
+            },
+            {
+                path: 'Detail',
+                name: 'Detail',
+                component: () => import('@/views/Patients/enterprisePatient/list'),
+                meta: {title: 'router.caseDetail', icon: 'home', role:['3']}
+            }
+        ]
+    },
+
+
+
+
 
 //COMMMMM
 

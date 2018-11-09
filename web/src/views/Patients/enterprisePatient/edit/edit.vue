@@ -12,25 +12,14 @@
 
             <el-button type="success" style="float:right;margin-right: 20px;margin-top: 20px;" @click="submitJournal">{{ $t('table.confirm') }}</el-button>
             <el-button type="warning" style="float:right;margin-right: 20px;margin-top: 20px;" @click="clean">{{ $t('table.clean') }}</el-button>
-
-            <div style="float:right;">
-                <el-input style="width:500px;margin-right: 20px;margin-top: 20px;" placeholder="请输入标题" v-model="title" class="input-with-select">
-                    <el-select style="width:110px;" v-model="select" slot="prepend" placeholder="发布对象">
-                        <el-option label="医师" value="1"></el-option>
-                        <el-option label="企业" value="2"></el-option>
-                        <el-option label="患者" value="3"></el-option>
-                        <el-option label="全部" value="4"></el-option>
-                    </el-select>
-                </el-input>
-            </div>
         </div>
     </div>
 </template>
 
 <script>
     import Tinymce from './components/Tinymce'
-    import {fetchJournalContent, submitJournal, updateJournal} from "../../api/admin";
-    import {getToken} from "../../utils/auth";
+    import {fetchJournalContent, submitJournal, updateJournal} from "@/api/admin";
+    import {getToken} from "@/utils/auth";
 
     export default {
         name: 'TinymceDemo',
@@ -73,7 +62,7 @@
                             })
                         })
                     }else{
-                        submitJournal(this.content, this.select, this.title, getToken()).then(() => {
+                        patientToAddHistory(this.content, getToken()).then(() => {
                             this.$notify({
                                 title: '发表提示',
                                 message: '发表成功',
