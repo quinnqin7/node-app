@@ -36,7 +36,7 @@ const cn = {
 		'mine': '我的',
 		'home': '首页',
 		'enterpriseShowPatient': '企业患者',
-        'appointmentRefuse':'拒绝预约',
+        'appointmentRefuse':'预约情况',
         'appointmentSign':'预约签到',
         'journal':'公告',
         'journaledit':'公告编辑',
