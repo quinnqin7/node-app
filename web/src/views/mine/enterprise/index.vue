@@ -26,25 +26,12 @@
                     <!--<el-input v-model="list.enterpriseCategory"></el-input>-->
                 </el-form-item>
             <el-form-item :label="$t('table.frequency')" prop="frequency">
-                <el-select v-model="list.frequency" placeholder="所需服务频率（次/月）">
-                    <el-option value="1"></el-option>
-                    <el-option value="2"></el-option>
-                    <el-option value="3"></el-option>
-                    <el-option value="4"></el-option>
-                    <el-option value="5"></el-option>
-                    <el-option value="6"></el-option>
-                    <el-option value="7"></el-option>
-                    <el-option value="8"></el-option>
-                    <el-option value="9"></el-option>
-                    <el-option value="10"></el-option>
-                    <el-option value="11"></el-option>
-                    <el-option value="12"></el-option>
-                    <el-option value="13"></el-option>
-                    <el-option value="14"></el-option>
-                    <el-option value="15"></el-option>
-                    <el-option value="16"></el-option>
-                    <el-option value="17"></el-option>
-                    <el-option value="18"></el-option>
+                <el-select v-model="list.frequency" placeholder="所需服务频率（次/月）" >
+                    <el-option
+                        v-for="n in 18"
+                        :key="n"
+                        :value="n">
+                    </el-option>
                 </el-select>
                 <!--<el-input v-model="list.frequency"></el-input>-->
             </el-form-item>
