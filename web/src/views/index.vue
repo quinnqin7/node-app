@@ -53,12 +53,6 @@
                     <!--- END CONTAINER -->
                 </div>
                 <!-- END NAVIGATION AREA -->
-
-                 <!--MOBILE-MENU-AREA START -->
-
-                 <!--MOBILE-MENU-AREA END -->
-
-
             </div>
         </header>
         <!-- END HEADER SECTION -->

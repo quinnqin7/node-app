@@ -92,7 +92,7 @@
                 <el-collapse v-model="activeName" accordion>
                     <!--<template v-if="a = scope.row.mainContent"></template>-->
                     <!--<span v-html="a.replace(/<img.*\/>/ig, '').replace(/[u4E00-u9FA5]/g,'').substring(0,9)"></span>-->
-                    <el-collapse-item v-for="(h,index) in dialogData.his" :title=h.time+h.doctorId  :name=index+1 >
+                    <el-collapse-item :key="index" v-for="(h,index) in dialogData.his" :title=h.time+h.doctorId  :name=index+1 >
                         <el-button @click="printdata(h.mainContent)">打印病例</el-button>
                         <el-button @click="printdata(h.suggest)">打印诊断建议</el-button>
                         <el-button @click="printdata(h.mainContent +'<br />'+ h.suggest)">全部打印</el-button>
