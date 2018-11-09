@@ -1,7 +1,7 @@
 <template>
     <div class="app-container">
         <div class="main-content">
-        <el-form label-position="top" label-width="80px" :rules="rules" :model="list">
+        <el-form label-position="left" label-width="100px" :rules="rules" :model="list">
             <el-card>
                 <h4>企業檔案</h4>
             <el-form-item :label="$t('table.domain')" prop="name">
@@ -17,7 +17,7 @@
                 </el-select>
                 <!--<el-input v-model="list.demandPerfession"></el-input>-->
             </el-form-item>
-                <el-form-item :label="$t('table.enterpriseCategory')" prop="enterpriseCategory">
+                <el-form-item :label="$t('table.enterpriseCategory')" prop="enterpriseCategory" >
                     <el-select v-model="list.enterpriseCategory" placeholder="请选择事业类别">
                         <el-option value="第一类"></el-option>
                         <el-option value="第二类"></el-option>
