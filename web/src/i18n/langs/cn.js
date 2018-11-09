@@ -7,7 +7,7 @@ const cn = {
 	},
 	comm: {
 	    'patienttitle':'企业用户登陆',
-		'title': '医师企业媒合平台',
+		'title': '醫療臨場服務媒合系統',
 		'doctor': '医生',
 		'enterprise': '企业',
 		'patient': '患者',

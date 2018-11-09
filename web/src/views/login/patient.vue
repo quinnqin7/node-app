@@ -1,42 +1,43 @@
 <template>
-    <div class="login-container">
-        <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on"
-                 label-position="left">
-            <h3 class="title">{{$t('comm.patienttitle')}}</h3>
+    <div id="login">
+        <div class="left">
+            <span class="title">{{$t('comm.title')}}</span>
+            <span class="describe">為企業與醫務人員打造一站式服務平台</span>
+            <span class="describe-fonz">企業員工入口</span>
+        </div>
+        <div class="right">
+            <div class="logo"></div>
+            <div class="login-box">
+        <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
             <el-form-item prop="username">
-        <span class="svg-container">
-          <svg-icon icon-class="user"/>
-        </span>
-                <el-input v-model="loginForm.username" name="username" auto-complete="on" placeholder="phone"/>
+                <span>账号</span>
+                <el-input  class="login-input" v-model="loginForm.username" name="username" placeholder="email"/>
             </el-form-item>
             <el-form-item prop="password">
-        <span class="svg-container">
-          <svg-icon icon-class="password"/>
-        </span>
                 <el-input
                     v-model="loginForm.password"
                     name="password"
                     auto-complete="on"
                     placeholder="password"
-                    @keyup.enter.native="handleLogin"/>
+                    :type="pwdType"
+                    @keyup.enter.native="handleLogin"
+                    class="login-input"/>
                 <span class="show-pwd" @click="showPwd">
-          <svg-icon icon-class="eye"/>
-        </span>
+                      <svg-icon icon-class="eye" />
+                </span>
             </el-form-item>
             <el-form-item>
-                <el-button :loading="loading" type="primary" style="width:100%;" @click.native.prevent="handleLogin">
+                <el-button class="login-btn" :loading="loading" type="primary" @click.native.prevent="handleLogin">
                     {{$t('comm.login')}}
                 </el-button>
             </el-form-item>
-            <el-form-item>
-                <a href="#/register">
-                    <el-button :loading="loading" type="primary" style="width:100%;">
-                        {{$t('comm.register')}}
-                    </el-button>
-                </a>
-            </el-form-item>
+            <div class='tiparea'>
+                <p>還沒有賬號？現在就 <a href="#/register">註 冊</a></p>
+            </div>
 
         </el-form>
+    </div>
+        </div>
     </div>
 </template>
 
@@ -122,91 +123,129 @@
     }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-    $bg: #2d3a4b;
-    $light_gray: #eee;
+<style scoped>
+    #login{
+        width: 800px;
+        height: 580px;
+        position: absolute;
+        top: 50%;
+        margin: -290px 0 0 -400px;
+        left: 50%;
+        box-shadow: 0px 0px 10px #999;
+    }
+    body {
+        overflow-x: hidden;
+        background: rgb(252,253,255);
+        height: 100%;
+    }
+    .left{
+        width: 490px;
+        height: 100%;
+        background: url("med-bg.jpg") no-repeat no-repeat center;
+        background-size: 490px 580px;
+        float: left;
+        box-sizing: border-box;
+        padding: 110px 0 0 60px;
+    }
+    .right{
+        width: 310px;
+        height: 100%;
+        background: #fff;
+        float: left;
+    }
+    .logo{
+        height: 100px;
+        width: 100%;
+        display: inline-block;
+        background:url("logon-logo.png") no-repeat no-repeat center;
+        background-size: 95px 95px;
+        margin: 100px 0 30px 0;
+    }
+    .login-box{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
 
-    /* reset element-ui css */
-    .login-container {
-        .el-input {
-            display: inline-block;
-            height: 47px;
-            width: 85%;
-            input {
-                background: transparent;
-                border: 0px;
-                -webkit-appearance: none;
-                border-radius: 0px;
-                padding: 12px 5px 12px 15px;
-                color: $light_gray;
-                height: 47px;
-                &:-webkit-autofill {
-                    -webkit-box-shadow: 0 0 0px 1000px $bg inset !important;
-                    -webkit-text-fill-color: #fff !important;
-                }
-            }
-        }
-        .el-form-item {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            color: #454545;
-        }
+    .login-btn{
+        margin-top: 10px;
+        width: 100%;
+        background: rgb(86, 182, 247);
+        border: 1px solid rgb(86, 182, 247);
+    }
+    .login-btn:hover{
+        background:rgb(43, 139, 242);
+        border: 1px solid rgb(43, 139, 242);
+    }
+    .login-btn:active{
+        background: rgb(86, 182, 247);
+        border: 1px solid rgb(86, 182, 247);
+    }
+    .login-btn:focus{
+        background: rgb(86, 182, 247);
+        border: 1px solid rgb(86, 182, 247);
+    }
+    .title,.describe{
+        display: inline-block;
+        color: #fff;
+        width: 100%;
+        letter-spacing:5px;
+        -webkit-font-smoothing: subpixel-antialiased
+    }
+    .title{
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    .describe{
+        font-size: 14px;
+        margin-bottom: 120px;
+    }
+
+    .describe-fonz{
+        font-size: 16px;
+        color: #FFFFFF;
+        text-align: center;
+        margin-left: 120px;
+
+    }
+
+    .show-pwd {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-size: 16px;
+        color: rgb(86, 182, 247);
+        cursor: pointer;
+        user-select: none;
     }
 
 </style>
+<style>
+    .login-input>input{
+        border-radius: 0px;
+        border: 1px solid transparent !important;
+        border-bottom: 1px solid #e0e0e0 !important;
+        padding: 0;
+        float: left;
+    }
+    .login-input>input:focus{
+        border-bottom: 1px solid rgb(139,192,240) !important;
+    }
+    .el-form-item__content>span{
+        color: #999;
+        font-size: 10px;
+        float: left;
+        margin-bottom: -12px;
+    }
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-    $bg: #2d3a4b;
-    $dark_gray: #889aa4;
-    $light_gray: #eee;
-    .login-container {
+    .tiparea{
+        margin-top: 5px;
+        text-align: right;
+        font-size: 13px;
+        color: #333;
+    }
 
-        height: 100%;
-        width: 100%;
-        background-color: $bg;
-        .login-form {
-            position: absolute;
-            left: 0;
-            right: 0;
-            width: 520px;
-            max-width: 100%;
-            padding: 35px 35px 15px 35px;
-            margin: 80px auto 0 auto;
-        }
-        .tips {
-            font-size: 14px;
-            color: #fff;
-            margin-bottom: 10px;
-            span {
-                &:first-of-type {
-                    margin-right: 16px;
-                }
-            }
-        }
-        .svg-container {
-            padding: 6px 5px 6px 15px;
-            color: $dark_gray;
-            vertical-align: middle;
-            width: 30px;
-            display: inline-block;
-        }
-        .title {
-            font-size: 26px;
-            font-weight: 400;
-            color: $light_gray;
-            margin: 0px auto 40px auto;
-            text-align: center;
-            font-weight: bold;
-        }
-        .show-pwd {
-            position: absolute;
-            right: 10px;
-            top: 7px;
-            font-size: 16px;
-            color: $dark_gray;
-            cursor: pointer;
-            user-select: none;
-        }
+    .tiparea p a {
+        color: #409eff;
     }
 </style>

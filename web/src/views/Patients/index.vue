@@ -14,8 +14,6 @@
             </el-button>
         </div>
 
-
-
         <el-table
             v-loading="listLoading"
             :data="tables"
@@ -50,6 +48,7 @@
                 </template>
             </el-table-column>
         </el-table>
+
 
         <!--分頁-->
         <div class="paginations">
@@ -480,7 +479,6 @@
     }
 </script>
 <style scoped>
-
 
     .filter-item {
         float: right;
