@@ -30,7 +30,17 @@
                 </el-select>
                 <!--<el-input v-model="list.frequency"></el-input>-->
             </el-form-item>
-
+                <el-form-item :label="$t('table.header')">
+                <el-upload
+                    class="avatar-uploader"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :show-file-list="false"
+                    :on-success="handleAvatarSuccess"
+                    :before-upload="beforeAvatarUpload">
+                    <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
+                </el-form-item>
             <!--<el-form-item :label="$t('table.email')">-->
                 <!--<el-input v-model="list.email"></el-input>-->
             <!--</el-form-item>-->
@@ -65,6 +75,8 @@
         },
         data() {
             return {
+                imageUrl:'',
+                imgbase64:'',
                 list: {},
                 listLoading: false,
                 rules :{
@@ -100,6 +112,10 @@
                 })
             },
             modify() {
+                if(this.imgbase64 !== '')
+                {
+                    this.list.header = this.imgbase64
+                }
                 modifyDoctorInfo(this.list).then(()=> {
                     this.$notify({
                         title: "成功",
@@ -107,7 +123,7 @@
                         type: 'success',
                         duration: 2000
                     })
-                    window.location.reload()
+                    //window.location.reload()
                 }).catch(()=>{
                     this.$notify({
                         title: "失败",
@@ -117,6 +133,36 @@
                     })
                 })
             },
+
+            blobToDataURI(blob, callback) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    callback(e.target.result);
+                }
+                reader.readAsDataURL(blob);
+            },
+            handleAvatarSuccess(res, file) {
+                this.imageUrl = URL.createObjectURL(file.raw);
+                this.blobToDataURI(file.raw, function (data) {
+                    //console.log(data)
+                    localStorage.setItem('header',data)
+                    //console.log(this.imgbase64)
+                })
+                this.imgbase64 = localStorage.getItem('header')
+                //console.log(this.imgbase64)
+            },
+            beforeAvatarUpload(file) {
+                const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+
+                if (!isJPG) {
+                    this.$message.error('上传头像图片只能是 JPG 格式!');
+                }
+                if (!isLt2M) {
+                    this.$message.error('上传头像图片大小不能超过 2MB!');
+                }
+                return isJPG && isLt2M;
+            }
         }
     }
 </script>
@@ -127,5 +173,30 @@
         margin:0 15px;
         width: 50%;
         margin-left: 260px;
+    }
+    .avatar-uploader{
+        width:100px;
+        height:100px;
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .avatar-uploader .el-upload:hover {
+        border-color: #409EFF;
+    }
+    .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+        display: block;
     }
 </style>

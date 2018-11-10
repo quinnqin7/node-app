@@ -97,7 +97,8 @@ const tw = {message: {
         'content':'主要內容',
         'rate':'評價等級',
         'lookAccess':'查看評價',
-        'myaccess':'我的評價'
+        'myaccess':'我的評價',
+        'header':'頭像'
     },
     nav:{
         'hello':'您好',

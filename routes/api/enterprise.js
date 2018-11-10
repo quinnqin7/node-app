@@ -124,6 +124,7 @@ router.post("/getEnterpriseInfo", passport.authenticate('jwt', {session: false})
 
 router.post("/modifyEnterpriseInfo", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var enterpriseDatas = req.body.enterpriseData
+	if(enterpriseDatas!==''){
 	var enterprises = {
 		name:enterpriseDatas.name,
 		tel:enterpriseDatas.tel,
@@ -133,6 +134,23 @@ router.post("/modifyEnterpriseInfo", passport.authenticate('jwt', {session: fals
 		enterpriseCategory:enterpriseDatas.enterpriseCategory,
 		specialHarm:enterpriseDatas.specialHarm,
 		demandPerfession:enterpriseDatas.demandPerfession,
+		lng:enterpriseDatas.lng,
+		lat:enterpriseDatas.lat,
+		header:enterpriseDatas.header
+	}}
+	else{
+		var enterprises = {
+			name:enterpriseDatas.name,
+			tel:enterpriseDatas.tel,
+			address:enterpriseDatas.address,
+			frequency:enterpriseDatas.frequency,
+			numberOfPeople:enterpriseDatas.numberOfPeople,
+			enterpriseCategory:enterpriseDatas.enterpriseCategory,
+			specialHarm:enterpriseDatas.specialHarm,
+			demandPerfession:enterpriseDatas.demandPerfession,
+			lng:enterpriseDatas.lng,
+			lat:enterpriseDatas.lat,
+		}
 	}
 	// var sec = {
 	// 	email:doctorDatas.email,
@@ -143,14 +161,6 @@ router.post("/modifyEnterpriseInfo", passport.authenticate('jwt', {session: fals
 		{$set: enterprises},
 		{new: true}
 	).then(profile => {
-		// user.findOneAndUpdate(
-		// 	{_id: doctorDatas._id},
-		// 	{$set: sec},
-		// 	{new: true}
-		// ).then(docs=>{
-		// 	res.json({
-		// 		code:20000
-		// 	})
 		res.json({
 			code:20000
 		})

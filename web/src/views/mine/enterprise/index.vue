@@ -1,8 +1,9 @@
 <template>
     <div class="app-container">
         <div class="main-content">
-        <el-form label-position="left"  label-width="100px" :rules="rules" :model="list">
             <el-card>
+        <el-form label-position="left"  label-width="100px" :rules="rules" :model="list">
+
                 <center><h4>企業檔案</h4></center>
                 <ve-bmap
                     style="width:500px;height:0px;float:right;margin-bottom: 30px;"
@@ -60,11 +61,21 @@
             <!--<el-form-item :label="$t('table.pwd')">-->
             <!--<el-input v-model="list.pwd"></el-input>-->
             <!--</el-form-item>-->
-                <el-button style="margin-bottom: 30px;" type="primary" @click=modify()>{{ $t('table.modify')}}
+            <el-form-item :label="$t('table.header')">
+            <el-upload
+                class="avatar-uploader"
+                action="https://jsonplaceholder.typicode.com/posts/"
+                :show-file-list="false"
+                :on-success="handleAvatarSuccess"
+                :before-upload="beforeAvatarUpload">
+                <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+            </el-upload>
+            </el-form-item>
+                <el-button style="margin-top: 30px;" type="primary" @click=modify()>{{ $t('table.modify')}}
                 </el-button>
-            </el-card>
         </el-form>
-
+            </el-card>
 
     </div>
     </div>
@@ -98,6 +109,8 @@
             }
             this.chartTooltip = { show: true }
             return {
+                imageUrl:'',
+                imgbase64:'',
                 lng:localStorage.getItem('lng'),
                 lat:localStorage.getItem('lat'),
                 chartSeries: [
@@ -142,10 +155,6 @@
         },
         created() {
             //localStorage.setItem('reload',1)
-            if(localStorage.getItem('reload')===1)
-            {
-
-            }
             this.fetchData()
 
         },
@@ -163,6 +172,12 @@
                 })
             },
             modify() {
+                this.list.lng = localStorage.getItem('lng')
+                this.list.lat = localStorage.getItem('lat')
+                if(this.imgbase64 !== '')
+                {
+                    this.list.header = this.imgbase64
+                }
                 modifyEnterpriseInfo(this.list).then(()=> {
                     this.$notify({
                         title: "成功",
@@ -237,9 +252,6 @@
                     alert('failed'+this.getStatus());
                   }
                 });
-                console.log(this.list)
-                console.log('djflksajflkasjfdklsa')
-                console.log(this.list.tel)
                 //进行 坐标提示
                 var contents = '<div style="margin:0;line-height:20px;padding:2px;">' +
                     '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
@@ -275,6 +287,36 @@
 
                 console.log(localStorage.getItem('lng')+"    "+localStorage.getItem('lat'))
 
+            },
+
+            blobToDataURI(blob, callback) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    callback(e.target.result);
+                }
+                reader.readAsDataURL(blob);
+            },
+            handleAvatarSuccess(res, file) {
+                this.imageUrl = URL.createObjectURL(file.raw);
+                this.blobToDataURI(file.raw, function (data) {
+                    //console.log(data)
+                    localStorage.setItem('headpic',data)
+                    //console.log(this.imgbase64)
+                })
+                this.imgbase64 = localStorage.getItem('headpic')
+                console.log(this.imgbase64)
+            },
+            beforeAvatarUpload(file) {
+                const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+
+                if (!isJPG) {
+                    this.$message.error('上传头像图片只能是 JPG 格式!');
+                }
+                if (!isLt2M) {
+                    this.$message.error('上传头像图片大小不能超过 2MB!');
+                }
+                return isJPG && isLt2M;
             }
         },
         beforeRouteLeave(to, from, next) {
@@ -289,12 +331,38 @@
 <style>
     .main-content{
         /*position: center;*/
-        margin:0 15px;
-        width: 50%;
-        margin-left: 260px;
+        /*margin:0 15px;*/
+        /*width: 50%;*/
+        /*margin-left: 260px;*/
     }
     .mapleft {
         /*//float: left;*/
         width:300px;
+    }
+
+    .avatar-uploader{
+        width:100px;
+        height:100px;
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .avatar-uploader .el-upload:hover {
+        border-color: #409EFF;
+    }
+    .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+        display: block;
     }
 </style>
