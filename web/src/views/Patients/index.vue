@@ -20,7 +20,11 @@
             element-loading-text="Loading"
             border
             fit
-            highlight-current-row>
+            highlight-current-row
+            :header-cell-style="{
+                background:'#fafafa',
+                color: 'rgb(89, 88, 88)'}
+            ">
             <el-table-column align="center" :label="$t('table.id')">
                 <template slot-scope="scope">
                     {{ scope.$index+1 }}
