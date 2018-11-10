@@ -37,7 +37,7 @@
         <!--//info-->
         <el-dropdown class="avatar-container" trigger="click">
             <div class="avatar-wrapper">
-                <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+                <img :src="avatar" class="user-avatar">
                 <i class="el-icon-caret-bottom"/>
             </div>
             <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -65,6 +65,7 @@
     export default {
         data() {
             return {
+                avatar:'',
                 getrole:"false",
                 list:'',
                 zh_cn: null
@@ -82,7 +83,6 @@
         computed: {
             ...mapGetters([
                 'sidebar',
-                'avatar',
                 'name',
                 'roles'
             ]),
@@ -140,6 +140,7 @@
                 //FIXME 这边 要进行 角色判断,不然会一直请求啊请求啊请求啊啊啊啊啊
                 //if (jwt.decode(getToken()).roles )
                 this.fetchAppointmentData()
+                this.avatar = localStorage.getItem('header'),
                 setTimeout(this.realTime,10000)
             },
             //判断显示 名字的格式

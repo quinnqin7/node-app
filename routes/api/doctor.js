@@ -70,12 +70,23 @@ router.post("/getDoctorInfo", passport.authenticate('jwt', {session: false}), (r
 //modifyDoctorInfo
 router.post("/modifyDoctorInfo", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var doctorDatas = req.body.doctorData
+	if(doctorDatas.header!==''){
 	var doctor = {
 		name:doctorDatas.name,
 		tel:doctorDatas.tel,
 		perfession:doctorDatas.perfession,
 		address:doctorDatas.address,
-		frequency:doctorDatas.frequency
+		frequency:doctorDatas.frequency,
+		header:doctorDatas.header
+	}}
+	else{
+		var doctor = {
+			name:doctorDatas.name,
+			tel:doctorDatas.tel,
+			perfession:doctorDatas.perfession,
+			address:doctorDatas.address,
+			frequency:doctorDatas.frequency,
+		}
 	}
 	// var sec = {
 	// 	email:doctorDatas.email,

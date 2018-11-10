@@ -36,7 +36,8 @@ const user = {
           setToken(data.token)
           commit('SET_TOKEN', data.token)
             // FIXME my gravatar
-            commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
+            //commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
+            localStorage.setItem('header',data)
           resolve(response)
         }).catch(error => {
           reject(error)
@@ -71,7 +72,7 @@ const user = {
                   setToken(data.token)
                   commit('SET_TOKEN', data.token)
                   // FIXME my gravatar
-                  commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
+                  //commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
                   resolve()
               }).catch(error => {
                   reject(error)
@@ -90,7 +91,7 @@ const user = {
             reject('getInfo: roles must be a non-null array !')
           }
           commit('SET_NAME', data.name)
-
+            localStorage.setItem('header',data.header)
           resolve(response.data)
         }).catch(error => {
           reject(error)
@@ -105,7 +106,7 @@ const user = {
                   setToken(token)
                   commit('SET_TOKEN',token)
                   // FIXME my gravatar
-                  commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
+                  //commit('SET_AVATAR',gravatar.url('egguipp@gmail.com',{s: '200', r: 'pg', d: 'mm'}))
                   resolve()
           })
       },
@@ -115,6 +116,7 @@ const user = {
         logout(state.token).then(() => {
           commit('SET_TOKEN', '')
           commit('SET_ROLES', [])
+            localStorage.setItem('header','')
           removeToken()
           resolve()
         }).catch(error => {
