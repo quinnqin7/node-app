@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/web/src/views/Patients/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/Patients/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/doctor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/doctor/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/enterprise/refuse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/enterprise/refuse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/enterprise/sign.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/enterprise/sign.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/enterprise/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/enterprise/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/table/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/table/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -248,8 +241,8 @@
       <file leaf-file-name="enterprise.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="221" column="8" selection-start-line="221" selection-start-column="8" selection-end-line="221" selection-end-column="8" />
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -573,13 +566,6 @@
       <workItem from="1541430137758" duration="20962000" />
       <workItem from="1541522360955" duration="2446000" />
       <workItem from="1541524821662" duration="18740000" />
-    </task>
-    <task id="LOCAL-00015" summary="增添 mdules 修改样式">
-      <created>1540856961952</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1540856961953</updated>
     </task>
     <task id="LOCAL-00016" summary="增添 mdules 修改样式">
       <created>1540857126811</created>
@@ -917,11 +903,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541747680518</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="修改表头样式">
+      <created>1541869074372</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1541869074373</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356745000" />
+    <option name="totallyTimeSpent" value="357166000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -934,7 +927,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="440" y="95" width="1345" height="785" extended-state="0" />
+    <frame x="94" y="31" width="1345" height="785" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996865" weight="0.26153848" />
@@ -943,8 +936,8 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="right" auto_hide="true" id="Mongo Explorer" order="4" weight="0.13791268" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.76132005" visible="true" weight="0.29774436" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2095165" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.76132005" visible="true" weight="0.29774436" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2095165" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Translate" order="3" weight="0.328541" />
@@ -1044,7 +1037,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Object -&gt; Array" />
     <MESSAGE value="fix a holy bug" />
     <MESSAGE value="增添 mdules 修改样式" />
     <MESSAGE value="other" />
@@ -1069,7 +1061,8 @@
     <MESSAGE value="修改企业和医师档案表单样式" />
     <MESSAGE value="修改企业医师档案表单" />
     <MESSAGE value="修改企业医师表单" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改企业医师表单" />
+    <MESSAGE value="修改表头样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改表头样式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1336,8 +1329,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="221" column="8" selection-start-line="221" selection-start-column="8" selection-end-line="221" selection-end-column="8" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="n#style#0;n#div#1;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
