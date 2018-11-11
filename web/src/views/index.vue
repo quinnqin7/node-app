@@ -37,10 +37,9 @@
                                     <ul class="navbar-nav">
                                         <li class="active dropdown quick-search" ><a href="#" class="nav-link"  style="padding:15px 30px !important;" ><span>{{$t('comm.login')}}</span></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="/#/login"><i class="icofont icofont-doctor-alt"></i> Doctor
-                                                    & Master</a></li>
+                                                <li><a href="/#/login"><i class="icofont icofont-doctor-alt"></i> {{$t('index.DoctorMaster')}}</a></li>
                                                 <li><a href="/#/patientlogin"><i class="icofont icofont-doctor-alt"></i>
-                                                    EnterpriseUser</a></li>
+                                                    {{$t('index.EnterpriseUser')}}</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -65,8 +64,8 @@
         </el-carousel>
         </section>
         <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block" style="margin-bottom: 50px;">
-            <span class="hahah"><a class="aaa" href="/#/login">Doctor & Master</a></span>
-            <span class="hahah"><a class="aaa" href="/#/patientlogin">EnterpriseUser</a></span>
+            <span class="hahah"><a class="aaa" href="/#/login">{{$t('index.DoctorMaster')}}</a></span>
+            <span class="hahah"><a class="aaa" href="/#/patientlogin">{{$t('index.EnterpriseUser')}}</a></span>
         </div>
         <section id="counter" class="counter-section overlay  section-back-image" data-background="assets/img/bg/counter-bg.jpg">
             <div class="container">
@@ -77,20 +76,8 @@
                                 <i class="icofont icofont-users-alt-2"></i>
                             </div>
                             <div class="single-counter-text">
-                                <h5 class="timer">1250</h5>
-                                <p>Happy Patients</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end single counter -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
-                        <div class="single-counter">
-                            <div class="single-counter-icon">
-                                <i class="icofont icofont-nurse-alt"></i>
-                            </div>
-                            <div class="single-counter-text">
-                                <h5 class="timer">1350</h5>
-                                <p>Medical Workers</p>
+                                <h5 class="timer">{{PatientsCount}}</h5>
+                                <p>{{$t('index.PatientsCount')}}</p>
                             </div>
                         </div>
                     </div>
@@ -101,8 +88,8 @@
                                 <i class="icofont icofont-doctor-alt"></i>
                             </div>
                             <div class="single-counter-text">
-                                <h5 class="timer">1560</h5>
-                                <p>Total Doctors</p>
+                                <h5 class="timer">{{DoctorCount}}</h5>
+                                <p>{{$t('index.MediackWorks')}}</p>
                             </div>
                         </div>
                     </div>
@@ -110,11 +97,23 @@
                     <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
                         <div class="single-counter">
                             <div class="single-counter-icon">
-                                <i class="icofont icofont-hat-alt"></i>
+                                <i class="icofont icofont-table"></i>
                             </div>
                             <div class="single-counter-text">
-                                <h5 class="timer">1670</h5>
-                                <p>Medical Experience</p>
+                                <h5 class="timer">{{enterpriseCount}}</h5>
+                                <p>{{$t('index.EnterPriseCount')}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single counter -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+                        <div class="single-counter">
+                            <div class="single-counter-icon">
+                                <i class="icofont icofont-ui-file"></i>
+                            </div>
+                            <div class="single-counter-text">
+                                <h5 class="timer">{{avgRate}}</h5>
+                                <p>{{$t('index.Satisfaction')}}</p>
                             </div>
                         </div>
                     </div>
@@ -128,10 +127,11 @@
             <div class="copyright">
                 <div class="auto-container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 copyright-text">
-                            <p>Copyright &copy; 2018.Company name All rights reserved.
-                            </p>
-                        </div>
+                        <div class="col-md-12">
+                            <center>
+                            <div class="copyright-text"><img style="width:40px;width:40px" src="static/github.png" /><a href="https://github.com/quinnqin7/node-app/tree/transplant-node-app">quinnqin7</a> Open Source
+                            </div>
+                        </center></div>
                         <!--<div class="col-lg-6 col-md-6 col-sm-12 col-12 footer-menu">-->
                             <!--<ul>-->
                                 <!--<li><a href="#">Make an Enquiry</a></li>-->
@@ -141,6 +141,7 @@
                         <!--</div>-->
                     </div>
                 </div>
+
             </div>
         </footer>
         <!-- END FOOTER -->
@@ -148,12 +149,21 @@
 </template>
 
 <script>
+    import {getRoleCount} from "../api/comm";
+
     export default {
         name: "index",
         data(){
             return {
+                PatientsCount:'',
+                DoctorCount:'',
+                enterpriseCount:'',
+                avgRate:'',
                 zh_cn: null
             }
+        },
+        created(){
+            this.getCount()
         },
         methods:{
             changeLangEvent(command) {
@@ -170,6 +180,16 @@
                     this.$i18n.locale = 'tw';
                 }
             },
+            getCount(){
+                getRoleCount().then((response)=>{
+                    this.PatientsCount = response.data.PatientsCount
+                    this.DoctorCount = response.data.DoctorCount
+                    this.enterpriseCount = response.data.enterpriseCount
+                    this.avgRate = response.data.avgRate
+                	}).catch(err=>{
+                		console.log(err)
+                })
+            }
         }
     }
 </script>
@@ -184,7 +204,9 @@
     @import "../../static/assets/venobox/css/venobox.css";
     @import "../../static/assets/css/style.css";
     @import "../../static/assets/css/responsive.css";
-
+.copyright{
+    width:100%;
+}
     .el-carousel__item {
         opacity: 0.75;
         text-align: center;

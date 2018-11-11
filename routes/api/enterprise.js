@@ -409,6 +409,36 @@ router.post("/getHistory2", passport.authenticate('jwt', {session: false}), (req
 
 
 
+//getDoctorName
+router.post("/getDoctorName", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//返回指定企业 指定 人 的 所有 病例
+	doctor.find({}).then(docs=>{
+		var data=docs
+		//console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
+
+//refuseServiceTime
+router.post("/refuseServiceTime", passport.authenticate('jwt', {session: false}), (req, res) => {
+	//返回指定企业 指定 人 的 所有 病例
+	var arrayRefuseServiceTimeId = req.body.arrayRefuseServiceTimeId
+	doctorServiceTime.find({_id:{$in:arrayRefuseServiceTimeId}}).then(docs=>{
+		var data=docs
+		console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	})
+});
+
+
+
+
 
 
 

@@ -145,7 +145,7 @@
                 <!--width="100">-->
                 <!--</el-table-column>-->
                 <el-table-column
-                    prop="enterpriseId"
+                    prop="name"
                     label="企业名称"
                 >
 
@@ -169,7 +169,7 @@
     import {
         DoctorTogetDoctorAndServiceTime,
         DoctorToGetEnterprise,
-        fetchContentData, getDoctorMessage,
+        fetchContentData, getDoctorMessage, getEnterpriseName,
         getEnterprises
     } from "../../api/doctor";
     import {dateFormat} from '../../utils/dateFormat/index'
@@ -280,11 +280,30 @@
                     this.listLoading = false
                 })
             },
-            fetchAppointmentData(){
+            async fetchAppointmentData(){
                 //this.listLoading = true
-                getDoctorMessage(jwt.decode(getToken()).id).then((response)=>{
+                await getDoctorMessage(jwt.decode(getToken()).id).then((response)=>{
                     this.Appointmentlist = response.data
                     //console.log(response)
+                }).catch(err=>{
+                    console.log(err)
+                })
+                await getEnterpriseName().then((response)=>{
+                    //console.log(response.data)
+                    //console.log(this.list)
+                    var haha  = response.data.map(item=>{
+                        for(var i=0;i<this.Appointmentlist.length; i++){
+                            if(item._id === this.Appointmentlist[i].enterpriseId)
+                            {
+                                var en = {name :item.name}
+                                Object.assign(this.Appointmentlist[i],en)
+                                return this.Appointmentlist[i]
+                                //console.log(item.name)
+                            }
+                        }
+                    })
+                    this.Appointmentlist = haha.filter(f=>f)
+                    //console.log()
                 }).catch(err=>{
                     console.log(err)
                 })

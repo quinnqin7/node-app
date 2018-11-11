@@ -23,6 +23,19 @@ const tw = {message: {
 
     },
 
+
+    //new
+    index:{
+        PatientsCount:'企業用戶',
+        MediackWorks:'醫師數量',
+        EnterPriseCount:'企業數量',
+        Satisfaction:'滿意度',
+        DoctorMaster:'醫師&管理員',
+        EnterpriseUser:'企業員工'
+    },
+
+
+
     doctor: {},
     router: {
         'analysis': '統計',

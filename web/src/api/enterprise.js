@@ -217,3 +217,27 @@ export function getHistory2(patientIdArray,enterpriseId){
         }
     })
 }
+
+
+//getDoctorName
+
+export function getDoctorName(){
+    return request({
+        url: '/api/enterprise/getDoctorName',
+        method: 'post',
+        data:{
+        }
+    })
+}
+
+//refuseServiceTime
+
+export function refuseServiceTime(arrayRefuseServiceTimeId){
+    return request({
+        url: '/api/enterprise/refuseServiceTime',
+        method: 'post',
+        data:{
+            arrayRefuseServiceTimeId:arrayRefuseServiceTimeId
+        }
+    })
+}

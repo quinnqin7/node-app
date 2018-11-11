@@ -119,6 +119,7 @@ router.post("/modifyDoctorInfo", passport.authenticate('jwt', {session: false}),
 
 router.post("/getDoctorMessage", passport.authenticate('jwt', {session: false}), (req, res) => {
 	doctorMessage.find({doctorId:req.body.doctorId,handle:'0'}).then(data=>{
+		//console.log(data)
 		res.json({
 					code:20000,
 					data
@@ -244,6 +245,40 @@ router.post("/fetchContentData", passport.authenticate('jwt', {session: false}),
 	})
 
 });
+
+
+//getEnterpriseName
+router.post("/getEnterpriseName", passport.authenticate('jwt', {session: false}), (req, res) => {
+	enterprise.find({},{name:1}).then(data=>{
+		//console.log(doc)
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		//consoel.log(err)
+		res.status(404).json(err)
+	})
+
+});
+
+//getDoctorServierTime
+router.post("/getDoctorServierTime", passport.authenticate('jwt', {session: false}), (req, res) => {
+	doctorServiceTime.find({doctorId:req.body.doctorId},{startTime:1,endTime:1}).then(data=>{
+		//console.log(data)
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		//consoel.log(err)
+		res.status(404).json(err)
+	})
+
+});
+
+
+
 
 module.exports = router;
 
