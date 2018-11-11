@@ -208,7 +208,7 @@
     width:100%;
 }
     .el-carousel__item {
-        opacity: 0.75;
+        opacity: 1;
         text-align: center;
     }
 

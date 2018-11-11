@@ -20,7 +20,7 @@ const tw = {message: {
         'email': '郵件',
         'pwd': '密碼',
         'contact':'聯繫',
-
+        'clickToKnowDoctorName':'點擊查看問診醫生以及病例 內容'
     },
 
 
@@ -37,6 +37,10 @@ const tw = {message: {
 
 
     doctor: {},
+    enterprise:{
+        none:'無',
+        Ok:'是'
+    },
     router: {
         'analysis': '統計',
         'enterpriseInfo': '問診',
@@ -102,10 +106,10 @@ const tw = {message: {
         'startTime':'開始時間',
         'endTime':'結束時間',
         'isAppointmant':'是否有預約',
-        'sign':'簽到',
-        'delay':'遲到',
+        'sign':'已就診',
+        'delay':'未就診',
         'status':'狀態',
-        'absent':'缺席',
+        'absent':'已停診',
         'title':'標題',
         'content':'主要內容',
         'rate':'評價等級',

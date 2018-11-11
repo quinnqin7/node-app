@@ -10,7 +10,7 @@
             </div>
         <div style="height:140px;overflow: hidden;">
             <div v-for="(o,index) in journalData" :key="index" class="text item">
-                {{ o['date'] +" "+ o['title'] +"   " }}<el-button type="text" @click="displayContent(o['content'])" size="small">查看</el-button>
+                {{ moment(o['date']).format("YYYY-MM-DD") +"    "+ o['title'] +"   " }}<el-button type="text" @click="displayContent(o['content'])" size="small">查看</el-button>
             </div>
         </div>
 
@@ -96,9 +96,11 @@
     import {sendFeedBack} from "../../utils/sendFeedBack";
     import {enterprisesToGetDoctor, fetchNoHandleAppointmentData, getDoctorName} from "../../api/enterprise";
     const jwt = require('jsonwebtoken');
+    import moment from 'moment';
     export default {
         data() {
             return {
+                moment:moment,
                 noHandle:[],
                 a:null,
                 sendFeedBack: sendFeedBack,

@@ -100,6 +100,7 @@ export const asyncRouterMap = [
     {
         path: '/Schedule',
         component: Layout,
+        hidden:true,
         meta: {
             role:['2']
         },
@@ -540,6 +541,7 @@ export const asyncRouterMap = [
     {
         path: '/map',
         component: Layout,
+        hidden:true,
         meta: {
             title: 'router.map',
             //role:['1']

@@ -15,9 +15,9 @@
                     {{ scope.$index }}
                 </template>
             </el-table-column>
-            <el-table-column :label="$t('table.time')">
+            <el-table-column  :label="$t('table.time')">
                 <template slot-scope="scope">
-                    {{ scope.row.time }}
+                    {{ moment(scope.row.time).format("YYYY-MM-DD") }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.domain')">
@@ -28,7 +28,9 @@
             <el-table-column :label="$t('table.serviceTime')"  align="center">
                 <template slot-scope="scope">
                     <i class="el-icon-time"/>
-                    <span>{{ scope.row.startTime }}{{ scope.row.endTime }}</span>
+                    <span>{{ moment(scope.row.startTime).format("YYYY-MM-DD") }} 
+                        <i class="el-icon-time"/>
+                        {{ moment(scope.row.endTime).format("YYYY-MM-DD") }}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.setup')"  align="center">
@@ -50,7 +52,8 @@
     //import { getList } from '@/api/enterprise'
     import {getAgree, getDoctorMessage, getDoctorServierTime, getEnterpriseName, setRefuse} from "../../../api/doctor";
     import {getToken} from "../../../utils/auth";
-
+    import {dateFormat} from "../../../utils/dateFormat";
+import moment from 'moment'
     const jwt = require('jsonwebtoken');
     export default {
         filters: {
@@ -65,6 +68,8 @@
         },
         data() {
             return {
+                moment:moment,
+                dateFormat:dateFormat,
                 list: null,
                 listLoading: false
             }
