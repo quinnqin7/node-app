@@ -20,7 +20,7 @@
         <el-table
             style="width:100%"
             v-loading="listLoading"
-            :data="refuseData"
+            :data="ls"
             element-loading-text="Loading"
             border
             fit
@@ -35,12 +35,12 @@
             </el-table-column>
             <el-table-column :label="$t('table.name')" align="center">
                 <template slot-scope="scope">
-                    {{ scope.row.doctorId }}
+                    {{ scope.row.name }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.tel')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.doctorId }}</span>
+                    <span>{{ scope.row.tel }}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.startTime')" align="center">
@@ -55,7 +55,7 @@
             </el-table-column>
             <el-table-column :label="$t('table.perfession')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.doctorId }}</span>
+                    <span>{{ scope.row.perfession }}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.status')" class-name="status-col" width="100">
@@ -88,7 +88,7 @@
 
     import {
         enterpriseAppointmentDoctor,
-        getDoctorAndServiceTime,
+        getDoctorAndServiceTime, getDoctorName,
         getDoctors, getRefuseData, getSignData,
         sendMessageToDoctor, Sign
     } from "../../../api/enterprise";
@@ -99,6 +99,7 @@
         data() {
             return {
                 refuseData:null,
+                ls:[],
                 multipleSelection: '',
                 dialogData: {},
                 serviceTimeData: [],
@@ -129,14 +130,37 @@
             this.fetchSignData()
         },
         methods: {
-            fetchSignData(){
-                getSignData(jwt.decode(getToken()).id).then(
+            async fetchSignData(){
+                await getSignData(jwt.decode(getToken()).id).then(
                     response=>{
-                        console.log(response.data)
+                       // console.log(response.data)
                         this.refuseData = response.data
                         this.listLoading = false
                     }
                 )
+                await getDoctorName().then((response)=>{
+                    //console.log(response.data)
+                    //return response.data
+                    var haha  = response.data.filter(item=>{
+                        for(var i=0;i<this.refuseData.length; i++){
+                            if(item._id === this.refuseData[i].doctorId)
+                            {
+                                var en = {name :item.name,tel:item.tel,perfession:item.perfession}
+                                Object.assign(this.refuseData[i],en)
+                                this.ls.push(this.refuseData[i])
+                                //return this.refuseData[i]
+                                //console.log(item.name)
+                            }
+                        }
+                    })
+                    //this.refuseData = response.data
+                    //this.refuseData = haha.filter(f=>f)
+                   // console.log(this.refuseData)
+                    //console.log(haha)
+                }).catch(err=>{
+                    console.log(err)
+                })
+
             },
             // 1 到 2 迟  (不点 没到)
             handleSign(sign,doctorServiceTimeId){

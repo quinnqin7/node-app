@@ -50,4 +50,39 @@ router.post("/sendfeedback", passport.authenticate('jwt', {session: false}), (re
 });
 
 
+router.post("/getRoleCount", (req, res) => {
+	Patients.count({}).then(PatientsCount=>{
+		Doctor.count({}).then(DoctorCount=>{
+			enterprise.count({}).then(enterpriseCount=>{
+				historyCase.find({},{rate:1}).then(allRate=>{
+					var rateCount=0;
+					var haveRate = 0
+					allRate.map(rate=>{
+						if(rate.rate!==undefined) {
+							rateCount += parseInt(rate.rate)
+							haveRate++
+						}
+					})
+					var avgRate = rateCount/haveRate
+					var data = {
+						PatientsCount:PatientsCount,
+						DoctorCount:DoctorCount,
+						enterpriseCount:enterpriseCount,
+						avgRate:avgRate
+					}
+					res.json({
+						code:20000,
+						data
+					})
+				})
+			})
+		})
+
+	})
+
+});
+
+
+
+
 module.exports = router;

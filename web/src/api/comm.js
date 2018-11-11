@@ -12,3 +12,14 @@ export function sendfeedback(content) {
         }
     })
 }
+
+
+//getRoleCount
+export function getRoleCount() {
+    return request({
+        url: '/api/comm/getRoleCount',
+        method: 'post',
+        data:{
+        }
+    })
+}

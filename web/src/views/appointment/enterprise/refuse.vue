@@ -20,7 +20,7 @@
         <el-table
             style="width:100%"
             v-loading="listLoading"
-            :data="refuseData"
+            :data="lss"
             element-loading-text="Loading"
             border
             fit
@@ -35,22 +35,22 @@
             </el-table-column>
             <el-table-column :label="$t('table.name')" align="center">
                 <template slot-scope="scope">
-                    {{ scope.row.doctorId }}
+                    {{ scope.row.name }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.tel')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.doctorId }}</span>
+                    <span>{{ scope.row.tel }}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.time')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.doctorServiceTimeId }}</span>
+                    <span>{{ scope.row.startTime }}{{ scope.row.endTime}}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.perfession')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.doctorId }}</span>
+                    <span>{{ scope.row.perfession }}</span>
                 </template>
             </el-table-column>
         </el-table>
@@ -63,8 +63,8 @@
 
     import {
         enterpriseAppointmentDoctor,
-        getDoctorAndServiceTime,
-        getDoctors, getRefuseData,
+        getDoctorAndServiceTime, getDoctorName,
+        getDoctors, getRefuseData, refuseServiceTime,
         sendMessageToDoctor
     } from "../../../api/enterprise";
     import {getToken} from "../../../utils/auth";
@@ -73,6 +73,8 @@
     export default {
         data() {
             return {
+                ls:[],
+                lss:[],
                 refuseData:null,
                 multipleSelection: '',
                 dialogData: {},
@@ -97,14 +99,57 @@
             this.fetchRefuseData()
         },
         methods: {
-            fetchRefuseData(){
-                getRefuseData(jwt.decode(getToken()).id).then(
+           async fetchRefuseData(){
+                await getRefuseData(jwt.decode(getToken()).id).then(
                     response=>{
                         console.log(response.data)
                         this.refuseData = response.data
                         this.listLoading = false
                     }
                 )
+
+
+                await getDoctorName().then((response)=>{
+                    //console.log(response.data)
+                    //return response.data
+                    var haha  = response.data.filter(item=>{
+                        for(var i=0;i<this.refuseData.length; i++){
+                            if(item._id === this.refuseData[i].doctorId)
+                            {
+                                var en = {name :item.name,tel:item.tel,perfession:item.perfession}
+                                Object.assign(this.refuseData[i],en)
+                                this.ls.push(this.refuseData[i])
+                                //return this.refuseData[i]
+                                //console.log(item.name)
+                            }
+                        }
+                    })
+                    //this.refuseData = response.data
+                    //this.refuseData = haha.filter(f=>f)
+                    // console.log(this.refuseData)
+                    //console.log(haha)
+                }).catch(err=>{
+                    console.log(err)
+                })
+                var arrayRefuseServiceTimeId = this.ls.map(item=>{
+                    return item.doctorServiceTimeId
+                })
+               await refuseServiceTime(arrayRefuseServiceTimeId).then((response)=>{
+                   var haha  = response.data.filter(item=>{
+                       for(var i=0;i<this.ls.length; i++){
+                           if(item._id === this.ls[i].doctorServiceTimeId)
+                           {
+                               var en = {startTime:item.startTime,endTime:item.endTime}
+                               Object.assign(this.ls[i],en)
+                               this.lss.push(this.ls[i])
+                               //return this.refuseData[i]
+                               console.log(this.lss)
+                           }
+                       }
+                   })
+               }).catch(err=>{
+               		console.log(err)
+               })
             }
 
         }

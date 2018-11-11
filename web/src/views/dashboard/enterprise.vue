@@ -50,7 +50,7 @@
             </div>
             <!--doctorHadServiceData-->
             <div v-for="(o,index) in doctorHadServiceData" :key="index" class="text item">
-                {{'医师 Id ' + o.doctorId }}
+                {{o.name }}
             </div>
         </el-card>
 
@@ -64,7 +64,7 @@
                 <!--<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
             <div v-for="(o,index) in noHandle" :key="index" class="text item">
-                {{'医生 id ' + o.doctorId }}
+                {{o.name }}
             </div>
         </el-card>
 
@@ -94,12 +94,13 @@
     import {getToken} from "../../utils/auth";
     import {fetchContentData} from "../../api/doctor";
     import {sendFeedBack} from "../../utils/sendFeedBack";
-    import {enterprisesToGetDoctor, fetchNoHandleAppointmentData} from "../../api/enterprise";
+    import {enterprisesToGetDoctor, fetchNoHandleAppointmentData, getDoctorName} from "../../api/enterprise";
     const jwt = require('jsonwebtoken');
     export default {
         data() {
             return {
                 noHandle:[],
+                a:null,
                 sendFeedBack: sendFeedBack,
                 journalData: [{
                     date: '2016-05-03',
@@ -140,6 +141,15 @@
             this.fetchNoHandleAppointment()
         },
         methods: {
+           async getDoctor(id){
+                await getDoctorName(id).then((response)=>{
+                		//console.log(response.data)
+                    return response.data
+                	}).catch(err=>{
+                		console.log(err)
+                })
+                //return this.a.name
+            },
             fetchContent() {
                 fetchContentData(getToken()).then((response) => {
                     this.journalData = response.data
@@ -152,9 +162,9 @@
                     dangerouslyUseHTMLString: true
                 })
             },
-            fetchServiceDoctorData() {
+            async fetchServiceDoctorData() {
                 this.listLoading = true
-                enterprisesToGetDoctor(jwt.decode(getToken()).id).then(response => {
+                await enterprisesToGetDoctor(jwt.decode(getToken()).id).then(response => {
                     //去重
                     var hash = {};
                     this.doctorHadServiceData = response.data.reduce(function(item, next) {
@@ -165,10 +175,30 @@
                     console.log(this.doctorHadServiceData)
                     this.listLoading = false
                 })
+
+                await getDoctorName().then((response)=>{
+                    //console.log(response.data)
+                    //return response.data
+                    var haha  = response.data.map(item=>{
+                        for(var i=0;i<this.doctorHadServiceData.length; i++){
+                            if(item._id === this.doctorHadServiceData[i].doctorId)
+                            {
+                                var en = {name :item.name}
+                                Object.assign(this.doctorHadServiceData[i],en)
+                                return this.doctorHadServiceData[i]
+                                //console.log(item.name)
+                            }
+                        }
+                    })
+                    this.doctorHadServiceData = haha.filter(f=>f)
+                }).catch(err=>{
+                    console.log(err)
+                })
+
             },
-            fetchNoHandleAppointment(){
+           async fetchNoHandleAppointment(){
                 this.listLoading = true
-                fetchNoHandleAppointmentData(jwt.decode(getToken()).id).then((response)=>{
+               await fetchNoHandleAppointmentData(jwt.decode(getToken()).id).then((response)=>{
                     //去重
                     var hash = {};
                     this.noHandle = response.data.reduce(function(item, next) {
@@ -177,6 +207,25 @@
                     }, [])
                     this.listLoading = false
                 })
+
+               await getDoctorName().then((response)=>{
+                   //console.log(response.data)
+                   //return response.data
+                   var haha  = response.data.map(item=>{
+                       for(var i=0;i<this.noHandle.length; i++){
+                           if(item._id === this.noHandle[i].doctorId)
+                           {
+                               var en = {name :item.name}
+                               Object.assign(this.noHandle[i],en)
+                               return this.noHandle[i]
+                               //console.log(item.name)
+                           }
+                       }
+                   })
+                   this.noHandle = haha.filter(f=>f)
+               }).catch(err=>{
+                   console.log(err)
+               })
             }
 
 

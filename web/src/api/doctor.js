@@ -139,3 +139,25 @@ export function fetchContentData(token){
         }
     })
 }
+
+
+//getEnterpriseName
+export function getEnterpriseName(){
+    return request({
+        url: '/api/doctor/getEnterpriseName',
+        method: 'post',
+        data:{
+        }
+    })
+}
+
+//getDoctorServierTime
+export function getDoctorServierTime(doctorId){
+    return request({
+        url: '/api/doctor/getDoctorServierTime',
+        method: 'post',
+        data:{
+            doctorId:doctorId
+        }
+    })
+}
