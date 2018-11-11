@@ -301,7 +301,7 @@ export const asyncRouterMap = [
             {
                 path: 'Analysis',
                 name: 'Analysis',
-                component: () => import('@/views/Statistic/totalpatients'),
+                component: () => import('@/views/Statistic/doctor/index'),
                 meta: {title: 'router.analysis', icon: 'chart', role:['1']}
             }
         ]

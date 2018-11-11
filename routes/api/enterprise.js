@@ -86,7 +86,8 @@ router.post("/updatePatient", passport.authenticate('jwt', {session: false}), (r
 				doctorId: mongoose.Types.ObjectId(req.body.doctorId),
 				enterpriseId: mongoose.Types.ObjectId(req.body.enterpriseId),
 				patientId: mongoose.Types.ObjectId(req.body.patientData._id),
-				time: new Date()
+				time: new Date(),
+				rate:0
 			})
 			historyCaseToSave.save().then((docs) => {
 				res.json({
