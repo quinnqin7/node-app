@@ -254,10 +254,14 @@
     @import "../../static/assets/fonts/icofont.css";
     @import "../../static/assets/css/meanmenu.min.css";
     @import "../../static/assets/css/animate.css";
+
     @import "../../static/assets/owlcarousel/css/owl.carousel.min.css";
+    @import "../../static/assets/owlcarousel/css/owl.theme.default.min.css";
+
     @import "../../static/assets/venobox/css/venobox.css";
     @import "../../static/assets/css/style.css";
     @import "../../static/assets/css/responsive.css";
+
 .copyright{
     width:100%;
 }
