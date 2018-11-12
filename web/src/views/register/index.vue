@@ -158,12 +158,12 @@
         display: inline-block;
         background:url("../login/logon-logo.png") no-repeat no-repeat center;
         background-size: 95px 95px;
-        margin: 80px 0 30px 0;
+        margin: 80px 0 20px 0;
     }
     .login-box{
         width: 100%;
         box-sizing: border-box;
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
     .login-btn{
@@ -203,7 +203,7 @@
         right: 10px;
         top: 30px;
         font-size: 16px;
-        color: rgb(86, 182, 247);
+        color: #889aa4;
         cursor: pointer;
         user-select: none;
     }
