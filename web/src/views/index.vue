@@ -55,14 +55,68 @@
             </div>
         </header>
         <!-- END HEADER SECTION -->
-        <section>
-        <el-carousel :interval="4000" type="card" style="padding-top: 10px;background: linear-gradient(to bottom right, #61a2ff, rgba(0,0,0,0));" >
-            <el-carousel-item v-for="item in 6" :key="item">
-                <!--<h3>{{ item }}</h3>-->
-                <img src="../../static/assets/img/bg/s5.png" />
-            </el-carousel-item>
-        </el-carousel>
+
+        <!--TODO:加这段-->
+        <section class="slider-section">
+            <div class="home-slides owl-carousel owl-theme ">
+                <div class="home-single-slide" data-background="../../static/assets/img/bg/slide2.jpg">
+                    <div class="home-slide-overlay"></div>
+                    <div class="home-single-slide-inner">
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-8 col-sm-8 col-12">
+                                    <div class="home-single-slide-dec">
+                                        <p>WELL CARE</p>
+                                        <h2>PROVIDING</h2>
+                                        <h2>TOTAL LAB SOLUTION</h2>
+                                        <span><i class="icofont icofont-plus"></i> CARING YOUR REPORTS</span>
+                                        <a href="appointment.html" class="home-btn-1">GET APPOINTMENT</a>
+                                        <a href="reports.html" class="home-btn-2">LAB REPORTS</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-4 col-sm-4 col-12 d-lg-block d-md-block d-sm-block d-none">
+                                    <img class="img-fluid" src="../../static/assets/img/bg/single-doc1.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single slider -->
+                <div class="home-single-slide" data-background="../../static/assets/img/bg/slide1.jpg">
+                    <div class="home-slide-overlay"></div>
+                    <div class="home-single-slide-inner">
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-8 col-sm-8 col-12">
+                                    <div class="home-single-slide-dec">
+                                        <p>TOTAL CARE</p>
+                                        <h2>PROVIDING</h2>
+                                        <h2>HEALTH SOLUTION</h2>
+                                        <span><i class="icofont icofont-plus"></i> WE ARE CARING</span>
+                                        <a href="services.html" class="home-btn-1">OUR SERVICES</a>
+                                        <a href="services.html" class="home-btn-2">CONTACT US</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-4 col-sm-4 col-12 d-lg-block d-md-block d-sm-block d-none">
+                                    <img class="home-single-slide--img img-fluid" src="../../static/assets/img/bg/single-doc2.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single slider -->
+            </div>
         </section>
+        <!-- END SLIDER SECTION  -->
+
+        <!--<section>-->
+        <!--<el-carousel :interval="4000" type="card" style="padding-top: 10px;background: linear-gradient(to bottom right, #61a2ff, rgba(0,0,0,0));" >-->
+            <!--<el-carousel-item v-for="item in 6" :key="item">-->
+                <!--&lt;!&ndash;<h3>{{ item }}</h3>&ndash;&gt;-->
+                <!--<img src="../../static/assets/img/bg/s3.png" />-->
+            <!--</el-carousel-item>-->
+        <!--</el-carousel>-->
+        <!--</section>-->
         <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block" style="margin-bottom: 50px;">
             <span class="hahah"><a class="aaa" href="/#/login">{{$t('index.DoctorMaster')}}</a></span>
             <span class="hahah"><a class="aaa" href="/#/patientlogin">{{$t('index.EnterpriseUser')}}</a></span>
