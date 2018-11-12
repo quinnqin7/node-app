@@ -37,7 +37,7 @@
             </el-table-column>
             <el-table-column :label="$t('table.date')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.date }}</span>
+                    <span>{{ moment(scope.row.date).format("YYYY-MM-DD") }}</span>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
@@ -98,10 +98,11 @@
     import {getJournalList} from "../../../api/admin";
     //import FileSaver from 'file-saver';
     //import XLSX from 'xlsx'
-
+    import moment from 'moment'
     export default {
         data() {
             return {
+                moment:moment,
                 searchInput: '',
                 dialogData: {},
                 dialogFormVisible: false,

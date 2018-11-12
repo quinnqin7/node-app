@@ -14,6 +14,7 @@
                 <el-table-column
                     fixed
                     sortable
+                    :formatter="dateFormat"
                     prop="date"
                     label="日期"
                     width="100">
@@ -88,9 +89,11 @@
     import {getToken} from "../../utils/auth";
     import {fetchContentData} from "../../api/doctor";
     import {sendFeedBack} from '../../utils/sendFeedBack'
+    import {dateFormat} from "../../utils/dateFormat";
     export default {
         data(){
             return{
+                dateFormat:dateFormat,
                 sendFeedBack:sendFeedBack,
                 journalData:[{
                     date: '2016-05-03',

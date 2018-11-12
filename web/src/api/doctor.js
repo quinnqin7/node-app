@@ -161,3 +161,26 @@ export function getDoctorServierTime(doctorId){
         }
     })
 }
+
+//getPatientNumberOfMonth
+
+export function getPatientNumberOfMonth(doctorId){
+    return request({
+        url: '/api/doctor/getPatientNumberOfMonth',
+        method: 'post',
+        data:{
+            doctorId:doctorId
+        }
+    })
+}
+
+//getpatientRateToDoctor
+export function getpatientRateToDoctor(doctorId){
+    return request({
+        url: '/api/doctor/getpatientRateToDoctor',
+        method: 'post',
+        data:{
+            doctorId:doctorId
+        }
+    })
+}

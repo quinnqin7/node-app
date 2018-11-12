@@ -45,7 +45,7 @@
             </el-table-column>
             <el-table-column :label="$t('table.time')" align="center">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.startTime }}{{ scope.row.endTime}}</span>
+                    <span>{{ moment(scope.row.startTime).format("YYYY-MM-DD") }} - {{ moment(scope.row.endTime).format("YYYY-MM-DD")}}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.perfession')" align="center">
@@ -73,6 +73,7 @@
     export default {
         data() {
             return {
+                moment:moment,
                 ls:[],
                 lss:[],
                 refuseData:null,

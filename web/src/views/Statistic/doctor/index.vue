@@ -6,11 +6,15 @@
                 <div class="grid-content bg-purple">
                     <div class="chart-container">
                         <ve-histogram :data="chartData" :settings="chartSettings"></ve-histogram>
+                        <center>問診數  月/人</center>
                     </div>
                 </div>
             </el-col>
             <el-col :span="12">
-                <div class="grid-content bg-purple"><ve-pie :data="chartData2"></ve-pie></div>
+                <div class="grid-content bg-purple chart-container">
+                    <ve-pie :data="chartData2" :settings="pieSettings"></ve-pie>
+                    <center>問診滿意度</center>
+                </div>
             </el-col>
         </el-row>
         <el-row :gutter="20">
@@ -27,21 +31,24 @@
 <script>
     import VeHistogram from 'v-charts/lib/histogram.common'
     import 'v-charts/lib/style.css'
-
+    import {getToken} from "../../../utils/auth";
+    import {getPatientNumberOfMonth, getpatientRateToDoctor} from "../../../api/doctor";
+    const jwt = require('jsonwebtoken');
     export default {
         data() {
             this.chartSettings = {
                 stack: {'患者': ['男', '女']}
             }
+            this.pieSettings={radius: 150}
             return {
                 chartData2: {
-                    columns: ['滿意度', '評價人數'],
+                    columns: ['Satisfaction', 'assess'],
                     rows: [
-                        { '滿意度': '1', '評價人數': 1393 },
-                        { '滿意度': '2', '評價人數': 3530 },
-                        { '滿意度': '3', '評價人數': 2923 },
-                        { '滿意度': '4', '評價人數': 1723 },
-                        { '滿意度': '5', '評價人數': 3792 },
+                        {'滿意度': '1', '評價人數': 1393},
+                        {'滿意度': '2', '評價人數': 3530},
+                        {'滿意度': '3', '評價人數': 2923},
+                        {'滿意度': '4', '評價人數': 1723},
+                        {'滿意度': '5', '評價人數': 3792},
                     ]
                 },
                 chartData: {
@@ -71,16 +78,37 @@
                 }
             }
         },
-
-
-        components: {VeHistogram}
+        components: {VeHistogram},
+        created(){
+            this.patientNumberOfMonth()
+            this.patientRateToDoctor()
+        },
+        methods:{
+            patientNumberOfMonth(){
+                getPatientNumberOfMonth(jwt.decode(getToken()).id).then((response)=>{
+                		console.log(response.data)
+                    this.chartData.rows = response.data
+                	}).catch(err=>{
+                		console.log(err)
+                })
+            },
+            patientRateToDoctor(){
+                getpatientRateToDoctor(jwt.decode(getToken()).id).then((response)=>{
+                		console.log(response.data)
+                    this.chartData2.rows = response.data
+                	}).catch(err=>{
+                		console.log(err)
+                })
+            }
+        }
     }
 </script>
 
 <style>
     .chart-container {
         position: relative;
-        width: 60%;
+        width: 100%;
         height: calc(100vh - 84px);
+        padding:50px;
     }
 </style>

@@ -50,26 +50,27 @@
                         <el-form-item :label="$t('table.domain')">
                             <!--<template slot-scope="scope">{{getEnterprise(scope.row.enterpriseId)}}</template>-->
                             <span>
-                                {{ props.row.name }}
+                                {{ props.row.name?props.row.name:$t('enterprise.none') }}
                             </span>
                         </el-form-item>
+                        <br />
                         <el-form-item :label="$t('table.address')">
-                            <span>{{ props.row.address }}</span>
+                            <span>{{ props.row.address?props.row.address:$t('enterprise.none') }}</span>
                         </el-form-item>
                         <el-form-item :label="$t('table.enterpriseCategory')">
-                            <span>{{ props.row.enterpriseCategory }}</span>
+                            <span>{{ props.row.enterpriseCategory?props.row.enterpriseCategory:$t('enterprise.none') }}</span>
                         </el-form-item>
                         <el-form-item :label="$t('table.frequency')">
-                            <span>{{ props.row.frequency }}</span>
+                            <span>{{ props.row.frequency?props.row.frequency:$t('enterprise.none') }}</span>
                         </el-form-item>
                         <el-form-item :label="$t('table.numberOfPeople')">
-                            <span>{{ props.row.numberOfPeople }}</span>
+                            <span>{{ props.row.numberOfPeople?props.row.numberOfPeople:$t('enterprise.none') }}</span>
                         </el-form-item>
                         <el-form-item :label="$t('table.specialHarm')">
-                            <span>{{ props.row.specialHarm }}</span>
+                            <span>{{ props.row.specialHarm?props.row.specialHarm:$t('enterprise.none') }}</span>
                         </el-form-item>
                         <el-form-item :label="$t('table.tel')">
-                            <span>{{ props.row.tel }}</span>
+                            <span>{{ props.row.tel?props.row.tel:$t('enterprise.none') }}</span>
                         </el-form-item>
                     </el-form>
                 </template>
@@ -77,10 +78,12 @@
             <el-table-column
                 :label="$t('table.startTime')"
                 prop="startTime"
+                :formatter="dateFormat"
                 sortable>
             </el-table-column>
             <el-table-column
                 :label="$t('table.endTime')"
+                :formatter="dateFormat"
                 prop="endTime">
             </el-table-column>
             <el-table-column
@@ -138,6 +141,7 @@
 <script>
     import {getToken} from "../../../utils/auth";
     import {CreateSchedule, DoctorTogetDoctorAndServiceTime, DoctorToGetEnterprise} from "../../../api/doctor";
+    import {dateFormat} from "../../../utils/dateFormat";
 
     const jwt = require('jsonwebtoken');
     export default {
@@ -153,6 +157,7 @@
         },
         data() {
             return {
+                dateFormat:dateFormat,
                 pickerOptions1: {
                     shortcuts: [{
                         text: '今天',
@@ -227,7 +232,7 @@
             getEnterprise(enterpriseId){
                 if(enterpriseId==='')
                 {
-                    return '无'
+                    return "無"
                 }
                 else{
                     return '是'

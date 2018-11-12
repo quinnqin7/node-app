@@ -14,7 +14,7 @@ const user = require('../../modules/user')
 const doctorMessage = require('../../modules/doctorMessage')
 
 const Journal = require('../../modules/journal')
-
+const moment = require('moment')
 
 router.post("/getEnterprises", passport.authenticate('jwt', {session: false}), (req, res) => {
 	var doctorId = jwt.decode(req.body.token).id
@@ -276,6 +276,76 @@ router.post("/getDoctorServierTime", passport.authenticate('jwt', {session: fals
 	})
 
 });
+
+
+
+//getPatientNumberOfMonth
+
+router.post("/getPatientNumberOfMonth", passport.authenticate('jwt', {session: false}), (req, res) => {
+	historyCase.find({doctorId:req.body.doctorId},{time:1}).then(datas=>{
+		//console.log(data)
+		var data = [
+			// 現在模擬
+			{'日期': '1', '人/月': 100,},
+			{'日期': '2', '人/月': 155,},
+			{'日期': '3', '人/月': 255,},
+			{'日期': '4', '人/月': 355,},
+			{'日期': '5', '人/月': 455,},
+			{'日期': '6', '人/月': 355,},
+			{'日期': '7', '人/月': 543,},
+			{'日期': '8', '人/月': 664,},
+			{'日期': '9', '人/月': 765,},
+			{'日期': '10', '人/月': 876,},
+			{'日期': '11', '人/月': 134,},
+			{'日期': '12', '人/月': 21,}
+		]
+
+		datas.map(item=>{
+			data[moment(item.time).format("MM")-1]["人/月"]++
+		})
+		//console.log(char)
+		// moment(date).format("YYYY-MM-DD");
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		//consoel.log(err)
+		res.status(404).json(err)
+	})
+
+});
+
+//getpatientRateToDoctor
+router.post("/getpatientRateToDoctor", passport.authenticate('jwt', {session: false}), (req, res) => {
+	historyCase.find({doctorId:req.body.doctorId},{_id:0,rate:1}).then(datas=>{
+		//console.log(datas)
+		var data = [
+			{'Satisfaction': '1', 'assess': 123},
+			{'Satisfaction': '2', 'assess': 434},
+			{'Satisfaction': '3', 'assess': 54},
+			{'Satisfaction': '4', 'assess': 76},
+			{'Satisfaction': '5', 'assess': 99},
+		]
+		//datas.filter(jfk=>jfk)
+		datas.map(item=>{
+			if(item.rate!==0)
+			data[item.rate-1].assess++
+		})
+		//console.log(char)
+		// moment(date).format("YYYY-MM-DD");
+		res.json({
+			code:20000,
+			data
+		})
+	}).catch(err=>{
+		console.log(err)
+		res.status(404).json(err)
+	})
+
+});
+
+
 
 
 

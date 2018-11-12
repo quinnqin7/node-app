@@ -35,7 +35,7 @@
             </el-table-column>
             <el-table-column :label="$t('table.caseDoctor')" align="center">
                 <template slot-scope="scope">
-                    {{ scope.row.doctorId }}
+                    {{ scope.row.name }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.hisSimple')" align="center">
@@ -141,11 +141,13 @@
     //import FileSaver from 'file-saver';
     //import XLSX from 'xlsx'
     import Tinymce from './edit/components/Tinymce'
+    import {getDoctorName} from "../../../api/enterprise";
 
     export default {
         components: {Tinymce},
         data() {
             return {
+                ls:[],
                 watchdog:'0',
                 allRate:[],
                 content: '',
@@ -199,14 +201,41 @@
         },
 
         methods: {
-            fetchData() {
+            async fetchData() {
                 this.listLoading = true
-                getHistoryCase(getToken()).then((response) => {
+                await getHistoryCase(getToken()).then((response) => {
                     this.list = response.data
-                    this.setPaginations()
+
                     this.listLoading = false
 
                 }).catch(err => {
+                    console.log(err)
+                })
+
+
+
+                await getDoctorName().then((response)=>{
+                    //console.log(response.data)
+                    //return response.data
+                    var haha  = response.data.filter(item=>{
+                        for(var i=0;i<this.list.length; i++){
+                            if(item._id === this.list[i].doctorId)
+                            {
+                                var en = {name :item.name}
+                                Object.assign(this.list[i],en)
+                                this.ls.push(this.list[i])
+                                //return this.refuseData[i]
+                                //console.log(item.name)
+                            }
+                        }
+                    })
+                    //this.refuseData = response.data
+                    //this.refuseData = haha.filter(f=>f)
+                    // console.log(this.refuseData)
+                   // console.log(this.ls)
+                    this.list = this.ls
+                    this.setPaginations()
+                }).catch(err=>{
                     console.log(err)
                 })
 

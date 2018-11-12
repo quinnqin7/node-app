@@ -100,6 +100,7 @@ export const asyncRouterMap = [
     {
         path: '/Schedule',
         component: Layout,
+        hidden:true,
         meta: {
             role:['2']
         },
@@ -300,7 +301,7 @@ export const asyncRouterMap = [
             {
                 path: 'Analysis',
                 name: 'Analysis',
-                component: () => import('@/views/Statistic/totalpatients'),
+                component: () => import('@/views/Statistic/doctor/index'),
                 meta: {title: 'router.analysis', icon: 'chart', role:['1']}
             }
         ]
@@ -540,6 +541,7 @@ export const asyncRouterMap = [
     {
         path: '/map',
         component: Layout,
+        hidden:true,
         meta: {
             title: 'router.map',
             //role:['1']

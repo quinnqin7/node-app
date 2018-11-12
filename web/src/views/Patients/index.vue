@@ -92,16 +92,25 @@
                 <el-form-item v-show="showEditCase" :label="$t('table.suggest')">
                     <tinymce style="margin:0;" :height="300" v-model="dialogData.suggest"/>
                 </el-form-item>
-                <el-collapse v-model="activeName" accordion>
+                <el-collapse v-model="activeName">
                     <!--<template v-if="a = scope.row.mainContent"></template>-->
                     <!--<span v-html="a.replace(/<img.*\/>/ig, '').replace(/[u4E00-u9FA5]/g,'').substring(0,9)"></span>-->
-                    <el-collapse-item :key="index" v-for="(h,index) in dialogData.his" :title=h.time+h.doctorId  :name=index+1 >
+                    <el-collapse-item :key="index" v-for="(h,index) in dialogData.his" :name=index+1 >
+
+                        <template slot="title">
+                            <center>
+                            {{moment(h.time).format("YYYY-MM-DD")}}
+                            {{h.name?h.name:$t('comm.clickToKnowDoctorName')}}
+                            <i class="header-icon el-icon-info"></i>
+                            </center>
+                        </template>
+
                         <el-button @click="printdata(h.mainContent)">打印病例</el-button>
                         <el-button @click="printdata(h.suggest)">打印诊断建议</el-button>
                         <el-button @click="printdata(h.mainContent +'<br />'+ h.suggest)">全部打印</el-button>
                         <center><h1>{{$t('table.hisCase')}}</h1></center>
                         <div v-html="h.mainContent"></div>
-                        <h1>{{$t('table.suggest')}}</h1>
+                        <center><h1>{{$t('table.suggest')}}</h1></center>
                         <div v-html="h.suggest"></div>
                     </el-collapse-item>
 
@@ -122,17 +131,20 @@
     import {mapGetters} from 'vuex'
     import {doctorToGetPatients} from '@/api/doctor'
     import jwt from 'jsonwebtoken'
-    import {getHistory, getHistory2, Search, updatePatient} from "../../api/enterprise";
+    import {getDoctorName, getHistory, getHistory2, Search, updatePatient} from "../../api/enterprise";
     import {getToken} from "../../utils/auth";
     import Tinymce from './enterprisePatient/edit/components/Tinymce'
     //import FileSaver from 'file-saver';
     //import XLSX from 'xlsx'
-
+    import moment from 'moment'
     export default {
         components: {Tinymce},
         data() {
             return {
+                displayed:false,
+                moment:moment,
                 fus:'true',
+                ls:[],
                 activeName:['1'],
                 labelPosition:'top',
                 searchInput: '',
@@ -196,15 +208,16 @@
                 document.body.innerHTML = oldContent;
                 return false;
             },
-            fetchData() {
+            async fetchData() {
                 this.listLoading = true
                 if (this.roles[0] === '1') {
-                    doctorToGetPatients(this.$route.params.enterpriseId).then(response => {
+                    await doctorToGetPatients(this.$route.params.enterpriseId).then(response => {
                         this.list = response.data
                         this.listLoading = false
                         this.handleSearch()
                         this.setPaginations()
                     })
+
                 } else {
                     getPatients().then(response => {
                         this.list = response.data
@@ -214,14 +227,43 @@
                     })
                 }
             },
-            fetchPatientData(id) {
+            async fetchPatientData(id) {
                 this.listLoading = true
-                getPatient(id).then(response => {
-
+                await getPatient(id).then(response => {
                     this.dialogData = response.data
                     console.log(this.dialogData)
                     this.listLoading = false
 
+                })
+
+                await getDoctorName().then((response)=>{
+                    //console.log(response.data)
+                    //return response.data
+                    var jj=this.dialogData
+                    var haha  = response.data.filter(item=>{
+                            for(var j = 0;j< jj.his.length;j++){
+                                if(item._id === jj.his[j].doctorId)
+                                {
+                                    var en = {name :item.name}
+                                    Object.assign(jj.his[j],en)
+                                    //this.ls.push(this.dialogData)
+                                    //return this.refuseData[i]
+                                    //console.log(item.name)
+                                   // console.log('哈哈哈哈')
+                                }
+                        }
+                    })
+                    this.dialogData = jj
+                    console.log(jj)
+                    //this.refuseData = response.data
+                    //this.refuseData = haha.filter(f=>f)
+                    // console.log(this.refuseData)
+                    //this.ls.push(this.dialogData)
+                   // console.log(this.ls)
+                    //this.list = this.ls
+                    //this.setPaginations()
+                }).catch(err=>{
+                    console.log(err)
                 })
             },
             handleCreate() {

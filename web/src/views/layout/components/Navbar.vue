@@ -171,12 +171,7 @@
             float: left;
             padding: 0 10px;
         }
-        .screenfull {
-            position: absolute;
-            right: 350px;
-            top: 16px;
-            color: red;
-        }
+
         .avatar-container {
             height: 50px;
             display: inline-block;
@@ -208,6 +203,13 @@
 
     .el-icon-arrow-down {
         font-size: 12px;
+    }
+    .screenfull {
+        position: absolute;
+        right: 450px;
+        top: 16px;
+        color: red;
+        float:right;
     }
 </style>
 

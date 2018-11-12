@@ -5,7 +5,7 @@
         <el-card class="box-card odd" shadow="hover">
             <div slot="header" class="clearfix">
                 <span>今日公告</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                <!--<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
             <!--<div v-for="o in 4" :key="o" class="text item">-->
             <!--{{'列表内容 ' + o }}-->
@@ -18,6 +18,7 @@
                 <el-table-column
                     fixed
                     sortable
+                    :formatter="dateFormat"
                     prop="date"
                     label="日期"
                     width="100">
@@ -99,10 +100,12 @@
     import { mapGetters } from 'vuex'
     import {getToken} from "../../utils/auth";
     import {fetchContentData} from "../../api/doctor";
+    import {dateFormat} from "../../utils/dateFormat";
 
     export default {
         data(){
             return{
+                dateFormat:dateFormat,
                 journalData:[{
                     date: '2016-05-03',
                     name: '王小虎',
