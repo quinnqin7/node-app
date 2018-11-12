@@ -5,7 +5,7 @@ Version      : 1.0
 */
 
 /* Large Layouts */
-@media only screen and (max-width: 1400px) {}
+@media only screen and (max-width: 1400px) {} 
 @media only screen and (max-width: 1340px) {
 .logo-area .header-info-box {
 	margin-left: 62px;
@@ -38,7 +38,7 @@ Version      : 1.0
 	margin-left: 15px;
 }
 .mainmenu-area .navbar-nav .dropdown.quick-search .nav-link {
-	padding: 15px 40px;
+	padding: 15px 30px;
 }
 }
 @media only screen and (max-width: 1023px) {

@@ -60,7 +60,7 @@ Table Of Contents end
         });
 
 
-
+       
 	   /* 2. JQUERY STICKY MENU */
 
         $(".sticky-menu").sticky({
@@ -84,7 +84,7 @@ Table Of Contents end
                 $('.mainmenu-area').removeClass('menu-animation');
             }
         });
-
+		
         $('a.js-scroll-trigger').on('click', function(e) {
             var anchor = $(this);
             $('html, body').stop().animate({
@@ -92,13 +92,13 @@ Table Of Contents end
             }, 1000);
             e.preventDefault();
         });
-
+		
         // Activate scrollspy to add active class to navbar items on scroll
         $('body').scrollspy({
             target: '.mainmenu-area',
             offset: 54
         });
-
+		
 
         /* 4. SECTIONS BACKGROUNDS */
 
@@ -110,7 +110,7 @@ Table Of Contents end
             }
         });
 
-
+	
 
         /* 5. COUNTDOWN JS */
 
@@ -134,7 +134,7 @@ Table Of Contents end
             }
         });
         /* END COUNTDOWN JS */
-
+		
 
 
         /* 6. HOME SLIDER JS */
@@ -169,16 +169,16 @@ Table Of Contents end
 				}
 			}
         });
-
+		
 		$(".home-slides").on("translate.owl.carousel", function () {
 			$(this).find(".owl-item .home-single-slide-dec > *").removeClass("fadeInUp animated").css("opacity","0");
 		});
-
+		
 		$(".home-slides").on("translated.owl.carousel", function () {
 			$(this).find(".owl-item .home-single-slide-dec > *").addClass("fadeInUp animated").css("opacity","1");
 		});
 
-
+            
 		var dot = $('.home-slides .owl-dot');
 		dot.each(function() {
 			var index = $(this).index() + 1;
@@ -189,7 +189,7 @@ Table Of Contents end
 		  }
 		});
 
-
+				
         /* 7. BLOG SLIDER JS */
 
         $('.single-blog-slider').owlCarousel({
@@ -202,7 +202,7 @@ Table Of Contents end
             items: 1,
             nav: false,
         });
-
+            
 		var dot = $('.single-blog-slider .owl-dot');
 		dot.each(function() {
 			var index = $(this).index() + 1;
@@ -213,7 +213,7 @@ Table Of Contents end
 		  }
 		});
 
-
+		   
 	  /* 8. ABOUT SLIDER JS */
 
 	  $('.about-slider').owlCarousel({
@@ -227,8 +227,8 @@ Table Of Contents end
             nav: true,
             navText: ["<i class='icofont icofont-thin-left'></i>", "<i class='icofont icofont-thin-right'></i>"]
         });
-
-
+		
+		
         /* 9. PORTFOLIO SLIDER JS */
 
         $('.portfolio-slider').owlCarousel({
@@ -257,8 +257,8 @@ Table Of Contents end
 				}
 			}
         });
-
-
+		
+		
         /* 10. SERVICE SLIDER JS */
 
         $('.service-slider').owlCarousel({
@@ -288,7 +288,7 @@ Table Of Contents end
 				}
 			}
         });
-
+				
 
         /* 11. TEAM SLIDER JS */
 
@@ -317,8 +317,8 @@ Table Of Contents end
 				}
 			}
         });
-
-
+			
+		   
 	  /* 12. CLIENT SLIDER JS */
 
 		$('.client-slider').owlCarousel({
@@ -331,7 +331,7 @@ Table Of Contents end
             nav: false
         });
 
-
+		   
 	  /* 13. WN SLIDER JS */
 
 		$('.single-wn-slider').owlCarousel({
@@ -346,7 +346,7 @@ Table Of Contents end
 			animateOut: "fadeOutDown"
         });
 
-
+		
         /* 14. VENOBOX JS */
 
         $('.venobox').venobox({
@@ -356,7 +356,7 @@ Table Of Contents end
             spinColor: '#fff'
         });
 
-
+		
         /* 15. ACCORDION JS  */
 
         var selectIds = $('#panel1,#panel2,#panel3,#panel4,#panel5,#panel6,#panel7,#panel8');
@@ -365,10 +365,10 @@ Table Of Contents end
                 $(this).prev().find('.icofont').toggleClass('icofont-thin-down icofont-thin-right');
             })
         });
-
+		
 
 		 /* 16. DATEPICKER JS  */
-
+		 
 		 $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
@@ -380,7 +380,7 @@ Table Of Contents end
 
     new WOW().init();
 
-
+	
 	/* 18. MIXITUP JS */
 
 	        $('.portfolio-items').mixItUp({
@@ -401,7 +401,7 @@ Table Of Contents end
                 }
             }
         });
-
-
-
+		
+	
+	
 })(jQuery);

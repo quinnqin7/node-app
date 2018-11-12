@@ -2,14 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ca510c-8697-4a38-bf2a-d31424bb1aec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/web/src/views/Patients/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/Patients/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/doctor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/doctor/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/enterprise/refuse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/enterprise/refuse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/appointment/enterprise/sign.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/appointment/enterprise/sign.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/enterprise/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/enterprise/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/table/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/table/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/i18n/langs/cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/i18n/langs/cn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/bootstrap/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/bootstrap/js/popper.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/css/extralayers.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/css/gijgo.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/css/meanmenu.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/fonts/icofont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/fonts/icofont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/fonts/icofont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/fonts/icofont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/fonts/icofont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/fonts/icon-font.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/app-apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/app-google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/counter-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/doc-promo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/heading.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/icon-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/icon-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/icon-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/promo-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/s3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/s5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/single-doc1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/single-doc2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/single-doc3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/single-doc4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/slide1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/slide2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/slide4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/slide5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/bg/video.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/blog/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/blog/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/blog/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/blog/de-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/blog/de-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/blog/de-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/blog/de-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/clients/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/clients/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/clients/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/clients/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/gallery/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/t1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/t2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/service/t3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/tes1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/tes2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/img/team/tes3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/canvasjs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/form-contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/gijgo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/jquery-2.2.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/jquery.appear.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/jquery.inview.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/jquery.meanmenu.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/jquery.mixitup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/jquery.sticky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/scrolltopcontrol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/js/wow.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/owlcarousel/css/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/owlcarousel/css/owl.theme.default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/owlcarousel/css/owl.video.play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/owlcarousel/js/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/venobox/css/venobox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/assets/venobox/js/venobox.min.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -205,107 +302,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/Patients/index.vue">
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/views/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="25" selection-end-column="41" />
+            <state relative-caret-position="309">
+              <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-button#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-button#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#10394#11758#0" />
-                <element signature="e#11799#12215#0" />
-                <element signature="e#12257#12535#0" />
-                <element signature="e#12566#12937#0" />
+                <element signature="n#style#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#script#0;n#!!top" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/enterprise/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/arrange/doctor/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#el-table#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="enterprise.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="221" column="8" selection-start-line="221" selection-start-column="8" selection-end-line="221" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/appointment/doctor/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/table/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/appointment/enterprise/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-              <folding>
-                <element signature="n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#el-dialog#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="e#11061#12688#0" />
-                <element signature="e#12966#13377#0" />
-                <element signature="e#13419#13697#0" />
-                <element signature="e#13728#14099#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="refuse.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/appointment/enterprise/refuse.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sign.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/views/appointment/enterprise/sign.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -395,7 +403,6 @@
         <option value="$PROJECT_DIR$/routes/api/users.js" />
         <option value="$PROJECT_DIR$/web/src/router/index.js" />
         <option value="$PROJECT_DIR$/web/src/permission.js" />
-        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/static/assets/bootstrap/js/popper.min.js" />
         <option value="$PROJECT_DIR$/config/keys.js" />
         <option value="$PROJECT_DIR$/public/initdb/user.js" />
@@ -405,12 +412,10 @@
         <option value="$PROJECT_DIR$/public/initdb/models/db.js" />
         <option value="$PROJECT_DIR$/public/initdb/models/doctorServiceTime.js" />
         <option value="$PROJECT_DIR$/public/initdb/doctorServiceTime.js" />
-        <option value="$PROJECT_DIR$/web/src/views/index.vue" />
         <option value="$PROJECT_DIR$/web/src/api/enterprise.js" />
         <option value="$PROJECT_DIR$/routes/api/enterprise.js" />
         <option value="$PROJECT_DIR$/web/src/views/mine/doctor/index.vue" />
         <option value="$PROJECT_DIR$/web/src/views/mine/enterprise/index.vue" />
-        <option value="$PROJECT_DIR$/web/src/i18n/langs/cn.js" />
         <option value="$PROJECT_DIR$/web/src/views/login/index.vue" />
         <option value="$PROJECT_DIR$/web/src/views/login/patient.vue" />
         <option value="$PROJECT_DIR$/web/src/views/register/index.vue" />
@@ -422,6 +427,9 @@
         <option value="$PROJECT_DIR$/web/src/views/table/index.vue" />
         <option value="$PROJECT_DIR$/web/src/views/enterprise/index.vue" />
         <option value="$PROJECT_DIR$/web/src/views/dashboard/enterprise.vue" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/web/src/i18n/langs/cn.js" />
+        <option value="$PROJECT_DIR$/web/src/views/index.vue" />
       </list>
     </option>
   </component>
@@ -444,10 +452,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="94" />
-    <option name="y" value="31" />
-    <option name="width" value="1345" />
-    <option name="height" value="785" />
+    <option name="x" value="150" />
+    <option name="y" value="46" />
+    <option name="width" value="1291" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -487,9 +495,22 @@
               <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node-app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node-app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -509,11 +530,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/static" />
       <recent name="$PROJECT_DIR$/web/src/views/login" />
       <recent name="$PROJECT_DIR$/web/static/assets/img" />
       <recent name="$PROJECT_DIR$/web/static/assets/bootstrap/js" />
       <recent name="$PROJECT_DIR$/docs/images" />
-      <recent name="$PROJECT_DIR$/web/src/views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/static" />
@@ -573,27 +594,8 @@
       <workItem from="1541430137758" duration="20962000" />
       <workItem from="1541522360955" duration="2446000" />
       <workItem from="1541524821662" duration="18740000" />
-    </task>
-    <task id="LOCAL-00015" summary="增添 mdules 修改样式">
-      <created>1540856961952</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1540856961953</updated>
-    </task>
-    <task id="LOCAL-00016" summary="增添 mdules 修改样式">
-      <created>1540857126811</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1540857126811</updated>
-    </task>
-    <task id="LOCAL-00017" summary="增添 mdules 修改样式">
-      <created>1540857139512</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1540857139512</updated>
+      <workItem from="1541989260359" duration="211000" />
+      <workItem from="1541989686194" duration="7679000" />
     </task>
     <task id="LOCAL-00018" summary="other">
       <created>1540893867792</created>
@@ -917,11 +919,32 @@
       <option name="project" value="LOCAL" />
       <updated>1541747680518</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="調整註冊窗口樣式">
+      <created>1541987958775</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1541987958783</updated>
+    </task>
+    <task id="LOCAL-00065" summary="首页">
+      <created>1541997603548</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1541997603551</updated>
+    </task>
+    <task id="LOCAL-00066" summary="首页">
+      <created>1542000603770</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1542000603770</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356745000" />
+    <option name="totallyTimeSpent" value="365778000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -934,68 +957,55 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="440" y="95" width="1345" height="785" extended-state="0" />
+    <frame x="150" y="46" width="1291" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996865" weight="0.26153848" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23867998" side_tool="true" visible="true" weight="0.29774436" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.7759018" weight="0.23759398" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.24259408" side_tool="true" visible="true" weight="0.30428135" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.77436686" weight="0.18195489" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" auto_hide="true" id="Mongo Explorer" order="4" weight="0.13791268" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.76132005" visible="true" weight="0.29774436" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2095165" />
+      <window_info anchor="right" auto_hide="true" id="Mongo Explorer" order="4" weight="0.13690953" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.75740594" visible="true" weight="0.30428135" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26581264" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Translate" order="3" weight="0.328541" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" auto_hide="true" id="Mongo Explorer" order="4" weight="0.13791268" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.7752929" weight="0.1821156" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19542067" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996865" weight="0.26153848" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Translate" order="3" weight="0.328541" />
       <window_info anchor="right" id="Database" order="5" weight="0.3290735" />
       <window_info anchor="right" id="emBrowser" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2401491" side_tool="true" visible="true" weight="0.32388222" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946752" weight="0.3293348" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7598509" visible="true" weight="0.32388222" />
-      <window_info id="Favorites" order="3" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Translate" order="3" weight="0.32959402" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19604701" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.31467792" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2344245" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Translate" order="3" weight="0.32959402" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.43543956" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Mongo Explorer" order="4" visible="true" weight="0.14797008" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.43543956" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2344245" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -1044,8 +1054,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Object -&gt; Array" />
-    <MESSAGE value="fix a holy bug" />
     <MESSAGE value="增添 mdules 修改样式" />
     <MESSAGE value="other" />
     <MESSAGE value="more" />
@@ -1069,7 +1077,9 @@
     <MESSAGE value="修改企业和医师档案表单样式" />
     <MESSAGE value="修改企业医师档案表单" />
     <MESSAGE value="修改企业医师表单" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改企业医师表单" />
+    <MESSAGE value="調整註冊窗口樣式" />
+    <MESSAGE value="首页" />
+    <option name="LAST_COMMIT_MESSAGE" value="首页" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1089,121 +1099,8 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/passport.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/initdb/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/journal/edit.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/journal/journalList/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4317" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/mine/doctor/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#el-button#0;n#el-card#0;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1347#1415#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/mine/enterprise/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-679" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/team/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/team/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/team/3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/team/5.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/team/6.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/team/tes3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/team/tes1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/ajax-loader.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/app-apple.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/app-google.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/single-doc3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/video.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/counter-bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/heading.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/doc-promo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/icon-2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/icon-3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/blog/de-1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/blog/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/assets/img/blog/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/views/login/login-logo.png" />
-    <entry file="file://$PROJECT_DIR$/web/src/views/login/med-bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/i18n/i18n.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/views/login/login-bg.jpg" />
     <entry file="file://$PROJECT_DIR$/web/src/views/login/logon_logo.png" />
@@ -1228,21 +1125,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/tw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1383" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/en.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1381" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/cn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/views/register/index.vue">
@@ -1328,9 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#el-table#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1340,6 +1222,130 @@
           <caret line="221" column="8" selection-start-line="221" selection-start-column="8" selection-end-line="221" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#div#1;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/single-doc4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/single-doc3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/single-doc1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/single-doc2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/initdb/generate.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/doc-promo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/video.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/slide5.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/slide4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/slide2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/slide1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/icon-4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/promo-bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/heading.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/icon-1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/icon-2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/s3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/cn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/i18n/langs/tw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="26" selection-start-line="26" selection-end-line="34" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/img/bg/s5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/jquery.inview.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/scrolltopcontrol.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/jquery-2.2.4.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/jquery.sticky.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/jquery.appear.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/form-contact.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/canvasjs.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/wow.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/js/gijgo.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/assets/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18192" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/views/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#el-dropdown#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#script#0;n#!!top" />
           </folding>
         </state>
       </provider>

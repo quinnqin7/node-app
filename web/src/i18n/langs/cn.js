@@ -25,7 +25,15 @@ const cn = {
         'contact':'联系',
 
 	},
-
+    //new
+    index:{
+        PatientsCount:'企业用户',
+        MediackWorks:'医师数量',
+        EnterPriseCount:'企业数量',
+        Satisfaction:'满意度',
+        DoctorMaster:'医师&管理员',
+        EnterpriseUser:'企业员工'
+    },
 	doctor: {},
 	router: {
 		'analysis': '统计',
