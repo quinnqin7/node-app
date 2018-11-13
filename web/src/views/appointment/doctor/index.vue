@@ -12,7 +12,7 @@
                 color: 'rgb(89, 88, 88)'}">
             <el-table-column align="center" label="ID" >
                 <template slot-scope="scope">
-                    {{ scope.$index }}
+                    {{ scope.$index+1 }}
                 </template>
             </el-table-column>
             <el-table-column  :label="$t('table.time')">
@@ -28,20 +28,20 @@
             <el-table-column :label="$t('table.serviceTime')"  align="center">
                 <template slot-scope="scope">
                     <i class="el-icon-time"/>
-                    <span>{{ moment(scope.row.startTime).format("YYYY-MM-DD") }} 
+                    <span>{{ moment(scope.row.startTime).format("YYYY-MM-DD") }}
                         <i class="el-icon-time"/>
                         {{ moment(scope.row.endTime).format("YYYY-MM-DD") }}</span>
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.setup')"  align="center">
                 <template slot-scope="scope">
-                    <el-button @click="handleAgree(scope.row.doctorServiceTimeId,scope.row._id,scope.row.enterpriseId)">{{$t('table.agree')}}</el-button>
+                    <el-button type="success" @click="handleAgree(scope.row.doctorServiceTimeId,scope.row._id,scope.row.enterpriseId)">{{$t('table.agree')}}</el-button>
                 </template>
 
             </el-table-column>
             <el-table-column :label="$t('table.setup')"  align="center">
             <template slot-scope="scope">
-                <el-button @click="handleRefuse(scope.row._id)">{{$t('table.refuse')}}</el-button>
+                <el-button type="danger" @click="handleRefuse(scope.row._id)">{{$t('table.refuse')}}</el-button>
             </template>
             </el-table-column>
         </el-table>

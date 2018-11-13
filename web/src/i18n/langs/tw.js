@@ -4,7 +4,7 @@ const tw = {message: {
     },
     comm: {
         'patienttitle':'企業用戶登陸',
-        'title': '醫師企業平台',
+        'title': '醫療臨場服務媒合系統',
         'doctor': '醫生',
         'enterprise': '企業',
         'patient': '患者',
@@ -115,7 +115,7 @@ const tw = {message: {
         'rate':'評價等級',
         'lookAccess':'查看評價',
         'myaccess':'我的評價',
-        'header':'頭像'
+        'header':'我的頭像'
     },
     nav:{
         'hello':'您好',

@@ -29,7 +29,7 @@
                 color: 'rgb(89, 88, 88)'}">
             <el-table-column align="center" :label="$t('table.id')" >
                 <template slot-scope="scope">
-                    {{ scope.$index }}
+                    {{ scope.$index+1 }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.domain')"  align="center">
@@ -49,12 +49,12 @@
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button  @click="handlelook(scope.row)">{{$t('table.look')}}</el-button>
+                    <el-button type="success" plain @click="handlelook(scope.row)">{{$t('table.look')}}</el-button>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <router-link :to="'enterpriseShowPatient/'+scope.row._id"><el-button>{{$t('table.detail')}}</el-button></router-link>
+                    <router-link :to="'enterpriseShowPatient/'+scope.row._id"><el-button type="primary" plain>{{$t('table.detail')}}</el-button></router-link>
                 </template>
             </el-table-column>
         </el-table>

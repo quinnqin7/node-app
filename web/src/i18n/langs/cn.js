@@ -108,7 +108,8 @@ const cn = {
         'content':'主要内容',
         'rate':'评价等级',
         'lookAccess':'查看评价',
-        'myaccess':'我的评价'
+        'myaccess':'我的评价',
+        'header':'我的头像'
 	},
     nav:{
 	    'hello':'您好',

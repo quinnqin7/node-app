@@ -105,9 +105,9 @@
                             </center>
                         </template>
 
-                        <el-button @click="printdata(h.mainContent)">打印病例</el-button>
-                        <el-button @click="printdata(h.suggest)">打印诊断建议</el-button>
-                        <el-button @click="printdata(h.mainContent +'<br />'+ h.suggest)">全部打印</el-button>
+                        <el-button type="success" round plain @click="printdata(h.mainContent)">打印病歷</el-button>
+                        <el-button type="info" round plain @click="printdata(h.suggest)">打印診斷建議</el-button>
+                        <el-button type="warning" round plain @click="printdata(h.mainContent +'<br />'+ h.suggest)">全部打印</el-button>
                         <center><h1>{{$t('table.hisCase')}}</h1></center>
                         <div v-html="h.mainContent"></div>
                         <center><h1>{{$t('table.suggest')}}</h1></center>
@@ -532,7 +532,11 @@
     }
 
     .dialog {
-        wdith: 1000px;
+        /*wdith: 1000px;*/
+        margin:0 15px;
+        width: 40%;
+        margin-top: 20px;
+        margin-left: 350px;
     }
 
     .paginations {

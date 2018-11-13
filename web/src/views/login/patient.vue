@@ -141,7 +141,7 @@
     .left{
         width: 490px;
         height: 100%;
-        background: url("med-bg.jpg") no-repeat no-repeat center;
+        background: url("bg-login2.jpg") no-repeat no-repeat center;
         background-size: 490px 580px;
         float: left;
         box-sizing: border-box;
@@ -187,7 +187,7 @@
     }
     .title,.describe{
         display: inline-block;
-        color: #fff;
+        color:rgb(89, 85, 85);
         width: 100%;
         letter-spacing:5px;
         -webkit-font-smoothing: subpixel-antialiased
@@ -197,13 +197,13 @@
         margin-bottom: 15px;
     }
     .describe{
-        font-size: 14px;
+        font-size: 18px;
         margin-bottom: 120px;
     }
 
     .describe-fonz{
-        font-size: 16px;
-        color: #FFFFFF;
+        font-size: 22px;
+        color: rgb(89, 85, 85);
         text-align: center;
         margin-left: 120px;
 

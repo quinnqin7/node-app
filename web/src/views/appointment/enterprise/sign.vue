@@ -30,7 +30,7 @@
                 color: 'rgb(89, 88, 88)'}">
             <el-table-column align="center" :label="$t('table.id')">
                 <template slot-scope="scope">
-                    {{ scope.$index }}
+                    {{ scope.$index+1 }}
                 </template>
             </el-table-column>
             <el-table-column :label="$t('table.name')" align="center">
@@ -60,22 +60,22 @@
             </el-table-column>
             <el-table-column :label="$t('table.status')" class-name="status-col" width="100">
                 <template slot-scope="scope">
-                    <el-tag :type="scope.row.sign | statusFilter">{{ scope.row.sign==='2'?'迟到':(scope.row.sign==='1'?'签到':'未到') }}</el-tag>
+                    <el-tag closable :type="scope.row.sign | statusFilter">{{ scope.row.sign==='2'?'未就診':(scope.row.sign==='1'?'已就診':'已停診') }}</el-tag>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button @click="handleSign(1,scope.row._id)">{{$t('table.sign')}}</el-button>
+                    <el-button type="success" plain @click="handleSign(1,scope.row._id)">{{$t('table.sign')}}</el-button>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button @click="handleSign(2,scope.row._id)">{{$t('table.delay')}}</el-button>
+                    <el-button type="warning" plain @click="handleSign(2,scope.row._id)">{{$t('table.delay')}}</el-button>
                 </template>
             </el-table-column>
             <el-table-column class-name="status-col" :label="$t('table.setup')" align="center">
                 <template slot-scope="scope">
-                    <el-button @click="handleSign(0,scope.row._id)">{{$t('table.absent')}}</el-button>
+                    <el-button type="danger" plain @click="handleSign(0,scope.row._id)">{{$t('table.absent')}}</el-button>
                 </template>
             </el-table-column>
         </el-table>
