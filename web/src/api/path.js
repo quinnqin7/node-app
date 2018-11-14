@@ -13,8 +13,8 @@ exports.path = {
 }
 
 exports.host = {
-    ip:"localhost",
-    vueport:'9898'
+    ip:"project.guojiakun.cn",
+    vueport:'80'
 }
 
 // FUNCTION pathFilter 在服务端填写过滤路由的时候使用

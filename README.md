@@ -3,6 +3,7 @@
 
   本项目在 [nvm] 安装的 [Nodejs8.12](https://nodejs.org/zh-cn/) 环境下开发, 语言 JavaScript [es6](http://es6.ruanyifeng.com)
   * [在线地址](http://med.4843.fun) [测试账号](./public/serverpwd.txt)
+  * [在线地址2](http://project.guojiakun.cn)  [测试账号](./public/serverpwd2.txt)
 > 使用框架
 
 * 后台: [express4.16.4],
