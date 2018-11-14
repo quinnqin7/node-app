@@ -257,7 +257,7 @@
                         duration: 2000
                     })
                 })
-                    window.location.reload()
+                    //window.location.reload()
                 this.dialogFormVisible=false
             }
         }

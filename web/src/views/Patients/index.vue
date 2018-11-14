@@ -532,11 +532,11 @@
     }
 
     .dialog {
-        /*wdith: 1000px;*/
-        margin:0 15px;
-        width: 40%;
-        margin-top: 20px;
-        margin-left: 350px;
+        /*!*wdith: 1000px;*!*/
+        /*margin:0 15px;*/
+        /*!*width: 40%;*!*/
+        /*margin-top: 20px;*/
+        /*margin-left: 350px;*/
     }
 
     .paginations {
