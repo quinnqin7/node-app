@@ -109,14 +109,14 @@
         </section>
         <!-- END SLIDER SECTION  -->
 
-        <!--<section>-->
-        <!--<el-carousel :interval="4000" type="card" style="padding-top: 10px;background: linear-gradient(to bottom right, #61a2ff, rgba(0,0,0,0));" >-->
-            <!--<el-carousel-item v-for="item in 6" :key="item">-->
-                <!--&lt;!&ndash;<h3>{{ item }}</h3>&ndash;&gt;-->
-                <!--<img src="../../static/assets/img/bg/s3.png" />-->
-            <!--</el-carousel-item>-->
-        <!--</el-carousel>-->
-        <!--</section>-->
+        <section>
+        <el-carousel :interval="4000" type="card" style="padding-top: 10px;background: linear-gradient(to bottom right, #61a2ff, rgba(0,0,0,0));" >
+            <el-carousel-item v-for="item in 6" :key="item">
+                <!--<h3>{{ item }}</h3>-->
+                <img src="../../static/assets/img/bg/s3.png" />
+            </el-carousel-item>
+        </el-carousel>
+        </section>
         <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block" style="margin-bottom: 50px;">
             <span class="hahah"><a class="aaa" href="/#/login">{{$t('index.DoctorMaster')}}</a></span>
             <span class="hahah"><a class="aaa" href="/#/patientlogin">{{$t('index.EnterpriseUser')}}</a></span>
