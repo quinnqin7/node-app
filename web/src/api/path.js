@@ -13,7 +13,7 @@ exports.path = {
 }
 
 exports.host = {
-    ip:"project.guojiakun.cn",
+    ip:"med.4843.fun",
     vueport:'80'
 }
 

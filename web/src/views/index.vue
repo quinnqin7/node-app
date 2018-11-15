@@ -113,7 +113,7 @@
         <el-carousel :interval="4000" type="card" style="padding-top: 10px;background: linear-gradient(to bottom right, #61a2ff, rgba(0,0,0,0));" >
             <el-carousel-item v-for="item in 6" :key="item">
                 <!--<h3>{{ item }}</h3>-->
-                <img src="../../static/assets/img/bg/s3.png" />
+                <img src="../../static/assets/img/bg/s3.jpg" />
             </el-carousel-item>
         </el-carousel>
         </section>
@@ -239,7 +239,7 @@
                     this.PatientsCount = response.data.PatientsCount
                     this.DoctorCount = response.data.DoctorCount
                     this.enterpriseCount = response.data.enterpriseCount
-                    this.avgRate = response.data.avgRate
+                    this.avgRate = Math.ceil(response.data.avgRate)
                 	}).catch(err=>{
                 		console.log(err)
                 })
